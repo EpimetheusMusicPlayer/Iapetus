@@ -8,13 +8,13 @@ part of 'item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BannerSuperbrowseItem _$$BannerSuperbrowseItemFromJson(
+_$BannerSuperbrowseItemImpl _$$BannerSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$BannerSuperbrowseItem',
+      r'_$BannerSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$BannerSuperbrowseItem(
+        final val = _$BannerSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -35,8 +35,8 @@ _$BannerSuperbrowseItem _$$BannerSuperbrowseItemFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$BannerSuperbrowseItemToJson(
-        _$BannerSuperbrowseItem instance) =>
+Map<String, dynamic> _$$BannerSuperbrowseItemImplToJson(
+        _$BannerSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,
@@ -45,13 +45,13 @@ Map<String, dynamic> _$$BannerSuperbrowseItemToJson(
       'type': instance.$type,
     };
 
-_$BeltSuperbrowseItem _$$BeltSuperbrowseItemFromJson(
+_$BeltSuperbrowseItemImpl _$$BeltSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$BeltSuperbrowseItem',
+      r'_$BeltSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$BeltSuperbrowseItem(
+        final val = _$BeltSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -80,8 +80,8 @@ _$BeltSuperbrowseItem _$$BeltSuperbrowseItemFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$BeltSuperbrowseItemToJson(
-        _$BeltSuperbrowseItem instance) =>
+Map<String, dynamic> _$$BeltSuperbrowseItemImplToJson(
+        _$BeltSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,
@@ -93,13 +93,13 @@ Map<String, dynamic> _$$BeltSuperbrowseItemToJson(
       'type': instance.$type,
     };
 
-_$FeaturedSuperbrowseItem _$$FeaturedSuperbrowseItemFromJson(
+_$FeaturedSuperbrowseItemImpl _$$FeaturedSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$FeaturedSuperbrowseItem',
+      r'_$FeaturedSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$FeaturedSuperbrowseItem(
+        final val = _$FeaturedSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -133,8 +133,8 @@ _$FeaturedSuperbrowseItem _$$FeaturedSuperbrowseItemFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$FeaturedSuperbrowseItemToJson(
-        _$FeaturedSuperbrowseItem instance) =>
+Map<String, dynamic> _$$FeaturedSuperbrowseItemImplToJson(
+        _$FeaturedSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,
@@ -146,13 +146,13 @@ Map<String, dynamic> _$$FeaturedSuperbrowseItemToJson(
       'type': instance.$type,
     };
 
-_$FooterSuperbrowseItem _$$FooterSuperbrowseItemFromJson(
+_$FooterSuperbrowseItemImpl _$$FooterSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$FooterSuperbrowseItem',
+      r'_$FooterSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$FooterSuperbrowseItem(
+        final val = _$FooterSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -183,8 +183,8 @@ _$FooterSuperbrowseItem _$$FooterSuperbrowseItemFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$FooterSuperbrowseItemToJson(
-        _$FooterSuperbrowseItem instance) =>
+Map<String, dynamic> _$$FooterSuperbrowseItemImplToJson(
+        _$FooterSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,
@@ -195,13 +195,13 @@ Map<String, dynamic> _$$FooterSuperbrowseItemToJson(
       'type': instance.$type,
     };
 
-_$GridSuperbrowseItem _$$GridSuperbrowseItemFromJson(
+_$GridSuperbrowseItemImpl _$$GridSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$GridSuperbrowseItem',
+      r'_$GridSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$GridSuperbrowseItem(
+        final val = _$GridSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -228,8 +228,8 @@ _$GridSuperbrowseItem _$$GridSuperbrowseItemFromJson(
                   ?.map((e) =>
                       SuperbrowseBadge.fromJson(e as Map<String, dynamic>))
                   .toList()),
-          timestamp: $checkedConvert(
-              'timeStamp', (v) => readOptionalDateTimeMilliseconds(v as int?)),
+          timestamp: $checkedConvert('timeStamp',
+              (v) => readOptionalDateTimeMilliseconds((v as num?)?.toInt())),
           $type: $checkedConvert('type', (v) => v as String?),
         );
         return val;
@@ -237,8 +237,8 @@ _$GridSuperbrowseItem _$$GridSuperbrowseItemFromJson(
       fieldKeyMap: const {'timestamp': 'timeStamp', r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$GridSuperbrowseItemToJson(
-        _$GridSuperbrowseItem instance) =>
+Map<String, dynamic> _$$GridSuperbrowseItemImplToJson(
+        _$GridSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,
@@ -251,13 +251,13 @@ Map<String, dynamic> _$$GridSuperbrowseItemToJson(
       'type': instance.$type,
     };
 
-_$HeaderSuperbrowseItem _$$HeaderSuperbrowseItemFromJson(
+_$HeaderSuperbrowseItemImpl _$$HeaderSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$HeaderSuperbrowseItem',
+      r'_$HeaderSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$HeaderSuperbrowseItem(
+        final val = _$HeaderSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -288,8 +288,8 @@ _$HeaderSuperbrowseItem _$$HeaderSuperbrowseItemFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$HeaderSuperbrowseItemToJson(
-        _$HeaderSuperbrowseItem instance) =>
+Map<String, dynamic> _$$HeaderSuperbrowseItemImplToJson(
+        _$HeaderSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,
@@ -300,13 +300,13 @@ Map<String, dynamic> _$$HeaderSuperbrowseItemToJson(
       'type': instance.$type,
     };
 
-_$HeroSuperbrowseItem _$$HeroSuperbrowseItemFromJson(
+_$HeroSuperbrowseItemImpl _$$HeroSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$HeroSuperbrowseItem',
+      r'_$HeroSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$HeroSuperbrowseItem(
+        final val = _$HeroSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -345,8 +345,8 @@ _$HeroSuperbrowseItem _$$HeroSuperbrowseItemFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$HeroSuperbrowseItemToJson(
-        _$HeroSuperbrowseItem instance) =>
+Map<String, dynamic> _$$HeroSuperbrowseItemImplToJson(
+        _$HeroSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,
@@ -359,13 +359,13 @@ Map<String, dynamic> _$$HeroSuperbrowseItemToJson(
       'type': instance.$type,
     };
 
-_$LargeRowSuperbrowseItem _$$LargeRowSuperbrowseItemFromJson(
+_$LargeRowSuperbrowseItemImpl _$$LargeRowSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$LargeRowSuperbrowseItem',
+      r'_$LargeRowSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$LargeRowSuperbrowseItem(
+        final val = _$LargeRowSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -411,8 +411,8 @@ _$LargeRowSuperbrowseItem _$$LargeRowSuperbrowseItemFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$LargeRowSuperbrowseItemToJson(
-        _$LargeRowSuperbrowseItem instance) =>
+Map<String, dynamic> _$$LargeRowSuperbrowseItemImplToJson(
+        _$LargeRowSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,
@@ -427,13 +427,13 @@ Map<String, dynamic> _$$LargeRowSuperbrowseItemToJson(
       'type': instance.$type,
     };
 
-_$SmallRowSuperbrowseItem _$$SmallRowSuperbrowseItemFromJson(
+_$SmallRowSuperbrowseItemImpl _$$SmallRowSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$SmallRowSuperbrowseItem',
+      r'_$SmallRowSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$SmallRowSuperbrowseItem(
+        final val = _$SmallRowSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -464,8 +464,8 @@ _$SmallRowSuperbrowseItem _$$SmallRowSuperbrowseItemFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$SmallRowSuperbrowseItemToJson(
-        _$SmallRowSuperbrowseItem instance) =>
+Map<String, dynamic> _$$SmallRowSuperbrowseItemImplToJson(
+        _$SmallRowSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,
@@ -476,13 +476,13 @@ Map<String, dynamic> _$$SmallRowSuperbrowseItemToJson(
       'type': instance.$type,
     };
 
-_$SplitSuperbrowseItem _$$SplitSuperbrowseItemFromJson(
+_$SplitSuperbrowseItemImpl _$$SplitSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$SplitSuperbrowseItem',
+      r'_$SplitSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$SplitSuperbrowseItem(
+        final val = _$SplitSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -516,8 +516,8 @@ _$SplitSuperbrowseItem _$$SplitSuperbrowseItemFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$SplitSuperbrowseItemToJson(
-        _$SplitSuperbrowseItem instance) =>
+Map<String, dynamic> _$$SplitSuperbrowseItemImplToJson(
+        _$SplitSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,
@@ -529,13 +529,13 @@ Map<String, dynamic> _$$SplitSuperbrowseItemToJson(
       'type': instance.$type,
     };
 
-_$TileSuperbrowseItem _$$TileSuperbrowseItemFromJson(
+_$TileSuperbrowseItemImpl _$$TileSuperbrowseItemImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$TileSuperbrowseItem',
+      r'_$TileSuperbrowseItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$TileSuperbrowseItem(
+        final val = _$TileSuperbrowseItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
           analyticsToken: $checkedConvert('analyticsToken', (v) => v as String),
           labels: $checkedConvert(
@@ -564,8 +564,8 @@ _$TileSuperbrowseItem _$$TileSuperbrowseItemFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$TileSuperbrowseItemToJson(
-        _$TileSuperbrowseItem instance) =>
+Map<String, dynamic> _$$TileSuperbrowseItemImplToJson(
+        _$TileSuperbrowseItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'analyticsToken': instance.analyticsToken,

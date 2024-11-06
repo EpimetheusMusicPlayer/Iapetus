@@ -8,13 +8,13 @@ part of 'artist_recommendation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ArtistRecommendation _$$_ArtistRecommendationFromJson(
+_$ArtistRecommendationImpl _$$ArtistRecommendationImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_ArtistRecommendation',
+      r'_$ArtistRecommendationImpl',
       json,
       ($checkedConvert) {
-        final val = _$_ArtistRecommendation(
+        final val = _$ArtistRecommendationImpl(
           artistName: $checkedConvert('artistName', (v) => v as String),
           score: $checkedConvert('score', (v) => readScore(v as Object)),
           likelyMatch: $checkedConvert('likelyMatch', (v) => v as bool),
@@ -28,8 +28,8 @@ _$_ArtistRecommendation _$$_ArtistRecommendationFromJson(
       },
     );
 
-Map<String, dynamic> _$$_ArtistRecommendationToJson(
-        _$_ArtistRecommendation instance) =>
+Map<String, dynamic> _$$ArtistRecommendationImplToJson(
+        _$ArtistRecommendationImpl instance) =>
     <String, dynamic>{
       'artistName': instance.artistName,
       'score': writeScore(instance.score),

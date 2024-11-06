@@ -12,7 +12,7 @@ part of 'form_factor.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 FormFactor _$FormFactorFromJson(Map<String, dynamic> json) {
   return _FormFactor.fromJson(json);
@@ -27,8 +27,12 @@ mixin _$FormFactor {
   @JsonKey(name: 'fractionSize')
   double? get fractionSize => throw _privateConstructorUsedError;
 
+  /// Serializes this FormFactor to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FormFactor
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FormFactorCopyWith<FormFactor> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$FormFactorCopyWithImpl<$Res, $Val extends FormFactor>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FormFactor
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,11 +86,11 @@ class _$FormFactorCopyWithImpl<$Res, $Val extends FormFactor>
 }
 
 /// @nodoc
-abstract class _$$_FormFactorCopyWith<$Res>
+abstract class _$$FormFactorImplCopyWith<$Res>
     implements $FormFactorCopyWith<$Res> {
-  factory _$$_FormFactorCopyWith(
-          _$_FormFactor value, $Res Function(_$_FormFactor) then) =
-      __$$_FormFactorCopyWithImpl<$Res>;
+  factory _$$FormFactorImplCopyWith(
+          _$FormFactorImpl value, $Res Function(_$FormFactorImpl) then) =
+      __$$FormFactorImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,13 +100,15 @@ abstract class _$$_FormFactorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FormFactorCopyWithImpl<$Res>
-    extends _$FormFactorCopyWithImpl<$Res, _$_FormFactor>
-    implements _$$_FormFactorCopyWith<$Res> {
-  __$$_FormFactorCopyWithImpl(
-      _$_FormFactor _value, $Res Function(_$_FormFactor) _then)
+class __$$FormFactorImplCopyWithImpl<$Res>
+    extends _$FormFactorCopyWithImpl<$Res, _$FormFactorImpl>
+    implements _$$FormFactorImplCopyWith<$Res> {
+  __$$FormFactorImplCopyWithImpl(
+      _$FormFactorImpl _value, $Res Function(_$FormFactorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FormFactor
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,7 +116,7 @@ class __$$_FormFactorCopyWithImpl<$Res>
     Object? columnCount = freezed,
     Object? fractionSize = freezed,
   }) {
-    return _then(_$_FormFactor(
+    return _then(_$FormFactorImpl(
       rowCount: freezed == rowCount
           ? _value.rowCount
           : rowCount // ignore: cast_nullable_to_non_nullable
@@ -127,14 +135,14 @@ class __$$_FormFactorCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FormFactor implements _FormFactor {
-  const _$_FormFactor(
+class _$FormFactorImpl implements _FormFactor {
+  const _$FormFactorImpl(
       {@JsonKey(name: 'numRows') this.rowCount,
       @JsonKey(name: 'numCols') this.columnCount,
       @JsonKey(name: 'fractionSize') this.fractionSize});
 
-  factory _$_FormFactor.fromJson(Map<String, dynamic> json) =>
-      _$$_FormFactorFromJson(json);
+  factory _$FormFactorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FormFactorImplFromJson(json);
 
   @override
   @JsonKey(name: 'numRows')
@@ -152,10 +160,10 @@ class _$_FormFactor implements _FormFactor {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FormFactor &&
+            other is _$FormFactorImpl &&
             (identical(other.rowCount, rowCount) ||
                 other.rowCount == rowCount) &&
             (identical(other.columnCount, columnCount) ||
@@ -164,20 +172,22 @@ class _$_FormFactor implements _FormFactor {
                 other.fractionSize == fractionSize));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, rowCount, columnCount, fractionSize);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FormFactor
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FormFactorCopyWith<_$_FormFactor> get copyWith =>
-      __$$_FormFactorCopyWithImpl<_$_FormFactor>(this, _$identity);
+  _$$FormFactorImplCopyWith<_$FormFactorImpl> get copyWith =>
+      __$$FormFactorImplCopyWithImpl<_$FormFactorImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FormFactorToJson(
+    return _$$FormFactorImplToJson(
       this,
     );
   }
@@ -188,10 +198,10 @@ abstract class _FormFactor implements FormFactor {
           {@JsonKey(name: 'numRows') final int? rowCount,
           @JsonKey(name: 'numCols') final int? columnCount,
           @JsonKey(name: 'fractionSize') final double? fractionSize}) =
-      _$_FormFactor;
+      _$FormFactorImpl;
 
   factory _FormFactor.fromJson(Map<String, dynamic> json) =
-      _$_FormFactor.fromJson;
+      _$FormFactorImpl.fromJson;
 
   @override
   @JsonKey(name: 'numRows')
@@ -202,8 +212,11 @@ abstract class _FormFactor implements FormFactor {
   @override
   @JsonKey(name: 'fractionSize')
   double? get fractionSize;
+
+  /// Create a copy of FormFactor
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FormFactorCopyWith<_$_FormFactor> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FormFactorImplCopyWith<_$FormFactorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

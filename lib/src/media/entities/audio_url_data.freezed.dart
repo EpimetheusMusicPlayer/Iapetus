@@ -12,7 +12,7 @@ part of 'audio_url_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AudioUrlData _$AudioUrlDataFromJson(Map<String, dynamic> json) {
   return _AudioUrlData.fromJson(json);
@@ -29,8 +29,12 @@ mixin _$AudioUrlData {
   @JsonKey(name: 'audioUrl')
   Uri get audioUrl => throw _privateConstructorUsedError;
 
+  /// Serializes this AudioUrlData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AudioUrlData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AudioUrlDataCopyWith<AudioUrlData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$AudioUrlDataCopyWithImpl<$Res, $Val extends AudioUrlData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AudioUrlData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,11 +94,11 @@ class _$AudioUrlDataCopyWithImpl<$Res, $Val extends AudioUrlData>
 }
 
 /// @nodoc
-abstract class _$$_AudioUrlDataCopyWith<$Res>
+abstract class _$$AudioUrlDataImplCopyWith<$Res>
     implements $AudioUrlDataCopyWith<$Res> {
-  factory _$$_AudioUrlDataCopyWith(
-          _$_AudioUrlData value, $Res Function(_$_AudioUrlData) then) =
-      __$$_AudioUrlDataCopyWithImpl<$Res>;
+  factory _$$AudioUrlDataImplCopyWith(
+          _$AudioUrlDataImpl value, $Res Function(_$AudioUrlDataImpl) then) =
+      __$$AudioUrlDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,13 +109,15 @@ abstract class _$$_AudioUrlDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AudioUrlDataCopyWithImpl<$Res>
-    extends _$AudioUrlDataCopyWithImpl<$Res, _$_AudioUrlData>
-    implements _$$_AudioUrlDataCopyWith<$Res> {
-  __$$_AudioUrlDataCopyWithImpl(
-      _$_AudioUrlData _value, $Res Function(_$_AudioUrlData) _then)
+class __$$AudioUrlDataImplCopyWithImpl<$Res>
+    extends _$AudioUrlDataCopyWithImpl<$Res, _$AudioUrlDataImpl>
+    implements _$$AudioUrlDataImplCopyWith<$Res> {
+  __$$AudioUrlDataImplCopyWithImpl(
+      _$AudioUrlDataImpl _value, $Res Function(_$AudioUrlDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AudioUrlData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,7 +126,7 @@ class __$$_AudioUrlDataCopyWithImpl<$Res>
     Object? encoding = null,
     Object? audioUrl = null,
   }) {
-    return _then(_$_AudioUrlData(
+    return _then(_$AudioUrlDataImpl(
       audioToken: null == audioToken
           ? _value.audioToken
           : audioToken // ignore: cast_nullable_to_non_nullable
@@ -141,15 +149,15 @@ class __$$_AudioUrlDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AudioUrlData implements _AudioUrlData {
-  const _$_AudioUrlData(
+class _$AudioUrlDataImpl implements _AudioUrlData {
+  const _$AudioUrlDataImpl(
       {@JsonKey(name: 'audioToken') required this.audioToken,
       @JsonKey(name: 'bitrate') required this.bitrate,
       @JsonKey(name: 'encoding') required this.encoding,
       @JsonKey(name: 'audioUrl') required this.audioUrl});
 
-  factory _$_AudioUrlData.fromJson(Map<String, dynamic> json) =>
-      _$$_AudioUrlDataFromJson(json);
+  factory _$AudioUrlDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AudioUrlDataImplFromJson(json);
 
   @override
   @JsonKey(name: 'audioToken')
@@ -170,10 +178,10 @@ class _$_AudioUrlData implements _AudioUrlData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AudioUrlData &&
+            other is _$AudioUrlDataImpl &&
             (identical(other.audioToken, audioToken) ||
                 other.audioToken == audioToken) &&
             (identical(other.bitrate, bitrate) || other.bitrate == bitrate) &&
@@ -183,20 +191,22 @@ class _$_AudioUrlData implements _AudioUrlData {
                 other.audioUrl == audioUrl));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, audioToken, bitrate, encoding, audioUrl);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AudioUrlData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AudioUrlDataCopyWith<_$_AudioUrlData> get copyWith =>
-      __$$_AudioUrlDataCopyWithImpl<_$_AudioUrlData>(this, _$identity);
+  _$$AudioUrlDataImplCopyWith<_$AudioUrlDataImpl> get copyWith =>
+      __$$AudioUrlDataImplCopyWithImpl<_$AudioUrlDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AudioUrlDataToJson(
+    return _$$AudioUrlDataImplToJson(
       this,
     );
   }
@@ -208,10 +218,10 @@ abstract class _AudioUrlData implements AudioUrlData {
           @JsonKey(name: 'bitrate') required final String bitrate,
           @JsonKey(name: 'encoding') required final String encoding,
           @JsonKey(name: 'audioUrl') required final Uri audioUrl}) =
-      _$_AudioUrlData;
+      _$AudioUrlDataImpl;
 
   factory _AudioUrlData.fromJson(Map<String, dynamic> json) =
-      _$_AudioUrlData.fromJson;
+      _$AudioUrlDataImpl.fromJson;
 
   @override
   @JsonKey(name: 'audioToken')
@@ -225,8 +235,11 @@ abstract class _AudioUrlData implements AudioUrlData {
   @override
   @JsonKey(name: 'audioUrl')
   Uri get audioUrl;
+
+  /// Create a copy of AudioUrlData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_AudioUrlDataCopyWith<_$_AudioUrlData> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AudioUrlDataImplCopyWith<_$AudioUrlDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

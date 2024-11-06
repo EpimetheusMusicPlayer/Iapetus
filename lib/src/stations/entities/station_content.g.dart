@@ -8,12 +8,12 @@ part of 'station_content.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_StationContent _$$_StationContentFromJson(Map<String, dynamic> json) =>
+_$StationContentImpl _$$StationContentImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_StationContent',
+      r'_$StationContentImpl',
       json,
       ($checkedConvert) {
-        final val = _$_StationContent(
+        final val = _$StationContentImpl(
           userSeed: $checkedConvert('userSeed', (v) => v as String?),
           allowBookmarkTrack:
               $checkedConvert('allowBookmarkTrack', (v) => v as bool),
@@ -57,8 +57,8 @@ _$_StationContent _$$_StationContentFromJson(Map<String, dynamic> json) =>
           programDescriptor:
               $checkedConvert('programDescriptor', (v) => v as String),
           artistName: $checkedConvert('artistName', (v) => v as String),
-          trackLength:
-              $checkedConvert('trackLength', (v) => readSeconds(v as int)),
+          trackLength: $checkedConvert(
+              'trackLength', (v) => readSeconds((v as num).toInt())),
           trackToken: $checkedConvert('trackToken', (v) => v as String),
           allowBuyTrack: $checkedConvert('allowBuyTrack', (v) => v as bool),
           albumDetailUrl:
@@ -89,7 +89,8 @@ _$_StationContent _$$_StationContentFromJson(Map<String, dynamic> json) =>
                   : TrackKey.fromJson(v as Map<String, dynamic>)),
           nowPlayingStationAdUnit:
               $checkedConvert('nowPlayingStationAdUnit', (v) => v as String?),
-          requestedModeId: $checkedConvert('requestedModeId', (v) => v as int),
+          requestedModeId:
+              $checkedConvert('requestedModeId', (v) => (v as num).toInt()),
           stationId: $checkedConvert('stationId', (v) => v as String),
           pandoraId: $checkedConvert('pandoraId', (v) => v as String),
           allowSkipTrackWithoutLimit:
@@ -98,13 +99,14 @@ _$_StationContent _$$_StationContentFromJson(Map<String, dynamic> json) =>
               $checkedConvert('itunesSongUrl', (v) => Uri.parse(v as String)),
           disableSkipButton:
               $checkedConvert('disableSkipButton', (v) => v as bool),
-          modeId: $checkedConvert('modeId', (v) => v as int),
+          modeId: $checkedConvert('modeId', (v) => (v as num).toInt()),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$$_StationContentToJson(_$_StationContent instance) =>
+Map<String, dynamic> _$$StationContentImplToJson(
+        _$StationContentImpl instance) =>
     <String, dynamic>{
       'userSeed': instance.userSeed,
       'allowBookmarkTrack': instance.allowBookmarkTrack,

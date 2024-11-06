@@ -12,7 +12,7 @@ part of 'action.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SuperbrowseAction _$SuperbrowseActionFromJson(Map<String, dynamic> json) {
   return _SuperbrowseAction.fromJson(json);
@@ -33,8 +33,12 @@ mixin _$SuperbrowseAction {
   @JsonKey(name: 'url')
   Uri? get url => throw _privateConstructorUsedError;
 
+  /// Serializes this SuperbrowseAction to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SuperbrowseAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SuperbrowseActionCopyWith<SuperbrowseAction> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -64,6 +68,8 @@ class _$SuperbrowseActionCopyWithImpl<$Res, $Val extends SuperbrowseAction>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SuperbrowseAction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -104,11 +110,11 @@ class _$SuperbrowseActionCopyWithImpl<$Res, $Val extends SuperbrowseAction>
 }
 
 /// @nodoc
-abstract class _$$_SuperbrowseActionCopyWith<$Res>
+abstract class _$$SuperbrowseActionImplCopyWith<$Res>
     implements $SuperbrowseActionCopyWith<$Res> {
-  factory _$$_SuperbrowseActionCopyWith(_$_SuperbrowseAction value,
-          $Res Function(_$_SuperbrowseAction) then) =
-      __$$_SuperbrowseActionCopyWithImpl<$Res>;
+  factory _$$SuperbrowseActionImplCopyWith(_$SuperbrowseActionImpl value,
+          $Res Function(_$SuperbrowseActionImpl) then) =
+      __$$SuperbrowseActionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -121,13 +127,15 @@ abstract class _$$_SuperbrowseActionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SuperbrowseActionCopyWithImpl<$Res>
-    extends _$SuperbrowseActionCopyWithImpl<$Res, _$_SuperbrowseAction>
-    implements _$$_SuperbrowseActionCopyWith<$Res> {
-  __$$_SuperbrowseActionCopyWithImpl(
-      _$_SuperbrowseAction _value, $Res Function(_$_SuperbrowseAction) _then)
+class __$$SuperbrowseActionImplCopyWithImpl<$Res>
+    extends _$SuperbrowseActionCopyWithImpl<$Res, _$SuperbrowseActionImpl>
+    implements _$$SuperbrowseActionImplCopyWith<$Res> {
+  __$$SuperbrowseActionImplCopyWithImpl(_$SuperbrowseActionImpl _value,
+      $Res Function(_$SuperbrowseActionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SuperbrowseAction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -138,7 +146,7 @@ class __$$_SuperbrowseActionCopyWithImpl<$Res>
     Object? loadingScreen = freezed,
     Object? url = freezed,
   }) {
-    return _then(_$_SuperbrowseAction(
+    return _then(_$SuperbrowseActionImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -169,8 +177,8 @@ class __$$_SuperbrowseActionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SuperbrowseAction implements _SuperbrowseAction {
-  const _$_SuperbrowseAction(
+class _$SuperbrowseActionImpl implements _SuperbrowseAction {
+  const _$SuperbrowseActionImpl(
       {@JsonKey(name: 'type') required this.type,
       @JsonKey(name: 'pandoraId') this.pandoraId,
       @JsonKey(name: 'sourceId') this.sourceId,
@@ -178,8 +186,8 @@ class _$_SuperbrowseAction implements _SuperbrowseAction {
       @JsonKey(name: 'loadingScreen') this.loadingScreen,
       @JsonKey(name: 'url') this.url});
 
-  factory _$_SuperbrowseAction.fromJson(Map<String, dynamic> json) =>
-      _$$_SuperbrowseActionFromJson(json);
+  factory _$SuperbrowseActionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SuperbrowseActionImplFromJson(json);
 
   @override
   @JsonKey(name: 'type')
@@ -206,10 +214,10 @@ class _$_SuperbrowseAction implements _SuperbrowseAction {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SuperbrowseAction &&
+            other is _$SuperbrowseActionImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.pandoraId, pandoraId) ||
                 other.pandoraId == pandoraId) &&
@@ -221,21 +229,23 @@ class _$_SuperbrowseAction implements _SuperbrowseAction {
             (identical(other.url, url) || other.url == url));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, type, pandoraId, sourceId, title, loadingScreen, url);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SuperbrowseAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuperbrowseActionCopyWith<_$_SuperbrowseAction> get copyWith =>
-      __$$_SuperbrowseActionCopyWithImpl<_$_SuperbrowseAction>(
+  _$$SuperbrowseActionImplCopyWith<_$SuperbrowseActionImpl> get copyWith =>
+      __$$SuperbrowseActionImplCopyWithImpl<_$SuperbrowseActionImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SuperbrowseActionToJson(
+    return _$$SuperbrowseActionImplToJson(
       this,
     );
   }
@@ -248,10 +258,10 @@ abstract class _SuperbrowseAction implements SuperbrowseAction {
       @JsonKey(name: 'sourceId') final String? sourceId,
       @JsonKey(name: 'title') final String? title,
       @JsonKey(name: 'loadingScreen') final LoadingScreenType? loadingScreen,
-      @JsonKey(name: 'url') final Uri? url}) = _$_SuperbrowseAction;
+      @JsonKey(name: 'url') final Uri? url}) = _$SuperbrowseActionImpl;
 
   factory _SuperbrowseAction.fromJson(Map<String, dynamic> json) =
-      _$_SuperbrowseAction.fromJson;
+      _$SuperbrowseActionImpl.fromJson;
 
   @override
   @JsonKey(name: 'type')
@@ -271,8 +281,11 @@ abstract class _SuperbrowseAction implements SuperbrowseAction {
   @override
   @JsonKey(name: 'url')
   Uri? get url;
+
+  /// Create a copy of SuperbrowseAction
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SuperbrowseActionCopyWith<_$_SuperbrowseAction> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuperbrowseActionImplCopyWith<_$SuperbrowseActionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

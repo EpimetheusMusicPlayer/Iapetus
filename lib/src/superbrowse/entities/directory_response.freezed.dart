@@ -12,7 +12,7 @@ part of 'directory_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 DirectoryResponse _$DirectoryResponseFromJson(Map<String, dynamic> json) {
   return _DirectoryResponse.fromJson(json);
@@ -36,8 +36,12 @@ mixin _$DirectoryResponse {
   Map<SuperbrowseItemType, FormFactors> get formFactorsByType =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this DirectoryResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DirectoryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DirectoryResponseCopyWith<DirectoryResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,19 +54,14 @@ abstract class $DirectoryResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'ttl', fromJson: readSeconds, toJson: writeSeconds)
-          Duration ttl,
-      @JsonKey(name: 'title')
-          String? title,
-      @JsonKey(name: 'checksum')
-          String checksum,
-      @JsonKey(name: 'generation')
-          String? generation,
-      @JsonKey(name: 'sections')
-          List<SuperbrowseSection> sections,
-      @JsonKey(name: 'preferCachedData')
-          bool preferCachedData,
+      Duration ttl,
+      @JsonKey(name: 'title') String? title,
+      @JsonKey(name: 'checksum') String checksum,
+      @JsonKey(name: 'generation') String? generation,
+      @JsonKey(name: 'sections') List<SuperbrowseSection> sections,
+      @JsonKey(name: 'preferCachedData') bool preferCachedData,
       @JsonKey(name: 'formFactorsByType')
-          Map<SuperbrowseItemType, FormFactors> formFactorsByType});
+      Map<SuperbrowseItemType, FormFactors> formFactorsByType});
 }
 
 /// @nodoc
@@ -75,6 +74,8 @@ class _$DirectoryResponseCopyWithImpl<$Res, $Val extends DirectoryResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DirectoryResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,38 +121,35 @@ class _$DirectoryResponseCopyWithImpl<$Res, $Val extends DirectoryResponse>
 }
 
 /// @nodoc
-abstract class _$$_DirectoryResponseCopyWith<$Res>
+abstract class _$$DirectoryResponseImplCopyWith<$Res>
     implements $DirectoryResponseCopyWith<$Res> {
-  factory _$$_DirectoryResponseCopyWith(_$_DirectoryResponse value,
-          $Res Function(_$_DirectoryResponse) then) =
-      __$$_DirectoryResponseCopyWithImpl<$Res>;
+  factory _$$DirectoryResponseImplCopyWith(_$DirectoryResponseImpl value,
+          $Res Function(_$DirectoryResponseImpl) then) =
+      __$$DirectoryResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {@JsonKey(name: 'ttl', fromJson: readSeconds, toJson: writeSeconds)
-          Duration ttl,
-      @JsonKey(name: 'title')
-          String? title,
-      @JsonKey(name: 'checksum')
-          String checksum,
-      @JsonKey(name: 'generation')
-          String? generation,
-      @JsonKey(name: 'sections')
-          List<SuperbrowseSection> sections,
-      @JsonKey(name: 'preferCachedData')
-          bool preferCachedData,
+      Duration ttl,
+      @JsonKey(name: 'title') String? title,
+      @JsonKey(name: 'checksum') String checksum,
+      @JsonKey(name: 'generation') String? generation,
+      @JsonKey(name: 'sections') List<SuperbrowseSection> sections,
+      @JsonKey(name: 'preferCachedData') bool preferCachedData,
       @JsonKey(name: 'formFactorsByType')
-          Map<SuperbrowseItemType, FormFactors> formFactorsByType});
+      Map<SuperbrowseItemType, FormFactors> formFactorsByType});
 }
 
 /// @nodoc
-class __$$_DirectoryResponseCopyWithImpl<$Res>
-    extends _$DirectoryResponseCopyWithImpl<$Res, _$_DirectoryResponse>
-    implements _$$_DirectoryResponseCopyWith<$Res> {
-  __$$_DirectoryResponseCopyWithImpl(
-      _$_DirectoryResponse _value, $Res Function(_$_DirectoryResponse) _then)
+class __$$DirectoryResponseImplCopyWithImpl<$Res>
+    extends _$DirectoryResponseCopyWithImpl<$Res, _$DirectoryResponseImpl>
+    implements _$$DirectoryResponseImplCopyWith<$Res> {
+  __$$DirectoryResponseImplCopyWithImpl(_$DirectoryResponseImpl _value,
+      $Res Function(_$DirectoryResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DirectoryResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,7 +161,7 @@ class __$$_DirectoryResponseCopyWithImpl<$Res>
     Object? preferCachedData = null,
     Object? formFactorsByType = null,
   }) {
-    return _then(_$_DirectoryResponse(
+    return _then(_$DirectoryResponseImpl(
       ttl: null == ttl
           ? _value.ttl
           : ttl // ignore: cast_nullable_to_non_nullable
@@ -198,28 +196,23 @@ class __$$_DirectoryResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DirectoryResponse implements _DirectoryResponse {
-  const _$_DirectoryResponse(
+class _$DirectoryResponseImpl implements _DirectoryResponse {
+  const _$DirectoryResponseImpl(
       {@JsonKey(name: 'ttl', fromJson: readSeconds, toJson: writeSeconds)
-          required this.ttl,
-      @JsonKey(name: 'title')
-          this.title,
-      @JsonKey(name: 'checksum')
-          required this.checksum,
-      @JsonKey(name: 'generation')
-          this.generation,
+      required this.ttl,
+      @JsonKey(name: 'title') this.title,
+      @JsonKey(name: 'checksum') required this.checksum,
+      @JsonKey(name: 'generation') this.generation,
       @JsonKey(name: 'sections')
-          required final List<SuperbrowseSection> sections,
-      @JsonKey(name: 'preferCachedData')
-          required this.preferCachedData,
+      required final List<SuperbrowseSection> sections,
+      @JsonKey(name: 'preferCachedData') required this.preferCachedData,
       @JsonKey(name: 'formFactorsByType')
-          required final Map<SuperbrowseItemType, FormFactors>
-              formFactorsByType})
+      required final Map<SuperbrowseItemType, FormFactors> formFactorsByType})
       : _sections = sections,
         _formFactorsByType = formFactorsByType;
 
-  factory _$_DirectoryResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_DirectoryResponseFromJson(json);
+  factory _$DirectoryResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DirectoryResponseImplFromJson(json);
 
   @override
   @JsonKey(name: 'ttl', fromJson: readSeconds, toJson: writeSeconds)
@@ -261,10 +254,10 @@ class _$_DirectoryResponse implements _DirectoryResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DirectoryResponse &&
+            other is _$DirectoryResponseImpl &&
             (identical(other.ttl, ttl) || other.ttl == ttl) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.checksum, checksum) ||
@@ -278,7 +271,7 @@ class _$_DirectoryResponse implements _DirectoryResponse {
                 .equals(other._formFactorsByType, _formFactorsByType));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -290,16 +283,18 @@ class _$_DirectoryResponse implements _DirectoryResponse {
       preferCachedData,
       const DeepCollectionEquality().hash(_formFactorsByType));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DirectoryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DirectoryResponseCopyWith<_$_DirectoryResponse> get copyWith =>
-      __$$_DirectoryResponseCopyWithImpl<_$_DirectoryResponse>(
+  _$$DirectoryResponseImplCopyWith<_$DirectoryResponseImpl> get copyWith =>
+      __$$DirectoryResponseImplCopyWithImpl<_$DirectoryResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DirectoryResponseToJson(
+    return _$$DirectoryResponseImplToJson(
       this,
     );
   }
@@ -308,23 +303,19 @@ class _$_DirectoryResponse implements _DirectoryResponse {
 abstract class _DirectoryResponse implements DirectoryResponse {
   const factory _DirectoryResponse(
       {@JsonKey(name: 'ttl', fromJson: readSeconds, toJson: writeSeconds)
-          required final Duration ttl,
-      @JsonKey(name: 'title')
-          final String? title,
-      @JsonKey(name: 'checksum')
-          required final String checksum,
-      @JsonKey(name: 'generation')
-          final String? generation,
+      required final Duration ttl,
+      @JsonKey(name: 'title') final String? title,
+      @JsonKey(name: 'checksum') required final String checksum,
+      @JsonKey(name: 'generation') final String? generation,
       @JsonKey(name: 'sections')
-          required final List<SuperbrowseSection> sections,
-      @JsonKey(name: 'preferCachedData')
-          required final bool preferCachedData,
+      required final List<SuperbrowseSection> sections,
+      @JsonKey(name: 'preferCachedData') required final bool preferCachedData,
       @JsonKey(name: 'formFactorsByType')
-          required final Map<SuperbrowseItemType, FormFactors>
-              formFactorsByType}) = _$_DirectoryResponse;
+      required final Map<SuperbrowseItemType, FormFactors>
+          formFactorsByType}) = _$DirectoryResponseImpl;
 
   factory _DirectoryResponse.fromJson(Map<String, dynamic> json) =
-      _$_DirectoryResponse.fromJson;
+      _$DirectoryResponseImpl.fromJson;
 
   @override
   @JsonKey(name: 'ttl', fromJson: readSeconds, toJson: writeSeconds)
@@ -347,8 +338,11 @@ abstract class _DirectoryResponse implements DirectoryResponse {
   @override
   @JsonKey(name: 'formFactorsByType')
   Map<SuperbrowseItemType, FormFactors> get formFactorsByType;
+
+  /// Create a copy of DirectoryResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_DirectoryResponseCopyWith<_$_DirectoryResponse> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DirectoryResponseImplCopyWith<_$DirectoryResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

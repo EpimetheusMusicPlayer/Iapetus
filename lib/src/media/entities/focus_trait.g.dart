@@ -8,12 +8,12 @@ part of 'focus_trait.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FocusTrait _$$_FocusTraitFromJson(Map<String, dynamic> json) =>
+_$FocusTraitImpl _$$FocusTraitImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_FocusTrait',
+      r'_$FocusTraitImpl',
       json,
       ($checkedConvert) {
-        final val = _$_FocusTrait(
+        final val = _$FocusTraitImpl(
           name: $checkedConvert('name', (v) => v as String),
           focusTraitSet: $checkedConvert('focusTraitSet', (v) => v as String),
           focusTraitSetType:
@@ -23,7 +23,7 @@ _$_FocusTrait _$$_FocusTraitFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_FocusTraitToJson(_$_FocusTrait instance) =>
+Map<String, dynamic> _$$FocusTraitImplToJson(_$FocusTraitImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'focusTraitSet': instance.focusTraitSet,

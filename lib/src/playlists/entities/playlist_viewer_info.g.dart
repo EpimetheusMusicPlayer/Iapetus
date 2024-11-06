@@ -8,21 +8,21 @@ part of 'playlist_viewer_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PlaylistViewerInfo _$$_PlaylistViewerInfoFromJson(
+_$PlaylistViewerInfoImpl _$$PlaylistViewerInfoImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_PlaylistViewerInfo',
+      r'_$PlaylistViewerInfoImpl',
       json,
       ($checkedConvert) {
-        final val = _$_PlaylistViewerInfo(
+        final val = _$PlaylistViewerInfoImpl(
           editable: $checkedConvert('editable', (v) => v as bool),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$$_PlaylistViewerInfoToJson(
-        _$_PlaylistViewerInfo instance) =>
+Map<String, dynamic> _$$PlaylistViewerInfoImplToJson(
+        _$PlaylistViewerInfoImpl instance) =>
     <String, dynamic>{
       'editable': instance.editable,
     };

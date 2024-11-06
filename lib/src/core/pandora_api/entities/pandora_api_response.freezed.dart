@@ -12,7 +12,7 @@ part of 'pandora_api_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 PandoraApiResponse _$PandoraApiResponseFromJson(Map<String, dynamic> json) {
   switch (json['stat']) {
@@ -34,9 +34,8 @@ mixin _$PandoraApiResponse {
     required TResult Function(@JsonKey(name: 'result') Object? result) ok,
     required TResult Function(
             @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-                PandoraApiErrorCode code,
-            @JsonKey(name: 'message')
-                String message)
+            PandoraApiErrorCode code,
+            @JsonKey(name: 'message') String message)
         fail,
   }) =>
       throw _privateConstructorUsedError;
@@ -45,9 +44,8 @@ mixin _$PandoraApiResponse {
     TResult? Function(@JsonKey(name: 'result') Object? result)? ok,
     TResult? Function(
             @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-                PandoraApiErrorCode code,
-            @JsonKey(name: 'message')
-                String message)?
+            PandoraApiErrorCode code,
+            @JsonKey(name: 'message') String message)?
         fail,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,9 +54,8 @@ mixin _$PandoraApiResponse {
     TResult Function(@JsonKey(name: 'result') Object? result)? ok,
     TResult Function(
             @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-                PandoraApiErrorCode code,
-            @JsonKey(name: 'message')
-                String message)?
+            PandoraApiErrorCode code,
+            @JsonKey(name: 'message') String message)?
         fail,
     required TResult orElse(),
   }) =>
@@ -82,6 +79,8 @@ mixin _$PandoraApiResponse {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this PandoraApiResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -101,34 +100,39 @@ class _$PandoraApiResponseCopyWithImpl<$Res, $Val extends PandoraApiResponse>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PandoraApiResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$SuccessfulPandoraApiResponseCopyWith<$Res> {
-  factory _$$SuccessfulPandoraApiResponseCopyWith(
-          _$SuccessfulPandoraApiResponse value,
-          $Res Function(_$SuccessfulPandoraApiResponse) then) =
-      __$$SuccessfulPandoraApiResponseCopyWithImpl<$Res>;
+abstract class _$$SuccessfulPandoraApiResponseImplCopyWith<$Res> {
+  factory _$$SuccessfulPandoraApiResponseImplCopyWith(
+          _$SuccessfulPandoraApiResponseImpl value,
+          $Res Function(_$SuccessfulPandoraApiResponseImpl) then) =
+      __$$SuccessfulPandoraApiResponseImplCopyWithImpl<$Res>;
   @useResult
   $Res call({@JsonKey(name: 'result') Object? result});
 }
 
 /// @nodoc
-class __$$SuccessfulPandoraApiResponseCopyWithImpl<$Res>
+class __$$SuccessfulPandoraApiResponseImplCopyWithImpl<$Res>
     extends _$PandoraApiResponseCopyWithImpl<$Res,
-        _$SuccessfulPandoraApiResponse>
-    implements _$$SuccessfulPandoraApiResponseCopyWith<$Res> {
-  __$$SuccessfulPandoraApiResponseCopyWithImpl(
-      _$SuccessfulPandoraApiResponse _value,
-      $Res Function(_$SuccessfulPandoraApiResponse) _then)
+        _$SuccessfulPandoraApiResponseImpl>
+    implements _$$SuccessfulPandoraApiResponseImplCopyWith<$Res> {
+  __$$SuccessfulPandoraApiResponseImplCopyWithImpl(
+      _$SuccessfulPandoraApiResponseImpl _value,
+      $Res Function(_$SuccessfulPandoraApiResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PandoraApiResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? result = freezed,
   }) {
-    return _then(_$SuccessfulPandoraApiResponse(
+    return _then(_$SuccessfulPandoraApiResponseImpl(
       result: freezed == result ? _value.result : result,
     ));
   }
@@ -136,13 +140,15 @@ class __$$SuccessfulPandoraApiResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SuccessfulPandoraApiResponse implements SuccessfulPandoraApiResponse {
-  const _$SuccessfulPandoraApiResponse(
+class _$SuccessfulPandoraApiResponseImpl
+    implements SuccessfulPandoraApiResponse {
+  const _$SuccessfulPandoraApiResponseImpl(
       {@JsonKey(name: 'result') this.result, final String? $type})
       : $type = $type ?? 'ok';
 
-  factory _$SuccessfulPandoraApiResponse.fromJson(Map<String, dynamic> json) =>
-      _$$SuccessfulPandoraApiResponseFromJson(json);
+  factory _$SuccessfulPandoraApiResponseImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$SuccessfulPandoraApiResponseImplFromJson(json);
 
   @override
   @JsonKey(name: 'result')
@@ -157,24 +163,27 @@ class _$SuccessfulPandoraApiResponse implements SuccessfulPandoraApiResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessfulPandoraApiResponse &&
+            other is _$SuccessfulPandoraApiResponseImpl &&
             const DeepCollectionEquality().equals(other.result, result));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PandoraApiResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessfulPandoraApiResponseCopyWith<_$SuccessfulPandoraApiResponse>
-      get copyWith => __$$SuccessfulPandoraApiResponseCopyWithImpl<
-          _$SuccessfulPandoraApiResponse>(this, _$identity);
+  _$$SuccessfulPandoraApiResponseImplCopyWith<
+          _$SuccessfulPandoraApiResponseImpl>
+      get copyWith => __$$SuccessfulPandoraApiResponseImplCopyWithImpl<
+          _$SuccessfulPandoraApiResponseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -182,9 +191,8 @@ class _$SuccessfulPandoraApiResponse implements SuccessfulPandoraApiResponse {
     required TResult Function(@JsonKey(name: 'result') Object? result) ok,
     required TResult Function(
             @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-                PandoraApiErrorCode code,
-            @JsonKey(name: 'message')
-                String message)
+            PandoraApiErrorCode code,
+            @JsonKey(name: 'message') String message)
         fail,
   }) {
     return ok(result);
@@ -196,9 +204,8 @@ class _$SuccessfulPandoraApiResponse implements SuccessfulPandoraApiResponse {
     TResult? Function(@JsonKey(name: 'result') Object? result)? ok,
     TResult? Function(
             @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-                PandoraApiErrorCode code,
-            @JsonKey(name: 'message')
-                String message)?
+            PandoraApiErrorCode code,
+            @JsonKey(name: 'message') String message)?
         fail,
   }) {
     return ok?.call(result);
@@ -210,9 +217,8 @@ class _$SuccessfulPandoraApiResponse implements SuccessfulPandoraApiResponse {
     TResult Function(@JsonKey(name: 'result') Object? result)? ok,
     TResult Function(
             @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-                PandoraApiErrorCode code,
-            @JsonKey(name: 'message')
-                String message)?
+            PandoraApiErrorCode code,
+            @JsonKey(name: 'message') String message)?
         fail,
     required TResult orElse(),
   }) {
@@ -255,7 +261,7 @@ class _$SuccessfulPandoraApiResponse implements SuccessfulPandoraApiResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SuccessfulPandoraApiResponseToJson(
+    return _$$SuccessfulPandoraApiResponseImplToJson(
       this,
     );
   }
@@ -264,46 +270,51 @@ class _$SuccessfulPandoraApiResponse implements SuccessfulPandoraApiResponse {
 abstract class SuccessfulPandoraApiResponse implements PandoraApiResponse {
   const factory SuccessfulPandoraApiResponse(
           {@JsonKey(name: 'result') final Object? result}) =
-      _$SuccessfulPandoraApiResponse;
+      _$SuccessfulPandoraApiResponseImpl;
 
   factory SuccessfulPandoraApiResponse.fromJson(Map<String, dynamic> json) =
-      _$SuccessfulPandoraApiResponse.fromJson;
+      _$SuccessfulPandoraApiResponseImpl.fromJson;
 
   @JsonKey(name: 'result')
   Object? get result;
-  @JsonKey(ignore: true)
-  _$$SuccessfulPandoraApiResponseCopyWith<_$SuccessfulPandoraApiResponse>
+
+  /// Create a copy of PandoraApiResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessfulPandoraApiResponseImplCopyWith<
+          _$SuccessfulPandoraApiResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$PandoraApiExceptionCopyWith<$Res> {
-  factory _$$PandoraApiExceptionCopyWith(_$PandoraApiException value,
-          $Res Function(_$PandoraApiException) then) =
-      __$$PandoraApiExceptionCopyWithImpl<$Res>;
+abstract class _$$PandoraApiExceptionImplCopyWith<$Res> {
+  factory _$$PandoraApiExceptionImplCopyWith(_$PandoraApiExceptionImpl value,
+          $Res Function(_$PandoraApiExceptionImpl) then) =
+      __$$PandoraApiExceptionImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {@JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-          PandoraApiErrorCode code,
-      @JsonKey(name: 'message')
-          String message});
+      PandoraApiErrorCode code,
+      @JsonKey(name: 'message') String message});
 }
 
 /// @nodoc
-class __$$PandoraApiExceptionCopyWithImpl<$Res>
-    extends _$PandoraApiResponseCopyWithImpl<$Res, _$PandoraApiException>
-    implements _$$PandoraApiExceptionCopyWith<$Res> {
-  __$$PandoraApiExceptionCopyWithImpl(
-      _$PandoraApiException _value, $Res Function(_$PandoraApiException) _then)
+class __$$PandoraApiExceptionImplCopyWithImpl<$Res>
+    extends _$PandoraApiResponseCopyWithImpl<$Res, _$PandoraApiExceptionImpl>
+    implements _$$PandoraApiExceptionImplCopyWith<$Res> {
+  __$$PandoraApiExceptionImplCopyWithImpl(_$PandoraApiExceptionImpl _value,
+      $Res Function(_$PandoraApiExceptionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PandoraApiResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? code = null,
     Object? message = null,
   }) {
-    return _then(_$PandoraApiException(
+    return _then(_$PandoraApiExceptionImpl(
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -318,17 +329,16 @@ class __$$PandoraApiExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PandoraApiException implements PandoraApiException {
-  const _$PandoraApiException(
+class _$PandoraApiExceptionImpl implements PandoraApiException {
+  const _$PandoraApiExceptionImpl(
       {@JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-          required this.code,
-      @JsonKey(name: 'message')
-          required this.message,
+      required this.code,
+      @JsonKey(name: 'message') required this.message,
       final String? $type})
       : $type = $type ?? 'fail';
 
-  factory _$PandoraApiException.fromJson(Map<String, dynamic> json) =>
-      _$$PandoraApiExceptionFromJson(json);
+  factory _$PandoraApiExceptionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PandoraApiExceptionImplFromJson(json);
 
   @override
   @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
@@ -346,23 +356,25 @@ class _$PandoraApiException implements PandoraApiException {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PandoraApiException &&
+            other is _$PandoraApiExceptionImpl &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, code, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PandoraApiResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PandoraApiExceptionCopyWith<_$PandoraApiException> get copyWith =>
-      __$$PandoraApiExceptionCopyWithImpl<_$PandoraApiException>(
+  _$$PandoraApiExceptionImplCopyWith<_$PandoraApiExceptionImpl> get copyWith =>
+      __$$PandoraApiExceptionImplCopyWithImpl<_$PandoraApiExceptionImpl>(
           this, _$identity);
 
   @override
@@ -371,9 +383,8 @@ class _$PandoraApiException implements PandoraApiException {
     required TResult Function(@JsonKey(name: 'result') Object? result) ok,
     required TResult Function(
             @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-                PandoraApiErrorCode code,
-            @JsonKey(name: 'message')
-                String message)
+            PandoraApiErrorCode code,
+            @JsonKey(name: 'message') String message)
         fail,
   }) {
     return fail(code, message);
@@ -385,9 +396,8 @@ class _$PandoraApiException implements PandoraApiException {
     TResult? Function(@JsonKey(name: 'result') Object? result)? ok,
     TResult? Function(
             @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-                PandoraApiErrorCode code,
-            @JsonKey(name: 'message')
-                String message)?
+            PandoraApiErrorCode code,
+            @JsonKey(name: 'message') String message)?
         fail,
   }) {
     return fail?.call(code, message);
@@ -399,9 +409,8 @@ class _$PandoraApiException implements PandoraApiException {
     TResult Function(@JsonKey(name: 'result') Object? result)? ok,
     TResult Function(
             @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
-                PandoraApiErrorCode code,
-            @JsonKey(name: 'message')
-                String message)?
+            PandoraApiErrorCode code,
+            @JsonKey(name: 'message') String message)?
         fail,
     required TResult orElse(),
   }) {
@@ -444,7 +453,7 @@ class _$PandoraApiException implements PandoraApiException {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PandoraApiExceptionToJson(
+    return _$$PandoraApiExceptionImplToJson(
       this,
     );
   }
@@ -452,19 +461,22 @@ class _$PandoraApiException implements PandoraApiException {
 
 abstract class PandoraApiException implements PandoraApiResponse, Exception {
   const factory PandoraApiException(
-      {@JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
+          {@JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
           required final PandoraApiErrorCode code,
-      @JsonKey(name: 'message')
-          required final String message}) = _$PandoraApiException;
+          @JsonKey(name: 'message') required final String message}) =
+      _$PandoraApiExceptionImpl;
 
   factory PandoraApiException.fromJson(Map<String, dynamic> json) =
-      _$PandoraApiException.fromJson;
+      _$PandoraApiExceptionImpl.fromJson;
 
   @JsonKey(name: 'code', fromJson: PandoraApiErrorCode.fromCode)
   PandoraApiErrorCode get code;
   @JsonKey(name: 'message')
   String get message;
-  @JsonKey(ignore: true)
-  _$$PandoraApiExceptionCopyWith<_$PandoraApiException> get copyWith =>
+
+  /// Create a copy of PandoraApiResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PandoraApiExceptionImplCopyWith<_$PandoraApiExceptionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

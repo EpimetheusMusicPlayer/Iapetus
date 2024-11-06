@@ -12,7 +12,7 @@ part of 'subsection.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SuperbrowseSubsection _$SuperbrowseSubsectionFromJson(
     Map<String, dynamic> json) {
@@ -49,53 +49,51 @@ mixin _$SuperbrowseSubsection {
   TResult when<TResult extends Object?>({
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         horizontalScroll,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)
         recentlyPlayed,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         singleton,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         verticalList,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         displayAd,
   }) =>
       throw _privateConstructorUsedError;
@@ -103,53 +101,51 @@ mixin _$SuperbrowseSubsection {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
   }) =>
       throw _privateConstructorUsedError;
@@ -157,53 +153,51 @@ mixin _$SuperbrowseSubsection {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
     required TResult orElse(),
   }) =>
@@ -242,8 +236,13 @@ mixin _$SuperbrowseSubsection {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this SuperbrowseSubsection to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SuperbrowseSubsectionCopyWith<SuperbrowseSubsection> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -255,12 +254,11 @@ abstract class $SuperbrowseSubsectionCopyWith<$Res> {
       _$SuperbrowseSubsectionCopyWithImpl<$Res, SuperbrowseSubsection>;
   @useResult
   $Res call(
-      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          String sectionId,
+      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey) String sectionId,
       @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          FormFactors formFactors,
+      FormFactors formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          List<SuperbrowseItem> items});
+      List<SuperbrowseItem> items});
 
   $FormFactorsCopyWith<$Res>? get formFactors;
 }
@@ -276,6 +274,8 @@ class _$SuperbrowseSubsectionCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -299,6 +299,8 @@ class _$SuperbrowseSubsectionCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FormFactorsCopyWith<$Res>? get formFactors {
@@ -313,38 +315,39 @@ class _$SuperbrowseSubsectionCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$HorizontalScrollSuperbrowseSubsectionCopyWith<$Res>
+abstract class _$$HorizontalScrollSuperbrowseSubsectionImplCopyWith<$Res>
     implements $SuperbrowseSubsectionCopyWith<$Res> {
-  factory _$$HorizontalScrollSuperbrowseSubsectionCopyWith(
-          _$HorizontalScrollSuperbrowseSubsection value,
-          $Res Function(_$HorizontalScrollSuperbrowseSubsection) then) =
-      __$$HorizontalScrollSuperbrowseSubsectionCopyWithImpl<$Res>;
+  factory _$$HorizontalScrollSuperbrowseSubsectionImplCopyWith(
+          _$HorizontalScrollSuperbrowseSubsectionImpl value,
+          $Res Function(_$HorizontalScrollSuperbrowseSubsectionImpl) then) =
+      __$$HorizontalScrollSuperbrowseSubsectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          String sectionId,
+      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey) String sectionId,
       @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-          ScrollType? scrollType,
+      ScrollType? scrollType,
       @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          FormFactors formFactors,
+      FormFactors formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          List<SuperbrowseItem> items});
+      List<SuperbrowseItem> items});
 
   @override
   $FormFactorsCopyWith<$Res> get formFactors;
 }
 
 /// @nodoc
-class __$$HorizontalScrollSuperbrowseSubsectionCopyWithImpl<$Res>
+class __$$HorizontalScrollSuperbrowseSubsectionImplCopyWithImpl<$Res>
     extends _$SuperbrowseSubsectionCopyWithImpl<$Res,
-        _$HorizontalScrollSuperbrowseSubsection>
-    implements _$$HorizontalScrollSuperbrowseSubsectionCopyWith<$Res> {
-  __$$HorizontalScrollSuperbrowseSubsectionCopyWithImpl(
-      _$HorizontalScrollSuperbrowseSubsection _value,
-      $Res Function(_$HorizontalScrollSuperbrowseSubsection) _then)
+        _$HorizontalScrollSuperbrowseSubsectionImpl>
+    implements _$$HorizontalScrollSuperbrowseSubsectionImplCopyWith<$Res> {
+  __$$HorizontalScrollSuperbrowseSubsectionImplCopyWithImpl(
+      _$HorizontalScrollSuperbrowseSubsectionImpl _value,
+      $Res Function(_$HorizontalScrollSuperbrowseSubsectionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -353,7 +356,7 @@ class __$$HorizontalScrollSuperbrowseSubsectionCopyWithImpl<$Res>
     Object? formFactors = null,
     Object? items = null,
   }) {
-    return _then(_$HorizontalScrollSuperbrowseSubsection(
+    return _then(_$HorizontalScrollSuperbrowseSubsectionImpl(
       sectionId: null == sectionId
           ? _value.sectionId
           : sectionId // ignore: cast_nullable_to_non_nullable
@@ -373,6 +376,8 @@ class __$$HorizontalScrollSuperbrowseSubsectionCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FormFactorsCopyWith<$Res> get formFactors {
@@ -384,24 +389,23 @@ class __$$HorizontalScrollSuperbrowseSubsectionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HorizontalScrollSuperbrowseSubsection
+class _$HorizontalScrollSuperbrowseSubsectionImpl
     implements HorizontalScrollSuperbrowseSubsection {
-  const _$HorizontalScrollSuperbrowseSubsection(
+  const _$HorizontalScrollSuperbrowseSubsectionImpl(
       {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          required this.sectionId,
-      @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-          this.scrollType,
+      required this.sectionId,
+      @JsonKey(name: SuperbrowseSubsection._scrollTypeKey) this.scrollType,
       @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          required this.formFactors,
+      required this.formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          required final List<SuperbrowseItem> items,
+      required final List<SuperbrowseItem> items,
       final String? $type})
       : _items = items,
         $type = $type ?? 'horizontalScroll';
 
-  factory _$HorizontalScrollSuperbrowseSubsection.fromJson(
+  factory _$HorizontalScrollSuperbrowseSubsectionImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$HorizontalScrollSuperbrowseSubsectionFromJson(json);
+      _$$HorizontalScrollSuperbrowseSubsectionImplFromJson(json);
 
   @override
   @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
@@ -430,10 +434,10 @@ class _$HorizontalScrollSuperbrowseSubsection
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HorizontalScrollSuperbrowseSubsection &&
+            other is _$HorizontalScrollSuperbrowseSubsectionImpl &&
             (identical(other.sectionId, sectionId) ||
                 other.sectionId == sectionId) &&
             (identical(other.scrollType, scrollType) ||
@@ -443,71 +447,71 @@ class _$HorizontalScrollSuperbrowseSubsection
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, sectionId, scrollType,
       formFactors, const DeepCollectionEquality().hash(_items));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HorizontalScrollSuperbrowseSubsectionCopyWith<
-          _$HorizontalScrollSuperbrowseSubsection>
-      get copyWith => __$$HorizontalScrollSuperbrowseSubsectionCopyWithImpl<
-          _$HorizontalScrollSuperbrowseSubsection>(this, _$identity);
+  _$$HorizontalScrollSuperbrowseSubsectionImplCopyWith<
+          _$HorizontalScrollSuperbrowseSubsectionImpl>
+      get copyWith => __$$HorizontalScrollSuperbrowseSubsectionImplCopyWithImpl<
+          _$HorizontalScrollSuperbrowseSubsectionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         horizontalScroll,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)
         recentlyPlayed,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         singleton,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         verticalList,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         displayAd,
   }) {
     return horizontalScroll(sectionId, scrollType, formFactors, items);
@@ -518,53 +522,51 @@ class _$HorizontalScrollSuperbrowseSubsection
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
   }) {
     return horizontalScroll?.call(sectionId, scrollType, formFactors, items);
@@ -575,53 +577,51 @@ class _$HorizontalScrollSuperbrowseSubsection
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
     required TResult orElse(),
   }) {
@@ -679,7 +679,7 @@ class _$HorizontalScrollSuperbrowseSubsection
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$HorizontalScrollSuperbrowseSubsectionToJson(
+    return _$$HorizontalScrollSuperbrowseSubsectionImplToJson(
       this,
     );
   }
@@ -689,18 +689,18 @@ abstract class HorizontalScrollSuperbrowseSubsection
     implements SuperbrowseSubsection {
   const factory HorizontalScrollSuperbrowseSubsection(
           {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-              required final String sectionId,
+          required final String sectionId,
           @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-              final ScrollType? scrollType,
+          final ScrollType? scrollType,
           @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-              required final FormFactors formFactors,
+          required final FormFactors formFactors,
           @JsonKey(name: SuperbrowseSubsection._itemsKey)
-              required final List<SuperbrowseItem> items}) =
-      _$HorizontalScrollSuperbrowseSubsection;
+          required final List<SuperbrowseItem> items}) =
+      _$HorizontalScrollSuperbrowseSubsectionImpl;
 
   factory HorizontalScrollSuperbrowseSubsection.fromJson(
           Map<String, dynamic> json) =
-      _$HorizontalScrollSuperbrowseSubsection.fromJson;
+      _$HorizontalScrollSuperbrowseSubsectionImpl.fromJson;
 
   @override
   @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
@@ -713,52 +713,54 @@ abstract class HorizontalScrollSuperbrowseSubsection
   @override
   @JsonKey(name: SuperbrowseSubsection._itemsKey)
   List<SuperbrowseItem> get items;
+
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$HorizontalScrollSuperbrowseSubsectionCopyWith<
-          _$HorizontalScrollSuperbrowseSubsection>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HorizontalScrollSuperbrowseSubsectionImplCopyWith<
+          _$HorizontalScrollSuperbrowseSubsectionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RecentlyPlayedSuperbrowseSubsectionCopyWith<$Res>
+abstract class _$$RecentlyPlayedSuperbrowseSubsectionImplCopyWith<$Res>
     implements $SuperbrowseSubsectionCopyWith<$Res> {
-  factory _$$RecentlyPlayedSuperbrowseSubsectionCopyWith(
-          _$RecentlyPlayedSuperbrowseSubsection value,
-          $Res Function(_$RecentlyPlayedSuperbrowseSubsection) then) =
-      __$$RecentlyPlayedSuperbrowseSubsectionCopyWithImpl<$Res>;
+  factory _$$RecentlyPlayedSuperbrowseSubsectionImplCopyWith(
+          _$RecentlyPlayedSuperbrowseSubsectionImpl value,
+          $Res Function(_$RecentlyPlayedSuperbrowseSubsectionImpl) then) =
+      __$$RecentlyPlayedSuperbrowseSubsectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          String sectionId,
+      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey) String sectionId,
       @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-          ScrollType? scrollType,
+      ScrollType? scrollType,
       @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          FormFactors formFactors,
+      FormFactors formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          List<SuperbrowseItem> items,
+      List<SuperbrowseItem> items,
       @JsonKey(name: 'newItemTemplate')
-          Map<String, SuperbrowseItem>? newItemTemplate,
-      @JsonKey(name: 'minRequired')
-          int? minRequired,
-      @JsonKey(name: 'maxRequired')
-          int? maxRequired});
+      Map<String, SuperbrowseItem>? newItemTemplate,
+      @JsonKey(name: 'minRequired') int? minRequired,
+      @JsonKey(name: 'maxRequired') int? maxRequired});
 
   @override
   $FormFactorsCopyWith<$Res> get formFactors;
 }
 
 /// @nodoc
-class __$$RecentlyPlayedSuperbrowseSubsectionCopyWithImpl<$Res>
+class __$$RecentlyPlayedSuperbrowseSubsectionImplCopyWithImpl<$Res>
     extends _$SuperbrowseSubsectionCopyWithImpl<$Res,
-        _$RecentlyPlayedSuperbrowseSubsection>
-    implements _$$RecentlyPlayedSuperbrowseSubsectionCopyWith<$Res> {
-  __$$RecentlyPlayedSuperbrowseSubsectionCopyWithImpl(
-      _$RecentlyPlayedSuperbrowseSubsection _value,
-      $Res Function(_$RecentlyPlayedSuperbrowseSubsection) _then)
+        _$RecentlyPlayedSuperbrowseSubsectionImpl>
+    implements _$$RecentlyPlayedSuperbrowseSubsectionImplCopyWith<$Res> {
+  __$$RecentlyPlayedSuperbrowseSubsectionImplCopyWithImpl(
+      _$RecentlyPlayedSuperbrowseSubsectionImpl _value,
+      $Res Function(_$RecentlyPlayedSuperbrowseSubsectionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -770,7 +772,7 @@ class __$$RecentlyPlayedSuperbrowseSubsectionCopyWithImpl<$Res>
     Object? minRequired = freezed,
     Object? maxRequired = freezed,
   }) {
-    return _then(_$RecentlyPlayedSuperbrowseSubsection(
+    return _then(_$RecentlyPlayedSuperbrowseSubsectionImpl(
       sectionId: null == sectionId
           ? _value.sectionId
           : sectionId // ignore: cast_nullable_to_non_nullable
@@ -802,6 +804,8 @@ class __$$RecentlyPlayedSuperbrowseSubsectionCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FormFactorsCopyWith<$Res> get formFactors {
@@ -813,31 +817,28 @@ class __$$RecentlyPlayedSuperbrowseSubsectionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RecentlyPlayedSuperbrowseSubsection
+class _$RecentlyPlayedSuperbrowseSubsectionImpl
     implements RecentlyPlayedSuperbrowseSubsection {
-  const _$RecentlyPlayedSuperbrowseSubsection(
+  const _$RecentlyPlayedSuperbrowseSubsectionImpl(
       {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          required this.sectionId,
-      @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-          this.scrollType,
+      required this.sectionId,
+      @JsonKey(name: SuperbrowseSubsection._scrollTypeKey) this.scrollType,
       @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          required this.formFactors,
+      required this.formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          required final List<SuperbrowseItem> items,
+      required final List<SuperbrowseItem> items,
       @JsonKey(name: 'newItemTemplate')
-          required final Map<String, SuperbrowseItem>? newItemTemplate,
-      @JsonKey(name: 'minRequired')
-          this.minRequired,
-      @JsonKey(name: 'maxRequired')
-          this.maxRequired,
+      required final Map<String, SuperbrowseItem>? newItemTemplate,
+      @JsonKey(name: 'minRequired') this.minRequired,
+      @JsonKey(name: 'maxRequired') this.maxRequired,
       final String? $type})
       : _items = items,
         _newItemTemplate = newItemTemplate,
         $type = $type ?? 'recentlyPlayed';
 
-  factory _$RecentlyPlayedSuperbrowseSubsection.fromJson(
+  factory _$RecentlyPlayedSuperbrowseSubsectionImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$RecentlyPlayedSuperbrowseSubsectionFromJson(json);
+      _$$RecentlyPlayedSuperbrowseSubsectionImplFromJson(json);
 
   @override
   @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
@@ -884,10 +885,10 @@ class _$RecentlyPlayedSuperbrowseSubsection
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RecentlyPlayedSuperbrowseSubsection &&
+            other is _$RecentlyPlayedSuperbrowseSubsectionImpl &&
             (identical(other.sectionId, sectionId) ||
                 other.sectionId == sectionId) &&
             (identical(other.scrollType, scrollType) ||
@@ -903,7 +904,7 @@ class _$RecentlyPlayedSuperbrowseSubsection
                 other.maxRequired == maxRequired));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -915,66 +916,66 @@ class _$RecentlyPlayedSuperbrowseSubsection
       minRequired,
       maxRequired);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$RecentlyPlayedSuperbrowseSubsectionCopyWith<
-          _$RecentlyPlayedSuperbrowseSubsection>
-      get copyWith => __$$RecentlyPlayedSuperbrowseSubsectionCopyWithImpl<
-          _$RecentlyPlayedSuperbrowseSubsection>(this, _$identity);
+  _$$RecentlyPlayedSuperbrowseSubsectionImplCopyWith<
+          _$RecentlyPlayedSuperbrowseSubsectionImpl>
+      get copyWith => __$$RecentlyPlayedSuperbrowseSubsectionImplCopyWithImpl<
+          _$RecentlyPlayedSuperbrowseSubsectionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         horizontalScroll,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)
         recentlyPlayed,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         singleton,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         verticalList,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         displayAd,
   }) {
     return recentlyPlayed(sectionId, scrollType, formFactors, items,
@@ -986,53 +987,51 @@ class _$RecentlyPlayedSuperbrowseSubsection
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
   }) {
     return recentlyPlayed?.call(sectionId, scrollType, formFactors, items,
@@ -1044,53 +1043,51 @@ class _$RecentlyPlayedSuperbrowseSubsection
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
     required TResult orElse(),
   }) {
@@ -1149,7 +1146,7 @@ class _$RecentlyPlayedSuperbrowseSubsection
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RecentlyPlayedSuperbrowseSubsectionToJson(
+    return _$$RecentlyPlayedSuperbrowseSubsectionImplToJson(
       this,
     );
   }
@@ -1158,24 +1155,23 @@ class _$RecentlyPlayedSuperbrowseSubsection
 abstract class RecentlyPlayedSuperbrowseSubsection
     implements SuperbrowseSubsection {
   const factory RecentlyPlayedSuperbrowseSubsection(
-      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
+          {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
           required final String sectionId,
-      @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
+          @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
           final ScrollType? scrollType,
-      @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
+          @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
           required final FormFactors formFactors,
-      @JsonKey(name: SuperbrowseSubsection._itemsKey)
+          @JsonKey(name: SuperbrowseSubsection._itemsKey)
           required final List<SuperbrowseItem> items,
-      @JsonKey(name: 'newItemTemplate')
+          @JsonKey(name: 'newItemTemplate')
           required final Map<String, SuperbrowseItem>? newItemTemplate,
-      @JsonKey(name: 'minRequired')
-          final int? minRequired,
-      @JsonKey(name: 'maxRequired')
-          final int? maxRequired}) = _$RecentlyPlayedSuperbrowseSubsection;
+          @JsonKey(name: 'minRequired') final int? minRequired,
+          @JsonKey(name: 'maxRequired') final int? maxRequired}) =
+      _$RecentlyPlayedSuperbrowseSubsectionImpl;
 
   factory RecentlyPlayedSuperbrowseSubsection.fromJson(
           Map<String, dynamic> json) =
-      _$RecentlyPlayedSuperbrowseSubsection.fromJson;
+      _$RecentlyPlayedSuperbrowseSubsectionImpl.fromJson;
 
   @override
   @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
@@ -1194,44 +1190,48 @@ abstract class RecentlyPlayedSuperbrowseSubsection
   int? get minRequired;
   @JsonKey(name: 'maxRequired')
   int? get maxRequired;
+
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$RecentlyPlayedSuperbrowseSubsectionCopyWith<
-          _$RecentlyPlayedSuperbrowseSubsection>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RecentlyPlayedSuperbrowseSubsectionImplCopyWith<
+          _$RecentlyPlayedSuperbrowseSubsectionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SingletonSuperbrowseSubsectionCopyWith<$Res>
+abstract class _$$SingletonSuperbrowseSubsectionImplCopyWith<$Res>
     implements $SuperbrowseSubsectionCopyWith<$Res> {
-  factory _$$SingletonSuperbrowseSubsectionCopyWith(
-          _$SingletonSuperbrowseSubsection value,
-          $Res Function(_$SingletonSuperbrowseSubsection) then) =
-      __$$SingletonSuperbrowseSubsectionCopyWithImpl<$Res>;
+  factory _$$SingletonSuperbrowseSubsectionImplCopyWith(
+          _$SingletonSuperbrowseSubsectionImpl value,
+          $Res Function(_$SingletonSuperbrowseSubsectionImpl) then) =
+      __$$SingletonSuperbrowseSubsectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          String sectionId,
+      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey) String sectionId,
       @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          FormFactors? formFactors,
+      FormFactors? formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          List<SuperbrowseItem> items});
+      List<SuperbrowseItem> items});
 
   @override
   $FormFactorsCopyWith<$Res>? get formFactors;
 }
 
 /// @nodoc
-class __$$SingletonSuperbrowseSubsectionCopyWithImpl<$Res>
+class __$$SingletonSuperbrowseSubsectionImplCopyWithImpl<$Res>
     extends _$SuperbrowseSubsectionCopyWithImpl<$Res,
-        _$SingletonSuperbrowseSubsection>
-    implements _$$SingletonSuperbrowseSubsectionCopyWith<$Res> {
-  __$$SingletonSuperbrowseSubsectionCopyWithImpl(
-      _$SingletonSuperbrowseSubsection _value,
-      $Res Function(_$SingletonSuperbrowseSubsection) _then)
+        _$SingletonSuperbrowseSubsectionImpl>
+    implements _$$SingletonSuperbrowseSubsectionImplCopyWith<$Res> {
+  __$$SingletonSuperbrowseSubsectionImplCopyWithImpl(
+      _$SingletonSuperbrowseSubsectionImpl _value,
+      $Res Function(_$SingletonSuperbrowseSubsectionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1239,7 +1239,7 @@ class __$$SingletonSuperbrowseSubsectionCopyWithImpl<$Res>
     Object? formFactors = freezed,
     Object? items = null,
   }) {
-    return _then(_$SingletonSuperbrowseSubsection(
+    return _then(_$SingletonSuperbrowseSubsectionImpl(
       sectionId: null == sectionId
           ? _value.sectionId
           : sectionId // ignore: cast_nullable_to_non_nullable
@@ -1258,22 +1258,21 @@ class __$$SingletonSuperbrowseSubsectionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SingletonSuperbrowseSubsection
+class _$SingletonSuperbrowseSubsectionImpl
     implements SingletonSuperbrowseSubsection {
-  const _$SingletonSuperbrowseSubsection(
+  const _$SingletonSuperbrowseSubsectionImpl(
       {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          required this.sectionId,
-      @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          this.formFactors,
+      required this.sectionId,
+      @JsonKey(name: SuperbrowseSubsection._formFactorsKey) this.formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          required final List<SuperbrowseItem> items,
+      required final List<SuperbrowseItem> items,
       final String? $type})
       : _items = items,
         $type = $type ?? 'singleton';
 
-  factory _$SingletonSuperbrowseSubsection.fromJson(
+  factory _$SingletonSuperbrowseSubsectionImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$SingletonSuperbrowseSubsectionFromJson(json);
+      _$$SingletonSuperbrowseSubsectionImplFromJson(json);
 
   @override
   @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
@@ -1299,10 +1298,10 @@ class _$SingletonSuperbrowseSubsection
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SingletonSuperbrowseSubsection &&
+            other is _$SingletonSuperbrowseSubsectionImpl &&
             (identical(other.sectionId, sectionId) ||
                 other.sectionId == sectionId) &&
             (identical(other.formFactors, formFactors) ||
@@ -1310,70 +1309,71 @@ class _$SingletonSuperbrowseSubsection
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, sectionId, formFactors,
       const DeepCollectionEquality().hash(_items));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SingletonSuperbrowseSubsectionCopyWith<_$SingletonSuperbrowseSubsection>
-      get copyWith => __$$SingletonSuperbrowseSubsectionCopyWithImpl<
-          _$SingletonSuperbrowseSubsection>(this, _$identity);
+  _$$SingletonSuperbrowseSubsectionImplCopyWith<
+          _$SingletonSuperbrowseSubsectionImpl>
+      get copyWith => __$$SingletonSuperbrowseSubsectionImplCopyWithImpl<
+          _$SingletonSuperbrowseSubsectionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         horizontalScroll,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)
         recentlyPlayed,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         singleton,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         verticalList,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         displayAd,
   }) {
     return singleton(sectionId, formFactors, items);
@@ -1384,53 +1384,51 @@ class _$SingletonSuperbrowseSubsection
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
   }) {
     return singleton?.call(sectionId, formFactors, items);
@@ -1441,53 +1439,51 @@ class _$SingletonSuperbrowseSubsection
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
     required TResult orElse(),
   }) {
@@ -1545,7 +1541,7 @@ class _$SingletonSuperbrowseSubsection
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SingletonSuperbrowseSubsectionToJson(
+    return _$$SingletonSuperbrowseSubsectionImplToJson(
       this,
     );
   }
@@ -1554,15 +1550,15 @@ class _$SingletonSuperbrowseSubsection
 abstract class SingletonSuperbrowseSubsection implements SuperbrowseSubsection {
   const factory SingletonSuperbrowseSubsection(
           {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-              required final String sectionId,
+          required final String sectionId,
           @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-              final FormFactors? formFactors,
+          final FormFactors? formFactors,
           @JsonKey(name: SuperbrowseSubsection._itemsKey)
-              required final List<SuperbrowseItem> items}) =
-      _$SingletonSuperbrowseSubsection;
+          required final List<SuperbrowseItem> items}) =
+      _$SingletonSuperbrowseSubsectionImpl;
 
   factory SingletonSuperbrowseSubsection.fromJson(Map<String, dynamic> json) =
-      _$SingletonSuperbrowseSubsection.fromJson;
+      _$SingletonSuperbrowseSubsectionImpl.fromJson;
 
   @override
   @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
@@ -1573,43 +1569,48 @@ abstract class SingletonSuperbrowseSubsection implements SuperbrowseSubsection {
   @override
   @JsonKey(name: SuperbrowseSubsection._itemsKey)
   List<SuperbrowseItem> get items;
+
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$SingletonSuperbrowseSubsectionCopyWith<_$SingletonSuperbrowseSubsection>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SingletonSuperbrowseSubsectionImplCopyWith<
+          _$SingletonSuperbrowseSubsectionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$VerticalListSuperbrowseSubsectionCopyWith<$Res>
+abstract class _$$VerticalListSuperbrowseSubsectionImplCopyWith<$Res>
     implements $SuperbrowseSubsectionCopyWith<$Res> {
-  factory _$$VerticalListSuperbrowseSubsectionCopyWith(
-          _$VerticalListSuperbrowseSubsection value,
-          $Res Function(_$VerticalListSuperbrowseSubsection) then) =
-      __$$VerticalListSuperbrowseSubsectionCopyWithImpl<$Res>;
+  factory _$$VerticalListSuperbrowseSubsectionImplCopyWith(
+          _$VerticalListSuperbrowseSubsectionImpl value,
+          $Res Function(_$VerticalListSuperbrowseSubsectionImpl) then) =
+      __$$VerticalListSuperbrowseSubsectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          String sectionId,
+      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey) String sectionId,
       @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          FormFactors? formFactors,
+      FormFactors? formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          List<SuperbrowseItem> items});
+      List<SuperbrowseItem> items});
 
   @override
   $FormFactorsCopyWith<$Res>? get formFactors;
 }
 
 /// @nodoc
-class __$$VerticalListSuperbrowseSubsectionCopyWithImpl<$Res>
+class __$$VerticalListSuperbrowseSubsectionImplCopyWithImpl<$Res>
     extends _$SuperbrowseSubsectionCopyWithImpl<$Res,
-        _$VerticalListSuperbrowseSubsection>
-    implements _$$VerticalListSuperbrowseSubsectionCopyWith<$Res> {
-  __$$VerticalListSuperbrowseSubsectionCopyWithImpl(
-      _$VerticalListSuperbrowseSubsection _value,
-      $Res Function(_$VerticalListSuperbrowseSubsection) _then)
+        _$VerticalListSuperbrowseSubsectionImpl>
+    implements _$$VerticalListSuperbrowseSubsectionImplCopyWith<$Res> {
+  __$$VerticalListSuperbrowseSubsectionImplCopyWithImpl(
+      _$VerticalListSuperbrowseSubsectionImpl _value,
+      $Res Function(_$VerticalListSuperbrowseSubsectionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1617,7 +1618,7 @@ class __$$VerticalListSuperbrowseSubsectionCopyWithImpl<$Res>
     Object? formFactors = freezed,
     Object? items = null,
   }) {
-    return _then(_$VerticalListSuperbrowseSubsection(
+    return _then(_$VerticalListSuperbrowseSubsectionImpl(
       sectionId: null == sectionId
           ? _value.sectionId
           : sectionId // ignore: cast_nullable_to_non_nullable
@@ -1636,22 +1637,21 @@ class __$$VerticalListSuperbrowseSubsectionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$VerticalListSuperbrowseSubsection
+class _$VerticalListSuperbrowseSubsectionImpl
     implements VerticalListSuperbrowseSubsection {
-  const _$VerticalListSuperbrowseSubsection(
+  const _$VerticalListSuperbrowseSubsectionImpl(
       {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          required this.sectionId,
-      @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          this.formFactors,
+      required this.sectionId,
+      @JsonKey(name: SuperbrowseSubsection._formFactorsKey) this.formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          required final List<SuperbrowseItem> items,
+      required final List<SuperbrowseItem> items,
       final String? $type})
       : _items = items,
         $type = $type ?? 'verticalList';
 
-  factory _$VerticalListSuperbrowseSubsection.fromJson(
+  factory _$VerticalListSuperbrowseSubsectionImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$VerticalListSuperbrowseSubsectionFromJson(json);
+      _$$VerticalListSuperbrowseSubsectionImplFromJson(json);
 
   @override
   @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
@@ -1677,10 +1677,10 @@ class _$VerticalListSuperbrowseSubsection
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$VerticalListSuperbrowseSubsection &&
+            other is _$VerticalListSuperbrowseSubsectionImpl &&
             (identical(other.sectionId, sectionId) ||
                 other.sectionId == sectionId) &&
             (identical(other.formFactors, formFactors) ||
@@ -1688,71 +1688,71 @@ class _$VerticalListSuperbrowseSubsection
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, sectionId, formFactors,
       const DeepCollectionEquality().hash(_items));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$VerticalListSuperbrowseSubsectionCopyWith<
-          _$VerticalListSuperbrowseSubsection>
-      get copyWith => __$$VerticalListSuperbrowseSubsectionCopyWithImpl<
-          _$VerticalListSuperbrowseSubsection>(this, _$identity);
+  _$$VerticalListSuperbrowseSubsectionImplCopyWith<
+          _$VerticalListSuperbrowseSubsectionImpl>
+      get copyWith => __$$VerticalListSuperbrowseSubsectionImplCopyWithImpl<
+          _$VerticalListSuperbrowseSubsectionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         horizontalScroll,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)
         recentlyPlayed,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         singleton,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         verticalList,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         displayAd,
   }) {
     return verticalList(sectionId, formFactors, items);
@@ -1763,53 +1763,51 @@ class _$VerticalListSuperbrowseSubsection
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
   }) {
     return verticalList?.call(sectionId, formFactors, items);
@@ -1820,53 +1818,51 @@ class _$VerticalListSuperbrowseSubsection
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
     required TResult orElse(),
   }) {
@@ -1924,7 +1920,7 @@ class _$VerticalListSuperbrowseSubsection
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$VerticalListSuperbrowseSubsectionToJson(
+    return _$$VerticalListSuperbrowseSubsectionImplToJson(
       this,
     );
   }
@@ -1934,15 +1930,16 @@ abstract class VerticalListSuperbrowseSubsection
     implements SuperbrowseSubsection {
   const factory VerticalListSuperbrowseSubsection(
           {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-              required final String sectionId,
+          required final String sectionId,
           @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-              final FormFactors? formFactors,
+          final FormFactors? formFactors,
           @JsonKey(name: SuperbrowseSubsection._itemsKey)
-              required final List<SuperbrowseItem> items}) =
-      _$VerticalListSuperbrowseSubsection;
+          required final List<SuperbrowseItem> items}) =
+      _$VerticalListSuperbrowseSubsectionImpl;
 
   factory VerticalListSuperbrowseSubsection.fromJson(
-      Map<String, dynamic> json) = _$VerticalListSuperbrowseSubsection.fromJson;
+          Map<String, dynamic> json) =
+      _$VerticalListSuperbrowseSubsectionImpl.fromJson;
 
   @override
   @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
@@ -1953,44 +1950,48 @@ abstract class VerticalListSuperbrowseSubsection
   @override
   @JsonKey(name: SuperbrowseSubsection._itemsKey)
   List<SuperbrowseItem> get items;
+
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$VerticalListSuperbrowseSubsectionCopyWith<
-          _$VerticalListSuperbrowseSubsection>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$VerticalListSuperbrowseSubsectionImplCopyWith<
+          _$VerticalListSuperbrowseSubsectionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DisplayAdSuperbrowseSubsectionCopyWith<$Res>
+abstract class _$$DisplayAdSuperbrowseSubsectionImplCopyWith<$Res>
     implements $SuperbrowseSubsectionCopyWith<$Res> {
-  factory _$$DisplayAdSuperbrowseSubsectionCopyWith(
-          _$DisplayAdSuperbrowseSubsection value,
-          $Res Function(_$DisplayAdSuperbrowseSubsection) then) =
-      __$$DisplayAdSuperbrowseSubsectionCopyWithImpl<$Res>;
+  factory _$$DisplayAdSuperbrowseSubsectionImplCopyWith(
+          _$DisplayAdSuperbrowseSubsectionImpl value,
+          $Res Function(_$DisplayAdSuperbrowseSubsectionImpl) then) =
+      __$$DisplayAdSuperbrowseSubsectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          String sectionId,
+      {@JsonKey(name: SuperbrowseSubsection._sectionIdKey) String sectionId,
       @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          FormFactors formFactors,
+      FormFactors formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          List<SuperbrowseItem> items});
+      List<SuperbrowseItem> items});
 
   @override
   $FormFactorsCopyWith<$Res> get formFactors;
 }
 
 /// @nodoc
-class __$$DisplayAdSuperbrowseSubsectionCopyWithImpl<$Res>
+class __$$DisplayAdSuperbrowseSubsectionImplCopyWithImpl<$Res>
     extends _$SuperbrowseSubsectionCopyWithImpl<$Res,
-        _$DisplayAdSuperbrowseSubsection>
-    implements _$$DisplayAdSuperbrowseSubsectionCopyWith<$Res> {
-  __$$DisplayAdSuperbrowseSubsectionCopyWithImpl(
-      _$DisplayAdSuperbrowseSubsection _value,
-      $Res Function(_$DisplayAdSuperbrowseSubsection) _then)
+        _$DisplayAdSuperbrowseSubsectionImpl>
+    implements _$$DisplayAdSuperbrowseSubsectionImplCopyWith<$Res> {
+  __$$DisplayAdSuperbrowseSubsectionImplCopyWithImpl(
+      _$DisplayAdSuperbrowseSubsectionImpl _value,
+      $Res Function(_$DisplayAdSuperbrowseSubsectionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1998,7 +1999,7 @@ class __$$DisplayAdSuperbrowseSubsectionCopyWithImpl<$Res>
     Object? formFactors = null,
     Object? items = null,
   }) {
-    return _then(_$DisplayAdSuperbrowseSubsection(
+    return _then(_$DisplayAdSuperbrowseSubsectionImpl(
       sectionId: null == sectionId
           ? _value.sectionId
           : sectionId // ignore: cast_nullable_to_non_nullable
@@ -2014,6 +2015,8 @@ class __$$DisplayAdSuperbrowseSubsectionCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FormFactorsCopyWith<$Res> get formFactors {
@@ -2025,22 +2028,22 @@ class __$$DisplayAdSuperbrowseSubsectionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DisplayAdSuperbrowseSubsection
+class _$DisplayAdSuperbrowseSubsectionImpl
     implements DisplayAdSuperbrowseSubsection {
-  const _$DisplayAdSuperbrowseSubsection(
+  const _$DisplayAdSuperbrowseSubsectionImpl(
       {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-          required this.sectionId,
+      required this.sectionId,
       @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-          required this.formFactors,
+      required this.formFactors,
       @JsonKey(name: SuperbrowseSubsection._itemsKey)
-          required final List<SuperbrowseItem> items,
+      required final List<SuperbrowseItem> items,
       final String? $type})
       : _items = items,
         $type = $type ?? 'displayAd';
 
-  factory _$DisplayAdSuperbrowseSubsection.fromJson(
+  factory _$DisplayAdSuperbrowseSubsectionImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$DisplayAdSuperbrowseSubsectionFromJson(json);
+      _$$DisplayAdSuperbrowseSubsectionImplFromJson(json);
 
   @override
   @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
@@ -2066,10 +2069,10 @@ class _$DisplayAdSuperbrowseSubsection
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DisplayAdSuperbrowseSubsection &&
+            other is _$DisplayAdSuperbrowseSubsectionImpl &&
             (identical(other.sectionId, sectionId) ||
                 other.sectionId == sectionId) &&
             (identical(other.formFactors, formFactors) ||
@@ -2077,70 +2080,71 @@ class _$DisplayAdSuperbrowseSubsection
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, sectionId, formFactors,
       const DeepCollectionEquality().hash(_items));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DisplayAdSuperbrowseSubsectionCopyWith<_$DisplayAdSuperbrowseSubsection>
-      get copyWith => __$$DisplayAdSuperbrowseSubsectionCopyWithImpl<
-          _$DisplayAdSuperbrowseSubsection>(this, _$identity);
+  _$$DisplayAdSuperbrowseSubsectionImplCopyWith<
+          _$DisplayAdSuperbrowseSubsectionImpl>
+      get copyWith => __$$DisplayAdSuperbrowseSubsectionImplCopyWithImpl<
+          _$DisplayAdSuperbrowseSubsectionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         horizontalScroll,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)
         recentlyPlayed,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         singleton,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         verticalList,
     required TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)
+            List<SuperbrowseItem> items)
         displayAd,
   }) {
     return displayAd(sectionId, formFactors, items);
@@ -2151,53 +2155,51 @@ class _$DisplayAdSuperbrowseSubsection
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult? Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
   }) {
     return displayAd?.call(sectionId, formFactors, items);
@@ -2208,53 +2210,51 @@ class _$DisplayAdSuperbrowseSubsection
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         horizontalScroll,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._scrollTypeKey)
-                ScrollType? scrollType,
+            ScrollType? scrollType,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items,
+            List<SuperbrowseItem> items,
             @JsonKey(name: 'newItemTemplate')
-                Map<String, SuperbrowseItem>? newItemTemplate,
-            @JsonKey(name: 'minRequired')
-                int? minRequired,
-            @JsonKey(name: 'maxRequired')
-                int? maxRequired)?
+            Map<String, SuperbrowseItem>? newItemTemplate,
+            @JsonKey(name: 'minRequired') int? minRequired,
+            @JsonKey(name: 'maxRequired') int? maxRequired)?
         recentlyPlayed,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         singleton,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors? formFactors,
+            FormFactors? formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         verticalList,
     TResult Function(
             @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-                String sectionId,
+            String sectionId,
             @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-                FormFactors formFactors,
+            FormFactors formFactors,
             @JsonKey(name: SuperbrowseSubsection._itemsKey)
-                List<SuperbrowseItem> items)?
+            List<SuperbrowseItem> items)?
         displayAd,
     required TResult orElse(),
   }) {
@@ -2312,7 +2312,7 @@ class _$DisplayAdSuperbrowseSubsection
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DisplayAdSuperbrowseSubsectionToJson(
+    return _$$DisplayAdSuperbrowseSubsectionImplToJson(
       this,
     );
   }
@@ -2321,15 +2321,15 @@ class _$DisplayAdSuperbrowseSubsection
 abstract class DisplayAdSuperbrowseSubsection implements SuperbrowseSubsection {
   const factory DisplayAdSuperbrowseSubsection(
           {@JsonKey(name: SuperbrowseSubsection._sectionIdKey)
-              required final String sectionId,
+          required final String sectionId,
           @JsonKey(name: SuperbrowseSubsection._formFactorsKey)
-              required final FormFactors formFactors,
+          required final FormFactors formFactors,
           @JsonKey(name: SuperbrowseSubsection._itemsKey)
-              required final List<SuperbrowseItem> items}) =
-      _$DisplayAdSuperbrowseSubsection;
+          required final List<SuperbrowseItem> items}) =
+      _$DisplayAdSuperbrowseSubsectionImpl;
 
   factory DisplayAdSuperbrowseSubsection.fromJson(Map<String, dynamic> json) =
-      _$DisplayAdSuperbrowseSubsection.fromJson;
+      _$DisplayAdSuperbrowseSubsectionImpl.fromJson;
 
   @override
   @JsonKey(name: SuperbrowseSubsection._sectionIdKey)
@@ -2340,8 +2340,12 @@ abstract class DisplayAdSuperbrowseSubsection implements SuperbrowseSubsection {
   @override
   @JsonKey(name: SuperbrowseSubsection._itemsKey)
   List<SuperbrowseItem> get items;
+
+  /// Create a copy of SuperbrowseSubsection
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$DisplayAdSuperbrowseSubsectionCopyWith<_$DisplayAdSuperbrowseSubsection>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DisplayAdSuperbrowseSubsectionImplCopyWith<
+          _$DisplayAdSuperbrowseSubsectionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

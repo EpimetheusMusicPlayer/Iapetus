@@ -12,7 +12,7 @@ part of 'badge.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SuperbrowseBadge _$SuperbrowseBadgeFromJson(Map<String, dynamic> json) {
   return _SuperbrowseBadge.fromJson(json);
@@ -25,8 +25,12 @@ mixin _$SuperbrowseBadge {
   @JsonKey(name: 'data')
   String? get data => throw _privateConstructorUsedError;
 
+  /// Serializes this SuperbrowseBadge to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SuperbrowseBadge
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SuperbrowseBadgeCopyWith<SuperbrowseBadge> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$SuperbrowseBadgeCopyWithImpl<$Res, $Val extends SuperbrowseBadge>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SuperbrowseBadge
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -71,11 +77,11 @@ class _$SuperbrowseBadgeCopyWithImpl<$Res, $Val extends SuperbrowseBadge>
 }
 
 /// @nodoc
-abstract class _$$_SuperbrowseBadgeCopyWith<$Res>
+abstract class _$$SuperbrowseBadgeImplCopyWith<$Res>
     implements $SuperbrowseBadgeCopyWith<$Res> {
-  factory _$$_SuperbrowseBadgeCopyWith(
-          _$_SuperbrowseBadge value, $Res Function(_$_SuperbrowseBadge) then) =
-      __$$_SuperbrowseBadgeCopyWithImpl<$Res>;
+  factory _$$SuperbrowseBadgeImplCopyWith(_$SuperbrowseBadgeImpl value,
+          $Res Function(_$SuperbrowseBadgeImpl) then) =
+      __$$SuperbrowseBadgeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -83,20 +89,22 @@ abstract class _$$_SuperbrowseBadgeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SuperbrowseBadgeCopyWithImpl<$Res>
-    extends _$SuperbrowseBadgeCopyWithImpl<$Res, _$_SuperbrowseBadge>
-    implements _$$_SuperbrowseBadgeCopyWith<$Res> {
-  __$$_SuperbrowseBadgeCopyWithImpl(
-      _$_SuperbrowseBadge _value, $Res Function(_$_SuperbrowseBadge) _then)
+class __$$SuperbrowseBadgeImplCopyWithImpl<$Res>
+    extends _$SuperbrowseBadgeCopyWithImpl<$Res, _$SuperbrowseBadgeImpl>
+    implements _$$SuperbrowseBadgeImplCopyWith<$Res> {
+  __$$SuperbrowseBadgeImplCopyWithImpl(_$SuperbrowseBadgeImpl _value,
+      $Res Function(_$SuperbrowseBadgeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SuperbrowseBadge
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? type = null,
     Object? data = freezed,
   }) {
-    return _then(_$_SuperbrowseBadge(
+    return _then(_$SuperbrowseBadgeImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -111,13 +119,13 @@ class __$$_SuperbrowseBadgeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SuperbrowseBadge implements _SuperbrowseBadge {
-  const _$_SuperbrowseBadge(
+class _$SuperbrowseBadgeImpl implements _SuperbrowseBadge {
+  const _$SuperbrowseBadgeImpl(
       {@JsonValue('type') required this.type,
       @JsonKey(name: 'data') this.data});
 
-  factory _$_SuperbrowseBadge.fromJson(Map<String, dynamic> json) =>
-      _$$_SuperbrowseBadgeFromJson(json);
+  factory _$SuperbrowseBadgeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SuperbrowseBadgeImplFromJson(json);
 
   @override
   @JsonValue('type')
@@ -132,27 +140,30 @@ class _$_SuperbrowseBadge implements _SuperbrowseBadge {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SuperbrowseBadge &&
+            other is _$SuperbrowseBadgeImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.data, data) || other.data == data));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type, data);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SuperbrowseBadge
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuperbrowseBadgeCopyWith<_$_SuperbrowseBadge> get copyWith =>
-      __$$_SuperbrowseBadgeCopyWithImpl<_$_SuperbrowseBadge>(this, _$identity);
+  _$$SuperbrowseBadgeImplCopyWith<_$SuperbrowseBadgeImpl> get copyWith =>
+      __$$SuperbrowseBadgeImplCopyWithImpl<_$SuperbrowseBadgeImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SuperbrowseBadgeToJson(
+    return _$$SuperbrowseBadgeImplToJson(
       this,
     );
   }
@@ -161,10 +172,10 @@ class _$_SuperbrowseBadge implements _SuperbrowseBadge {
 abstract class _SuperbrowseBadge implements SuperbrowseBadge {
   const factory _SuperbrowseBadge(
       {@JsonValue('type') required final BadgeType type,
-      @JsonKey(name: 'data') final String? data}) = _$_SuperbrowseBadge;
+      @JsonKey(name: 'data') final String? data}) = _$SuperbrowseBadgeImpl;
 
   factory _SuperbrowseBadge.fromJson(Map<String, dynamic> json) =
-      _$_SuperbrowseBadge.fromJson;
+      _$SuperbrowseBadgeImpl.fromJson;
 
   @override
   @JsonValue('type')
@@ -172,8 +183,11 @@ abstract class _SuperbrowseBadge implements SuperbrowseBadge {
   @override
   @JsonKey(name: 'data')
   String? get data;
+
+  /// Create a copy of SuperbrowseBadge
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SuperbrowseBadgeCopyWith<_$_SuperbrowseBadge> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuperbrowseBadgeImplCopyWith<_$SuperbrowseBadgeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

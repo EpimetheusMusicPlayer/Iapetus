@@ -8,13 +8,13 @@ part of 'listener_id_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ListenerIdInfo _$$_ListenerIdInfoFromJson(Map<String, dynamic> json) =>
+_$ListenerIdInfoImpl _$$ListenerIdInfoImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_ListenerIdInfo',
+      r'_$ListenerIdInfoImpl',
       json,
       ($checkedConvert) {
-        final val = _$_ListenerIdInfo(
-          listenerId: $checkedConvert('listenerId', (v) => v as int),
+        final val = _$ListenerIdInfoImpl(
+          listenerId: $checkedConvert('listenerId', (v) => (v as num).toInt()),
           listenerPandoraId:
               $checkedConvert('listenerPandoraId', (v) => v as String),
           listenerIdToken:
@@ -24,7 +24,8 @@ _$_ListenerIdInfo _$$_ListenerIdInfoFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_ListenerIdInfoToJson(_$_ListenerIdInfo instance) =>
+Map<String, dynamic> _$$ListenerIdInfoImplToJson(
+        _$ListenerIdInfoImpl instance) =>
     <String, dynamic>{
       'listenerId': instance.listenerId,
       'listenerPandoraId': instance.listenerPandoraId,

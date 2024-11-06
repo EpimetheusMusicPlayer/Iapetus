@@ -8,12 +8,13 @@ part of 'action.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SuperbrowseAction _$$_SuperbrowseActionFromJson(Map<String, dynamic> json) =>
+_$SuperbrowseActionImpl _$$SuperbrowseActionImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_SuperbrowseAction',
+      r'_$SuperbrowseActionImpl',
       json,
       ($checkedConvert) {
-        final val = _$_SuperbrowseAction(
+        final val = _$SuperbrowseActionImpl(
           type: $checkedConvert(
               'type', (v) => $enumDecode(_$ActionTypeEnumMap, v)),
           pandoraId: $checkedConvert('pandoraId', (v) => v as String?),
@@ -28,8 +29,8 @@ _$_SuperbrowseAction _$$_SuperbrowseActionFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_SuperbrowseActionToJson(
-        _$_SuperbrowseAction instance) =>
+Map<String, dynamic> _$$SuperbrowseActionImplToJson(
+        _$SuperbrowseActionImpl instance) =>
     <String, dynamic>{
       'type': _$ActionTypeEnumMap[instance.type]!,
       'pandoraId': instance.pandoraId,

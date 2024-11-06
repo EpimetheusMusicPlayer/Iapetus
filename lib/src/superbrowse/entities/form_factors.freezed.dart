@@ -12,7 +12,7 @@ part of 'form_factors.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 FormFactors _$FormFactorsFromJson(Map<String, dynamic> json) {
   return _FormFactors.fromJson(json);
@@ -25,8 +25,12 @@ mixin _$FormFactors {
   @JsonKey(name: 'landscape')
   FormFactor get landscape => throw _privateConstructorUsedError;
 
+  /// Serializes this FormFactors to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FormFactors
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FormFactorsCopyWith<FormFactors> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$FormFactorsCopyWithImpl<$Res, $Val extends FormFactors>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FormFactors
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -73,6 +79,8 @@ class _$FormFactorsCopyWithImpl<$Res, $Val extends FormFactors>
     ) as $Val);
   }
 
+  /// Create a copy of FormFactors
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FormFactorCopyWith<$Res> get portrait {
@@ -81,6 +89,8 @@ class _$FormFactorsCopyWithImpl<$Res, $Val extends FormFactors>
     });
   }
 
+  /// Create a copy of FormFactors
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FormFactorCopyWith<$Res> get landscape {
@@ -91,11 +101,11 @@ class _$FormFactorsCopyWithImpl<$Res, $Val extends FormFactors>
 }
 
 /// @nodoc
-abstract class _$$_FormFactorsCopyWith<$Res>
+abstract class _$$FormFactorsImplCopyWith<$Res>
     implements $FormFactorsCopyWith<$Res> {
-  factory _$$_FormFactorsCopyWith(
-          _$_FormFactors value, $Res Function(_$_FormFactors) then) =
-      __$$_FormFactorsCopyWithImpl<$Res>;
+  factory _$$FormFactorsImplCopyWith(
+          _$FormFactorsImpl value, $Res Function(_$FormFactorsImpl) then) =
+      __$$FormFactorsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -109,20 +119,22 @@ abstract class _$$_FormFactorsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FormFactorsCopyWithImpl<$Res>
-    extends _$FormFactorsCopyWithImpl<$Res, _$_FormFactors>
-    implements _$$_FormFactorsCopyWith<$Res> {
-  __$$_FormFactorsCopyWithImpl(
-      _$_FormFactors _value, $Res Function(_$_FormFactors) _then)
+class __$$FormFactorsImplCopyWithImpl<$Res>
+    extends _$FormFactorsCopyWithImpl<$Res, _$FormFactorsImpl>
+    implements _$$FormFactorsImplCopyWith<$Res> {
+  __$$FormFactorsImplCopyWithImpl(
+      _$FormFactorsImpl _value, $Res Function(_$FormFactorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FormFactors
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? portrait = null,
     Object? landscape = null,
   }) {
-    return _then(_$_FormFactors(
+    return _then(_$FormFactorsImpl(
       portrait: null == portrait
           ? _value.portrait
           : portrait // ignore: cast_nullable_to_non_nullable
@@ -137,13 +149,13 @@ class __$$_FormFactorsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FormFactors implements _FormFactors {
-  const _$_FormFactors(
+class _$FormFactorsImpl implements _FormFactors {
+  const _$FormFactorsImpl(
       {@JsonKey(name: 'portrait') required this.portrait,
       @JsonKey(name: 'landscape') required this.landscape});
 
-  factory _$_FormFactors.fromJson(Map<String, dynamic> json) =>
-      _$$_FormFactorsFromJson(json);
+  factory _$FormFactorsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FormFactorsImplFromJson(json);
 
   @override
   @JsonKey(name: 'portrait')
@@ -158,29 +170,31 @@ class _$_FormFactors implements _FormFactors {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FormFactors &&
+            other is _$FormFactorsImpl &&
             (identical(other.portrait, portrait) ||
                 other.portrait == portrait) &&
             (identical(other.landscape, landscape) ||
                 other.landscape == landscape));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, portrait, landscape);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FormFactors
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FormFactorsCopyWith<_$_FormFactors> get copyWith =>
-      __$$_FormFactorsCopyWithImpl<_$_FormFactors>(this, _$identity);
+  _$$FormFactorsImplCopyWith<_$FormFactorsImpl> get copyWith =>
+      __$$FormFactorsImplCopyWithImpl<_$FormFactorsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FormFactorsToJson(
+    return _$$FormFactorsImplToJson(
       this,
     );
   }
@@ -190,10 +204,10 @@ abstract class _FormFactors implements FormFactors {
   const factory _FormFactors(
           {@JsonKey(name: 'portrait') required final FormFactor portrait,
           @JsonKey(name: 'landscape') required final FormFactor landscape}) =
-      _$_FormFactors;
+      _$FormFactorsImpl;
 
   factory _FormFactors.fromJson(Map<String, dynamic> json) =
-      _$_FormFactors.fromJson;
+      _$FormFactorsImpl.fromJson;
 
   @override
   @JsonKey(name: 'portrait')
@@ -201,8 +215,11 @@ abstract class _FormFactors implements FormFactors {
   @override
   @JsonKey(name: 'landscape')
   FormFactor get landscape;
+
+  /// Create a copy of FormFactors
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FormFactorsCopyWith<_$_FormFactors> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FormFactorsImplCopyWith<_$FormFactorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'playlist_track.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 PlaylistTrack _$PlaylistTrackFromJson(Map<String, dynamic> json) {
   return _PlaylistTrack.fromJson(json);
@@ -37,8 +37,12 @@ mixin _$PlaylistTrack {
   @JsonKey(name: 'trackPandoraId')
   String get trackPandoraId => throw _privateConstructorUsedError;
 
+  /// Serializes this PlaylistTrack to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PlaylistTrack
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PlaylistTrackCopyWith<PlaylistTrack> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,16 +54,19 @@ abstract class $PlaylistTrackCopyWith<$Res> {
       _$PlaylistTrackCopyWithImpl<$Res, PlaylistTrack>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'pandoraId')
-          String pandoraId,
-      @JsonKey(name: 'itemId')
-          int itemId,
-      @JsonKey(name: 'addedTimestamp', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          DateTime addedTimestamp,
-      @JsonKey(name: 'duration', fromJson: readOptionalSeconds, toJson: writeOptionalSeconds)
-          Duration? duration,
-      @JsonKey(name: 'trackPandoraId')
-          String trackPandoraId});
+      {@JsonKey(name: 'pandoraId') String pandoraId,
+      @JsonKey(name: 'itemId') int itemId,
+      @JsonKey(
+          name: 'addedTimestamp',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      DateTime addedTimestamp,
+      @JsonKey(
+          name: 'duration',
+          fromJson: readOptionalSeconds,
+          toJson: writeOptionalSeconds)
+      Duration? duration,
+      @JsonKey(name: 'trackPandoraId') String trackPandoraId});
 }
 
 /// @nodoc
@@ -72,6 +79,8 @@ class _$PlaylistTrackCopyWithImpl<$Res, $Val extends PlaylistTrack>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PlaylistTrack
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -107,34 +116,39 @@ class _$PlaylistTrackCopyWithImpl<$Res, $Val extends PlaylistTrack>
 }
 
 /// @nodoc
-abstract class _$$_PlaylistTrackCopyWith<$Res>
+abstract class _$$PlaylistTrackImplCopyWith<$Res>
     implements $PlaylistTrackCopyWith<$Res> {
-  factory _$$_PlaylistTrackCopyWith(
-          _$_PlaylistTrack value, $Res Function(_$_PlaylistTrack) then) =
-      __$$_PlaylistTrackCopyWithImpl<$Res>;
+  factory _$$PlaylistTrackImplCopyWith(
+          _$PlaylistTrackImpl value, $Res Function(_$PlaylistTrackImpl) then) =
+      __$$PlaylistTrackImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'pandoraId')
-          String pandoraId,
-      @JsonKey(name: 'itemId')
-          int itemId,
-      @JsonKey(name: 'addedTimestamp', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          DateTime addedTimestamp,
-      @JsonKey(name: 'duration', fromJson: readOptionalSeconds, toJson: writeOptionalSeconds)
-          Duration? duration,
-      @JsonKey(name: 'trackPandoraId')
-          String trackPandoraId});
+      {@JsonKey(name: 'pandoraId') String pandoraId,
+      @JsonKey(name: 'itemId') int itemId,
+      @JsonKey(
+          name: 'addedTimestamp',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      DateTime addedTimestamp,
+      @JsonKey(
+          name: 'duration',
+          fromJson: readOptionalSeconds,
+          toJson: writeOptionalSeconds)
+      Duration? duration,
+      @JsonKey(name: 'trackPandoraId') String trackPandoraId});
 }
 
 /// @nodoc
-class __$$_PlaylistTrackCopyWithImpl<$Res>
-    extends _$PlaylistTrackCopyWithImpl<$Res, _$_PlaylistTrack>
-    implements _$$_PlaylistTrackCopyWith<$Res> {
-  __$$_PlaylistTrackCopyWithImpl(
-      _$_PlaylistTrack _value, $Res Function(_$_PlaylistTrack) _then)
+class __$$PlaylistTrackImplCopyWithImpl<$Res>
+    extends _$PlaylistTrackCopyWithImpl<$Res, _$PlaylistTrackImpl>
+    implements _$$PlaylistTrackImplCopyWith<$Res> {
+  __$$PlaylistTrackImplCopyWithImpl(
+      _$PlaylistTrackImpl _value, $Res Function(_$PlaylistTrackImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PlaylistTrack
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -144,7 +158,7 @@ class __$$_PlaylistTrackCopyWithImpl<$Res>
     Object? duration = freezed,
     Object? trackPandoraId = null,
   }) {
-    return _then(_$_PlaylistTrack(
+    return _then(_$PlaylistTrackImpl(
       pandoraId: null == pandoraId
           ? _value.pandoraId
           : pandoraId // ignore: cast_nullable_to_non_nullable
@@ -171,22 +185,25 @@ class __$$_PlaylistTrackCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PlaylistTrack extends _PlaylistTrack {
-  const _$_PlaylistTrack(
-      {@JsonKey(name: 'pandoraId')
-          required this.pandoraId,
-      @JsonKey(name: 'itemId')
-          required this.itemId,
-      @JsonKey(name: 'addedTimestamp', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          required this.addedTimestamp,
-      @JsonKey(name: 'duration', fromJson: readOptionalSeconds, toJson: writeOptionalSeconds)
-          required this.duration,
-      @JsonKey(name: 'trackPandoraId')
-          required this.trackPandoraId})
+class _$PlaylistTrackImpl extends _PlaylistTrack {
+  const _$PlaylistTrackImpl(
+      {@JsonKey(name: 'pandoraId') required this.pandoraId,
+      @JsonKey(name: 'itemId') required this.itemId,
+      @JsonKey(
+          name: 'addedTimestamp',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      required this.addedTimestamp,
+      @JsonKey(
+          name: 'duration',
+          fromJson: readOptionalSeconds,
+          toJson: writeOptionalSeconds)
+      required this.duration,
+      @JsonKey(name: 'trackPandoraId') required this.trackPandoraId})
       : super._();
 
-  factory _$_PlaylistTrack.fromJson(Map<String, dynamic> json) =>
-      _$$_PlaylistTrackFromJson(json);
+  factory _$PlaylistTrackImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PlaylistTrackImplFromJson(json);
 
   @override
   @JsonKey(name: 'pandoraId')
@@ -216,10 +233,10 @@ class _$_PlaylistTrack extends _PlaylistTrack {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PlaylistTrack &&
+            other is _$PlaylistTrackImpl &&
             (identical(other.pandoraId, pandoraId) ||
                 other.pandoraId == pandoraId) &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
@@ -231,20 +248,22 @@ class _$_PlaylistTrack extends _PlaylistTrack {
                 other.trackPandoraId == trackPandoraId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, pandoraId, itemId, addedTimestamp, duration, trackPandoraId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PlaylistTrack
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PlaylistTrackCopyWith<_$_PlaylistTrack> get copyWith =>
-      __$$_PlaylistTrackCopyWithImpl<_$_PlaylistTrack>(this, _$identity);
+  _$$PlaylistTrackImplCopyWith<_$PlaylistTrackImpl> get copyWith =>
+      __$$PlaylistTrackImplCopyWithImpl<_$PlaylistTrackImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PlaylistTrackToJson(
+    return _$$PlaylistTrackImplToJson(
       this,
     );
   }
@@ -252,20 +271,24 @@ class _$_PlaylistTrack extends _PlaylistTrack {
 
 abstract class _PlaylistTrack extends PlaylistTrack {
   const factory _PlaylistTrack(
-      {@JsonKey(name: 'pandoraId')
-          required final String pandoraId,
-      @JsonKey(name: 'itemId')
-          required final int itemId,
-      @JsonKey(name: 'addedTimestamp', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          required final DateTime addedTimestamp,
-      @JsonKey(name: 'duration', fromJson: readOptionalSeconds, toJson: writeOptionalSeconds)
-          required final Duration? duration,
+      {@JsonKey(name: 'pandoraId') required final String pandoraId,
+      @JsonKey(name: 'itemId') required final int itemId,
+      @JsonKey(
+          name: 'addedTimestamp',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      required final DateTime addedTimestamp,
+      @JsonKey(
+          name: 'duration',
+          fromJson: readOptionalSeconds,
+          toJson: writeOptionalSeconds)
+      required final Duration? duration,
       @JsonKey(name: 'trackPandoraId')
-          required final String trackPandoraId}) = _$_PlaylistTrack;
+      required final String trackPandoraId}) = _$PlaylistTrackImpl;
   const _PlaylistTrack._() : super._();
 
   factory _PlaylistTrack.fromJson(Map<String, dynamic> json) =
-      _$_PlaylistTrack.fromJson;
+      _$PlaylistTrackImpl.fromJson;
 
   @override
   @JsonKey(name: 'pandoraId')
@@ -288,8 +311,11 @@ abstract class _PlaylistTrack extends PlaylistTrack {
   @override
   @JsonKey(name: 'trackPandoraId')
   String get trackPandoraId;
+
+  /// Create a copy of PlaylistTrack
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_PlaylistTrackCopyWith<_$_PlaylistTrack> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PlaylistTrackImplCopyWith<_$PlaylistTrackImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

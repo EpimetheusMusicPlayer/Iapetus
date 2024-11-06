@@ -8,11 +8,12 @@ part of 'track_key.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TrackKey _$$_TrackKeyFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$_TrackKey',
+_$TrackKeyImpl _$$TrackKeyImplFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      r'_$TrackKeyImpl',
       json,
       ($checkedConvert) {
-        final val = _$_TrackKey(
+        final val = _$TrackKeyImpl(
           trackId: $checkedConvert('trackId', (v) => v as String),
           trackType: $checkedConvert(
               'trackType', (v) => $enumDecode(_$TrackTypeEnumMap, v)),
@@ -23,7 +24,7 @@ _$_TrackKey _$$_TrackKeyFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$_TrackKeyToJson(_$_TrackKey instance) =>
+Map<String, dynamic> _$$TrackKeyImplToJson(_$TrackKeyImpl instance) =>
     <String, dynamic>{
       'trackId': instance.trackId,
       'trackType': _$TrackTypeEnumMap[instance.trackType]!,

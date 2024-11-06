@@ -12,7 +12,7 @@ part of 'rights_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 RightsInfo _$RightsInfoFromJson(Map<String, dynamic> json) {
   return _RightsInfo.fromJson(json);
@@ -36,8 +36,12 @@ mixin _$RightsInfo {
       toJson: writeMilliseconds)
   Duration get expiresIn => throw _privateConstructorUsedError;
 
+  /// Serializes this RightsInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RightsInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RightsInfoCopyWith<RightsInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,18 +53,16 @@ abstract class $RightsInfoCopyWith<$Res> {
       _$RightsInfoCopyWithImpl<$Res, RightsInfo>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'hasInteractive')
-          bool hasInteractive,
-      @JsonKey(name: 'hasOffline')
-          bool hasOffline,
-      @JsonKey(name: 'hasNonInteractive')
-          bool hasNonInteractive,
-      @JsonKey(name: 'hasStatutory')
-          bool hasStatutory,
-      @JsonKey(name: 'hasRadioRights')
-          bool hasRadioRights,
-      @JsonKey(name: 'expirationTime', fromJson: readMilliseconds, toJson: writeMilliseconds)
-          Duration expiresIn});
+      {@JsonKey(name: 'hasInteractive') bool hasInteractive,
+      @JsonKey(name: 'hasOffline') bool hasOffline,
+      @JsonKey(name: 'hasNonInteractive') bool hasNonInteractive,
+      @JsonKey(name: 'hasStatutory') bool hasStatutory,
+      @JsonKey(name: 'hasRadioRights') bool hasRadioRights,
+      @JsonKey(
+          name: 'expirationTime',
+          fromJson: readMilliseconds,
+          toJson: writeMilliseconds)
+      Duration expiresIn});
 }
 
 /// @nodoc
@@ -73,6 +75,8 @@ class _$RightsInfoCopyWithImpl<$Res, $Val extends RightsInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RightsInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -113,36 +117,36 @@ class _$RightsInfoCopyWithImpl<$Res, $Val extends RightsInfo>
 }
 
 /// @nodoc
-abstract class _$$_RightsInfoCopyWith<$Res>
+abstract class _$$RightsInfoImplCopyWith<$Res>
     implements $RightsInfoCopyWith<$Res> {
-  factory _$$_RightsInfoCopyWith(
-          _$_RightsInfo value, $Res Function(_$_RightsInfo) then) =
-      __$$_RightsInfoCopyWithImpl<$Res>;
+  factory _$$RightsInfoImplCopyWith(
+          _$RightsInfoImpl value, $Res Function(_$RightsInfoImpl) then) =
+      __$$RightsInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'hasInteractive')
-          bool hasInteractive,
-      @JsonKey(name: 'hasOffline')
-          bool hasOffline,
-      @JsonKey(name: 'hasNonInteractive')
-          bool hasNonInteractive,
-      @JsonKey(name: 'hasStatutory')
-          bool hasStatutory,
-      @JsonKey(name: 'hasRadioRights')
-          bool hasRadioRights,
-      @JsonKey(name: 'expirationTime', fromJson: readMilliseconds, toJson: writeMilliseconds)
-          Duration expiresIn});
+      {@JsonKey(name: 'hasInteractive') bool hasInteractive,
+      @JsonKey(name: 'hasOffline') bool hasOffline,
+      @JsonKey(name: 'hasNonInteractive') bool hasNonInteractive,
+      @JsonKey(name: 'hasStatutory') bool hasStatutory,
+      @JsonKey(name: 'hasRadioRights') bool hasRadioRights,
+      @JsonKey(
+          name: 'expirationTime',
+          fromJson: readMilliseconds,
+          toJson: writeMilliseconds)
+      Duration expiresIn});
 }
 
 /// @nodoc
-class __$$_RightsInfoCopyWithImpl<$Res>
-    extends _$RightsInfoCopyWithImpl<$Res, _$_RightsInfo>
-    implements _$$_RightsInfoCopyWith<$Res> {
-  __$$_RightsInfoCopyWithImpl(
-      _$_RightsInfo _value, $Res Function(_$_RightsInfo) _then)
+class __$$RightsInfoImplCopyWithImpl<$Res>
+    extends _$RightsInfoCopyWithImpl<$Res, _$RightsInfoImpl>
+    implements _$$RightsInfoImplCopyWith<$Res> {
+  __$$RightsInfoImplCopyWithImpl(
+      _$RightsInfoImpl _value, $Res Function(_$RightsInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RightsInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -153,7 +157,7 @@ class __$$_RightsInfoCopyWithImpl<$Res>
     Object? hasRadioRights = null,
     Object? expiresIn = null,
   }) {
-    return _then(_$_RightsInfo(
+    return _then(_$RightsInfoImpl(
       hasInteractive: null == hasInteractive
           ? _value.hasInteractive
           : hasInteractive // ignore: cast_nullable_to_non_nullable
@@ -184,23 +188,21 @@ class __$$_RightsInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RightsInfo implements _RightsInfo {
-  const _$_RightsInfo(
-      {@JsonKey(name: 'hasInteractive')
-          required this.hasInteractive,
-      @JsonKey(name: 'hasOffline')
-          required this.hasOffline,
-      @JsonKey(name: 'hasNonInteractive')
-          required this.hasNonInteractive,
-      @JsonKey(name: 'hasStatutory')
-          required this.hasStatutory,
-      @JsonKey(name: 'hasRadioRights')
-          required this.hasRadioRights,
-      @JsonKey(name: 'expirationTime', fromJson: readMilliseconds, toJson: writeMilliseconds)
-          required this.expiresIn});
+class _$RightsInfoImpl implements _RightsInfo {
+  const _$RightsInfoImpl(
+      {@JsonKey(name: 'hasInteractive') required this.hasInteractive,
+      @JsonKey(name: 'hasOffline') required this.hasOffline,
+      @JsonKey(name: 'hasNonInteractive') required this.hasNonInteractive,
+      @JsonKey(name: 'hasStatutory') required this.hasStatutory,
+      @JsonKey(name: 'hasRadioRights') required this.hasRadioRights,
+      @JsonKey(
+          name: 'expirationTime',
+          fromJson: readMilliseconds,
+          toJson: writeMilliseconds)
+      required this.expiresIn});
 
-  factory _$_RightsInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_RightsInfoFromJson(json);
+  factory _$RightsInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RightsInfoImplFromJson(json);
 
   @override
   @JsonKey(name: 'hasInteractive')
@@ -230,10 +232,10 @@ class _$_RightsInfo implements _RightsInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RightsInfo &&
+            other is _$RightsInfoImpl &&
             (identical(other.hasInteractive, hasInteractive) ||
                 other.hasInteractive == hasInteractive) &&
             (identical(other.hasOffline, hasOffline) ||
@@ -248,20 +250,22 @@ class _$_RightsInfo implements _RightsInfo {
                 other.expiresIn == expiresIn));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, hasInteractive, hasOffline,
       hasNonInteractive, hasStatutory, hasRadioRights, expiresIn);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RightsInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RightsInfoCopyWith<_$_RightsInfo> get copyWith =>
-      __$$_RightsInfoCopyWithImpl<_$_RightsInfo>(this, _$identity);
+  _$$RightsInfoImplCopyWith<_$RightsInfoImpl> get copyWith =>
+      __$$RightsInfoImplCopyWithImpl<_$RightsInfoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RightsInfoToJson(
+    return _$$RightsInfoImplToJson(
       this,
     );
   }
@@ -269,21 +273,19 @@ class _$_RightsInfo implements _RightsInfo {
 
 abstract class _RightsInfo implements RightsInfo {
   const factory _RightsInfo(
-      {@JsonKey(name: 'hasInteractive')
-          required final bool hasInteractive,
-      @JsonKey(name: 'hasOffline')
-          required final bool hasOffline,
-      @JsonKey(name: 'hasNonInteractive')
-          required final bool hasNonInteractive,
-      @JsonKey(name: 'hasStatutory')
-          required final bool hasStatutory,
-      @JsonKey(name: 'hasRadioRights')
-          required final bool hasRadioRights,
-      @JsonKey(name: 'expirationTime', fromJson: readMilliseconds, toJson: writeMilliseconds)
-          required final Duration expiresIn}) = _$_RightsInfo;
+      {@JsonKey(name: 'hasInteractive') required final bool hasInteractive,
+      @JsonKey(name: 'hasOffline') required final bool hasOffline,
+      @JsonKey(name: 'hasNonInteractive') required final bool hasNonInteractive,
+      @JsonKey(name: 'hasStatutory') required final bool hasStatutory,
+      @JsonKey(name: 'hasRadioRights') required final bool hasRadioRights,
+      @JsonKey(
+          name: 'expirationTime',
+          fromJson: readMilliseconds,
+          toJson: writeMilliseconds)
+      required final Duration expiresIn}) = _$RightsInfoImpl;
 
   factory _RightsInfo.fromJson(Map<String, dynamic> json) =
-      _$_RightsInfo.fromJson;
+      _$RightsInfoImpl.fromJson;
 
   @override
   @JsonKey(name: 'hasInteractive')
@@ -306,8 +308,11 @@ abstract class _RightsInfo implements RightsInfo {
       fromJson: readMilliseconds,
       toJson: writeMilliseconds)
   Duration get expiresIn;
+
+  /// Create a copy of RightsInfo
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_RightsInfoCopyWith<_$_RightsInfo> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RightsInfoImplCopyWith<_$RightsInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

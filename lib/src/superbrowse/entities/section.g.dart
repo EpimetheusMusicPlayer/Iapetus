@@ -8,13 +8,13 @@ part of 'section.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SuperbrowseSection _$$_SuperbrowseSectionFromJson(
+_$SuperbrowseSectionImpl _$$SuperbrowseSectionImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_SuperbrowseSection',
+      r'_$SuperbrowseSectionImpl',
       json,
       ($checkedConvert) {
-        final val = _$_SuperbrowseSection(
+        final val = _$SuperbrowseSectionImpl(
           id: $checkedConvert('id', (v) => v as String),
           header: $checkedConvert(
               'title',
@@ -38,8 +38,8 @@ _$_SuperbrowseSection _$$_SuperbrowseSectionFromJson(
       fieldKeyMap: const {'header': 'title', 'footer': 'viewAll'},
     );
 
-Map<String, dynamic> _$$_SuperbrowseSectionToJson(
-        _$_SuperbrowseSection instance) =>
+Map<String, dynamic> _$$SuperbrowseSectionImplToJson(
+        _$SuperbrowseSectionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.header,

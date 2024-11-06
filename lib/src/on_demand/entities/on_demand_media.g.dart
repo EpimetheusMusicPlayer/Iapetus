@@ -8,12 +8,12 @@ part of 'on_demand_media.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_OnDemandMedia _$$_OnDemandMediaFromJson(Map<String, dynamic> json) =>
+_$OnDemandMediaImpl _$$OnDemandMediaImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_OnDemandMedia',
+      r'_$OnDemandMediaImpl',
       json,
       ($checkedConvert) {
-        final val = _$_OnDemandMedia(
+        final val = _$OnDemandMediaImpl(
           audioSkipUrl:
               $checkedConvert('audioSkipUrl', (v) => Uri.parse(v as String)),
           audioReceiptUrl:
@@ -31,7 +31,7 @@ _$_OnDemandMedia _$$_OnDemandMediaFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_OnDemandMediaToJson(_$_OnDemandMedia instance) =>
+Map<String, dynamic> _$$OnDemandMediaImplToJson(_$OnDemandMediaImpl instance) =>
     <String, dynamic>{
       'audioSkipUrl': instance.audioSkipUrl.toString(),
       'audioReceiptUrl': instance.audioReceiptUrl.toString(),

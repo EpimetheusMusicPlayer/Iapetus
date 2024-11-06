@@ -8,12 +8,12 @@ part of 'rights_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RightsInfo _$$_RightsInfoFromJson(Map<String, dynamic> json) =>
+_$RightsInfoImpl _$$RightsInfoImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_RightsInfo',
+      r'_$RightsInfoImpl',
       json,
       ($checkedConvert) {
-        final val = _$_RightsInfo(
+        final val = _$RightsInfoImpl(
           hasInteractive: $checkedConvert('hasInteractive', (v) => v as bool),
           hasOffline: $checkedConvert('hasOffline', (v) => v as bool),
           hasNonInteractive:
@@ -21,14 +21,14 @@ _$_RightsInfo _$$_RightsInfoFromJson(Map<String, dynamic> json) =>
           hasStatutory: $checkedConvert('hasStatutory', (v) => v as bool),
           hasRadioRights: $checkedConvert('hasRadioRights', (v) => v as bool),
           expiresIn: $checkedConvert(
-              'expirationTime', (v) => readMilliseconds(v as int)),
+              'expirationTime', (v) => readMilliseconds((v as num).toInt())),
         );
         return val;
       },
       fieldKeyMap: const {'expiresIn': 'expirationTime'},
     );
 
-Map<String, dynamic> _$$_RightsInfoToJson(_$_RightsInfo instance) =>
+Map<String, dynamic> _$$RightsInfoImplToJson(_$RightsInfoImpl instance) =>
     <String, dynamic>{
       'hasInteractive': instance.hasInteractive,
       'hasOffline': instance.hasOffline,

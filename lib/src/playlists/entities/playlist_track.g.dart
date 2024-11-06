@@ -8,25 +8,25 @@ part of 'playlist_track.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PlaylistTrack _$$_PlaylistTrackFromJson(Map<String, dynamic> json) =>
+_$PlaylistTrackImpl _$$PlaylistTrackImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_PlaylistTrack',
+      r'_$PlaylistTrackImpl',
       json,
       ($checkedConvert) {
-        final val = _$_PlaylistTrack(
+        final val = _$PlaylistTrackImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String),
-          itemId: $checkedConvert('itemId', (v) => v as int),
-          addedTimestamp: $checkedConvert(
-              'addedTimestamp', (v) => readDateTimeMilliseconds(v as int)),
+          itemId: $checkedConvert('itemId', (v) => (v as num).toInt()),
+          addedTimestamp: $checkedConvert('addedTimestamp',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           duration: $checkedConvert(
-              'duration', (v) => readOptionalSeconds(v as int?)),
+              'duration', (v) => readOptionalSeconds((v as num?)?.toInt())),
           trackPandoraId: $checkedConvert('trackPandoraId', (v) => v as String),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$$_PlaylistTrackToJson(_$_PlaylistTrack instance) =>
+Map<String, dynamic> _$$PlaylistTrackImplToJson(_$PlaylistTrackImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'itemId': instance.itemId,

@@ -12,7 +12,7 @@ part of 'collection_item.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CollectionItem _$CollectionItemFromJson(Map<String, dynamic> json) {
   return _CollectionItem.fromJson(json);
@@ -39,8 +39,12 @@ mixin _$CollectionItem {
   @JsonKey(name: 'ownerPandoraId')
   String? get ownerPandoraId => throw _privateConstructorUsedError;
 
+  /// Serializes this CollectionItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CollectionItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CollectionItemCopyWith<CollectionItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,18 +56,20 @@ abstract class $CollectionItemCopyWith<$Res> {
       _$CollectionItemCopyWithImpl<$Res, CollectionItem>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'pandoraId')
-          String pandoraId,
-      @JsonKey(name: 'pandoraType')
-          PandoraType pandoraType,
-      @JsonKey(name: 'addedTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          DateTime addedTime,
-      @JsonKey(name: 'updatedTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          DateTime updatedTime,
-      @JsonKey(name: 'ownerId')
-          int? ownerId,
-      @JsonKey(name: 'ownerPandoraId')
-          String? ownerPandoraId});
+      {@JsonKey(name: 'pandoraId') String pandoraId,
+      @JsonKey(name: 'pandoraType') PandoraType pandoraType,
+      @JsonKey(
+          name: 'addedTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      DateTime addedTime,
+      @JsonKey(
+          name: 'updatedTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      DateTime updatedTime,
+      @JsonKey(name: 'ownerId') int? ownerId,
+      @JsonKey(name: 'ownerPandoraId') String? ownerPandoraId});
 }
 
 /// @nodoc
@@ -76,6 +82,8 @@ class _$CollectionItemCopyWithImpl<$Res, $Val extends CollectionItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CollectionItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -116,36 +124,40 @@ class _$CollectionItemCopyWithImpl<$Res, $Val extends CollectionItem>
 }
 
 /// @nodoc
-abstract class _$$_CollectionItemCopyWith<$Res>
+abstract class _$$CollectionItemImplCopyWith<$Res>
     implements $CollectionItemCopyWith<$Res> {
-  factory _$$_CollectionItemCopyWith(
-          _$_CollectionItem value, $Res Function(_$_CollectionItem) then) =
-      __$$_CollectionItemCopyWithImpl<$Res>;
+  factory _$$CollectionItemImplCopyWith(_$CollectionItemImpl value,
+          $Res Function(_$CollectionItemImpl) then) =
+      __$$CollectionItemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'pandoraId')
-          String pandoraId,
-      @JsonKey(name: 'pandoraType')
-          PandoraType pandoraType,
-      @JsonKey(name: 'addedTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          DateTime addedTime,
-      @JsonKey(name: 'updatedTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          DateTime updatedTime,
-      @JsonKey(name: 'ownerId')
-          int? ownerId,
-      @JsonKey(name: 'ownerPandoraId')
-          String? ownerPandoraId});
+      {@JsonKey(name: 'pandoraId') String pandoraId,
+      @JsonKey(name: 'pandoraType') PandoraType pandoraType,
+      @JsonKey(
+          name: 'addedTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      DateTime addedTime,
+      @JsonKey(
+          name: 'updatedTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      DateTime updatedTime,
+      @JsonKey(name: 'ownerId') int? ownerId,
+      @JsonKey(name: 'ownerPandoraId') String? ownerPandoraId});
 }
 
 /// @nodoc
-class __$$_CollectionItemCopyWithImpl<$Res>
-    extends _$CollectionItemCopyWithImpl<$Res, _$_CollectionItem>
-    implements _$$_CollectionItemCopyWith<$Res> {
-  __$$_CollectionItemCopyWithImpl(
-      _$_CollectionItem _value, $Res Function(_$_CollectionItem) _then)
+class __$$CollectionItemImplCopyWithImpl<$Res>
+    extends _$CollectionItemCopyWithImpl<$Res, _$CollectionItemImpl>
+    implements _$$CollectionItemImplCopyWith<$Res> {
+  __$$CollectionItemImplCopyWithImpl(
+      _$CollectionItemImpl _value, $Res Function(_$CollectionItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CollectionItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -156,7 +168,7 @@ class __$$_CollectionItemCopyWithImpl<$Res>
     Object? ownerId = freezed,
     Object? ownerPandoraId = freezed,
   }) {
-    return _then(_$_CollectionItem(
+    return _then(_$CollectionItemImpl(
       pandoraId: null == pandoraId
           ? _value.pandoraId
           : pandoraId // ignore: cast_nullable_to_non_nullable
@@ -187,23 +199,25 @@ class __$$_CollectionItemCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CollectionItem implements _CollectionItem {
-  const _$_CollectionItem(
-      {@JsonKey(name: 'pandoraId')
-          required this.pandoraId,
-      @JsonKey(name: 'pandoraType')
-          required this.pandoraType,
-      @JsonKey(name: 'addedTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          required this.addedTime,
-      @JsonKey(name: 'updatedTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          required this.updatedTime,
-      @JsonKey(name: 'ownerId')
-          this.ownerId,
-      @JsonKey(name: 'ownerPandoraId')
-          this.ownerPandoraId});
+class _$CollectionItemImpl implements _CollectionItem {
+  const _$CollectionItemImpl(
+      {@JsonKey(name: 'pandoraId') required this.pandoraId,
+      @JsonKey(name: 'pandoraType') required this.pandoraType,
+      @JsonKey(
+          name: 'addedTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      required this.addedTime,
+      @JsonKey(
+          name: 'updatedTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      required this.updatedTime,
+      @JsonKey(name: 'ownerId') this.ownerId,
+      @JsonKey(name: 'ownerPandoraId') this.ownerPandoraId});
 
-  factory _$_CollectionItem.fromJson(Map<String, dynamic> json) =>
-      _$$_CollectionItemFromJson(json);
+  factory _$CollectionItemImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CollectionItemImplFromJson(json);
 
   @override
   @JsonKey(name: 'pandoraId')
@@ -236,10 +250,10 @@ class _$_CollectionItem implements _CollectionItem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CollectionItem &&
+            other is _$CollectionItemImpl &&
             (identical(other.pandoraId, pandoraId) ||
                 other.pandoraId == pandoraId) &&
             (identical(other.pandoraType, pandoraType) ||
@@ -253,20 +267,23 @@ class _$_CollectionItem implements _CollectionItem {
                 other.ownerPandoraId == ownerPandoraId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, pandoraId, pandoraType,
       addedTime, updatedTime, ownerId, ownerPandoraId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CollectionItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CollectionItemCopyWith<_$_CollectionItem> get copyWith =>
-      __$$_CollectionItemCopyWithImpl<_$_CollectionItem>(this, _$identity);
+  _$$CollectionItemImplCopyWith<_$CollectionItemImpl> get copyWith =>
+      __$$CollectionItemImplCopyWithImpl<_$CollectionItemImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CollectionItemToJson(
+    return _$$CollectionItemImplToJson(
       this,
     );
   }
@@ -274,21 +291,24 @@ class _$_CollectionItem implements _CollectionItem {
 
 abstract class _CollectionItem implements CollectionItem {
   const factory _CollectionItem(
-      {@JsonKey(name: 'pandoraId')
-          required final String pandoraId,
-      @JsonKey(name: 'pandoraType')
-          required final PandoraType pandoraType,
-      @JsonKey(name: 'addedTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
+          {@JsonKey(name: 'pandoraId') required final String pandoraId,
+          @JsonKey(name: 'pandoraType') required final PandoraType pandoraType,
+          @JsonKey(
+              name: 'addedTime',
+              fromJson: readDateTimeMilliseconds,
+              toJson: writeDateTimeMilliseconds)
           required final DateTime addedTime,
-      @JsonKey(name: 'updatedTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
+          @JsonKey(
+              name: 'updatedTime',
+              fromJson: readDateTimeMilliseconds,
+              toJson: writeDateTimeMilliseconds)
           required final DateTime updatedTime,
-      @JsonKey(name: 'ownerId')
-          final int? ownerId,
-      @JsonKey(name: 'ownerPandoraId')
-          final String? ownerPandoraId}) = _$_CollectionItem;
+          @JsonKey(name: 'ownerId') final int? ownerId,
+          @JsonKey(name: 'ownerPandoraId') final String? ownerPandoraId}) =
+      _$CollectionItemImpl;
 
   factory _CollectionItem.fromJson(Map<String, dynamic> json) =
-      _$_CollectionItem.fromJson;
+      _$CollectionItemImpl.fromJson;
 
   @override
   @JsonKey(name: 'pandoraId')
@@ -314,8 +334,11 @@ abstract class _CollectionItem implements CollectionItem {
   @override
   @JsonKey(name: 'ownerPandoraId')
   String? get ownerPandoraId;
+
+  /// Create a copy of CollectionItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_CollectionItemCopyWith<_$_CollectionItem> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CollectionItemImplCopyWith<_$CollectionItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

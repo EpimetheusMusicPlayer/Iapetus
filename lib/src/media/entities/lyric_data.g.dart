@@ -8,13 +8,13 @@ part of 'lyric_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_IapetusMediaLyricData _$$_IapetusMediaLyricDataFromJson(
+_$IapetusMediaLyricDataImpl _$$IapetusMediaLyricDataImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_IapetusMediaLyricData',
+      r'_$IapetusMediaLyricDataImpl',
       json,
       ($checkedConvert) {
-        final val = _$_IapetusMediaLyricData(
+        final val = _$IapetusMediaLyricDataImpl(
           lyricId: $checkedConvert('lyricId', (v) => v as String),
           lyricSnippetHtml: $checkedConvert('lyricSnippet', (v) => v as String),
           lyricCreditsHtml: $checkedConvert('lyricCredits', (v) => v as String),
@@ -27,8 +27,8 @@ _$_IapetusMediaLyricData _$$_IapetusMediaLyricDataFromJson(
       },
     );
 
-Map<String, dynamic> _$$_IapetusMediaLyricDataToJson(
-        _$_IapetusMediaLyricData instance) =>
+Map<String, dynamic> _$$IapetusMediaLyricDataImplToJson(
+        _$IapetusMediaLyricDataImpl instance) =>
     <String, dynamic>{
       'lyricId': instance.lyricId,
       'lyricSnippet': instance.lyricSnippetHtml,

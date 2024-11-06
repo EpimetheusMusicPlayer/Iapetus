@@ -12,7 +12,7 @@ part of 'iapetus_proxy_config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$IapetusProxyConfig {
@@ -78,29 +78,37 @@ class _$IapetusProxyConfigCopyWithImpl<$Res, $Val extends IapetusProxyConfig>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of IapetusProxyConfig
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$NoProxyIapetusProxyConfigCopyWith<$Res> {
-  factory _$$NoProxyIapetusProxyConfigCopyWith(
-          _$NoProxyIapetusProxyConfig value,
-          $Res Function(_$NoProxyIapetusProxyConfig) then) =
-      __$$NoProxyIapetusProxyConfigCopyWithImpl<$Res>;
+abstract class _$$NoProxyIapetusProxyConfigImplCopyWith<$Res> {
+  factory _$$NoProxyIapetusProxyConfigImplCopyWith(
+          _$NoProxyIapetusProxyConfigImpl value,
+          $Res Function(_$NoProxyIapetusProxyConfigImpl) then) =
+      __$$NoProxyIapetusProxyConfigImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NoProxyIapetusProxyConfigCopyWithImpl<$Res>
-    extends _$IapetusProxyConfigCopyWithImpl<$Res, _$NoProxyIapetusProxyConfig>
-    implements _$$NoProxyIapetusProxyConfigCopyWith<$Res> {
-  __$$NoProxyIapetusProxyConfigCopyWithImpl(_$NoProxyIapetusProxyConfig _value,
-      $Res Function(_$NoProxyIapetusProxyConfig) _then)
+class __$$NoProxyIapetusProxyConfigImplCopyWithImpl<$Res>
+    extends _$IapetusProxyConfigCopyWithImpl<$Res,
+        _$NoProxyIapetusProxyConfigImpl>
+    implements _$$NoProxyIapetusProxyConfigImplCopyWith<$Res> {
+  __$$NoProxyIapetusProxyConfigImplCopyWithImpl(
+      _$NoProxyIapetusProxyConfigImpl _value,
+      $Res Function(_$NoProxyIapetusProxyConfigImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of IapetusProxyConfig
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$NoProxyIapetusProxyConfig implements NoProxyIapetusProxyConfig {
-  const _$NoProxyIapetusProxyConfig();
+class _$NoProxyIapetusProxyConfigImpl implements NoProxyIapetusProxyConfig {
+  const _$NoProxyIapetusProxyConfigImpl();
 
   @override
   String toString() {
@@ -108,10 +116,10 @@ class _$NoProxyIapetusProxyConfig implements NoProxyIapetusProxyConfig {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NoProxyIapetusProxyConfig);
+            other is _$NoProxyIapetusProxyConfigImpl);
   }
 
   @override
@@ -187,29 +195,35 @@ class _$NoProxyIapetusProxyConfig implements NoProxyIapetusProxyConfig {
 }
 
 abstract class NoProxyIapetusProxyConfig implements IapetusProxyConfig {
-  const factory NoProxyIapetusProxyConfig() = _$NoProxyIapetusProxyConfig;
+  const factory NoProxyIapetusProxyConfig() = _$NoProxyIapetusProxyConfigImpl;
 }
 
 /// @nodoc
-abstract class _$$SystemIapetusProxyConfigCopyWith<$Res> {
-  factory _$$SystemIapetusProxyConfigCopyWith(_$SystemIapetusProxyConfig value,
-          $Res Function(_$SystemIapetusProxyConfig) then) =
-      __$$SystemIapetusProxyConfigCopyWithImpl<$Res>;
+abstract class _$$SystemIapetusProxyConfigImplCopyWith<$Res> {
+  factory _$$SystemIapetusProxyConfigImplCopyWith(
+          _$SystemIapetusProxyConfigImpl value,
+          $Res Function(_$SystemIapetusProxyConfigImpl) then) =
+      __$$SystemIapetusProxyConfigImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SystemIapetusProxyConfigCopyWithImpl<$Res>
-    extends _$IapetusProxyConfigCopyWithImpl<$Res, _$SystemIapetusProxyConfig>
-    implements _$$SystemIapetusProxyConfigCopyWith<$Res> {
-  __$$SystemIapetusProxyConfigCopyWithImpl(_$SystemIapetusProxyConfig _value,
-      $Res Function(_$SystemIapetusProxyConfig) _then)
+class __$$SystemIapetusProxyConfigImplCopyWithImpl<$Res>
+    extends _$IapetusProxyConfigCopyWithImpl<$Res,
+        _$SystemIapetusProxyConfigImpl>
+    implements _$$SystemIapetusProxyConfigImplCopyWith<$Res> {
+  __$$SystemIapetusProxyConfigImplCopyWithImpl(
+      _$SystemIapetusProxyConfigImpl _value,
+      $Res Function(_$SystemIapetusProxyConfigImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of IapetusProxyConfig
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$SystemIapetusProxyConfig implements SystemIapetusProxyConfig {
-  const _$SystemIapetusProxyConfig();
+class _$SystemIapetusProxyConfigImpl implements SystemIapetusProxyConfig {
+  const _$SystemIapetusProxyConfigImpl();
 
   @override
   String toString() {
@@ -217,10 +231,10 @@ class _$SystemIapetusProxyConfig implements SystemIapetusProxyConfig {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SystemIapetusProxyConfig);
+            other is _$SystemIapetusProxyConfigImpl);
   }
 
   @override
@@ -296,36 +310,38 @@ class _$SystemIapetusProxyConfig implements SystemIapetusProxyConfig {
 }
 
 abstract class SystemIapetusProxyConfig implements IapetusProxyConfig {
-  const factory SystemIapetusProxyConfig() = _$SystemIapetusProxyConfig;
+  const factory SystemIapetusProxyConfig() = _$SystemIapetusProxyConfigImpl;
 }
 
 /// @nodoc
-abstract class _$$HttpProxyIapetusProxyConfigCopyWith<$Res> {
-  factory _$$HttpProxyIapetusProxyConfigCopyWith(
-          _$HttpProxyIapetusProxyConfig value,
-          $Res Function(_$HttpProxyIapetusProxyConfig) then) =
-      __$$HttpProxyIapetusProxyConfigCopyWithImpl<$Res>;
+abstract class _$$HttpProxyIapetusProxyConfigImplCopyWith<$Res> {
+  factory _$$HttpProxyIapetusProxyConfigImplCopyWith(
+          _$HttpProxyIapetusProxyConfigImpl value,
+          $Res Function(_$HttpProxyIapetusProxyConfigImpl) then) =
+      __$$HttpProxyIapetusProxyConfigImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String host, int port});
 }
 
 /// @nodoc
-class __$$HttpProxyIapetusProxyConfigCopyWithImpl<$Res>
+class __$$HttpProxyIapetusProxyConfigImplCopyWithImpl<$Res>
     extends _$IapetusProxyConfigCopyWithImpl<$Res,
-        _$HttpProxyIapetusProxyConfig>
-    implements _$$HttpProxyIapetusProxyConfigCopyWith<$Res> {
-  __$$HttpProxyIapetusProxyConfigCopyWithImpl(
-      _$HttpProxyIapetusProxyConfig _value,
-      $Res Function(_$HttpProxyIapetusProxyConfig) _then)
+        _$HttpProxyIapetusProxyConfigImpl>
+    implements _$$HttpProxyIapetusProxyConfigImplCopyWith<$Res> {
+  __$$HttpProxyIapetusProxyConfigImplCopyWithImpl(
+      _$HttpProxyIapetusProxyConfigImpl _value,
+      $Res Function(_$HttpProxyIapetusProxyConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IapetusProxyConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? host = null,
     Object? port = null,
   }) {
-    return _then(_$HttpProxyIapetusProxyConfig(
+    return _then(_$HttpProxyIapetusProxyConfigImpl(
       host: null == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
@@ -340,8 +356,9 @@ class __$$HttpProxyIapetusProxyConfigCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HttpProxyIapetusProxyConfig implements HttpProxyIapetusProxyConfig {
-  const _$HttpProxyIapetusProxyConfig({required this.host, required this.port});
+class _$HttpProxyIapetusProxyConfigImpl implements HttpProxyIapetusProxyConfig {
+  const _$HttpProxyIapetusProxyConfigImpl(
+      {required this.host, required this.port});
 
   @override
   final String host;
@@ -354,10 +371,10 @@ class _$HttpProxyIapetusProxyConfig implements HttpProxyIapetusProxyConfig {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HttpProxyIapetusProxyConfig &&
+            other is _$HttpProxyIapetusProxyConfigImpl &&
             (identical(other.host, host) || other.host == host) &&
             (identical(other.port, port) || other.port == port));
   }
@@ -365,12 +382,14 @@ class _$HttpProxyIapetusProxyConfig implements HttpProxyIapetusProxyConfig {
   @override
   int get hashCode => Object.hash(runtimeType, host, port);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IapetusProxyConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HttpProxyIapetusProxyConfigCopyWith<_$HttpProxyIapetusProxyConfig>
-      get copyWith => __$$HttpProxyIapetusProxyConfigCopyWithImpl<
-          _$HttpProxyIapetusProxyConfig>(this, _$identity);
+  _$$HttpProxyIapetusProxyConfigImplCopyWith<_$HttpProxyIapetusProxyConfigImpl>
+      get copyWith => __$$HttpProxyIapetusProxyConfigImplCopyWithImpl<
+          _$HttpProxyIapetusProxyConfigImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -444,11 +463,14 @@ class _$HttpProxyIapetusProxyConfig implements HttpProxyIapetusProxyConfig {
 abstract class HttpProxyIapetusProxyConfig implements IapetusProxyConfig {
   const factory HttpProxyIapetusProxyConfig(
       {required final String host,
-      required final int port}) = _$HttpProxyIapetusProxyConfig;
+      required final int port}) = _$HttpProxyIapetusProxyConfigImpl;
 
   String get host;
   int get port;
-  @JsonKey(ignore: true)
-  _$$HttpProxyIapetusProxyConfigCopyWith<_$HttpProxyIapetusProxyConfig>
+
+  /// Create a copy of IapetusProxyConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HttpProxyIapetusProxyConfigImplCopyWith<_$HttpProxyIapetusProxyConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

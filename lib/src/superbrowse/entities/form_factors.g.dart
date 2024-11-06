@@ -8,12 +8,12 @@ part of 'form_factors.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FormFactors _$$_FormFactorsFromJson(Map<String, dynamic> json) =>
+_$FormFactorsImpl _$$FormFactorsImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_FormFactors',
+      r'_$FormFactorsImpl',
       json,
       ($checkedConvert) {
-        final val = _$_FormFactors(
+        final val = _$FormFactorsImpl(
           portrait: $checkedConvert('portrait',
               (v) => FormFactor.fromJson(v as Map<String, dynamic>)),
           landscape: $checkedConvert('landscape',
@@ -23,7 +23,7 @@ _$_FormFactors _$$_FormFactorsFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_FormFactorsToJson(_$_FormFactors instance) =>
+Map<String, dynamic> _$$FormFactorsImplToJson(_$FormFactorsImpl instance) =>
     <String, dynamic>{
       'portrait': instance.portrait,
       'landscape': instance.landscape,

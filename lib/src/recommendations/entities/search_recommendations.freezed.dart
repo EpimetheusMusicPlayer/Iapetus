@@ -12,7 +12,7 @@ part of 'search_recommendations.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SearchRecommendations _$SearchRecommendationsFromJson(
     Map<String, dynamic> json) {
@@ -27,8 +27,12 @@ mixin _$SearchRecommendations {
   List<GenreStationRecommendation> get genreStations =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this SearchRecommendations to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchRecommendations
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SearchRecommendationsCopyWith<SearchRecommendations> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -40,10 +44,9 @@ abstract class $SearchRecommendationsCopyWith<$Res> {
       _$SearchRecommendationsCopyWithImpl<$Res, SearchRecommendations>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'artists')
-          List<ArtistRecommendation> artists,
+      {@JsonKey(name: 'artists') List<ArtistRecommendation> artists,
       @JsonKey(name: 'genreStations')
-          List<GenreStationRecommendation> genreStations});
+      List<GenreStationRecommendation> genreStations});
 }
 
 /// @nodoc
@@ -57,6 +60,8 @@ class _$SearchRecommendationsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SearchRecommendations
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -77,35 +82,38 @@ class _$SearchRecommendationsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SearchRecommendationsCopyWith<$Res>
+abstract class _$$SearchRecommendationsImplCopyWith<$Res>
     implements $SearchRecommendationsCopyWith<$Res> {
-  factory _$$_SearchRecommendationsCopyWith(_$_SearchRecommendations value,
-          $Res Function(_$_SearchRecommendations) then) =
-      __$$_SearchRecommendationsCopyWithImpl<$Res>;
+  factory _$$SearchRecommendationsImplCopyWith(
+          _$SearchRecommendationsImpl value,
+          $Res Function(_$SearchRecommendationsImpl) then) =
+      __$$SearchRecommendationsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'artists')
-          List<ArtistRecommendation> artists,
+      {@JsonKey(name: 'artists') List<ArtistRecommendation> artists,
       @JsonKey(name: 'genreStations')
-          List<GenreStationRecommendation> genreStations});
+      List<GenreStationRecommendation> genreStations});
 }
 
 /// @nodoc
-class __$$_SearchRecommendationsCopyWithImpl<$Res>
-    extends _$SearchRecommendationsCopyWithImpl<$Res, _$_SearchRecommendations>
-    implements _$$_SearchRecommendationsCopyWith<$Res> {
-  __$$_SearchRecommendationsCopyWithImpl(_$_SearchRecommendations _value,
-      $Res Function(_$_SearchRecommendations) _then)
+class __$$SearchRecommendationsImplCopyWithImpl<$Res>
+    extends _$SearchRecommendationsCopyWithImpl<$Res,
+        _$SearchRecommendationsImpl>
+    implements _$$SearchRecommendationsImplCopyWith<$Res> {
+  __$$SearchRecommendationsImplCopyWithImpl(_$SearchRecommendationsImpl _value,
+      $Res Function(_$SearchRecommendationsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchRecommendations
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? artists = null,
     Object? genreStations = null,
   }) {
-    return _then(_$_SearchRecommendations(
+    return _then(_$SearchRecommendationsImpl(
       artists: null == artists
           ? _value._artists
           : artists // ignore: cast_nullable_to_non_nullable
@@ -120,17 +128,17 @@ class __$$_SearchRecommendationsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SearchRecommendations implements _SearchRecommendations {
-  const _$_SearchRecommendations(
+class _$SearchRecommendationsImpl implements _SearchRecommendations {
+  const _$SearchRecommendationsImpl(
       {@JsonKey(name: 'artists')
-          required final List<ArtistRecommendation> artists,
+      required final List<ArtistRecommendation> artists,
       @JsonKey(name: 'genreStations')
-          required final List<GenreStationRecommendation> genreStations})
+      required final List<GenreStationRecommendation> genreStations})
       : _artists = artists,
         _genreStations = genreStations;
 
-  factory _$_SearchRecommendations.fromJson(Map<String, dynamic> json) =>
-      _$$_SearchRecommendationsFromJson(json);
+  factory _$SearchRecommendationsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SearchRecommendationsImplFromJson(json);
 
   final List<ArtistRecommendation> _artists;
   @override
@@ -156,32 +164,34 @@ class _$_SearchRecommendations implements _SearchRecommendations {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchRecommendations &&
+            other is _$SearchRecommendationsImpl &&
             const DeepCollectionEquality().equals(other._artists, _artists) &&
             const DeepCollectionEquality()
                 .equals(other._genreStations, _genreStations));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_artists),
       const DeepCollectionEquality().hash(_genreStations));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchRecommendations
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SearchRecommendationsCopyWith<_$_SearchRecommendations> get copyWith =>
-      __$$_SearchRecommendationsCopyWithImpl<_$_SearchRecommendations>(
-          this, _$identity);
+  _$$SearchRecommendationsImplCopyWith<_$SearchRecommendationsImpl>
+      get copyWith => __$$SearchRecommendationsImplCopyWithImpl<
+          _$SearchRecommendationsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SearchRecommendationsToJson(
+    return _$$SearchRecommendationsImplToJson(
       this,
     );
   }
@@ -190,13 +200,13 @@ class _$_SearchRecommendations implements _SearchRecommendations {
 abstract class _SearchRecommendations implements SearchRecommendations {
   const factory _SearchRecommendations(
           {@JsonKey(name: 'artists')
-              required final List<ArtistRecommendation> artists,
+          required final List<ArtistRecommendation> artists,
           @JsonKey(name: 'genreStations')
-              required final List<GenreStationRecommendation> genreStations}) =
-      _$_SearchRecommendations;
+          required final List<GenreStationRecommendation> genreStations}) =
+      _$SearchRecommendationsImpl;
 
   factory _SearchRecommendations.fromJson(Map<String, dynamic> json) =
-      _$_SearchRecommendations.fromJson;
+      _$SearchRecommendationsImpl.fromJson;
 
   @override
   @JsonKey(name: 'artists')
@@ -204,8 +214,11 @@ abstract class _SearchRecommendations implements SearchRecommendations {
   @override
   @JsonKey(name: 'genreStations')
   List<GenreStationRecommendation> get genreStations;
+
+  /// Create a copy of SearchRecommendations
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SearchRecommendationsCopyWith<_$_SearchRecommendations> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SearchRecommendationsImplCopyWith<_$SearchRecommendationsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

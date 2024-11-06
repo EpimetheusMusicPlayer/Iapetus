@@ -8,13 +8,13 @@ part of 'search_recommendations.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SearchRecommendations _$$_SearchRecommendationsFromJson(
+_$SearchRecommendationsImpl _$$SearchRecommendationsImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_SearchRecommendations',
+      r'_$SearchRecommendationsImpl',
       json,
       ($checkedConvert) {
-        final val = _$_SearchRecommendations(
+        final val = _$SearchRecommendationsImpl(
           artists: $checkedConvert(
               'artists',
               (v) => (v as List<dynamic>)
@@ -32,8 +32,8 @@ _$_SearchRecommendations _$$_SearchRecommendationsFromJson(
       },
     );
 
-Map<String, dynamic> _$$_SearchRecommendationsToJson(
-        _$_SearchRecommendations instance) =>
+Map<String, dynamic> _$$SearchRecommendationsImplToJson(
+        _$SearchRecommendationsImpl instance) =>
     <String, dynamic>{
       'artists': instance.artists,
       'genreStations': instance.genreStations,

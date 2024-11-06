@@ -8,13 +8,13 @@ part of 'genre_station_recommendation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GenreStationRecommendation _$$_GenreStationRecommendationFromJson(
+_$GenreStationRecommendationImpl _$$GenreStationRecommendationImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_GenreStationRecommendation',
+      r'_$GenreStationRecommendationImpl',
       json,
       ($checkedConvert) {
-        final val = _$_GenreStationRecommendation(
+        final val = _$GenreStationRecommendationImpl(
           musicToken: $checkedConvert('musicToken', (v) => v as String),
           explanation: $checkedConvert('explanation', (v) => v as String),
           artUrl: $checkedConvert(
@@ -26,8 +26,8 @@ _$_GenreStationRecommendation _$$_GenreStationRecommendationFromJson(
       },
     );
 
-Map<String, dynamic> _$$_GenreStationRecommendationToJson(
-        _$_GenreStationRecommendation instance) =>
+Map<String, dynamic> _$$GenreStationRecommendationImplToJson(
+        _$GenreStationRecommendationImpl instance) =>
     <String, dynamic>{
       'musicToken': instance.musicToken,
       'explanation': instance.explanation,

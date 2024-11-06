@@ -8,15 +8,15 @@ part of 'user_settings.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserSettings _$$_UserSettingsFromJson(Map<String, dynamic> json) =>
+_$UserSettingsImpl _$$UserSettingsImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_UserSettings',
+      r'_$UserSettingsImpl',
       json,
       ($checkedConvert) {
-        final val = _$_UserSettings(
+        final val = _$UserSettingsImpl(
           pushNotificationDeviceOptIn: $checkedConvert(
               'pushNotificationDeviceOptIn', (v) => readOptOutBool(v as bool?)),
-          birthYear: $checkedConvert('birthYear', (v) => v as int),
+          birthYear: $checkedConvert('birthYear', (v) => (v as num).toInt()),
           artistAudioMessagesEnabled: $checkedConvert(
               'artistAudioMessagesEnabled',
               (v) => $enumDecode(_$SettingEnableStatusEnumMap, v)),
@@ -61,7 +61,7 @@ _$_UserSettings _$$_UserSettingsFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_UserSettingsToJson(_$_UserSettings instance) =>
+Map<String, dynamic> _$$UserSettingsImplToJson(_$UserSettingsImpl instance) =>
     <String, dynamic>{
       'pushNotificationDeviceOptIn':
           writeOptOutBool(instance.pushNotificationDeviceOptIn),

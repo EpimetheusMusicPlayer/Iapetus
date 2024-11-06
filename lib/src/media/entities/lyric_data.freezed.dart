@@ -12,7 +12,7 @@ part of 'lyric_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MediaLyricData _$MediaLyricDataFromJson(Map<String, dynamic> json) {
   return _IapetusMediaLyricData.fromJson(json);
@@ -27,8 +27,12 @@ mixin _$MediaLyricData {
   @JsonKey(name: 'lyricCredits')
   String get lyricCreditsHtml => throw _privateConstructorUsedError;
 
+  /// Serializes this MediaLyricData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MediaLyricData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MediaLyricDataCopyWith<MediaLyricData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$MediaLyricDataCopyWithImpl<$Res, $Val extends MediaLyricData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MediaLyricData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,11 +86,12 @@ class _$MediaLyricDataCopyWithImpl<$Res, $Val extends MediaLyricData>
 }
 
 /// @nodoc
-abstract class _$$_IapetusMediaLyricDataCopyWith<$Res>
+abstract class _$$IapetusMediaLyricDataImplCopyWith<$Res>
     implements $MediaLyricDataCopyWith<$Res> {
-  factory _$$_IapetusMediaLyricDataCopyWith(_$_IapetusMediaLyricData value,
-          $Res Function(_$_IapetusMediaLyricData) then) =
-      __$$_IapetusMediaLyricDataCopyWithImpl<$Res>;
+  factory _$$IapetusMediaLyricDataImplCopyWith(
+          _$IapetusMediaLyricDataImpl value,
+          $Res Function(_$IapetusMediaLyricDataImpl) then) =
+      __$$IapetusMediaLyricDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,13 +101,15 @@ abstract class _$$_IapetusMediaLyricDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_IapetusMediaLyricDataCopyWithImpl<$Res>
-    extends _$MediaLyricDataCopyWithImpl<$Res, _$_IapetusMediaLyricData>
-    implements _$$_IapetusMediaLyricDataCopyWith<$Res> {
-  __$$_IapetusMediaLyricDataCopyWithImpl(_$_IapetusMediaLyricData _value,
-      $Res Function(_$_IapetusMediaLyricData) _then)
+class __$$IapetusMediaLyricDataImplCopyWithImpl<$Res>
+    extends _$MediaLyricDataCopyWithImpl<$Res, _$IapetusMediaLyricDataImpl>
+    implements _$$IapetusMediaLyricDataImplCopyWith<$Res> {
+  __$$IapetusMediaLyricDataImplCopyWithImpl(_$IapetusMediaLyricDataImpl _value,
+      $Res Function(_$IapetusMediaLyricDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MediaLyricData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,7 +117,7 @@ class __$$_IapetusMediaLyricDataCopyWithImpl<$Res>
     Object? lyricSnippetHtml = null,
     Object? lyricCreditsHtml = null,
   }) {
-    return _then(_$_IapetusMediaLyricData(
+    return _then(_$IapetusMediaLyricDataImpl(
       lyricId: null == lyricId
           ? _value.lyricId
           : lyricId // ignore: cast_nullable_to_non_nullable
@@ -127,14 +136,14 @@ class __$$_IapetusMediaLyricDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_IapetusMediaLyricData implements _IapetusMediaLyricData {
-  const _$_IapetusMediaLyricData(
+class _$IapetusMediaLyricDataImpl implements _IapetusMediaLyricData {
+  const _$IapetusMediaLyricDataImpl(
       {@JsonKey(name: 'lyricId') required this.lyricId,
       @JsonKey(name: 'lyricSnippet') required this.lyricSnippetHtml,
       @JsonKey(name: 'lyricCredits') required this.lyricCreditsHtml});
 
-  factory _$_IapetusMediaLyricData.fromJson(Map<String, dynamic> json) =>
-      _$$_IapetusMediaLyricDataFromJson(json);
+  factory _$IapetusMediaLyricDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IapetusMediaLyricDataImplFromJson(json);
 
   @override
   @JsonKey(name: 'lyricId')
@@ -152,10 +161,10 @@ class _$_IapetusMediaLyricData implements _IapetusMediaLyricData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_IapetusMediaLyricData &&
+            other is _$IapetusMediaLyricDataImpl &&
             (identical(other.lyricId, lyricId) || other.lyricId == lyricId) &&
             (identical(other.lyricSnippetHtml, lyricSnippetHtml) ||
                 other.lyricSnippetHtml == lyricSnippetHtml) &&
@@ -163,21 +172,23 @@ class _$_IapetusMediaLyricData implements _IapetusMediaLyricData {
                 other.lyricCreditsHtml == lyricCreditsHtml));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, lyricId, lyricSnippetHtml, lyricCreditsHtml);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MediaLyricData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_IapetusMediaLyricDataCopyWith<_$_IapetusMediaLyricData> get copyWith =>
-      __$$_IapetusMediaLyricDataCopyWithImpl<_$_IapetusMediaLyricData>(
-          this, _$identity);
+  _$$IapetusMediaLyricDataImplCopyWith<_$IapetusMediaLyricDataImpl>
+      get copyWith => __$$IapetusMediaLyricDataImplCopyWithImpl<
+          _$IapetusMediaLyricDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IapetusMediaLyricDataToJson(
+    return _$$IapetusMediaLyricDataImplToJson(
       this,
     );
   }
@@ -185,15 +196,13 @@ class _$_IapetusMediaLyricData implements _IapetusMediaLyricData {
 
 abstract class _IapetusMediaLyricData implements MediaLyricData {
   const factory _IapetusMediaLyricData(
-      {@JsonKey(name: 'lyricId')
-          required final String lyricId,
-      @JsonKey(name: 'lyricSnippet')
-          required final String lyricSnippetHtml,
+      {@JsonKey(name: 'lyricId') required final String lyricId,
+      @JsonKey(name: 'lyricSnippet') required final String lyricSnippetHtml,
       @JsonKey(name: 'lyricCredits')
-          required final String lyricCreditsHtml}) = _$_IapetusMediaLyricData;
+      required final String lyricCreditsHtml}) = _$IapetusMediaLyricDataImpl;
 
   factory _IapetusMediaLyricData.fromJson(Map<String, dynamic> json) =
-      _$_IapetusMediaLyricData.fromJson;
+      _$IapetusMediaLyricDataImpl.fromJson;
 
   @override
   @JsonKey(name: 'lyricId')
@@ -204,8 +213,11 @@ abstract class _IapetusMediaLyricData implements MediaLyricData {
   @override
   @JsonKey(name: 'lyricCredits')
   String get lyricCreditsHtml;
+
+  /// Create a copy of MediaLyricData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_IapetusMediaLyricDataCopyWith<_$_IapetusMediaLyricData> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$IapetusMediaLyricDataImplCopyWith<_$IapetusMediaLyricDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

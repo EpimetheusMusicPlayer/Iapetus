@@ -8,11 +8,12 @@ part of 'credits.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Credits _$$_CreditsFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$_Credits',
+_$CreditsImpl _$$CreditsImplFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      r'_$CreditsImpl',
       json,
       ($checkedConvert) {
-        final val = _$_Credits(
+        final val = _$CreditsImpl(
           creditsSnippetHtml:
               $checkedConvert('creditsSnippet', (v) => v as String),
           fullCreditsHtml: $checkedConvert('fullCredits', (v) => v as String),
@@ -25,7 +26,7 @@ _$_Credits _$$_CreditsFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$_CreditsToJson(_$_Credits instance) =>
+Map<String, dynamic> _$$CreditsImplToJson(_$CreditsImpl instance) =>
     <String, dynamic>{
       'creditsSnippet': instance.creditsSnippetHtml,
       'fullCredits': instance.fullCreditsHtml,

@@ -8,12 +8,13 @@ part of 'badge.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SuperbrowseBadge _$$_SuperbrowseBadgeFromJson(Map<String, dynamic> json) =>
+_$SuperbrowseBadgeImpl _$$SuperbrowseBadgeImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_SuperbrowseBadge',
+      r'_$SuperbrowseBadgeImpl',
       json,
       ($checkedConvert) {
-        final val = _$_SuperbrowseBadge(
+        final val = _$SuperbrowseBadgeImpl(
           type: $checkedConvert(
               'type', (v) => $enumDecode(_$BadgeTypeEnumMap, v)),
           data: $checkedConvert('data', (v) => v as String?),
@@ -22,7 +23,8 @@ _$_SuperbrowseBadge _$$_SuperbrowseBadgeFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_SuperbrowseBadgeToJson(_$_SuperbrowseBadge instance) =>
+Map<String, dynamic> _$$SuperbrowseBadgeImplToJson(
+        _$SuperbrowseBadgeImpl instance) =>
     <String, dynamic>{
       'type': _$BadgeTypeEnumMap[instance.type]!,
       'data': instance.data,

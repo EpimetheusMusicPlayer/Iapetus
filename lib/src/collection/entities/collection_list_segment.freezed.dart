@@ -12,7 +12,7 @@ part of 'collection_list_segment.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CollectionListSegment _$CollectionListSegmentFromJson(
     Map<String, dynamic> json) {
@@ -32,8 +32,12 @@ mixin _$CollectionListSegment {
   @JsonKey(name: 'items')
   List<CollectionItem> get items => throw _privateConstructorUsedError;
 
+  /// Serializes this CollectionListSegment to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CollectionListSegment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CollectionListSegmentCopyWith<CollectionListSegment> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,6 +67,8 @@ class _$CollectionListSegmentCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CollectionListSegment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,11 +104,12 @@ class _$CollectionListSegmentCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_CollectionListSegmentCopyWith<$Res>
+abstract class _$$CollectionListSegmentImplCopyWith<$Res>
     implements $CollectionListSegmentCopyWith<$Res> {
-  factory _$$_CollectionListSegmentCopyWith(_$_CollectionListSegment value,
-          $Res Function(_$_CollectionListSegment) then) =
-      __$$_CollectionListSegmentCopyWithImpl<$Res>;
+  factory _$$CollectionListSegmentImplCopyWith(
+          _$CollectionListSegmentImpl value,
+          $Res Function(_$CollectionListSegmentImpl) then) =
+      __$$CollectionListSegmentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -114,13 +121,16 @@ abstract class _$$_CollectionListSegmentCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CollectionListSegmentCopyWithImpl<$Res>
-    extends _$CollectionListSegmentCopyWithImpl<$Res, _$_CollectionListSegment>
-    implements _$$_CollectionListSegmentCopyWith<$Res> {
-  __$$_CollectionListSegmentCopyWithImpl(_$_CollectionListSegment _value,
-      $Res Function(_$_CollectionListSegment) _then)
+class __$$CollectionListSegmentImplCopyWithImpl<$Res>
+    extends _$CollectionListSegmentCopyWithImpl<$Res,
+        _$CollectionListSegmentImpl>
+    implements _$$CollectionListSegmentImplCopyWith<$Res> {
+  __$$CollectionListSegmentImplCopyWithImpl(_$CollectionListSegmentImpl _value,
+      $Res Function(_$CollectionListSegmentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CollectionListSegment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -130,7 +140,7 @@ class __$$_CollectionListSegmentCopyWithImpl<$Res>
     Object? version = null,
     Object? items = null,
   }) {
-    return _then(_$_CollectionListSegment(
+    return _then(_$CollectionListSegmentImpl(
       listenerId: null == listenerId
           ? _value.listenerId
           : listenerId // ignore: cast_nullable_to_non_nullable
@@ -157,8 +167,8 @@ class __$$_CollectionListSegmentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CollectionListSegment implements _CollectionListSegment {
-  const _$_CollectionListSegment(
+class _$CollectionListSegmentImpl implements _CollectionListSegment {
+  const _$CollectionListSegmentImpl(
       {@JsonKey(name: 'listenerId') required this.listenerId,
       @JsonKey(name: 'cursor') this.cursor,
       @JsonKey(name: 'limit') required this.limit,
@@ -166,8 +176,8 @@ class _$_CollectionListSegment implements _CollectionListSegment {
       @JsonKey(name: 'items') final List<CollectionItem> items = const []})
       : _items = items;
 
-  factory _$_CollectionListSegment.fromJson(Map<String, dynamic> json) =>
-      _$$_CollectionListSegmentFromJson(json);
+  factory _$CollectionListSegmentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CollectionListSegmentImplFromJson(json);
 
   @override
   @JsonKey(name: 'listenerId')
@@ -196,10 +206,10 @@ class _$_CollectionListSegment implements _CollectionListSegment {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CollectionListSegment &&
+            other is _$CollectionListSegmentImpl &&
             (identical(other.listenerId, listenerId) ||
                 other.listenerId == listenerId) &&
             (identical(other.cursor, cursor) || other.cursor == cursor) &&
@@ -208,21 +218,23 @@ class _$_CollectionListSegment implements _CollectionListSegment {
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, listenerId, cursor, limit,
       version, const DeepCollectionEquality().hash(_items));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CollectionListSegment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CollectionListSegmentCopyWith<_$_CollectionListSegment> get copyWith =>
-      __$$_CollectionListSegmentCopyWithImpl<_$_CollectionListSegment>(
-          this, _$identity);
+  _$$CollectionListSegmentImplCopyWith<_$CollectionListSegmentImpl>
+      get copyWith => __$$CollectionListSegmentImplCopyWithImpl<
+          _$CollectionListSegmentImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CollectionListSegmentToJson(
+    return _$$CollectionListSegmentImplToJson(
       this,
     );
   }
@@ -235,10 +247,10 @@ abstract class _CollectionListSegment implements CollectionListSegment {
           @JsonKey(name: 'limit') required final int limit,
           @JsonKey(name: 'version') required final int version,
           @JsonKey(name: 'items') final List<CollectionItem> items}) =
-      _$_CollectionListSegment;
+      _$CollectionListSegmentImpl;
 
   factory _CollectionListSegment.fromJson(Map<String, dynamic> json) =
-      _$_CollectionListSegment.fromJson;
+      _$CollectionListSegmentImpl.fromJson;
 
   @override
   @JsonKey(name: 'listenerId')
@@ -255,8 +267,11 @@ abstract class _CollectionListSegment implements CollectionListSegment {
   @override
   @JsonKey(name: 'items')
   List<CollectionItem> get items;
+
+  /// Create a copy of CollectionListSegment
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_CollectionListSegmentCopyWith<_$_CollectionListSegment> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CollectionListSegmentImplCopyWith<_$CollectionListSegmentImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -8,18 +8,19 @@ part of 'authenticated_user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AuthenticatedUser _$$_AuthenticatedUserFromJson(Map<String, dynamic> json) =>
+_$AuthenticatedUserImpl _$$AuthenticatedUserImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_AuthenticatedUser',
+      r'_$AuthenticatedUserImpl',
       json,
       ($checkedConvert) {
-        final val = _$_AuthenticatedUser(
+        final val = _$AuthenticatedUserImpl(
           isMonthlyPayer: $checkedConvert('isMonthlyPayer', (v) => v as bool),
-          dailySkipLimitSubscriber:
-              $checkedConvert('dailySkipLimitSubscriber', (v) => v as int),
-          minimumAdRefreshInterval:
-              $checkedConvert('minimumAdRefreshInterval', (v) => v as int?),
-          age: $checkedConvert('age', (v) => v as int),
+          dailySkipLimitSubscriber: $checkedConvert(
+              'dailySkipLimitSubscriber', (v) => (v as num).toInt()),
+          minimumAdRefreshInterval: $checkedConvert(
+              'minimumAdRefreshInterval', (v) => (v as num?)?.toInt()),
+          age: $checkedConvert('age', (v) => (v as num).toInt()),
           facebookPermissions: $checkedConvert('facebookPermissions',
               (v) => AuthenticatedUser._readCommaSeparatedList(v as String)),
           splashScreenAdUrl: $checkedConvert('splashScreenAdUrl',
@@ -30,19 +31,19 @@ _$_AuthenticatedUser _$$_AuthenticatedUserFromJson(Map<String, dynamic> json) =>
           hasUsedTrial: $checkedConvert('hasUsedTrial', (v) => v as bool),
           facebookAppId: $checkedConvert('facebookAppId', (v) => v as String),
           maxStationsAllowed:
-              $checkedConvert('maxStationsAllowed', (v) => v as int),
+              $checkedConvert('maxStationsAllowed', (v) => (v as num).toInt()),
           userId: $checkedConvert('userId', (v) => v as String),
-          accountMonthlyListening:
-              $checkedConvert('accountMonthlyListening', (v) => v as int),
+          accountMonthlyListening: $checkedConvert(
+              'accountMonthlyListening', (v) => (v as num).toInt()),
           zeroVolumeAutoPauseEnabledFlag: $checkedConvert(
               'zeroVolumeAutoPauseEnabledFlag', (v) => v as bool),
           isSubscriber: $checkedConvert('isSubscriber', (v) => v as bool),
-          stationHourlySkipLimit:
-              $checkedConvert('stationHourlySkipLimit', (v) => v as int),
+          stationHourlySkipLimit: $checkedConvert(
+              'stationHourlySkipLimit', (v) => (v as num).toInt()),
           listeningTimeout: $checkedConvert('listeningTimeoutMinutes',
               (v) => AuthenticatedUser._readMinuteString(v as String)),
-          deviceMonthlyListening:
-              $checkedConvert('deviceMonthlyListening', (v) => v as int),
+          deviceMonthlyListening: $checkedConvert(
+              'deviceMonthlyListening', (v) => (v as num).toInt()),
           zip: $checkedConvert('zip', (v) => v as String),
           stationCreationAdUrl: $checkedConvert('stationCreationAdUrl',
               (v) => v == null ? null : Uri.parse(v as String)),
@@ -51,8 +52,8 @@ _$_AuthenticatedUser _$$_AuthenticatedUserFromJson(Map<String, dynamic> json) =>
           isCapped: $checkedConvert('isCapped', (v) => v as bool),
           googleplayApiKey:
               $checkedConvert('googleplayApiKey', (v) => v as String),
-          dailySkipLimitNonSubscriber:
-              $checkedConvert('dailySkipLimitNonSubscriber', (v) => v as int),
+          dailySkipLimitNonSubscriber: $checkedConvert(
+              'dailySkipLimitNonSubscriber', (v) => (v as num).toInt()),
           collectTrackLifetimeStats:
               $checkedConvert('collectTrackLifetimeStats', (v) => v as bool),
           subscriptionHasExpired:
@@ -64,24 +65,27 @@ _$_AuthenticatedUser _$$_AuthenticatedUserFromJson(Map<String, dynamic> json) =>
           listeningTimeoutAlertMsgUri: $checkedConvert(
               'listeningTimeoutAlertMsgUri', (v) => Uri.parse(v as String)),
           monthlyCapWarningRepeatPercent: $checkedConvert(
-              'monthlyCapWarningRepeatPercent', (v) => v as int),
+              'monthlyCapWarningRepeatPercent', (v) => (v as num).toInt()),
           videoAdUrl: $checkedConvert(
               'videoAdUrl', (v) => v == null ? null : Uri.parse(v as String)),
-          zeroVolumeNumMutedTracks:
-              $checkedConvert('zeroVolumeNumMutedTracks', (v) => v as int),
+          zeroVolumeNumMutedTracks: $checkedConvert(
+              'zeroVolumeNumMutedTracks', (v) => (v as num).toInt()),
           skipDelayAfterTrackStart: $checkedConvert(
               'skipDelayMillisecondsAfterTrackStart',
-              (v) => AuthenticatedUser._readNullableMilliseconds(v as int?)),
+              (v) => AuthenticatedUser._readNullableMilliseconds(
+                  (v as num?)?.toInt())),
           accountMessageKey:
               $checkedConvert('accountMessageKey', (v) => v as String?),
-          dailySkipLimit: $checkedConvert('dailySkipLimit', (v) => v as int),
-          monthlyCapHours: $checkedConvert('monthlyCapHours', (v) => v as int),
+          dailySkipLimit:
+              $checkedConvert('dailySkipLimit', (v) => (v as num).toInt()),
+          monthlyCapHours:
+              $checkedConvert('monthlyCapHours', (v) => (v as num).toInt()),
           webname: $checkedConvert('webname', (v) => v as String),
           gender: $checkedConvert(
               'gender', (v) => genderFromApiString(v as String)),
           userstate: $checkedConvert('userstate', (v) => v as String),
-          monthlyCapWarningPercent:
-              $checkedConvert('monthlyCapWarningPercent', (v) => v as int),
+          monthlyCapWarningPercent: $checkedConvert(
+              'monthlyCapWarningPercent', (v) => (v as num).toInt()),
           hasAudioAds: $checkedConvert('hasAudioAds', (v) => v as bool),
           fullname: $checkedConvert('fullname',
               (v) => readOptionalOptionallyEmptyString(v as String?)),
@@ -109,8 +113,8 @@ _$_AuthenticatedUser _$$_AuthenticatedUserFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_AuthenticatedUserToJson(
-        _$_AuthenticatedUser instance) =>
+Map<String, dynamic> _$$AuthenticatedUserImplToJson(
+        _$AuthenticatedUserImpl instance) =>
     <String, dynamic>{
       'isMonthlyPayer': instance.isMonthlyPayer,
       'dailySkipLimitSubscriber': instance.dailySkipLimitSubscriber,

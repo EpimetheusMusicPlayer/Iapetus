@@ -12,7 +12,7 @@ part of 'genre_station_recommendation.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 GenreStationRecommendation _$GenreStationRecommendationFromJson(
     Map<String, dynamic> json) {
@@ -36,8 +36,12 @@ mixin _$GenreStationRecommendation {
       includeIfNull: true)
   int? get score => throw _privateConstructorUsedError;
 
+  /// Serializes this GenreStationRecommendation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GenreStationRecommendation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GenreStationRecommendationCopyWith<GenreStationRecommendation>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -50,16 +54,16 @@ abstract class $GenreStationRecommendationCopyWith<$Res> {
           GenreStationRecommendation>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'musicToken')
-          String musicToken,
-      @JsonKey(name: 'explanation')
-          String explanation,
-      @JsonKey(name: 'artUrl')
-          Uri? artUrl,
-      @JsonKey(name: 'stationName')
-          String stationName,
-      @JsonKey(name: 'score', fromJson: readScore, toJson: writeScore, includeIfNull: true)
-          int? score});
+      {@JsonKey(name: 'musicToken') String musicToken,
+      @JsonKey(name: 'explanation') String explanation,
+      @JsonKey(name: 'artUrl') Uri? artUrl,
+      @JsonKey(name: 'stationName') String stationName,
+      @JsonKey(
+          name: 'score',
+          fromJson: readScore,
+          toJson: writeScore,
+          includeIfNull: true)
+      int? score});
 }
 
 /// @nodoc
@@ -73,6 +77,8 @@ class _$GenreStationRecommendationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GenreStationRecommendation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,37 +114,39 @@ class _$GenreStationRecommendationCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GenreStationRecommendationCopyWith<$Res>
+abstract class _$$GenreStationRecommendationImplCopyWith<$Res>
     implements $GenreStationRecommendationCopyWith<$Res> {
-  factory _$$_GenreStationRecommendationCopyWith(
-          _$_GenreStationRecommendation value,
-          $Res Function(_$_GenreStationRecommendation) then) =
-      __$$_GenreStationRecommendationCopyWithImpl<$Res>;
+  factory _$$GenreStationRecommendationImplCopyWith(
+          _$GenreStationRecommendationImpl value,
+          $Res Function(_$GenreStationRecommendationImpl) then) =
+      __$$GenreStationRecommendationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'musicToken')
-          String musicToken,
-      @JsonKey(name: 'explanation')
-          String explanation,
-      @JsonKey(name: 'artUrl')
-          Uri? artUrl,
-      @JsonKey(name: 'stationName')
-          String stationName,
-      @JsonKey(name: 'score', fromJson: readScore, toJson: writeScore, includeIfNull: true)
-          int? score});
+      {@JsonKey(name: 'musicToken') String musicToken,
+      @JsonKey(name: 'explanation') String explanation,
+      @JsonKey(name: 'artUrl') Uri? artUrl,
+      @JsonKey(name: 'stationName') String stationName,
+      @JsonKey(
+          name: 'score',
+          fromJson: readScore,
+          toJson: writeScore,
+          includeIfNull: true)
+      int? score});
 }
 
 /// @nodoc
-class __$$_GenreStationRecommendationCopyWithImpl<$Res>
+class __$$GenreStationRecommendationImplCopyWithImpl<$Res>
     extends _$GenreStationRecommendationCopyWithImpl<$Res,
-        _$_GenreStationRecommendation>
-    implements _$$_GenreStationRecommendationCopyWith<$Res> {
-  __$$_GenreStationRecommendationCopyWithImpl(
-      _$_GenreStationRecommendation _value,
-      $Res Function(_$_GenreStationRecommendation) _then)
+        _$GenreStationRecommendationImpl>
+    implements _$$GenreStationRecommendationImplCopyWith<$Res> {
+  __$$GenreStationRecommendationImplCopyWithImpl(
+      _$GenreStationRecommendationImpl _value,
+      $Res Function(_$GenreStationRecommendationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GenreStationRecommendation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -148,7 +156,7 @@ class __$$_GenreStationRecommendationCopyWithImpl<$Res>
     Object? stationName = null,
     Object? score = freezed,
   }) {
-    return _then(_$_GenreStationRecommendation(
+    return _then(_$GenreStationRecommendationImpl(
       musicToken: null == musicToken
           ? _value.musicToken
           : musicToken // ignore: cast_nullable_to_non_nullable
@@ -175,21 +183,22 @@ class __$$_GenreStationRecommendationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GenreStationRecommendation implements _GenreStationRecommendation {
-  const _$_GenreStationRecommendation(
-      {@JsonKey(name: 'musicToken')
-          required this.musicToken,
-      @JsonKey(name: 'explanation')
-          required this.explanation,
-      @JsonKey(name: 'artUrl')
-          this.artUrl,
-      @JsonKey(name: 'stationName')
-          required this.stationName,
-      @JsonKey(name: 'score', fromJson: readScore, toJson: writeScore, includeIfNull: true)
-          this.score});
+class _$GenreStationRecommendationImpl implements _GenreStationRecommendation {
+  const _$GenreStationRecommendationImpl(
+      {@JsonKey(name: 'musicToken') required this.musicToken,
+      @JsonKey(name: 'explanation') required this.explanation,
+      @JsonKey(name: 'artUrl') this.artUrl,
+      @JsonKey(name: 'stationName') required this.stationName,
+      @JsonKey(
+          name: 'score',
+          fromJson: readScore,
+          toJson: writeScore,
+          includeIfNull: true)
+      this.score});
 
-  factory _$_GenreStationRecommendation.fromJson(Map<String, dynamic> json) =>
-      _$$_GenreStationRecommendationFromJson(json);
+  factory _$GenreStationRecommendationImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GenreStationRecommendationImplFromJson(json);
 
   @override
   @JsonKey(name: 'musicToken')
@@ -217,10 +226,10 @@ class _$_GenreStationRecommendation implements _GenreStationRecommendation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GenreStationRecommendation &&
+            other is _$GenreStationRecommendationImpl &&
             (identical(other.musicToken, musicToken) ||
                 other.musicToken == musicToken) &&
             (identical(other.explanation, explanation) ||
@@ -231,21 +240,23 @@ class _$_GenreStationRecommendation implements _GenreStationRecommendation {
             (identical(other.score, score) || other.score == score));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, musicToken, explanation, artUrl, stationName, score);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GenreStationRecommendation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GenreStationRecommendationCopyWith<_$_GenreStationRecommendation>
-      get copyWith => __$$_GenreStationRecommendationCopyWithImpl<
-          _$_GenreStationRecommendation>(this, _$identity);
+  _$$GenreStationRecommendationImplCopyWith<_$GenreStationRecommendationImpl>
+      get copyWith => __$$GenreStationRecommendationImplCopyWithImpl<
+          _$GenreStationRecommendationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GenreStationRecommendationToJson(
+    return _$$GenreStationRecommendationImplToJson(
       this,
     );
   }
@@ -254,19 +265,19 @@ class _$_GenreStationRecommendation implements _GenreStationRecommendation {
 abstract class _GenreStationRecommendation
     implements GenreStationRecommendation {
   const factory _GenreStationRecommendation(
-      {@JsonKey(name: 'musicToken')
-          required final String musicToken,
-      @JsonKey(name: 'explanation')
-          required final String explanation,
-      @JsonKey(name: 'artUrl')
-          final Uri? artUrl,
-      @JsonKey(name: 'stationName')
-          required final String stationName,
-      @JsonKey(name: 'score', fromJson: readScore, toJson: writeScore, includeIfNull: true)
-          final int? score}) = _$_GenreStationRecommendation;
+      {@JsonKey(name: 'musicToken') required final String musicToken,
+      @JsonKey(name: 'explanation') required final String explanation,
+      @JsonKey(name: 'artUrl') final Uri? artUrl,
+      @JsonKey(name: 'stationName') required final String stationName,
+      @JsonKey(
+          name: 'score',
+          fromJson: readScore,
+          toJson: writeScore,
+          includeIfNull: true)
+      final int? score}) = _$GenreStationRecommendationImpl;
 
   factory _GenreStationRecommendation.fromJson(Map<String, dynamic> json) =
-      _$_GenreStationRecommendation.fromJson;
+      _$GenreStationRecommendationImpl.fromJson;
 
   @override
   @JsonKey(name: 'musicToken')
@@ -287,8 +298,11 @@ abstract class _GenreStationRecommendation
       toJson: writeScore,
       includeIfNull: true)
   int? get score;
+
+  /// Create a copy of GenreStationRecommendation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_GenreStationRecommendationCopyWith<_$_GenreStationRecommendation>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GenreStationRecommendationImplCopyWith<_$GenreStationRecommendationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

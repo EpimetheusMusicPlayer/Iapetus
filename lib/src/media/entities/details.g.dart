@@ -8,12 +8,13 @@ part of 'details.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TrackDetailsSet _$$TrackDetailsSetFromJson(Map<String, dynamic> json) =>
+_$TrackDetailsSetImpl _$$TrackDetailsSetImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$TrackDetailsSet',
+      r'_$TrackDetailsSetImpl',
       json,
       ($checkedConvert) {
-        final val = _$TrackDetailsSet(
+        final val = _$TrackDetailsSetImpl(
           annotations: $checkedConvert(
               'annotations',
               (v) => (v as Map<String, dynamic>).map(
@@ -21,7 +22,7 @@ _$TrackDetailsSet _$$TrackDetailsSetFromJson(Map<String, dynamic> json) =>
                         k, MediaAnnotation.fromJson(e as Map<String, dynamic>)),
                   )),
           details: $checkedConvert('trackDetails',
-              (v) => TrackDetails.fromJson(v as Map<String, dynamic>)),
+              (v) => MediaDetails.fromJson(v as Map<String, dynamic>)),
           $type: $checkedConvert('runtimeType', (v) => v as String?),
         );
         return val;
@@ -29,19 +30,21 @@ _$TrackDetailsSet _$$TrackDetailsSetFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'details': 'trackDetails', r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$TrackDetailsSetToJson(_$TrackDetailsSet instance) =>
+Map<String, dynamic> _$$TrackDetailsSetImplToJson(
+        _$TrackDetailsSetImpl instance) =>
     <String, dynamic>{
       'annotations': instance.annotations,
       'trackDetails': instance.details,
       'runtimeType': instance.$type,
     };
 
-_$GenreDetailsSet _$$GenreDetailsSetFromJson(Map<String, dynamic> json) =>
+_$GenreDetailsSetImpl _$$GenreDetailsSetImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$GenreDetailsSet',
+      r'_$GenreDetailsSetImpl',
       json,
       ($checkedConvert) {
-        final val = _$GenreDetailsSet(
+        final val = _$GenreDetailsSetImpl(
           annotations: $checkedConvert(
               'annotations',
               (v) => (v as Map<String, dynamic>).map(
@@ -49,7 +52,7 @@ _$GenreDetailsSet _$$GenreDetailsSetFromJson(Map<String, dynamic> json) =>
                         k, MediaAnnotation.fromJson(e as Map<String, dynamic>)),
                   )),
           details: $checkedConvert('genreDetails',
-              (v) => GenreDetails.fromJson(v as Map<String, dynamic>)),
+              (v) => MediaDetails.fromJson(v as Map<String, dynamic>)),
           $type: $checkedConvert('runtimeType', (v) => v as String?),
         );
         return val;
@@ -57,19 +60,20 @@ _$GenreDetailsSet _$$GenreDetailsSetFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'details': 'genreDetails', r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$GenreDetailsSetToJson(_$GenreDetailsSet instance) =>
+Map<String, dynamic> _$$GenreDetailsSetImplToJson(
+        _$GenreDetailsSetImpl instance) =>
     <String, dynamic>{
       'annotations': instance.annotations,
       'genreDetails': instance.details,
       'runtimeType': instance.$type,
     };
 
-_$TrackDetails _$$TrackDetailsFromJson(Map<String, dynamic> json) =>
+_$TrackDetailsImpl _$$TrackDetailsImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$TrackDetails',
+      r'_$TrackDetailsImpl',
       json,
       ($checkedConvert) {
-        final val = _$TrackDetails(
+        final val = _$TrackDetailsImpl(
           trackTags: $checkedConvert('trackTags',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           lyricData: $checkedConvert(
@@ -87,8 +91,8 @@ _$TrackDetails _$$TrackDetailsFromJson(Map<String, dynamic> json) =>
           copyrightHtml: $checkedConvert('copyright', (v) => v as String),
           shareableUrlPath:
               $checkedConvert('shareableUrlPath', (v) => v as String),
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           similarTrackIds: $checkedConvert('similarTracks',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           focusTraits: $checkedConvert(
@@ -118,7 +122,7 @@ _$TrackDetails _$$TrackDetailsFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$TrackDetailsToJson(_$TrackDetails instance) =>
+Map<String, dynamic> _$$TrackDetailsImplToJson(_$TrackDetailsImpl instance) =>
     <String, dynamic>{
       'trackTags': instance.trackTags,
       'lyricData': instance.lyricData,
@@ -178,14 +182,14 @@ const _$PandoraTypeEnumMap = {
   PandoraType.xc: 'XC',
 };
 
-_$GenreDetails _$$GenreDetailsFromJson(Map<String, dynamic> json) =>
+_$GenreDetailsImpl _$$GenreDetailsImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$GenreDetails',
+      r'_$GenreDetailsImpl',
       json,
       ($checkedConvert) {
-        final val = _$GenreDetails(
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+        final val = _$GenreDetailsImpl(
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           sampleArtistIds: $checkedConvert('sampleArtists',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           sampleTrackIds: $checkedConvert('sampleTracks',
@@ -213,7 +217,7 @@ _$GenreDetails _$$GenreDetailsFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$GenreDetailsToJson(_$GenreDetails instance) =>
+Map<String, dynamic> _$$GenreDetailsImplToJson(_$GenreDetailsImpl instance) =>
     <String, dynamic>{
       'modificationTime': writeDateTimeMilliseconds(instance.modificationTime),
       'sampleArtists': instance.sampleArtistIds,

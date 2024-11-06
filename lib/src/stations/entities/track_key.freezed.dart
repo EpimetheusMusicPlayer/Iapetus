@@ -12,7 +12,7 @@ part of 'track_key.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 TrackKey _$TrackKeyFromJson(Map<String, dynamic> json) {
   return _TrackKey.fromJson(json);
@@ -29,8 +29,12 @@ mixin _$TrackKey {
   @JsonKey(name: 'spinId')
   String get spinId => throw _privateConstructorUsedError;
 
+  /// Serializes this TrackKey to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TrackKey
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TrackKeyCopyWith<TrackKey> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +61,8 @@ class _$TrackKeyCopyWithImpl<$Res, $Val extends TrackKey>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TrackKey
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,10 +93,11 @@ class _$TrackKeyCopyWithImpl<$Res, $Val extends TrackKey>
 }
 
 /// @nodoc
-abstract class _$$_TrackKeyCopyWith<$Res> implements $TrackKeyCopyWith<$Res> {
-  factory _$$_TrackKeyCopyWith(
-          _$_TrackKey value, $Res Function(_$_TrackKey) then) =
-      __$$_TrackKeyCopyWithImpl<$Res>;
+abstract class _$$TrackKeyImplCopyWith<$Res>
+    implements $TrackKeyCopyWith<$Res> {
+  factory _$$TrackKeyImplCopyWith(
+          _$TrackKeyImpl value, $Res Function(_$TrackKeyImpl) then) =
+      __$$TrackKeyImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -101,13 +108,15 @@ abstract class _$$_TrackKeyCopyWith<$Res> implements $TrackKeyCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TrackKeyCopyWithImpl<$Res>
-    extends _$TrackKeyCopyWithImpl<$Res, _$_TrackKey>
-    implements _$$_TrackKeyCopyWith<$Res> {
-  __$$_TrackKeyCopyWithImpl(
-      _$_TrackKey _value, $Res Function(_$_TrackKey) _then)
+class __$$TrackKeyImplCopyWithImpl<$Res>
+    extends _$TrackKeyCopyWithImpl<$Res, _$TrackKeyImpl>
+    implements _$$TrackKeyImplCopyWith<$Res> {
+  __$$TrackKeyImplCopyWithImpl(
+      _$TrackKeyImpl _value, $Res Function(_$TrackKeyImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TrackKey
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -116,7 +125,7 @@ class __$$_TrackKeyCopyWithImpl<$Res>
     Object? trackSubtype = null,
     Object? spinId = null,
   }) {
-    return _then(_$_TrackKey(
+    return _then(_$TrackKeyImpl(
       trackId: null == trackId
           ? _value.trackId
           : trackId // ignore: cast_nullable_to_non_nullable
@@ -139,15 +148,15 @@ class __$$_TrackKeyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TrackKey implements _TrackKey {
-  const _$_TrackKey(
+class _$TrackKeyImpl implements _TrackKey {
+  const _$TrackKeyImpl(
       {@JsonKey(name: 'trackId') required this.trackId,
       @JsonKey(name: 'trackType') required this.trackType,
       @JsonKey(name: 'trackSubtype') required this.trackSubtype,
       @JsonKey(name: 'spinId') required this.spinId});
 
-  factory _$_TrackKey.fromJson(Map<String, dynamic> json) =>
-      _$$_TrackKeyFromJson(json);
+  factory _$TrackKeyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TrackKeyImplFromJson(json);
 
   @override
   @JsonKey(name: 'trackId')
@@ -168,10 +177,10 @@ class _$_TrackKey implements _TrackKey {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TrackKey &&
+            other is _$TrackKeyImpl &&
             (identical(other.trackId, trackId) || other.trackId == trackId) &&
             (identical(other.trackType, trackType) ||
                 other.trackType == trackType) &&
@@ -180,20 +189,22 @@ class _$_TrackKey implements _TrackKey {
             (identical(other.spinId, spinId) || other.spinId == spinId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, trackId, trackType, trackSubtype, spinId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TrackKey
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TrackKeyCopyWith<_$_TrackKey> get copyWith =>
-      __$$_TrackKeyCopyWithImpl<_$_TrackKey>(this, _$identity);
+  _$$TrackKeyImplCopyWith<_$TrackKeyImpl> get copyWith =>
+      __$$TrackKeyImplCopyWithImpl<_$TrackKeyImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TrackKeyToJson(
+    return _$$TrackKeyImplToJson(
       this,
     );
   }
@@ -204,9 +215,10 @@ abstract class _TrackKey implements TrackKey {
       {@JsonKey(name: 'trackId') required final String trackId,
       @JsonKey(name: 'trackType') required final TrackType trackType,
       @JsonKey(name: 'trackSubtype') required final String trackSubtype,
-      @JsonKey(name: 'spinId') required final String spinId}) = _$_TrackKey;
+      @JsonKey(name: 'spinId') required final String spinId}) = _$TrackKeyImpl;
 
-  factory _TrackKey.fromJson(Map<String, dynamic> json) = _$_TrackKey.fromJson;
+  factory _TrackKey.fromJson(Map<String, dynamic> json) =
+      _$TrackKeyImpl.fromJson;
 
   @override
   @JsonKey(name: 'trackId')
@@ -220,8 +232,11 @@ abstract class _TrackKey implements TrackKey {
   @override
   @JsonKey(name: 'spinId')
   String get spinId;
+
+  /// Create a copy of TrackKey
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_TrackKeyCopyWith<_$_TrackKey> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TrackKeyImplCopyWith<_$TrackKeyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

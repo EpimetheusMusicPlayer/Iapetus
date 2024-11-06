@@ -8,20 +8,20 @@ part of 'collection_item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CollectionItem _$$_CollectionItemFromJson(Map<String, dynamic> json) =>
+_$CollectionItemImpl _$$CollectionItemImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_CollectionItem',
+      r'_$CollectionItemImpl',
       json,
       ($checkedConvert) {
-        final val = _$_CollectionItem(
+        final val = _$CollectionItemImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String),
           pandoraType: $checkedConvert(
               'pandoraType', (v) => $enumDecode(_$PandoraTypeEnumMap, v)),
           addedTime: $checkedConvert(
-              'addedTime', (v) => readDateTimeMilliseconds(v as int)),
-          updatedTime: $checkedConvert(
-              'updatedTime', (v) => readDateTimeMilliseconds(v as int)),
-          ownerId: $checkedConvert('ownerId', (v) => v as int?),
+              'addedTime', (v) => readDateTimeMilliseconds((v as num).toInt())),
+          updatedTime: $checkedConvert('updatedTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
+          ownerId: $checkedConvert('ownerId', (v) => (v as num?)?.toInt()),
           ownerPandoraId:
               $checkedConvert('ownerPandoraId', (v) => v as String?),
         );
@@ -29,7 +29,8 @@ _$_CollectionItem _$$_CollectionItemFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_CollectionItemToJson(_$_CollectionItem instance) =>
+Map<String, dynamic> _$$CollectionItemImplToJson(
+        _$CollectionItemImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'pandoraType': _$PandoraTypeEnumMap[instance.pandoraType]!,

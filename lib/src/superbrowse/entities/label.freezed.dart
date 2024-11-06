@@ -12,7 +12,7 @@ part of 'label.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SuperbrowseLabel _$SuperbrowseLabelFromJson(Map<String, dynamic> json) {
   return _SuperbrowseLabel.fromJson(json);
@@ -35,8 +35,12 @@ mixin _$SuperbrowseLabel {
   @JsonKey(name: 'underlined', fromJson: readOptInBool, toJson: writeOptInBool)
   bool get underlined => throw _privateConstructorUsedError;
 
+  /// Serializes this SuperbrowseLabel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SuperbrowseLabel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SuperbrowseLabelCopyWith<SuperbrowseLabel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,20 +52,17 @@ abstract class $SuperbrowseLabelCopyWith<$Res> {
       _$SuperbrowseLabelCopyWithImpl<$Res, SuperbrowseLabel>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'text')
-          String text,
-      @JsonKey(name: 'style')
-          LabelStyle style,
-      @JsonKey(name: 'alignment')
-          TextAlignment? alignment,
-      @JsonKey(name: 'maxLines')
-          int? maxLines,
+      {@JsonKey(name: 'text') String text,
+      @JsonKey(name: 'style') LabelStyle style,
+      @JsonKey(name: 'alignment') TextAlignment? alignment,
+      @JsonKey(name: 'maxLines') int? maxLines,
       @JsonKey(name: 'bold', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool bold,
+      bool bold,
       @JsonKey(name: 'italic', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool italic,
-      @JsonKey(name: 'underlined', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool underlined});
+      bool italic,
+      @JsonKey(
+          name: 'underlined', fromJson: readOptInBool, toJson: writeOptInBool)
+      bool underlined});
 }
 
 /// @nodoc
@@ -74,6 +75,8 @@ class _$SuperbrowseLabelCopyWithImpl<$Res, $Val extends SuperbrowseLabel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SuperbrowseLabel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,38 +122,37 @@ class _$SuperbrowseLabelCopyWithImpl<$Res, $Val extends SuperbrowseLabel>
 }
 
 /// @nodoc
-abstract class _$$_SuperbrowseLabelCopyWith<$Res>
+abstract class _$$SuperbrowseLabelImplCopyWith<$Res>
     implements $SuperbrowseLabelCopyWith<$Res> {
-  factory _$$_SuperbrowseLabelCopyWith(
-          _$_SuperbrowseLabel value, $Res Function(_$_SuperbrowseLabel) then) =
-      __$$_SuperbrowseLabelCopyWithImpl<$Res>;
+  factory _$$SuperbrowseLabelImplCopyWith(_$SuperbrowseLabelImpl value,
+          $Res Function(_$SuperbrowseLabelImpl) then) =
+      __$$SuperbrowseLabelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'text')
-          String text,
-      @JsonKey(name: 'style')
-          LabelStyle style,
-      @JsonKey(name: 'alignment')
-          TextAlignment? alignment,
-      @JsonKey(name: 'maxLines')
-          int? maxLines,
+      {@JsonKey(name: 'text') String text,
+      @JsonKey(name: 'style') LabelStyle style,
+      @JsonKey(name: 'alignment') TextAlignment? alignment,
+      @JsonKey(name: 'maxLines') int? maxLines,
       @JsonKey(name: 'bold', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool bold,
+      bool bold,
       @JsonKey(name: 'italic', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool italic,
-      @JsonKey(name: 'underlined', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool underlined});
+      bool italic,
+      @JsonKey(
+          name: 'underlined', fromJson: readOptInBool, toJson: writeOptInBool)
+      bool underlined});
 }
 
 /// @nodoc
-class __$$_SuperbrowseLabelCopyWithImpl<$Res>
-    extends _$SuperbrowseLabelCopyWithImpl<$Res, _$_SuperbrowseLabel>
-    implements _$$_SuperbrowseLabelCopyWith<$Res> {
-  __$$_SuperbrowseLabelCopyWithImpl(
-      _$_SuperbrowseLabel _value, $Res Function(_$_SuperbrowseLabel) _then)
+class __$$SuperbrowseLabelImplCopyWithImpl<$Res>
+    extends _$SuperbrowseLabelCopyWithImpl<$Res, _$SuperbrowseLabelImpl>
+    implements _$$SuperbrowseLabelImplCopyWith<$Res> {
+  __$$SuperbrowseLabelImplCopyWithImpl(_$SuperbrowseLabelImpl _value,
+      $Res Function(_$SuperbrowseLabelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SuperbrowseLabel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -162,7 +164,7 @@ class __$$_SuperbrowseLabelCopyWithImpl<$Res>
     Object? italic = null,
     Object? underlined = null,
   }) {
-    return _then(_$_SuperbrowseLabel(
+    return _then(_$SuperbrowseLabelImpl(
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -197,25 +199,22 @@ class __$$_SuperbrowseLabelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SuperbrowseLabel implements _SuperbrowseLabel {
-  const _$_SuperbrowseLabel(
-      {@JsonKey(name: 'text')
-          required this.text,
-      @JsonKey(name: 'style')
-          required this.style,
-      @JsonKey(name: 'alignment')
-          this.alignment,
-      @JsonKey(name: 'maxLines')
-          this.maxLines,
+class _$SuperbrowseLabelImpl implements _SuperbrowseLabel {
+  const _$SuperbrowseLabelImpl(
+      {@JsonKey(name: 'text') required this.text,
+      @JsonKey(name: 'style') required this.style,
+      @JsonKey(name: 'alignment') this.alignment,
+      @JsonKey(name: 'maxLines') this.maxLines,
       @JsonKey(name: 'bold', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.bold,
+      required this.bold,
       @JsonKey(name: 'italic', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.italic,
-      @JsonKey(name: 'underlined', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.underlined});
+      required this.italic,
+      @JsonKey(
+          name: 'underlined', fromJson: readOptInBool, toJson: writeOptInBool)
+      required this.underlined});
 
-  factory _$_SuperbrowseLabel.fromJson(Map<String, dynamic> json) =>
-      _$$_SuperbrowseLabelFromJson(json);
+  factory _$SuperbrowseLabelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SuperbrowseLabelImplFromJson(json);
 
   @override
   @JsonKey(name: 'text')
@@ -245,10 +244,10 @@ class _$_SuperbrowseLabel implements _SuperbrowseLabel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SuperbrowseLabel &&
+            other is _$SuperbrowseLabelImpl &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.style, style) || other.style == style) &&
             (identical(other.alignment, alignment) ||
@@ -261,20 +260,23 @@ class _$_SuperbrowseLabel implements _SuperbrowseLabel {
                 other.underlined == underlined));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, text, style, alignment, maxLines, bold, italic, underlined);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SuperbrowseLabel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuperbrowseLabelCopyWith<_$_SuperbrowseLabel> get copyWith =>
-      __$$_SuperbrowseLabelCopyWithImpl<_$_SuperbrowseLabel>(this, _$identity);
+  _$$SuperbrowseLabelImplCopyWith<_$SuperbrowseLabelImpl> get copyWith =>
+      __$$SuperbrowseLabelImplCopyWithImpl<_$SuperbrowseLabelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SuperbrowseLabelToJson(
+    return _$$SuperbrowseLabelImplToJson(
       this,
     );
   }
@@ -282,23 +284,20 @@ class _$_SuperbrowseLabel implements _SuperbrowseLabel {
 
 abstract class _SuperbrowseLabel implements SuperbrowseLabel {
   const factory _SuperbrowseLabel(
-      {@JsonKey(name: 'text')
-          required final String text,
-      @JsonKey(name: 'style')
-          required final LabelStyle style,
-      @JsonKey(name: 'alignment')
-          final TextAlignment? alignment,
-      @JsonKey(name: 'maxLines')
-          final int? maxLines,
+      {@JsonKey(name: 'text') required final String text,
+      @JsonKey(name: 'style') required final LabelStyle style,
+      @JsonKey(name: 'alignment') final TextAlignment? alignment,
+      @JsonKey(name: 'maxLines') final int? maxLines,
       @JsonKey(name: 'bold', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool bold,
+      required final bool bold,
       @JsonKey(name: 'italic', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool italic,
-      @JsonKey(name: 'underlined', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool underlined}) = _$_SuperbrowseLabel;
+      required final bool italic,
+      @JsonKey(
+          name: 'underlined', fromJson: readOptInBool, toJson: writeOptInBool)
+      required final bool underlined}) = _$SuperbrowseLabelImpl;
 
   factory _SuperbrowseLabel.fromJson(Map<String, dynamic> json) =
-      _$_SuperbrowseLabel.fromJson;
+      _$SuperbrowseLabelImpl.fromJson;
 
   @override
   @JsonKey(name: 'text')
@@ -321,8 +320,11 @@ abstract class _SuperbrowseLabel implements SuperbrowseLabel {
   @override
   @JsonKey(name: 'underlined', fromJson: readOptInBool, toJson: writeOptInBool)
   bool get underlined;
+
+  /// Create a copy of SuperbrowseLabel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SuperbrowseLabelCopyWith<_$_SuperbrowseLabel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuperbrowseLabelImplCopyWith<_$SuperbrowseLabelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

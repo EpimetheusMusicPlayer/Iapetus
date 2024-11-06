@@ -12,7 +12,7 @@ part of 'song_recommendation.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SongRecommendation _$SongRecommendationFromJson(Map<String, dynamic> json) {
   return _SongRecommendation.fromJson(json);
@@ -29,8 +29,12 @@ mixin _$SongRecommendation {
   @JsonKey(name: 'songRating')
   MediaRating get songRating => throw _privateConstructorUsedError;
 
+  /// Serializes this SongRecommendation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SongRecommendation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SongRecommendationCopyWith<SongRecommendation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$SongRecommendationCopyWithImpl<$Res, $Val extends SongRecommendation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SongRecommendation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,11 +94,11 @@ class _$SongRecommendationCopyWithImpl<$Res, $Val extends SongRecommendation>
 }
 
 /// @nodoc
-abstract class _$$_SongRecommendationCopyWith<$Res>
+abstract class _$$SongRecommendationImplCopyWith<$Res>
     implements $SongRecommendationCopyWith<$Res> {
-  factory _$$_SongRecommendationCopyWith(_$_SongRecommendation value,
-          $Res Function(_$_SongRecommendation) then) =
-      __$$_SongRecommendationCopyWithImpl<$Res>;
+  factory _$$SongRecommendationImplCopyWith(_$SongRecommendationImpl value,
+          $Res Function(_$SongRecommendationImpl) then) =
+      __$$SongRecommendationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,13 +109,15 @@ abstract class _$$_SongRecommendationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SongRecommendationCopyWithImpl<$Res>
-    extends _$SongRecommendationCopyWithImpl<$Res, _$_SongRecommendation>
-    implements _$$_SongRecommendationCopyWith<$Res> {
-  __$$_SongRecommendationCopyWithImpl(
-      _$_SongRecommendation _value, $Res Function(_$_SongRecommendation) _then)
+class __$$SongRecommendationImplCopyWithImpl<$Res>
+    extends _$SongRecommendationCopyWithImpl<$Res, _$SongRecommendationImpl>
+    implements _$$SongRecommendationImplCopyWith<$Res> {
+  __$$SongRecommendationImplCopyWithImpl(_$SongRecommendationImpl _value,
+      $Res Function(_$SongRecommendationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SongRecommendation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,7 +126,7 @@ class __$$_SongRecommendationCopyWithImpl<$Res>
     Object? token = null,
     Object? songRating = null,
   }) {
-    return _then(_$_SongRecommendation(
+    return _then(_$SongRecommendationImpl(
       pandoraId: null == pandoraId
           ? _value.pandoraId
           : pandoraId // ignore: cast_nullable_to_non_nullable
@@ -141,16 +149,16 @@ class __$$_SongRecommendationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SongRecommendation extends _SongRecommendation {
-  const _$_SongRecommendation(
+class _$SongRecommendationImpl extends _SongRecommendation {
+  const _$SongRecommendationImpl(
       {@JsonKey(name: 'musicId') required this.pandoraId,
       @JsonKey(name: 'autoplaySourceId') this.autoplaySourceId,
       @JsonKey(name: 'token') required this.token,
       @JsonKey(name: 'songRating') this.songRating = MediaRating.none})
       : super._();
 
-  factory _$_SongRecommendation.fromJson(Map<String, dynamic> json) =>
-      _$$_SongRecommendationFromJson(json);
+  factory _$SongRecommendationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SongRecommendationImplFromJson(json);
 
   @override
   @JsonKey(name: 'musicId')
@@ -171,10 +179,10 @@ class _$_SongRecommendation extends _SongRecommendation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SongRecommendation &&
+            other is _$SongRecommendationImpl &&
             (identical(other.pandoraId, pandoraId) ||
                 other.pandoraId == pandoraId) &&
             (identical(other.autoplaySourceId, autoplaySourceId) ||
@@ -184,21 +192,23 @@ class _$_SongRecommendation extends _SongRecommendation {
                 other.songRating == songRating));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, pandoraId, autoplaySourceId, token, songRating);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SongRecommendation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SongRecommendationCopyWith<_$_SongRecommendation> get copyWith =>
-      __$$_SongRecommendationCopyWithImpl<_$_SongRecommendation>(
+  _$$SongRecommendationImplCopyWith<_$SongRecommendationImpl> get copyWith =>
+      __$$SongRecommendationImplCopyWithImpl<_$SongRecommendationImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SongRecommendationToJson(
+    return _$$SongRecommendationImplToJson(
       this,
     );
   }
@@ -210,11 +220,11 @@ abstract class _SongRecommendation extends SongRecommendation {
           @JsonKey(name: 'autoplaySourceId') final String? autoplaySourceId,
           @JsonKey(name: 'token') required final String token,
           @JsonKey(name: 'songRating') final MediaRating songRating}) =
-      _$_SongRecommendation;
+      _$SongRecommendationImpl;
   const _SongRecommendation._() : super._();
 
   factory _SongRecommendation.fromJson(Map<String, dynamic> json) =
-      _$_SongRecommendation.fromJson;
+      _$SongRecommendationImpl.fromJson;
 
   @override
   @JsonKey(name: 'musicId')
@@ -228,8 +238,11 @@ abstract class _SongRecommendation extends SongRecommendation {
   @override
   @JsonKey(name: 'songRating')
   MediaRating get songRating;
+
+  /// Create a copy of SongRecommendation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SongRecommendationCopyWith<_$_SongRecommendation> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SongRecommendationImplCopyWith<_$SongRecommendationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

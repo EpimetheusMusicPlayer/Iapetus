@@ -8,17 +8,17 @@ part of 'collection_list_segment.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CollectionListSegment _$$_CollectionListSegmentFromJson(
+_$CollectionListSegmentImpl _$$CollectionListSegmentImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_CollectionListSegment',
+      r'_$CollectionListSegmentImpl',
       json,
       ($checkedConvert) {
-        final val = _$_CollectionListSegment(
-          listenerId: $checkedConvert('listenerId', (v) => v as int),
+        final val = _$CollectionListSegmentImpl(
+          listenerId: $checkedConvert('listenerId', (v) => (v as num).toInt()),
           cursor: $checkedConvert('cursor', (v) => v as String?),
-          limit: $checkedConvert('limit', (v) => v as int),
-          version: $checkedConvert('version', (v) => v as int),
+          limit: $checkedConvert('limit', (v) => (v as num).toInt()),
+          version: $checkedConvert('version', (v) => (v as num).toInt()),
           items: $checkedConvert(
               'items',
               (v) =>
@@ -32,8 +32,8 @@ _$_CollectionListSegment _$$_CollectionListSegmentFromJson(
       },
     );
 
-Map<String, dynamic> _$$_CollectionListSegmentToJson(
-        _$_CollectionListSegment instance) =>
+Map<String, dynamic> _$$CollectionListSegmentImplToJson(
+        _$CollectionListSegmentImpl instance) =>
     <String, dynamic>{
       'listenerId': instance.listenerId,
       'cursor': instance.cursor,

@@ -12,7 +12,7 @@ part of 'details.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MediaDetailsSet _$MediaDetailsSetFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
@@ -33,20 +33,18 @@ mixin _$MediaDetailsSet {
   Map<String, MediaAnnotation> get annotations =>
       throw _privateConstructorUsedError;
   @JsonKey(name: 'trackDetails')
-  dynamic get details => throw _privateConstructorUsedError;
+  MediaDetails get details => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'trackDetails')
-                TrackDetails details)
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'trackDetails') MediaDetails details)
         track,
     required TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'genreDetails')
-                GenreDetails details)
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'genreDetails') MediaDetails details)
         genre,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,15 +52,13 @@ mixin _$MediaDetailsSet {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'trackDetails')
-                TrackDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'trackDetails') MediaDetails details)?
         track,
     TResult? Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'genreDetails')
-                GenreDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'genreDetails') MediaDetails details)?
         genre,
   }) =>
       throw _privateConstructorUsedError;
@@ -70,15 +66,13 @@ mixin _$MediaDetailsSet {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'trackDetails')
-                TrackDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'trackDetails') MediaDetails details)?
         track,
     TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'genreDetails')
-                GenreDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'genreDetails') MediaDetails details)?
         genre,
     required TResult orElse(),
   }) =>
@@ -102,23 +96,129 @@ mixin _$MediaDetailsSet {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this MediaDetailsSet to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of MediaDetailsSet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $MediaDetailsSetCopyWith<MediaDetailsSet> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MediaDetailsSetCopyWith<$Res> {
+  factory $MediaDetailsSetCopyWith(
+          MediaDetailsSet value, $Res Function(MediaDetailsSet) then) =
+      _$MediaDetailsSetCopyWithImpl<$Res, MediaDetailsSet>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'annotations') Map<String, MediaAnnotation> annotations,
+      @JsonKey(name: 'trackDetails') MediaDetails details});
+
+  $MediaDetailsCopyWith<$Res> get details;
+}
+
+/// @nodoc
+class _$MediaDetailsSetCopyWithImpl<$Res, $Val extends MediaDetailsSet>
+    implements $MediaDetailsSetCopyWith<$Res> {
+  _$MediaDetailsSetCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of MediaDetailsSet
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? annotations = null,
+    Object? details = null,
+  }) {
+    return _then(_value.copyWith(
+      annotations: null == annotations
+          ? _value.annotations
+          : annotations // ignore: cast_nullable_to_non_nullable
+              as Map<String, MediaAnnotation>,
+      details: null == details
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
+              as MediaDetails,
+    ) as $Val);
+  }
+
+  /// Create a copy of MediaDetailsSet
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MediaDetailsCopyWith<$Res> get details {
+    return $MediaDetailsCopyWith<$Res>(_value.details, (value) {
+      return _then(_value.copyWith(details: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$TrackDetailsSetImplCopyWith<$Res>
+    implements $MediaDetailsSetCopyWith<$Res> {
+  factory _$$TrackDetailsSetImplCopyWith(_$TrackDetailsSetImpl value,
+          $Res Function(_$TrackDetailsSetImpl) then) =
+      __$$TrackDetailsSetImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'annotations') Map<String, MediaAnnotation> annotations,
+      @JsonKey(name: 'trackDetails') MediaDetails details});
+
+  @override
+  $MediaDetailsCopyWith<$Res> get details;
+}
+
+/// @nodoc
+class __$$TrackDetailsSetImplCopyWithImpl<$Res>
+    extends _$MediaDetailsSetCopyWithImpl<$Res, _$TrackDetailsSetImpl>
+    implements _$$TrackDetailsSetImplCopyWith<$Res> {
+  __$$TrackDetailsSetImplCopyWithImpl(
+      _$TrackDetailsSetImpl _value, $Res Function(_$TrackDetailsSetImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MediaDetailsSet
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? annotations = null,
+    Object? details = null,
+  }) {
+    return _then(_$TrackDetailsSetImpl(
+      annotations: null == annotations
+          ? _value._annotations
+          : annotations // ignore: cast_nullable_to_non_nullable
+              as Map<String, MediaAnnotation>,
+      details: null == details
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
+              as MediaDetails,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$TrackDetailsSet implements TrackDetailsSet {
-  const _$TrackDetailsSet(
+class _$TrackDetailsSetImpl implements TrackDetailsSet {
+  const _$TrackDetailsSetImpl(
       {@JsonKey(name: 'annotations')
-          required final Map<String, MediaAnnotation> annotations,
-      @JsonKey(name: 'trackDetails')
-          required this.details,
+      required final Map<String, MediaAnnotation> annotations,
+      @JsonKey(name: 'trackDetails') required this.details,
       final String? $type})
       : _annotations = annotations,
         $type = $type ?? 'track';
 
-  factory _$TrackDetailsSet.fromJson(Map<String, dynamic> json) =>
-      _$$TrackDetailsSetFromJson(json);
+  factory _$TrackDetailsSetImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TrackDetailsSetImplFromJson(json);
 
   final Map<String, MediaAnnotation> _annotations;
   @override
@@ -131,7 +231,7 @@ class _$TrackDetailsSet implements TrackDetailsSet {
 
   @override
   @JsonKey(name: 'trackDetails')
-  final TrackDetails details;
+  final MediaDetails details;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -142,36 +242,41 @@ class _$TrackDetailsSet implements TrackDetailsSet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TrackDetailsSet &&
+            other is _$TrackDetailsSetImpl &&
             const DeepCollectionEquality()
                 .equals(other._annotations, _annotations) &&
-            const DeepCollectionEquality().equals(other.details, details));
+            (identical(other.details, details) || other.details == details));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_annotations),
-      const DeepCollectionEquality().hash(details));
+      runtimeType, const DeepCollectionEquality().hash(_annotations), details);
+
+  /// Create a copy of MediaDetailsSet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TrackDetailsSetImplCopyWith<_$TrackDetailsSetImpl> get copyWith =>
+      __$$TrackDetailsSetImplCopyWithImpl<_$TrackDetailsSetImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'trackDetails')
-                TrackDetails details)
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'trackDetails') MediaDetails details)
         track,
     required TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'genreDetails')
-                GenreDetails details)
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'genreDetails') MediaDetails details)
         genre,
   }) {
     return track(annotations, details);
@@ -182,15 +287,13 @@ class _$TrackDetailsSet implements TrackDetailsSet {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'trackDetails')
-                TrackDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'trackDetails') MediaDetails details)?
         track,
     TResult? Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'genreDetails')
-                GenreDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'genreDetails') MediaDetails details)?
         genre,
   }) {
     return track?.call(annotations, details);
@@ -201,15 +304,13 @@ class _$TrackDetailsSet implements TrackDetailsSet {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'trackDetails')
-                TrackDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'trackDetails') MediaDetails details)?
         track,
     TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'genreDetails')
-                GenreDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'genreDetails') MediaDetails details)?
         genre,
     required TResult orElse(),
   }) {
@@ -252,7 +353,7 @@ class _$TrackDetailsSet implements TrackDetailsSet {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TrackDetailsSetToJson(
+    return _$$TrackDetailsSetImplToJson(
       this,
     );
   }
@@ -260,36 +361,87 @@ class _$TrackDetailsSet implements TrackDetailsSet {
 
 abstract class TrackDetailsSet implements MediaDetailsSet {
   const factory TrackDetailsSet(
-      {@JsonKey(name: 'annotations')
+          {@JsonKey(name: 'annotations')
           required final Map<String, MediaAnnotation> annotations,
-      @JsonKey(name: 'trackDetails')
-          required final TrackDetails details}) = _$TrackDetailsSet;
+          @JsonKey(name: 'trackDetails') required final MediaDetails details}) =
+      _$TrackDetailsSetImpl;
 
   factory TrackDetailsSet.fromJson(Map<String, dynamic> json) =
-      _$TrackDetailsSet.fromJson;
+      _$TrackDetailsSetImpl.fromJson;
 
   @override
   @JsonKey(name: 'annotations')
   Map<String, MediaAnnotation> get annotations;
   @override
   @JsonKey(name: 'trackDetails')
-  TrackDetails get details;
+  MediaDetails get details;
+
+  /// Create a copy of MediaDetailsSet
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TrackDetailsSetImplCopyWith<_$TrackDetailsSetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GenreDetailsSetImplCopyWith<$Res>
+    implements $MediaDetailsSetCopyWith<$Res> {
+  factory _$$GenreDetailsSetImplCopyWith(_$GenreDetailsSetImpl value,
+          $Res Function(_$GenreDetailsSetImpl) then) =
+      __$$GenreDetailsSetImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'annotations') Map<String, MediaAnnotation> annotations,
+      @JsonKey(name: 'genreDetails') MediaDetails details});
+
+  @override
+  $MediaDetailsCopyWith<$Res> get details;
+}
+
+/// @nodoc
+class __$$GenreDetailsSetImplCopyWithImpl<$Res>
+    extends _$MediaDetailsSetCopyWithImpl<$Res, _$GenreDetailsSetImpl>
+    implements _$$GenreDetailsSetImplCopyWith<$Res> {
+  __$$GenreDetailsSetImplCopyWithImpl(
+      _$GenreDetailsSetImpl _value, $Res Function(_$GenreDetailsSetImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MediaDetailsSet
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? annotations = null,
+    Object? details = null,
+  }) {
+    return _then(_$GenreDetailsSetImpl(
+      annotations: null == annotations
+          ? _value._annotations
+          : annotations // ignore: cast_nullable_to_non_nullable
+              as Map<String, MediaAnnotation>,
+      details: null == details
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
+              as MediaDetails,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$GenreDetailsSet implements GenreDetailsSet {
-  const _$GenreDetailsSet(
+class _$GenreDetailsSetImpl implements GenreDetailsSet {
+  const _$GenreDetailsSetImpl(
       {@JsonKey(name: 'annotations')
-          required final Map<String, MediaAnnotation> annotations,
-      @JsonKey(name: 'genreDetails')
-          required this.details,
+      required final Map<String, MediaAnnotation> annotations,
+      @JsonKey(name: 'genreDetails') required this.details,
       final String? $type})
       : _annotations = annotations,
         $type = $type ?? 'genre';
 
-  factory _$GenreDetailsSet.fromJson(Map<String, dynamic> json) =>
-      _$$GenreDetailsSetFromJson(json);
+  factory _$GenreDetailsSetImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GenreDetailsSetImplFromJson(json);
 
   final Map<String, MediaAnnotation> _annotations;
   @override
@@ -302,7 +454,7 @@ class _$GenreDetailsSet implements GenreDetailsSet {
 
   @override
   @JsonKey(name: 'genreDetails')
-  final GenreDetails details;
+  final MediaDetails details;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -313,36 +465,41 @@ class _$GenreDetailsSet implements GenreDetailsSet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GenreDetailsSet &&
+            other is _$GenreDetailsSetImpl &&
             const DeepCollectionEquality()
                 .equals(other._annotations, _annotations) &&
-            const DeepCollectionEquality().equals(other.details, details));
+            (identical(other.details, details) || other.details == details));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_annotations),
-      const DeepCollectionEquality().hash(details));
+      runtimeType, const DeepCollectionEquality().hash(_annotations), details);
+
+  /// Create a copy of MediaDetailsSet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GenreDetailsSetImplCopyWith<_$GenreDetailsSetImpl> get copyWith =>
+      __$$GenreDetailsSetImplCopyWithImpl<_$GenreDetailsSetImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'trackDetails')
-                TrackDetails details)
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'trackDetails') MediaDetails details)
         track,
     required TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'genreDetails')
-                GenreDetails details)
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'genreDetails') MediaDetails details)
         genre,
   }) {
     return genre(annotations, details);
@@ -353,15 +510,13 @@ class _$GenreDetailsSet implements GenreDetailsSet {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'trackDetails')
-                TrackDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'trackDetails') MediaDetails details)?
         track,
     TResult? Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'genreDetails')
-                GenreDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'genreDetails') MediaDetails details)?
         genre,
   }) {
     return genre?.call(annotations, details);
@@ -372,15 +527,13 @@ class _$GenreDetailsSet implements GenreDetailsSet {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'trackDetails')
-                TrackDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'trackDetails') MediaDetails details)?
         track,
     TResult Function(
             @JsonKey(name: 'annotations')
-                Map<String, MediaAnnotation> annotations,
-            @JsonKey(name: 'genreDetails')
-                GenreDetails details)?
+            Map<String, MediaAnnotation> annotations,
+            @JsonKey(name: 'genreDetails') MediaDetails details)?
         genre,
     required TResult orElse(),
   }) {
@@ -423,7 +576,7 @@ class _$GenreDetailsSet implements GenreDetailsSet {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GenreDetailsSetToJson(
+    return _$$GenreDetailsSetImplToJson(
       this,
     );
   }
@@ -431,20 +584,27 @@ class _$GenreDetailsSet implements GenreDetailsSet {
 
 abstract class GenreDetailsSet implements MediaDetailsSet {
   const factory GenreDetailsSet(
-      {@JsonKey(name: 'annotations')
+          {@JsonKey(name: 'annotations')
           required final Map<String, MediaAnnotation> annotations,
-      @JsonKey(name: 'genreDetails')
-          required final GenreDetails details}) = _$GenreDetailsSet;
+          @JsonKey(name: 'genreDetails') required final MediaDetails details}) =
+      _$GenreDetailsSetImpl;
 
   factory GenreDetailsSet.fromJson(Map<String, dynamic> json) =
-      _$GenreDetailsSet.fromJson;
+      _$GenreDetailsSetImpl.fromJson;
 
   @override
   @JsonKey(name: 'annotations')
   Map<String, MediaAnnotation> get annotations;
   @override
   @JsonKey(name: 'genreDetails')
-  GenreDetails get details;
+  MediaDetails get details;
+
+  /// Create a copy of MediaDetailsSet
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GenreDetailsSetImplCopyWith<_$GenreDetailsSetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 MediaDetails _$MediaDetailsFromJson(Map<String, dynamic> json) {
@@ -478,162 +638,117 @@ mixin _$MediaDetails {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'trackTags')
-                List<String> trackTags,
-            @JsonKey(name: 'lyricData')
-                MediaLyricData? lyricData,
-            @JsonKey(name: 'cleanLyricData')
-                MediaLyricData? cleanLyricData,
-            @JsonKey(name: 'releaseDate')
-                DateTime releaseDate,
-            @JsonKey(name: 'copyright')
-                String copyrightHtml,
-            @JsonKey(name: 'shareableUrlPath')
-                String shareableUrlPath,
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'similarTracks')
-                List<String> similarTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'credits')
-                Credits? credits,
-            @JsonKey(name: 'featured')
-                bool featured,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)
+            @JsonKey(name: 'trackTags') List<String> trackTags,
+            @JsonKey(name: 'lyricData') MediaLyricData? lyricData,
+            @JsonKey(name: 'cleanLyricData') MediaLyricData? cleanLyricData,
+            @JsonKey(name: 'releaseDate') DateTime releaseDate,
+            @JsonKey(name: 'copyright') String copyrightHtml,
+            @JsonKey(name: 'shareableUrlPath') String shareableUrlPath,
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'similarTracks') List<String> similarTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'credits') Credits? credits,
+            @JsonKey(name: 'featured') bool featured,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)
         track,
     required TResult Function(
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'sampleArtists')
-                List<String> sampleArtistIds,
-            @JsonKey(name: 'sampleTracks')
-                List<String> sampleTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'isRedirect')
-                bool isRedirect,
-            @JsonKey(name: 'curatorId')
-                String curatorId,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'sampleArtists') List<String> sampleArtistIds,
+            @JsonKey(name: 'sampleTracks') List<String> sampleTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'isRedirect') bool isRedirect,
+            @JsonKey(name: 'curatorId') String curatorId,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)
         genre,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'trackTags')
-                List<String> trackTags,
-            @JsonKey(name: 'lyricData')
-                MediaLyricData? lyricData,
-            @JsonKey(name: 'cleanLyricData')
-                MediaLyricData? cleanLyricData,
-            @JsonKey(name: 'releaseDate')
-                DateTime releaseDate,
-            @JsonKey(name: 'copyright')
-                String copyrightHtml,
-            @JsonKey(name: 'shareableUrlPath')
-                String shareableUrlPath,
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'similarTracks')
-                List<String> similarTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'credits')
-                Credits? credits,
-            @JsonKey(name: 'featured')
-                bool featured,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(name: 'trackTags') List<String> trackTags,
+            @JsonKey(name: 'lyricData') MediaLyricData? lyricData,
+            @JsonKey(name: 'cleanLyricData') MediaLyricData? cleanLyricData,
+            @JsonKey(name: 'releaseDate') DateTime releaseDate,
+            @JsonKey(name: 'copyright') String copyrightHtml,
+            @JsonKey(name: 'shareableUrlPath') String shareableUrlPath,
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'similarTracks') List<String> similarTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'credits') Credits? credits,
+            @JsonKey(name: 'featured') bool featured,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         track,
     TResult? Function(
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'sampleArtists')
-                List<String> sampleArtistIds,
-            @JsonKey(name: 'sampleTracks')
-                List<String> sampleTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'isRedirect')
-                bool isRedirect,
-            @JsonKey(name: 'curatorId')
-                String curatorId,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'sampleArtists') List<String> sampleArtistIds,
+            @JsonKey(name: 'sampleTracks') List<String> sampleTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'isRedirect') bool isRedirect,
+            @JsonKey(name: 'curatorId') String curatorId,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         genre,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'trackTags')
-                List<String> trackTags,
-            @JsonKey(name: 'lyricData')
-                MediaLyricData? lyricData,
-            @JsonKey(name: 'cleanLyricData')
-                MediaLyricData? cleanLyricData,
-            @JsonKey(name: 'releaseDate')
-                DateTime releaseDate,
-            @JsonKey(name: 'copyright')
-                String copyrightHtml,
-            @JsonKey(name: 'shareableUrlPath')
-                String shareableUrlPath,
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'similarTracks')
-                List<String> similarTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'credits')
-                Credits? credits,
-            @JsonKey(name: 'featured')
-                bool featured,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(name: 'trackTags') List<String> trackTags,
+            @JsonKey(name: 'lyricData') MediaLyricData? lyricData,
+            @JsonKey(name: 'cleanLyricData') MediaLyricData? cleanLyricData,
+            @JsonKey(name: 'releaseDate') DateTime releaseDate,
+            @JsonKey(name: 'copyright') String copyrightHtml,
+            @JsonKey(name: 'shareableUrlPath') String shareableUrlPath,
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'similarTracks') List<String> similarTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'credits') Credits? credits,
+            @JsonKey(name: 'featured') bool featured,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         track,
     TResult Function(
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'sampleArtists')
-                List<String> sampleArtistIds,
-            @JsonKey(name: 'sampleTracks')
-                List<String> sampleTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'isRedirect')
-                bool isRedirect,
-            @JsonKey(name: 'curatorId')
-                String curatorId,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'sampleArtists') List<String> sampleArtistIds,
+            @JsonKey(name: 'sampleTracks') List<String> sampleTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'isRedirect') bool isRedirect,
+            @JsonKey(name: 'curatorId') String curatorId,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         genre,
     required TResult orElse(),
   }) =>
@@ -657,8 +772,13 @@ mixin _$MediaDetails {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this MediaDetails to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MediaDetailsCopyWith<MediaDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -670,16 +790,15 @@ abstract class $MediaDetailsCopyWith<$Res> {
       _$MediaDetailsCopyWithImpl<$Res, MediaDetails>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          DateTime modificationTime,
-      @JsonKey(name: 'focusTraits')
-          List<FocusTrait> focusTraits,
-      @JsonKey(name: 'pandoraId')
-          String pandoraId,
-      @JsonKey(name: 'type')
-          PandoraType pandoraType,
-      @JsonKey(name: 'scope')
-          String scope});
+      {@JsonKey(
+          name: 'modificationTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      DateTime modificationTime,
+      @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+      @JsonKey(name: 'pandoraId') String pandoraId,
+      @JsonKey(name: 'type') PandoraType pandoraType,
+      @JsonKey(name: 'scope') String scope});
 }
 
 /// @nodoc
@@ -692,6 +811,8 @@ class _$MediaDetailsCopyWithImpl<$Res, $Val extends MediaDetails>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -727,42 +848,32 @@ class _$MediaDetailsCopyWithImpl<$Res, $Val extends MediaDetails>
 }
 
 /// @nodoc
-abstract class _$$TrackDetailsCopyWith<$Res>
+abstract class _$$TrackDetailsImplCopyWith<$Res>
     implements $MediaDetailsCopyWith<$Res> {
-  factory _$$TrackDetailsCopyWith(
-          _$TrackDetails value, $Res Function(_$TrackDetails) then) =
-      __$$TrackDetailsCopyWithImpl<$Res>;
+  factory _$$TrackDetailsImplCopyWith(
+          _$TrackDetailsImpl value, $Res Function(_$TrackDetailsImpl) then) =
+      __$$TrackDetailsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'trackTags')
-          List<String> trackTags,
-      @JsonKey(name: 'lyricData')
-          MediaLyricData? lyricData,
-      @JsonKey(name: 'cleanLyricData')
-          MediaLyricData? cleanLyricData,
-      @JsonKey(name: 'releaseDate')
-          DateTime releaseDate,
-      @JsonKey(name: 'copyright')
-          String copyrightHtml,
-      @JsonKey(name: 'shareableUrlPath')
-          String shareableUrlPath,
-      @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          DateTime modificationTime,
-      @JsonKey(name: 'similarTracks')
-          List<String> similarTrackIds,
-      @JsonKey(name: 'focusTraits')
-          List<FocusTrait> focusTraits,
-      @JsonKey(name: 'credits')
-          Credits? credits,
-      @JsonKey(name: 'featured')
-          bool featured,
-      @JsonKey(name: 'pandoraId')
-          String pandoraId,
-      @JsonKey(name: 'type')
-          PandoraType pandoraType,
-      @JsonKey(name: 'scope')
-          String scope});
+      {@JsonKey(name: 'trackTags') List<String> trackTags,
+      @JsonKey(name: 'lyricData') MediaLyricData? lyricData,
+      @JsonKey(name: 'cleanLyricData') MediaLyricData? cleanLyricData,
+      @JsonKey(name: 'releaseDate') DateTime releaseDate,
+      @JsonKey(name: 'copyright') String copyrightHtml,
+      @JsonKey(name: 'shareableUrlPath') String shareableUrlPath,
+      @JsonKey(
+          name: 'modificationTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      DateTime modificationTime,
+      @JsonKey(name: 'similarTracks') List<String> similarTrackIds,
+      @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+      @JsonKey(name: 'credits') Credits? credits,
+      @JsonKey(name: 'featured') bool featured,
+      @JsonKey(name: 'pandoraId') String pandoraId,
+      @JsonKey(name: 'type') PandoraType pandoraType,
+      @JsonKey(name: 'scope') String scope});
 
   $MediaLyricDataCopyWith<$Res>? get lyricData;
   $MediaLyricDataCopyWith<$Res>? get cleanLyricData;
@@ -770,13 +881,15 @@ abstract class _$$TrackDetailsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TrackDetailsCopyWithImpl<$Res>
-    extends _$MediaDetailsCopyWithImpl<$Res, _$TrackDetails>
-    implements _$$TrackDetailsCopyWith<$Res> {
-  __$$TrackDetailsCopyWithImpl(
-      _$TrackDetails _value, $Res Function(_$TrackDetails) _then)
+class __$$TrackDetailsImplCopyWithImpl<$Res>
+    extends _$MediaDetailsCopyWithImpl<$Res, _$TrackDetailsImpl>
+    implements _$$TrackDetailsImplCopyWith<$Res> {
+  __$$TrackDetailsImplCopyWithImpl(
+      _$TrackDetailsImpl _value, $Res Function(_$TrackDetailsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -795,7 +908,7 @@ class __$$TrackDetailsCopyWithImpl<$Res>
     Object? pandoraType = null,
     Object? scope = null,
   }) {
-    return _then(_$TrackDetails(
+    return _then(_$TrackDetailsImpl(
       trackTags: null == trackTags
           ? _value._trackTags
           : trackTags // ignore: cast_nullable_to_non_nullable
@@ -855,6 +968,8 @@ class __$$TrackDetailsCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MediaLyricDataCopyWith<$Res>? get lyricData {
@@ -867,6 +982,8 @@ class __$$TrackDetailsCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MediaLyricDataCopyWith<$Res>? get cleanLyricData {
@@ -879,6 +996,8 @@ class __$$TrackDetailsCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CreditsCopyWith<$Res>? get credits {
@@ -894,36 +1013,27 @@ class __$$TrackDetailsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TrackDetails implements TrackDetails {
-  const _$TrackDetails(
-      {@JsonKey(name: 'trackTags')
-          required final List<String> trackTags,
-      @JsonKey(name: 'lyricData')
-          this.lyricData,
-      @JsonKey(name: 'cleanLyricData')
-          this.cleanLyricData,
-      @JsonKey(name: 'releaseDate')
-          required this.releaseDate,
-      @JsonKey(name: 'copyright')
-          required this.copyrightHtml,
-      @JsonKey(name: 'shareableUrlPath')
-          required this.shareableUrlPath,
-      @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          required this.modificationTime,
+class _$TrackDetailsImpl implements TrackDetails {
+  const _$TrackDetailsImpl(
+      {@JsonKey(name: 'trackTags') required final List<String> trackTags,
+      @JsonKey(name: 'lyricData') this.lyricData,
+      @JsonKey(name: 'cleanLyricData') this.cleanLyricData,
+      @JsonKey(name: 'releaseDate') required this.releaseDate,
+      @JsonKey(name: 'copyright') required this.copyrightHtml,
+      @JsonKey(name: 'shareableUrlPath') required this.shareableUrlPath,
+      @JsonKey(
+          name: 'modificationTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      required this.modificationTime,
       @JsonKey(name: 'similarTracks')
-          required final List<String> similarTrackIds,
-      @JsonKey(name: 'focusTraits')
-          required final List<FocusTrait> focusTraits,
-      @JsonKey(name: 'credits')
-          this.credits,
-      @JsonKey(name: 'featured')
-          required this.featured,
-      @JsonKey(name: 'pandoraId')
-          required this.pandoraId,
-      @JsonKey(name: 'type')
-          required this.pandoraType,
-      @JsonKey(name: 'scope')
-          required this.scope,
+      required final List<String> similarTrackIds,
+      @JsonKey(name: 'focusTraits') required final List<FocusTrait> focusTraits,
+      @JsonKey(name: 'credits') this.credits,
+      @JsonKey(name: 'featured') required this.featured,
+      @JsonKey(name: 'pandoraId') required this.pandoraId,
+      @JsonKey(name: 'type') required this.pandoraType,
+      @JsonKey(name: 'scope') required this.scope,
       final String? $type})
       : assert((lyricData == null && cleanLyricData == null) ||
             (lyricData != null && cleanLyricData != null)),
@@ -932,8 +1042,8 @@ class _$TrackDetails implements TrackDetails {
         _focusTraits = focusTraits,
         $type = $type ?? 'track';
 
-  factory _$TrackDetails.fromJson(Map<String, dynamic> json) =>
-      _$$TrackDetailsFromJson(json);
+  factory _$TrackDetailsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TrackDetailsImplFromJson(json);
 
   final List<String> _trackTags;
   @override
@@ -1008,10 +1118,10 @@ class _$TrackDetails implements TrackDetails {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TrackDetails &&
+            other is _$TrackDetailsImpl &&
             const DeepCollectionEquality()
                 .equals(other._trackTags, _trackTags) &&
             (identical(other.lyricData, lyricData) ||
@@ -1040,7 +1150,7 @@ class _$TrackDetails implements TrackDetails {
             (identical(other.scope, scope) || other.scope == scope));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1059,64 +1169,51 @@ class _$TrackDetails implements TrackDetails {
       pandoraType,
       scope);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TrackDetailsCopyWith<_$TrackDetails> get copyWith =>
-      __$$TrackDetailsCopyWithImpl<_$TrackDetails>(this, _$identity);
+  _$$TrackDetailsImplCopyWith<_$TrackDetailsImpl> get copyWith =>
+      __$$TrackDetailsImplCopyWithImpl<_$TrackDetailsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'trackTags')
-                List<String> trackTags,
-            @JsonKey(name: 'lyricData')
-                MediaLyricData? lyricData,
-            @JsonKey(name: 'cleanLyricData')
-                MediaLyricData? cleanLyricData,
-            @JsonKey(name: 'releaseDate')
-                DateTime releaseDate,
-            @JsonKey(name: 'copyright')
-                String copyrightHtml,
-            @JsonKey(name: 'shareableUrlPath')
-                String shareableUrlPath,
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'similarTracks')
-                List<String> similarTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'credits')
-                Credits? credits,
-            @JsonKey(name: 'featured')
-                bool featured,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)
+            @JsonKey(name: 'trackTags') List<String> trackTags,
+            @JsonKey(name: 'lyricData') MediaLyricData? lyricData,
+            @JsonKey(name: 'cleanLyricData') MediaLyricData? cleanLyricData,
+            @JsonKey(name: 'releaseDate') DateTime releaseDate,
+            @JsonKey(name: 'copyright') String copyrightHtml,
+            @JsonKey(name: 'shareableUrlPath') String shareableUrlPath,
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'similarTracks') List<String> similarTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'credits') Credits? credits,
+            @JsonKey(name: 'featured') bool featured,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)
         track,
     required TResult Function(
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'sampleArtists')
-                List<String> sampleArtistIds,
-            @JsonKey(name: 'sampleTracks')
-                List<String> sampleTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'isRedirect')
-                bool isRedirect,
-            @JsonKey(name: 'curatorId')
-                String curatorId,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'sampleArtists') List<String> sampleArtistIds,
+            @JsonKey(name: 'sampleTracks') List<String> sampleTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'isRedirect') bool isRedirect,
+            @JsonKey(name: 'curatorId') String curatorId,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)
         genre,
   }) {
     return track(
@@ -1140,54 +1237,39 @@ class _$TrackDetails implements TrackDetails {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'trackTags')
-                List<String> trackTags,
-            @JsonKey(name: 'lyricData')
-                MediaLyricData? lyricData,
-            @JsonKey(name: 'cleanLyricData')
-                MediaLyricData? cleanLyricData,
-            @JsonKey(name: 'releaseDate')
-                DateTime releaseDate,
-            @JsonKey(name: 'copyright')
-                String copyrightHtml,
-            @JsonKey(name: 'shareableUrlPath')
-                String shareableUrlPath,
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'similarTracks')
-                List<String> similarTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'credits')
-                Credits? credits,
-            @JsonKey(name: 'featured')
-                bool featured,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(name: 'trackTags') List<String> trackTags,
+            @JsonKey(name: 'lyricData') MediaLyricData? lyricData,
+            @JsonKey(name: 'cleanLyricData') MediaLyricData? cleanLyricData,
+            @JsonKey(name: 'releaseDate') DateTime releaseDate,
+            @JsonKey(name: 'copyright') String copyrightHtml,
+            @JsonKey(name: 'shareableUrlPath') String shareableUrlPath,
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'similarTracks') List<String> similarTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'credits') Credits? credits,
+            @JsonKey(name: 'featured') bool featured,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         track,
     TResult? Function(
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'sampleArtists')
-                List<String> sampleArtistIds,
-            @JsonKey(name: 'sampleTracks')
-                List<String> sampleTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'isRedirect')
-                bool isRedirect,
-            @JsonKey(name: 'curatorId')
-                String curatorId,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'sampleArtists') List<String> sampleArtistIds,
+            @JsonKey(name: 'sampleTracks') List<String> sampleTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'isRedirect') bool isRedirect,
+            @JsonKey(name: 'curatorId') String curatorId,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         genre,
   }) {
     return track?.call(
@@ -1211,54 +1293,39 @@ class _$TrackDetails implements TrackDetails {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'trackTags')
-                List<String> trackTags,
-            @JsonKey(name: 'lyricData')
-                MediaLyricData? lyricData,
-            @JsonKey(name: 'cleanLyricData')
-                MediaLyricData? cleanLyricData,
-            @JsonKey(name: 'releaseDate')
-                DateTime releaseDate,
-            @JsonKey(name: 'copyright')
-                String copyrightHtml,
-            @JsonKey(name: 'shareableUrlPath')
-                String shareableUrlPath,
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'similarTracks')
-                List<String> similarTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'credits')
-                Credits? credits,
-            @JsonKey(name: 'featured')
-                bool featured,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(name: 'trackTags') List<String> trackTags,
+            @JsonKey(name: 'lyricData') MediaLyricData? lyricData,
+            @JsonKey(name: 'cleanLyricData') MediaLyricData? cleanLyricData,
+            @JsonKey(name: 'releaseDate') DateTime releaseDate,
+            @JsonKey(name: 'copyright') String copyrightHtml,
+            @JsonKey(name: 'shareableUrlPath') String shareableUrlPath,
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'similarTracks') List<String> similarTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'credits') Credits? credits,
+            @JsonKey(name: 'featured') bool featured,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         track,
     TResult Function(
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'sampleArtists')
-                List<String> sampleArtistIds,
-            @JsonKey(name: 'sampleTracks')
-                List<String> sampleTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'isRedirect')
-                bool isRedirect,
-            @JsonKey(name: 'curatorId')
-                String curatorId,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'sampleArtists') List<String> sampleArtistIds,
+            @JsonKey(name: 'sampleTracks') List<String> sampleTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'isRedirect') bool isRedirect,
+            @JsonKey(name: 'curatorId') String curatorId,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         genre,
     required TResult orElse(),
   }) {
@@ -1315,7 +1382,7 @@ class _$TrackDetails implements TrackDetails {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TrackDetailsToJson(
+    return _$$TrackDetailsImplToJson(
       this,
     );
   }
@@ -1323,37 +1390,29 @@ class _$TrackDetails implements TrackDetails {
 
 abstract class TrackDetails implements MediaDetails {
   const factory TrackDetails(
-      {@JsonKey(name: 'trackTags')
-          required final List<String> trackTags,
-      @JsonKey(name: 'lyricData')
-          final MediaLyricData? lyricData,
-      @JsonKey(name: 'cleanLyricData')
-          final MediaLyricData? cleanLyricData,
-      @JsonKey(name: 'releaseDate')
-          required final DateTime releaseDate,
-      @JsonKey(name: 'copyright')
-          required final String copyrightHtml,
-      @JsonKey(name: 'shareableUrlPath')
-          required final String shareableUrlPath,
-      @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          required final DateTime modificationTime,
+      {@JsonKey(name: 'trackTags') required final List<String> trackTags,
+      @JsonKey(name: 'lyricData') final MediaLyricData? lyricData,
+      @JsonKey(name: 'cleanLyricData') final MediaLyricData? cleanLyricData,
+      @JsonKey(name: 'releaseDate') required final DateTime releaseDate,
+      @JsonKey(name: 'copyright') required final String copyrightHtml,
+      @JsonKey(name: 'shareableUrlPath') required final String shareableUrlPath,
+      @JsonKey(
+          name: 'modificationTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      required final DateTime modificationTime,
       @JsonKey(name: 'similarTracks')
-          required final List<String> similarTrackIds,
-      @JsonKey(name: 'focusTraits')
-          required final List<FocusTrait> focusTraits,
-      @JsonKey(name: 'credits')
-          final Credits? credits,
-      @JsonKey(name: 'featured')
-          required final bool featured,
-      @JsonKey(name: 'pandoraId')
-          required final String pandoraId,
-      @JsonKey(name: 'type')
-          required final PandoraType pandoraType,
+      required final List<String> similarTrackIds,
+      @JsonKey(name: 'focusTraits') required final List<FocusTrait> focusTraits,
+      @JsonKey(name: 'credits') final Credits? credits,
+      @JsonKey(name: 'featured') required final bool featured,
+      @JsonKey(name: 'pandoraId') required final String pandoraId,
+      @JsonKey(name: 'type') required final PandoraType pandoraType,
       @JsonKey(name: 'scope')
-          required final String scope}) = _$TrackDetails;
+      required final String scope}) = _$TrackDetailsImpl;
 
   factory TrackDetails.fromJson(Map<String, dynamic> json) =
-      _$TrackDetails.fromJson;
+      _$TrackDetailsImpl.fromJson;
 
   @JsonKey(name: 'trackTags')
   List<String> get trackTags;
@@ -1391,49 +1450,49 @@ abstract class TrackDetails implements MediaDetails {
   @override
   @JsonKey(name: 'scope')
   String get scope;
+
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$TrackDetailsCopyWith<_$TrackDetails> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TrackDetailsImplCopyWith<_$TrackDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GenreDetailsCopyWith<$Res>
+abstract class _$$GenreDetailsImplCopyWith<$Res>
     implements $MediaDetailsCopyWith<$Res> {
-  factory _$$GenreDetailsCopyWith(
-          _$GenreDetails value, $Res Function(_$GenreDetails) then) =
-      __$$GenreDetailsCopyWithImpl<$Res>;
+  factory _$$GenreDetailsImplCopyWith(
+          _$GenreDetailsImpl value, $Res Function(_$GenreDetailsImpl) then) =
+      __$$GenreDetailsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          DateTime modificationTime,
-      @JsonKey(name: 'sampleArtists')
-          List<String> sampleArtistIds,
-      @JsonKey(name: 'sampleTracks')
-          List<String> sampleTrackIds,
-      @JsonKey(name: 'focusTraits')
-          List<FocusTrait> focusTraits,
-      @JsonKey(name: 'isRedirect')
-          bool isRedirect,
-      @JsonKey(name: 'curatorId')
-          String curatorId,
-      @JsonKey(name: 'pandoraId')
-          String pandoraId,
-      @JsonKey(name: 'type')
-          PandoraType pandoraType,
-      @JsonKey(name: 'scope')
-          String scope});
+      {@JsonKey(
+          name: 'modificationTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      DateTime modificationTime,
+      @JsonKey(name: 'sampleArtists') List<String> sampleArtistIds,
+      @JsonKey(name: 'sampleTracks') List<String> sampleTrackIds,
+      @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+      @JsonKey(name: 'isRedirect') bool isRedirect,
+      @JsonKey(name: 'curatorId') String curatorId,
+      @JsonKey(name: 'pandoraId') String pandoraId,
+      @JsonKey(name: 'type') PandoraType pandoraType,
+      @JsonKey(name: 'scope') String scope});
 }
 
 /// @nodoc
-class __$$GenreDetailsCopyWithImpl<$Res>
-    extends _$MediaDetailsCopyWithImpl<$Res, _$GenreDetails>
-    implements _$$GenreDetailsCopyWith<$Res> {
-  __$$GenreDetailsCopyWithImpl(
-      _$GenreDetails _value, $Res Function(_$GenreDetails) _then)
+class __$$GenreDetailsImplCopyWithImpl<$Res>
+    extends _$MediaDetailsCopyWithImpl<$Res, _$GenreDetailsImpl>
+    implements _$$GenreDetailsImplCopyWith<$Res> {
+  __$$GenreDetailsImplCopyWithImpl(
+      _$GenreDetailsImpl _value, $Res Function(_$GenreDetailsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1447,7 +1506,7 @@ class __$$GenreDetailsCopyWithImpl<$Res>
     Object? pandoraType = null,
     Object? scope = null,
   }) {
-    return _then(_$GenreDetails(
+    return _then(_$GenreDetailsImpl(
       modificationTime: null == modificationTime
           ? _value.modificationTime
           : modificationTime // ignore: cast_nullable_to_non_nullable
@@ -1490,34 +1549,30 @@ class __$$GenreDetailsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GenreDetails implements GenreDetails {
-  const _$GenreDetails(
-      {@JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          required this.modificationTime,
+class _$GenreDetailsImpl implements GenreDetails {
+  const _$GenreDetailsImpl(
+      {@JsonKey(
+          name: 'modificationTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      required this.modificationTime,
       @JsonKey(name: 'sampleArtists')
-          required final List<String> sampleArtistIds,
-      @JsonKey(name: 'sampleTracks')
-          required final List<String> sampleTrackIds,
-      @JsonKey(name: 'focusTraits')
-          required final List<FocusTrait> focusTraits,
-      @JsonKey(name: 'isRedirect')
-          required this.isRedirect,
-      @JsonKey(name: 'curatorId')
-          required this.curatorId,
-      @JsonKey(name: 'pandoraId')
-          required this.pandoraId,
-      @JsonKey(name: 'type')
-          required this.pandoraType,
-      @JsonKey(name: 'scope')
-          required this.scope,
+      required final List<String> sampleArtistIds,
+      @JsonKey(name: 'sampleTracks') required final List<String> sampleTrackIds,
+      @JsonKey(name: 'focusTraits') required final List<FocusTrait> focusTraits,
+      @JsonKey(name: 'isRedirect') required this.isRedirect,
+      @JsonKey(name: 'curatorId') required this.curatorId,
+      @JsonKey(name: 'pandoraId') required this.pandoraId,
+      @JsonKey(name: 'type') required this.pandoraType,
+      @JsonKey(name: 'scope') required this.scope,
       final String? $type})
       : _sampleArtistIds = sampleArtistIds,
         _sampleTrackIds = sampleTrackIds,
         _focusTraits = focusTraits,
         $type = $type ?? 'genre';
 
-  factory _$GenreDetails.fromJson(Map<String, dynamic> json) =>
-      _$$GenreDetailsFromJson(json);
+  factory _$GenreDetailsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GenreDetailsImplFromJson(json);
 
   @override
   @JsonKey(
@@ -1577,10 +1632,10 @@ class _$GenreDetails implements GenreDetails {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GenreDetails &&
+            other is _$GenreDetailsImpl &&
             (identical(other.modificationTime, modificationTime) ||
                 other.modificationTime == modificationTime) &&
             const DeepCollectionEquality()
@@ -1600,7 +1655,7 @@ class _$GenreDetails implements GenreDetails {
             (identical(other.scope, scope) || other.scope == scope));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1614,64 +1669,51 @@ class _$GenreDetails implements GenreDetails {
       pandoraType,
       scope);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GenreDetailsCopyWith<_$GenreDetails> get copyWith =>
-      __$$GenreDetailsCopyWithImpl<_$GenreDetails>(this, _$identity);
+  _$$GenreDetailsImplCopyWith<_$GenreDetailsImpl> get copyWith =>
+      __$$GenreDetailsImplCopyWithImpl<_$GenreDetailsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'trackTags')
-                List<String> trackTags,
-            @JsonKey(name: 'lyricData')
-                MediaLyricData? lyricData,
-            @JsonKey(name: 'cleanLyricData')
-                MediaLyricData? cleanLyricData,
-            @JsonKey(name: 'releaseDate')
-                DateTime releaseDate,
-            @JsonKey(name: 'copyright')
-                String copyrightHtml,
-            @JsonKey(name: 'shareableUrlPath')
-                String shareableUrlPath,
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'similarTracks')
-                List<String> similarTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'credits')
-                Credits? credits,
-            @JsonKey(name: 'featured')
-                bool featured,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)
+            @JsonKey(name: 'trackTags') List<String> trackTags,
+            @JsonKey(name: 'lyricData') MediaLyricData? lyricData,
+            @JsonKey(name: 'cleanLyricData') MediaLyricData? cleanLyricData,
+            @JsonKey(name: 'releaseDate') DateTime releaseDate,
+            @JsonKey(name: 'copyright') String copyrightHtml,
+            @JsonKey(name: 'shareableUrlPath') String shareableUrlPath,
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'similarTracks') List<String> similarTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'credits') Credits? credits,
+            @JsonKey(name: 'featured') bool featured,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)
         track,
     required TResult Function(
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'sampleArtists')
-                List<String> sampleArtistIds,
-            @JsonKey(name: 'sampleTracks')
-                List<String> sampleTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'isRedirect')
-                bool isRedirect,
-            @JsonKey(name: 'curatorId')
-                String curatorId,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'sampleArtists') List<String> sampleArtistIds,
+            @JsonKey(name: 'sampleTracks') List<String> sampleTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'isRedirect') bool isRedirect,
+            @JsonKey(name: 'curatorId') String curatorId,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)
         genre,
   }) {
     return genre(modificationTime, sampleArtistIds, sampleTrackIds, focusTraits,
@@ -1682,54 +1724,39 @@ class _$GenreDetails implements GenreDetails {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'trackTags')
-                List<String> trackTags,
-            @JsonKey(name: 'lyricData')
-                MediaLyricData? lyricData,
-            @JsonKey(name: 'cleanLyricData')
-                MediaLyricData? cleanLyricData,
-            @JsonKey(name: 'releaseDate')
-                DateTime releaseDate,
-            @JsonKey(name: 'copyright')
-                String copyrightHtml,
-            @JsonKey(name: 'shareableUrlPath')
-                String shareableUrlPath,
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'similarTracks')
-                List<String> similarTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'credits')
-                Credits? credits,
-            @JsonKey(name: 'featured')
-                bool featured,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(name: 'trackTags') List<String> trackTags,
+            @JsonKey(name: 'lyricData') MediaLyricData? lyricData,
+            @JsonKey(name: 'cleanLyricData') MediaLyricData? cleanLyricData,
+            @JsonKey(name: 'releaseDate') DateTime releaseDate,
+            @JsonKey(name: 'copyright') String copyrightHtml,
+            @JsonKey(name: 'shareableUrlPath') String shareableUrlPath,
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'similarTracks') List<String> similarTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'credits') Credits? credits,
+            @JsonKey(name: 'featured') bool featured,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         track,
     TResult? Function(
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'sampleArtists')
-                List<String> sampleArtistIds,
-            @JsonKey(name: 'sampleTracks')
-                List<String> sampleTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'isRedirect')
-                bool isRedirect,
-            @JsonKey(name: 'curatorId')
-                String curatorId,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'sampleArtists') List<String> sampleArtistIds,
+            @JsonKey(name: 'sampleTracks') List<String> sampleTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'isRedirect') bool isRedirect,
+            @JsonKey(name: 'curatorId') String curatorId,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         genre,
   }) {
     return genre?.call(modificationTime, sampleArtistIds, sampleTrackIds,
@@ -1740,54 +1767,39 @@ class _$GenreDetails implements GenreDetails {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'trackTags')
-                List<String> trackTags,
-            @JsonKey(name: 'lyricData')
-                MediaLyricData? lyricData,
-            @JsonKey(name: 'cleanLyricData')
-                MediaLyricData? cleanLyricData,
-            @JsonKey(name: 'releaseDate')
-                DateTime releaseDate,
-            @JsonKey(name: 'copyright')
-                String copyrightHtml,
-            @JsonKey(name: 'shareableUrlPath')
-                String shareableUrlPath,
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'similarTracks')
-                List<String> similarTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'credits')
-                Credits? credits,
-            @JsonKey(name: 'featured')
-                bool featured,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(name: 'trackTags') List<String> trackTags,
+            @JsonKey(name: 'lyricData') MediaLyricData? lyricData,
+            @JsonKey(name: 'cleanLyricData') MediaLyricData? cleanLyricData,
+            @JsonKey(name: 'releaseDate') DateTime releaseDate,
+            @JsonKey(name: 'copyright') String copyrightHtml,
+            @JsonKey(name: 'shareableUrlPath') String shareableUrlPath,
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'similarTracks') List<String> similarTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'credits') Credits? credits,
+            @JsonKey(name: 'featured') bool featured,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         track,
     TResult Function(
-            @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-                DateTime modificationTime,
-            @JsonKey(name: 'sampleArtists')
-                List<String> sampleArtistIds,
-            @JsonKey(name: 'sampleTracks')
-                List<String> sampleTrackIds,
-            @JsonKey(name: 'focusTraits')
-                List<FocusTrait> focusTraits,
-            @JsonKey(name: 'isRedirect')
-                bool isRedirect,
-            @JsonKey(name: 'curatorId')
-                String curatorId,
-            @JsonKey(name: 'pandoraId')
-                String pandoraId,
-            @JsonKey(name: 'type')
-                PandoraType pandoraType,
-            @JsonKey(name: 'scope')
-                String scope)?
+            @JsonKey(
+                name: 'modificationTime',
+                fromJson: readDateTimeMilliseconds,
+                toJson: writeDateTimeMilliseconds)
+            DateTime modificationTime,
+            @JsonKey(name: 'sampleArtists') List<String> sampleArtistIds,
+            @JsonKey(name: 'sampleTracks') List<String> sampleTrackIds,
+            @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
+            @JsonKey(name: 'isRedirect') bool isRedirect,
+            @JsonKey(name: 'curatorId') String curatorId,
+            @JsonKey(name: 'pandoraId') String pandoraId,
+            @JsonKey(name: 'type') PandoraType pandoraType,
+            @JsonKey(name: 'scope') String scope)?
         genre,
     required TResult orElse(),
   }) {
@@ -1831,7 +1843,7 @@ class _$GenreDetails implements GenreDetails {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GenreDetailsToJson(
+    return _$$GenreDetailsImplToJson(
       this,
     );
   }
@@ -1839,27 +1851,24 @@ class _$GenreDetails implements GenreDetails {
 
 abstract class GenreDetails implements MediaDetails {
   const factory GenreDetails(
-      {@JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-          required final DateTime modificationTime,
+      {@JsonKey(
+          name: 'modificationTime',
+          fromJson: readDateTimeMilliseconds,
+          toJson: writeDateTimeMilliseconds)
+      required final DateTime modificationTime,
       @JsonKey(name: 'sampleArtists')
-          required final List<String> sampleArtistIds,
-      @JsonKey(name: 'sampleTracks')
-          required final List<String> sampleTrackIds,
-      @JsonKey(name: 'focusTraits')
-          required final List<FocusTrait> focusTraits,
-      @JsonKey(name: 'isRedirect')
-          required final bool isRedirect,
-      @JsonKey(name: 'curatorId')
-          required final String curatorId,
-      @JsonKey(name: 'pandoraId')
-          required final String pandoraId,
-      @JsonKey(name: 'type')
-          required final PandoraType pandoraType,
+      required final List<String> sampleArtistIds,
+      @JsonKey(name: 'sampleTracks') required final List<String> sampleTrackIds,
+      @JsonKey(name: 'focusTraits') required final List<FocusTrait> focusTraits,
+      @JsonKey(name: 'isRedirect') required final bool isRedirect,
+      @JsonKey(name: 'curatorId') required final String curatorId,
+      @JsonKey(name: 'pandoraId') required final String pandoraId,
+      @JsonKey(name: 'type') required final PandoraType pandoraType,
       @JsonKey(name: 'scope')
-          required final String scope}) = _$GenreDetails;
+      required final String scope}) = _$GenreDetailsImpl;
 
   factory GenreDetails.fromJson(Map<String, dynamic> json) =
-      _$GenreDetails.fromJson;
+      _$GenreDetailsImpl.fromJson;
 
   @override
   @JsonKey(
@@ -1887,8 +1896,11 @@ abstract class GenreDetails implements MediaDetails {
   @override
   @JsonKey(name: 'scope')
   String get scope;
+
+  /// Create a copy of MediaDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$GenreDetailsCopyWith<_$GenreDetails> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GenreDetailsImplCopyWith<_$GenreDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

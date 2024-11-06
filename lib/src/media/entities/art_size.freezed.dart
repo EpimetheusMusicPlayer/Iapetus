@@ -12,14 +12,16 @@ part of 'art_size.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ArtSize {
   int get width => throw _privateConstructorUsedError;
   int get height => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ArtSize
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ArtSizeCopyWith<ArtSize> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -41,6 +43,8 @@ class _$ArtSizeCopyWithImpl<$Res, $Val extends ArtSize>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ArtSize
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -61,29 +65,32 @@ class _$ArtSizeCopyWithImpl<$Res, $Val extends ArtSize>
 }
 
 /// @nodoc
-abstract class _$$_ArtSizeCopyWith<$Res> implements $ArtSizeCopyWith<$Res> {
-  factory _$$_ArtSizeCopyWith(
-          _$_ArtSize value, $Res Function(_$_ArtSize) then) =
-      __$$_ArtSizeCopyWithImpl<$Res>;
+abstract class _$$ArtSizeImplCopyWith<$Res> implements $ArtSizeCopyWith<$Res> {
+  factory _$$ArtSizeImplCopyWith(
+          _$ArtSizeImpl value, $Res Function(_$ArtSizeImpl) then) =
+      __$$ArtSizeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int width, int height});
 }
 
 /// @nodoc
-class __$$_ArtSizeCopyWithImpl<$Res>
-    extends _$ArtSizeCopyWithImpl<$Res, _$_ArtSize>
-    implements _$$_ArtSizeCopyWith<$Res> {
-  __$$_ArtSizeCopyWithImpl(_$_ArtSize _value, $Res Function(_$_ArtSize) _then)
+class __$$ArtSizeImplCopyWithImpl<$Res>
+    extends _$ArtSizeCopyWithImpl<$Res, _$ArtSizeImpl>
+    implements _$$ArtSizeImplCopyWith<$Res> {
+  __$$ArtSizeImplCopyWithImpl(
+      _$ArtSizeImpl _value, $Res Function(_$ArtSizeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ArtSize
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? width = null,
     Object? height = null,
   }) {
-    return _then(_$_ArtSize(
+    return _then(_$ArtSizeImpl(
       null == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
@@ -98,8 +105,8 @@ class __$$_ArtSizeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ArtSize extends _ArtSize {
-  const _$_ArtSize(this.width, this.height) : super._();
+class _$ArtSizeImpl extends _ArtSize {
+  const _$ArtSizeImpl(this.width, this.height) : super._();
 
   @override
   final int width;
@@ -112,10 +119,10 @@ class _$_ArtSize extends _ArtSize {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ArtSize &&
+            other is _$ArtSizeImpl &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.height, height) || other.height == height));
   }
@@ -123,23 +130,28 @@ class _$_ArtSize extends _ArtSize {
   @override
   int get hashCode => Object.hash(runtimeType, width, height);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ArtSize
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ArtSizeCopyWith<_$_ArtSize> get copyWith =>
-      __$$_ArtSizeCopyWithImpl<_$_ArtSize>(this, _$identity);
+  _$$ArtSizeImplCopyWith<_$ArtSizeImpl> get copyWith =>
+      __$$ArtSizeImplCopyWithImpl<_$ArtSizeImpl>(this, _$identity);
 }
 
 abstract class _ArtSize extends ArtSize {
-  const factory _ArtSize(final int width, final int height) = _$_ArtSize;
+  const factory _ArtSize(final int width, final int height) = _$ArtSizeImpl;
   const _ArtSize._() : super._();
 
   @override
   int get width;
   @override
   int get height;
+
+  /// Create a copy of ArtSize
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_ArtSizeCopyWith<_$_ArtSize> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ArtSizeImplCopyWith<_$ArtSizeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

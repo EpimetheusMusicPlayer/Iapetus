@@ -12,7 +12,7 @@ part of 'button.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SuperbrowseButton _$SuperbrowseButtonFromJson(Map<String, dynamic> json) {
   return _SuperbrowseButton.fromJson(json);
@@ -25,8 +25,12 @@ mixin _$SuperbrowseButton {
   @JsonKey(name: 'type')
   ButtonType get type => throw _privateConstructorUsedError;
 
+  /// Serializes this SuperbrowseButton to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SuperbrowseButton
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SuperbrowseButtonCopyWith<SuperbrowseButton> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$SuperbrowseButtonCopyWithImpl<$Res, $Val extends SuperbrowseButton>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SuperbrowseButton
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -72,6 +78,8 @@ class _$SuperbrowseButtonCopyWithImpl<$Res, $Val extends SuperbrowseButton>
     ) as $Val);
   }
 
+  /// Create a copy of SuperbrowseButton
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SuperbrowseActionCopyWith<$Res>? get action {
@@ -86,11 +94,11 @@ class _$SuperbrowseButtonCopyWithImpl<$Res, $Val extends SuperbrowseButton>
 }
 
 /// @nodoc
-abstract class _$$_SuperbrowseButtonCopyWith<$Res>
+abstract class _$$SuperbrowseButtonImplCopyWith<$Res>
     implements $SuperbrowseButtonCopyWith<$Res> {
-  factory _$$_SuperbrowseButtonCopyWith(_$_SuperbrowseButton value,
-          $Res Function(_$_SuperbrowseButton) then) =
-      __$$_SuperbrowseButtonCopyWithImpl<$Res>;
+  factory _$$SuperbrowseButtonImplCopyWith(_$SuperbrowseButtonImpl value,
+          $Res Function(_$SuperbrowseButtonImpl) then) =
+      __$$SuperbrowseButtonImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -102,20 +110,22 @@ abstract class _$$_SuperbrowseButtonCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SuperbrowseButtonCopyWithImpl<$Res>
-    extends _$SuperbrowseButtonCopyWithImpl<$Res, _$_SuperbrowseButton>
-    implements _$$_SuperbrowseButtonCopyWith<$Res> {
-  __$$_SuperbrowseButtonCopyWithImpl(
-      _$_SuperbrowseButton _value, $Res Function(_$_SuperbrowseButton) _then)
+class __$$SuperbrowseButtonImplCopyWithImpl<$Res>
+    extends _$SuperbrowseButtonCopyWithImpl<$Res, _$SuperbrowseButtonImpl>
+    implements _$$SuperbrowseButtonImplCopyWith<$Res> {
+  __$$SuperbrowseButtonImplCopyWithImpl(_$SuperbrowseButtonImpl _value,
+      $Res Function(_$SuperbrowseButtonImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SuperbrowseButton
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? action = freezed,
     Object? type = null,
   }) {
-    return _then(_$_SuperbrowseButton(
+    return _then(_$SuperbrowseButtonImpl(
       action: freezed == action
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
@@ -130,13 +140,13 @@ class __$$_SuperbrowseButtonCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SuperbrowseButton implements _SuperbrowseButton {
-  const _$_SuperbrowseButton(
+class _$SuperbrowseButtonImpl implements _SuperbrowseButton {
+  const _$SuperbrowseButtonImpl(
       {@JsonKey(name: 'action') this.action,
       @JsonKey(name: 'type') required this.type});
 
-  factory _$_SuperbrowseButton.fromJson(Map<String, dynamic> json) =>
-      _$$_SuperbrowseButtonFromJson(json);
+  factory _$SuperbrowseButtonImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SuperbrowseButtonImplFromJson(json);
 
   @override
   @JsonKey(name: 'action')
@@ -151,28 +161,30 @@ class _$_SuperbrowseButton implements _SuperbrowseButton {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SuperbrowseButton &&
+            other is _$SuperbrowseButtonImpl &&
             (identical(other.action, action) || other.action == action) &&
             (identical(other.type, type) || other.type == type));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, action, type);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SuperbrowseButton
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuperbrowseButtonCopyWith<_$_SuperbrowseButton> get copyWith =>
-      __$$_SuperbrowseButtonCopyWithImpl<_$_SuperbrowseButton>(
+  _$$SuperbrowseButtonImplCopyWith<_$SuperbrowseButtonImpl> get copyWith =>
+      __$$SuperbrowseButtonImplCopyWithImpl<_$SuperbrowseButtonImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SuperbrowseButtonToJson(
+    return _$$SuperbrowseButtonImplToJson(
       this,
     );
   }
@@ -182,10 +194,10 @@ abstract class _SuperbrowseButton implements SuperbrowseButton {
   const factory _SuperbrowseButton(
           {@JsonKey(name: 'action') final SuperbrowseAction? action,
           @JsonKey(name: 'type') required final ButtonType type}) =
-      _$_SuperbrowseButton;
+      _$SuperbrowseButtonImpl;
 
   factory _SuperbrowseButton.fromJson(Map<String, dynamic> json) =
-      _$_SuperbrowseButton.fromJson;
+      _$SuperbrowseButtonImpl.fromJson;
 
   @override
   @JsonKey(name: 'action')
@@ -193,8 +205,11 @@ abstract class _SuperbrowseButton implements SuperbrowseButton {
   @override
   @JsonKey(name: 'type')
   ButtonType get type;
+
+  /// Create a copy of SuperbrowseButton
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SuperbrowseButtonCopyWith<_$_SuperbrowseButton> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuperbrowseButtonImplCopyWith<_$SuperbrowseButtonImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -8,14 +8,14 @@ part of 'subsection.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$HorizontalScrollSuperbrowseSubsection
-    _$$HorizontalScrollSuperbrowseSubsectionFromJson(
+_$HorizontalScrollSuperbrowseSubsectionImpl
+    _$$HorizontalScrollSuperbrowseSubsectionImplFromJson(
             Map<String, dynamic> json) =>
         $checkedCreate(
-          r'_$HorizontalScrollSuperbrowseSubsection',
+          r'_$HorizontalScrollSuperbrowseSubsectionImpl',
           json,
           ($checkedConvert) {
-            final val = _$HorizontalScrollSuperbrowseSubsection(
+            final val = _$HorizontalScrollSuperbrowseSubsectionImpl(
               sectionId: $checkedConvert('sectionId', (v) => v as String),
               scrollType: $checkedConvert('scrollType',
                   (v) => $enumDecodeNullable(_$ScrollTypeEnumMap, v)),
@@ -34,8 +34,8 @@ _$HorizontalScrollSuperbrowseSubsection
           fieldKeyMap: const {r'$type': 'subsectionType'},
         );
 
-Map<String, dynamic> _$$HorizontalScrollSuperbrowseSubsectionToJson(
-        _$HorizontalScrollSuperbrowseSubsection instance) =>
+Map<String, dynamic> _$$HorizontalScrollSuperbrowseSubsectionImplToJson(
+        _$HorizontalScrollSuperbrowseSubsectionImpl instance) =>
     <String, dynamic>{
       'sectionId': instance.sectionId,
       'scrollType': _$ScrollTypeEnumMap[instance.scrollType],
@@ -49,13 +49,14 @@ const _$ScrollTypeEnumMap = {
   ScrollType.snap: 'snap',
 };
 
-_$RecentlyPlayedSuperbrowseSubsection
-    _$$RecentlyPlayedSuperbrowseSubsectionFromJson(Map<String, dynamic> json) =>
+_$RecentlyPlayedSuperbrowseSubsectionImpl
+    _$$RecentlyPlayedSuperbrowseSubsectionImplFromJson(
+            Map<String, dynamic> json) =>
         $checkedCreate(
-          r'_$RecentlyPlayedSuperbrowseSubsection',
+          r'_$RecentlyPlayedSuperbrowseSubsectionImpl',
           json,
           ($checkedConvert) {
-            final val = _$RecentlyPlayedSuperbrowseSubsection(
+            final val = _$RecentlyPlayedSuperbrowseSubsectionImpl(
               sectionId: $checkedConvert('sectionId', (v) => v as String),
               scrollType: $checkedConvert('scrollType',
                   (v) => $enumDecodeNullable(_$ScrollTypeEnumMap, v)),
@@ -75,8 +76,10 @@ _$RecentlyPlayedSuperbrowseSubsection
                             SuperbrowseItem.fromJson(
                                 e as Map<String, dynamic>)),
                       )),
-              minRequired: $checkedConvert('minRequired', (v) => v as int?),
-              maxRequired: $checkedConvert('maxRequired', (v) => v as int?),
+              minRequired:
+                  $checkedConvert('minRequired', (v) => (v as num?)?.toInt()),
+              maxRequired:
+                  $checkedConvert('maxRequired', (v) => (v as num?)?.toInt()),
               $type: $checkedConvert('subsectionType', (v) => v as String?),
             );
             return val;
@@ -84,8 +87,8 @@ _$RecentlyPlayedSuperbrowseSubsection
           fieldKeyMap: const {r'$type': 'subsectionType'},
         );
 
-Map<String, dynamic> _$$RecentlyPlayedSuperbrowseSubsectionToJson(
-        _$RecentlyPlayedSuperbrowseSubsection instance) =>
+Map<String, dynamic> _$$RecentlyPlayedSuperbrowseSubsectionImplToJson(
+        _$RecentlyPlayedSuperbrowseSubsectionImpl instance) =>
     <String, dynamic>{
       'sectionId': instance.sectionId,
       'scrollType': _$ScrollTypeEnumMap[instance.scrollType],
@@ -97,48 +100,13 @@ Map<String, dynamic> _$$RecentlyPlayedSuperbrowseSubsectionToJson(
       'subsectionType': instance.$type,
     };
 
-_$SingletonSuperbrowseSubsection _$$SingletonSuperbrowseSubsectionFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$SingletonSuperbrowseSubsection',
-      json,
-      ($checkedConvert) {
-        final val = _$SingletonSuperbrowseSubsection(
-          sectionId: $checkedConvert('sectionId', (v) => v as String),
-          formFactors: $checkedConvert(
-              'formFactors',
-              (v) => v == null
-                  ? null
-                  : FormFactors.fromJson(v as Map<String, dynamic>)),
-          items: $checkedConvert(
-              'items',
-              (v) => (v as List<dynamic>)
-                  .map((e) =>
-                      SuperbrowseItem.fromJson(e as Map<String, dynamic>))
-                  .toList()),
-          $type: $checkedConvert('subsectionType', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {r'$type': 'subsectionType'},
-    );
-
-Map<String, dynamic> _$$SingletonSuperbrowseSubsectionToJson(
-        _$SingletonSuperbrowseSubsection instance) =>
-    <String, dynamic>{
-      'sectionId': instance.sectionId,
-      'formFactors': instance.formFactors,
-      'items': instance.items,
-      'subsectionType': instance.$type,
-    };
-
-_$VerticalListSuperbrowseSubsection
-    _$$VerticalListSuperbrowseSubsectionFromJson(Map<String, dynamic> json) =>
+_$SingletonSuperbrowseSubsectionImpl
+    _$$SingletonSuperbrowseSubsectionImplFromJson(Map<String, dynamic> json) =>
         $checkedCreate(
-          r'_$VerticalListSuperbrowseSubsection',
+          r'_$SingletonSuperbrowseSubsectionImpl',
           json,
           ($checkedConvert) {
-            final val = _$VerticalListSuperbrowseSubsection(
+            final val = _$SingletonSuperbrowseSubsectionImpl(
               sectionId: $checkedConvert('sectionId', (v) => v as String),
               formFactors: $checkedConvert(
                   'formFactors',
@@ -158,8 +126,8 @@ _$VerticalListSuperbrowseSubsection
           fieldKeyMap: const {r'$type': 'subsectionType'},
         );
 
-Map<String, dynamic> _$$VerticalListSuperbrowseSubsectionToJson(
-        _$VerticalListSuperbrowseSubsection instance) =>
+Map<String, dynamic> _$$SingletonSuperbrowseSubsectionImplToJson(
+        _$SingletonSuperbrowseSubsectionImpl instance) =>
     <String, dynamic>{
       'sectionId': instance.sectionId,
       'formFactors': instance.formFactors,
@@ -167,31 +135,67 @@ Map<String, dynamic> _$$VerticalListSuperbrowseSubsectionToJson(
       'subsectionType': instance.$type,
     };
 
-_$DisplayAdSuperbrowseSubsection _$$DisplayAdSuperbrowseSubsectionFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$DisplayAdSuperbrowseSubsection',
-      json,
-      ($checkedConvert) {
-        final val = _$DisplayAdSuperbrowseSubsection(
-          sectionId: $checkedConvert('sectionId', (v) => v as String),
-          formFactors: $checkedConvert('formFactors',
-              (v) => FormFactors.fromJson(v as Map<String, dynamic>)),
-          items: $checkedConvert(
-              'items',
-              (v) => (v as List<dynamic>)
-                  .map((e) =>
-                      SuperbrowseItem.fromJson(e as Map<String, dynamic>))
-                  .toList()),
-          $type: $checkedConvert('subsectionType', (v) => v as String?),
+_$VerticalListSuperbrowseSubsectionImpl
+    _$$VerticalListSuperbrowseSubsectionImplFromJson(
+            Map<String, dynamic> json) =>
+        $checkedCreate(
+          r'_$VerticalListSuperbrowseSubsectionImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$VerticalListSuperbrowseSubsectionImpl(
+              sectionId: $checkedConvert('sectionId', (v) => v as String),
+              formFactors: $checkedConvert(
+                  'formFactors',
+                  (v) => v == null
+                      ? null
+                      : FormFactors.fromJson(v as Map<String, dynamic>)),
+              items: $checkedConvert(
+                  'items',
+                  (v) => (v as List<dynamic>)
+                      .map((e) =>
+                          SuperbrowseItem.fromJson(e as Map<String, dynamic>))
+                      .toList()),
+              $type: $checkedConvert('subsectionType', (v) => v as String?),
+            );
+            return val;
+          },
+          fieldKeyMap: const {r'$type': 'subsectionType'},
         );
-        return val;
-      },
-      fieldKeyMap: const {r'$type': 'subsectionType'},
-    );
 
-Map<String, dynamic> _$$DisplayAdSuperbrowseSubsectionToJson(
-        _$DisplayAdSuperbrowseSubsection instance) =>
+Map<String, dynamic> _$$VerticalListSuperbrowseSubsectionImplToJson(
+        _$VerticalListSuperbrowseSubsectionImpl instance) =>
+    <String, dynamic>{
+      'sectionId': instance.sectionId,
+      'formFactors': instance.formFactors,
+      'items': instance.items,
+      'subsectionType': instance.$type,
+    };
+
+_$DisplayAdSuperbrowseSubsectionImpl
+    _$$DisplayAdSuperbrowseSubsectionImplFromJson(Map<String, dynamic> json) =>
+        $checkedCreate(
+          r'_$DisplayAdSuperbrowseSubsectionImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$DisplayAdSuperbrowseSubsectionImpl(
+              sectionId: $checkedConvert('sectionId', (v) => v as String),
+              formFactors: $checkedConvert('formFactors',
+                  (v) => FormFactors.fromJson(v as Map<String, dynamic>)),
+              items: $checkedConvert(
+                  'items',
+                  (v) => (v as List<dynamic>)
+                      .map((e) =>
+                          SuperbrowseItem.fromJson(e as Map<String, dynamic>))
+                      .toList()),
+              $type: $checkedConvert('subsectionType', (v) => v as String?),
+            );
+            return val;
+          },
+          fieldKeyMap: const {r'$type': 'subsectionType'},
+        );
+
+Map<String, dynamic> _$$DisplayAdSuperbrowseSubsectionImplToJson(
+        _$DisplayAdSuperbrowseSubsectionImpl instance) =>
     <String, dynamic>{
       'sectionId': instance.sectionId,
       'formFactors': instance.formFactors,

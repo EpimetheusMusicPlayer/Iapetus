@@ -8,12 +8,13 @@ part of 'image.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SuperbrowseImage _$$_SuperbrowseImageFromJson(Map<String, dynamic> json) =>
+_$SuperbrowseImageImpl _$$SuperbrowseImageImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_SuperbrowseImage',
+      r'_$SuperbrowseImageImpl',
       json,
       ($checkedConvert) {
-        final val = _$_SuperbrowseImage(
+        final val = _$SuperbrowseImageImpl(
           border: $checkedConvert('border', (v) => readOptInBool(v as bool?)),
           circular:
               $checkedConvert('circular', (v) => readOptInBool(v as bool?)),
@@ -44,7 +45,8 @@ _$_SuperbrowseImage _$$_SuperbrowseImageFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_SuperbrowseImageToJson(_$_SuperbrowseImage instance) =>
+Map<String, dynamic> _$$SuperbrowseImageImplToJson(
+        _$SuperbrowseImageImpl instance) =>
     <String, dynamic>{
       'border': writeOptInBool(instance.border),
       'circular': writeOptInBool(instance.circular),

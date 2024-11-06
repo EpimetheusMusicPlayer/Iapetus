@@ -8,12 +8,12 @@ part of 'audio_url_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AudioUrlData _$$_AudioUrlDataFromJson(Map<String, dynamic> json) =>
+_$AudioUrlDataImpl _$$AudioUrlDataImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_AudioUrlData',
+      r'_$AudioUrlDataImpl',
       json,
       ($checkedConvert) {
-        final val = _$_AudioUrlData(
+        final val = _$AudioUrlDataImpl(
           audioToken: $checkedConvert('audioToken', (v) => v as String),
           bitrate: $checkedConvert('bitrate', (v) => v as String),
           encoding: $checkedConvert('encoding', (v) => v as String),
@@ -23,7 +23,7 @@ _$_AudioUrlData _$$_AudioUrlDataFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_AudioUrlDataToJson(_$_AudioUrlData instance) =>
+Map<String, dynamic> _$$AudioUrlDataImplToJson(_$AudioUrlDataImpl instance) =>
     <String, dynamic>{
       'audioToken': instance.audioToken,
       'bitrate': instance.bitrate,

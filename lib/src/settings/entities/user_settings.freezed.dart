@@ -12,7 +12,7 @@ part of 'user_settings.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UserSettings _$UserSettingsFromJson(Map<String, dynamic> json) {
   return _UserSettings.fromJson(json);
@@ -105,8 +105,12 @@ mixin _$UserSettings {
       name: 'autoShareLikes', fromJson: readOptInBool, toJson: writeOptInBool)
   bool get autoShareLikes => throw _privateConstructorUsedError;
 
+  /// Serializes this UserSettings to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UserSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserSettingsCopyWith<UserSettings> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -118,52 +122,53 @@ abstract class $UserSettingsCopyWith<$Res> {
       _$UserSettingsCopyWithImpl<$Res, UserSettings>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'pushNotificationDeviceOptIn', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool pushNotificationDeviceOptIn,
-      @JsonKey(name: 'birthYear')
-          int birthYear,
+      {@JsonKey(
+          name: 'pushNotificationDeviceOptIn',
+          fromJson: readOptOutBool,
+          toJson: writeOptOutBool)
+      bool pushNotificationDeviceOptIn,
+      @JsonKey(name: 'birthYear') int birthYear,
       @JsonKey(name: 'artistAudioMessagesEnabled')
-          SettingEnableStatus artistAudioMessagesEnabled,
-      @JsonKey(name: 'emailNewFollowers')
-          bool emailNewFollowers,
+      SettingEnableStatus artistAudioMessagesEnabled,
+      @JsonKey(name: 'emailNewFollowers') bool emailNewFollowers,
       @JsonKey(name: 'emailOptInListeners', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool emailOptInListeners,
+      bool emailOptInListeners,
       @JsonKey(name: 'pushOptInListeners', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool pushOptInListeners,
-      @JsonKey(name: 'zipCode')
-          String zipCode,
-      @JsonKey(name: 'artistMessageMilestonesPushOptIn', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool artistMessageMilestonesPushOptIn,
-      @JsonKey(name: 'username')
-          String username,
+      bool pushOptInListeners,
+      @JsonKey(name: 'zipCode') String zipCode,
+      @JsonKey(
+          name: 'artistMessageMilestonesPushOptIn',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      bool artistMessageMilestonesPushOptIn,
+      @JsonKey(name: 'username') String username,
       @JsonKey(name: 'emailOptInArtists', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool emailOptInArtists,
+      bool emailOptInArtists,
       @JsonKey(name: 'gender', fromJson: genderFromApiString, toJson: genderToApiString)
-          Gender gender,
-      @JsonKey(name: 'emailComments')
-          bool emailComments,
-      @JsonKey(name: 'emailOptIn')
-          bool emailOptIn,
-      @JsonKey(name: 'isExplicitContentFilterEnabled', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool isExplicitContentFilterEnabled,
+      Gender gender,
+      @JsonKey(name: 'emailComments') bool emailComments,
+      @JsonKey(name: 'emailOptIn') bool emailOptIn,
+      @JsonKey(
+          name: 'isExplicitContentFilterEnabled',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      bool isExplicitContentFilterEnabled,
       @JsonKey(name: 'emailOptInPandora', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool emailOptInPandora,
+      bool emailOptInPandora,
       @JsonKey(name: 'pushOptInPandora', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool pushOptInPandora,
-      @JsonKey(name: 'enableFacebook')
-          bool enableFacebook,
+      bool pushOptInPandora,
+      @JsonKey(name: 'enableFacebook') bool enableFacebook,
       @JsonKey(name: 'facebookAutoShareEnabled', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool facebookAutoShareEnabled,
+      bool facebookAutoShareEnabled,
       @JsonKey(name: 'isProfilePrivate', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool isProfilePrivate,
+      bool isProfilePrivate,
       @JsonKey(name: 'autoShareFollows', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool autoShareFollows,
+      bool autoShareFollows,
       @JsonKey(name: 'autoShareTrackPlay', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool autoShareTrackPlay,
-      @JsonKey(name: 'facebookName')
-          String? facebookName,
+      bool autoShareTrackPlay,
+      @JsonKey(name: 'facebookName') String? facebookName,
       @JsonKey(name: 'autoShareLikes', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool autoShareLikes});
+      bool autoShareLikes});
 }
 
 /// @nodoc
@@ -176,6 +181,8 @@ class _$UserSettingsCopyWithImpl<$Res, $Val extends UserSettings>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserSettings
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -301,70 +308,73 @@ class _$UserSettingsCopyWithImpl<$Res, $Val extends UserSettings>
 }
 
 /// @nodoc
-abstract class _$$_UserSettingsCopyWith<$Res>
+abstract class _$$UserSettingsImplCopyWith<$Res>
     implements $UserSettingsCopyWith<$Res> {
-  factory _$$_UserSettingsCopyWith(
-          _$_UserSettings value, $Res Function(_$_UserSettings) then) =
-      __$$_UserSettingsCopyWithImpl<$Res>;
+  factory _$$UserSettingsImplCopyWith(
+          _$UserSettingsImpl value, $Res Function(_$UserSettingsImpl) then) =
+      __$$UserSettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'pushNotificationDeviceOptIn', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool pushNotificationDeviceOptIn,
-      @JsonKey(name: 'birthYear')
-          int birthYear,
+      {@JsonKey(
+          name: 'pushNotificationDeviceOptIn',
+          fromJson: readOptOutBool,
+          toJson: writeOptOutBool)
+      bool pushNotificationDeviceOptIn,
+      @JsonKey(name: 'birthYear') int birthYear,
       @JsonKey(name: 'artistAudioMessagesEnabled')
-          SettingEnableStatus artistAudioMessagesEnabled,
-      @JsonKey(name: 'emailNewFollowers')
-          bool emailNewFollowers,
+      SettingEnableStatus artistAudioMessagesEnabled,
+      @JsonKey(name: 'emailNewFollowers') bool emailNewFollowers,
       @JsonKey(name: 'emailOptInListeners', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool emailOptInListeners,
+      bool emailOptInListeners,
       @JsonKey(name: 'pushOptInListeners', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool pushOptInListeners,
-      @JsonKey(name: 'zipCode')
-          String zipCode,
-      @JsonKey(name: 'artistMessageMilestonesPushOptIn', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool artistMessageMilestonesPushOptIn,
-      @JsonKey(name: 'username')
-          String username,
+      bool pushOptInListeners,
+      @JsonKey(name: 'zipCode') String zipCode,
+      @JsonKey(
+          name: 'artistMessageMilestonesPushOptIn',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      bool artistMessageMilestonesPushOptIn,
+      @JsonKey(name: 'username') String username,
       @JsonKey(name: 'emailOptInArtists', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool emailOptInArtists,
+      bool emailOptInArtists,
       @JsonKey(name: 'gender', fromJson: genderFromApiString, toJson: genderToApiString)
-          Gender gender,
-      @JsonKey(name: 'emailComments')
-          bool emailComments,
-      @JsonKey(name: 'emailOptIn')
-          bool emailOptIn,
-      @JsonKey(name: 'isExplicitContentFilterEnabled', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool isExplicitContentFilterEnabled,
+      Gender gender,
+      @JsonKey(name: 'emailComments') bool emailComments,
+      @JsonKey(name: 'emailOptIn') bool emailOptIn,
+      @JsonKey(
+          name: 'isExplicitContentFilterEnabled',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      bool isExplicitContentFilterEnabled,
       @JsonKey(name: 'emailOptInPandora', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool emailOptInPandora,
+      bool emailOptInPandora,
       @JsonKey(name: 'pushOptInPandora', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool pushOptInPandora,
-      @JsonKey(name: 'enableFacebook')
-          bool enableFacebook,
+      bool pushOptInPandora,
+      @JsonKey(name: 'enableFacebook') bool enableFacebook,
       @JsonKey(name: 'facebookAutoShareEnabled', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool facebookAutoShareEnabled,
+      bool facebookAutoShareEnabled,
       @JsonKey(name: 'isProfilePrivate', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool isProfilePrivate,
+      bool isProfilePrivate,
       @JsonKey(name: 'autoShareFollows', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool autoShareFollows,
+      bool autoShareFollows,
       @JsonKey(name: 'autoShareTrackPlay', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool autoShareTrackPlay,
-      @JsonKey(name: 'facebookName')
-          String? facebookName,
+      bool autoShareTrackPlay,
+      @JsonKey(name: 'facebookName') String? facebookName,
       @JsonKey(name: 'autoShareLikes', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool autoShareLikes});
+      bool autoShareLikes});
 }
 
 /// @nodoc
-class __$$_UserSettingsCopyWithImpl<$Res>
-    extends _$UserSettingsCopyWithImpl<$Res, _$_UserSettings>
-    implements _$$_UserSettingsCopyWith<$Res> {
-  __$$_UserSettingsCopyWithImpl(
-      _$_UserSettings _value, $Res Function(_$_UserSettings) _then)
+class __$$UserSettingsImplCopyWithImpl<$Res>
+    extends _$UserSettingsCopyWithImpl<$Res, _$UserSettingsImpl>
+    implements _$$UserSettingsImplCopyWith<$Res> {
+  __$$UserSettingsImplCopyWithImpl(
+      _$UserSettingsImpl _value, $Res Function(_$UserSettingsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserSettings
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -392,7 +402,7 @@ class __$$_UserSettingsCopyWithImpl<$Res>
     Object? facebookName = freezed,
     Object? autoShareLikes = null,
   }) {
-    return _then(_$_UserSettings(
+    return _then(_$UserSettingsImpl(
       pushNotificationDeviceOptIn: null == pushNotificationDeviceOptIn
           ? _value.pushNotificationDeviceOptIn
           : pushNotificationDeviceOptIn // ignore: cast_nullable_to_non_nullable
@@ -491,57 +501,64 @@ class __$$_UserSettingsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserSettings implements _UserSettings {
-  const _$_UserSettings(
-      {@JsonKey(name: 'pushNotificationDeviceOptIn', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required this.pushNotificationDeviceOptIn,
-      @JsonKey(name: 'birthYear')
-          required this.birthYear,
+class _$UserSettingsImpl implements _UserSettings {
+  const _$UserSettingsImpl(
+      {@JsonKey(
+          name: 'pushNotificationDeviceOptIn',
+          fromJson: readOptOutBool,
+          toJson: writeOptOutBool)
+      required this.pushNotificationDeviceOptIn,
+      @JsonKey(name: 'birthYear') required this.birthYear,
       @JsonKey(name: 'artistAudioMessagesEnabled')
-          required this.artistAudioMessagesEnabled,
-      @JsonKey(name: 'emailNewFollowers')
-          required this.emailNewFollowers,
+      required this.artistAudioMessagesEnabled,
+      @JsonKey(name: 'emailNewFollowers') required this.emailNewFollowers,
       @JsonKey(name: 'emailOptInListeners', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required this.emailOptInListeners,
+      required this.emailOptInListeners,
       @JsonKey(name: 'pushOptInListeners', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required this.pushOptInListeners,
-      @JsonKey(name: 'zipCode')
-          required this.zipCode,
-      @JsonKey(name: 'artistMessageMilestonesPushOptIn', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.artistMessageMilestonesPushOptIn,
-      @JsonKey(name: 'username')
-          required this.username,
+      required this.pushOptInListeners,
+      @JsonKey(name: 'zipCode') required this.zipCode,
+      @JsonKey(
+          name: 'artistMessageMilestonesPushOptIn',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      required this.artistMessageMilestonesPushOptIn,
+      @JsonKey(name: 'username') required this.username,
       @JsonKey(name: 'emailOptInArtists', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.emailOptInArtists,
+      required this.emailOptInArtists,
       @JsonKey(name: 'gender', fromJson: genderFromApiString, toJson: genderToApiString)
-          required this.gender,
-      @JsonKey(name: 'emailComments')
-          required this.emailComments,
-      @JsonKey(name: 'emailOptIn')
-          required this.emailOptIn,
-      @JsonKey(name: 'isExplicitContentFilterEnabled', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.isExplicitContentFilterEnabled,
+      required this.gender,
+      @JsonKey(name: 'emailComments') required this.emailComments,
+      @JsonKey(name: 'emailOptIn') required this.emailOptIn,
+      @JsonKey(
+          name: 'isExplicitContentFilterEnabled',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      required this.isExplicitContentFilterEnabled,
       @JsonKey(name: 'emailOptInPandora', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required this.emailOptInPandora,
+      required this.emailOptInPandora,
       @JsonKey(name: 'pushOptInPandora', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required this.pushOptInPandora,
-      @JsonKey(name: 'enableFacebook')
-          required this.enableFacebook,
-      @JsonKey(name: 'facebookAutoShareEnabled', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.facebookAutoShareEnabled,
-      @JsonKey(name: 'isProfilePrivate', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required this.isProfilePrivate,
+      required this.pushOptInPandora,
+      @JsonKey(name: 'enableFacebook') required this.enableFacebook,
+      @JsonKey(
+          name: 'facebookAutoShareEnabled',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      required this.facebookAutoShareEnabled,
+      @JsonKey(
+          name: 'isProfilePrivate',
+          fromJson: readOptOutBool,
+          toJson: writeOptOutBool)
+      required this.isProfilePrivate,
       @JsonKey(name: 'autoShareFollows', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.autoShareFollows,
+      required this.autoShareFollows,
       @JsonKey(name: 'autoShareTrackPlay', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.autoShareTrackPlay,
-      @JsonKey(name: 'facebookName')
-          this.facebookName,
+      required this.autoShareTrackPlay,
+      @JsonKey(name: 'facebookName') this.facebookName,
       @JsonKey(name: 'autoShareLikes', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.autoShareLikes});
+      required this.autoShareLikes});
 
-  factory _$_UserSettings.fromJson(Map<String, dynamic> json) =>
-      _$$_UserSettingsFromJson(json);
+  factory _$UserSettingsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserSettingsImplFromJson(json);
 
   @override
   @JsonKey(
@@ -655,10 +672,10 @@ class _$_UserSettings implements _UserSettings {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserSettings &&
+            other is _$UserSettingsImpl &&
             (identical(other.pushNotificationDeviceOptIn, pushNotificationDeviceOptIn) ||
                 other.pushNotificationDeviceOptIn ==
                     pushNotificationDeviceOptIn) &&
@@ -709,7 +726,7 @@ class _$_UserSettings implements _UserSettings {
                 other.autoShareLikes == autoShareLikes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -738,15 +755,17 @@ class _$_UserSettings implements _UserSettings {
         autoShareLikes
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserSettingsCopyWith<_$_UserSettings> get copyWith =>
-      __$$_UserSettingsCopyWithImpl<_$_UserSettings>(this, _$identity);
+  _$$UserSettingsImplCopyWith<_$UserSettingsImpl> get copyWith =>
+      __$$UserSettingsImplCopyWithImpl<_$UserSettingsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserSettingsToJson(
+    return _$$UserSettingsImplToJson(
       this,
     );
   }
@@ -754,55 +773,62 @@ class _$_UserSettings implements _UserSettings {
 
 abstract class _UserSettings implements UserSettings {
   const factory _UserSettings(
-      {@JsonKey(name: 'pushNotificationDeviceOptIn', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required final bool pushNotificationDeviceOptIn,
-      @JsonKey(name: 'birthYear')
-          required final int birthYear,
+      {@JsonKey(
+          name: 'pushNotificationDeviceOptIn',
+          fromJson: readOptOutBool,
+          toJson: writeOptOutBool)
+      required final bool pushNotificationDeviceOptIn,
+      @JsonKey(name: 'birthYear') required final int birthYear,
       @JsonKey(name: 'artistAudioMessagesEnabled')
-          required final SettingEnableStatus artistAudioMessagesEnabled,
-      @JsonKey(name: 'emailNewFollowers')
-          required final bool emailNewFollowers,
-      @JsonKey(name: 'emailOptInListeners', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required final bool emailOptInListeners,
+      required final SettingEnableStatus artistAudioMessagesEnabled,
+      @JsonKey(name: 'emailNewFollowers') required final bool emailNewFollowers,
+      @JsonKey(
+          name: 'emailOptInListeners',
+          fromJson: readOptOutBool,
+          toJson: writeOptOutBool)
+      required final bool emailOptInListeners,
       @JsonKey(name: 'pushOptInListeners', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required final bool pushOptInListeners,
-      @JsonKey(name: 'zipCode')
-          required final String zipCode,
-      @JsonKey(name: 'artistMessageMilestonesPushOptIn', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool artistMessageMilestonesPushOptIn,
-      @JsonKey(name: 'username')
-          required final String username,
+      required final bool pushOptInListeners,
+      @JsonKey(name: 'zipCode') required final String zipCode,
+      @JsonKey(
+          name: 'artistMessageMilestonesPushOptIn',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      required final bool artistMessageMilestonesPushOptIn,
+      @JsonKey(name: 'username') required final String username,
       @JsonKey(name: 'emailOptInArtists', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool emailOptInArtists,
+      required final bool emailOptInArtists,
       @JsonKey(name: 'gender', fromJson: genderFromApiString, toJson: genderToApiString)
-          required final Gender gender,
-      @JsonKey(name: 'emailComments')
-          required final bool emailComments,
-      @JsonKey(name: 'emailOptIn')
-          required final bool emailOptIn,
-      @JsonKey(name: 'isExplicitContentFilterEnabled', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool isExplicitContentFilterEnabled,
+      required final Gender gender,
+      @JsonKey(name: 'emailComments') required final bool emailComments,
+      @JsonKey(name: 'emailOptIn') required final bool emailOptIn,
+      @JsonKey(
+          name: 'isExplicitContentFilterEnabled',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      required final bool isExplicitContentFilterEnabled,
       @JsonKey(name: 'emailOptInPandora', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required final bool emailOptInPandora,
+      required final bool emailOptInPandora,
       @JsonKey(name: 'pushOptInPandora', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required final bool pushOptInPandora,
-      @JsonKey(name: 'enableFacebook')
-          required final bool enableFacebook,
-      @JsonKey(name: 'facebookAutoShareEnabled', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool facebookAutoShareEnabled,
+      required final bool pushOptInPandora,
+      @JsonKey(name: 'enableFacebook') required final bool enableFacebook,
+      @JsonKey(
+          name: 'facebookAutoShareEnabled',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      required final bool facebookAutoShareEnabled,
       @JsonKey(name: 'isProfilePrivate', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required final bool isProfilePrivate,
+      required final bool isProfilePrivate,
       @JsonKey(name: 'autoShareFollows', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool autoShareFollows,
+      required final bool autoShareFollows,
       @JsonKey(name: 'autoShareTrackPlay', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool autoShareTrackPlay,
-      @JsonKey(name: 'facebookName')
-          final String? facebookName,
+      required final bool autoShareTrackPlay,
+      @JsonKey(name: 'facebookName') final String? facebookName,
       @JsonKey(name: 'autoShareLikes', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool autoShareLikes}) = _$_UserSettings;
+      required final bool autoShareLikes}) = _$UserSettingsImpl;
 
   factory _UserSettings.fromJson(Map<String, dynamic> json) =
-      _$_UserSettings.fromJson;
+      _$UserSettingsImpl.fromJson;
 
   @override
   @JsonKey(
@@ -909,8 +935,11 @@ abstract class _UserSettings implements UserSettings {
   @JsonKey(
       name: 'autoShareLikes', fromJson: readOptInBool, toJson: writeOptInBool)
   bool get autoShareLikes;
+
+  /// Create a copy of UserSettings
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_UserSettingsCopyWith<_$_UserSettings> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserSettingsImplCopyWith<_$UserSettingsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

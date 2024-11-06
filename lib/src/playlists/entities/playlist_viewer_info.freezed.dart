@@ -12,7 +12,7 @@ part of 'playlist_viewer_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 PlaylistViewerInfo _$PlaylistViewerInfoFromJson(Map<String, dynamic> json) {
   return _PlaylistViewerInfo.fromJson(json);
@@ -23,8 +23,12 @@ mixin _$PlaylistViewerInfo {
   @JsonKey(name: 'editable')
   bool get editable => throw _privateConstructorUsedError;
 
+  /// Serializes this PlaylistViewerInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PlaylistViewerInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PlaylistViewerInfoCopyWith<PlaylistViewerInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$PlaylistViewerInfoCopyWithImpl<$Res, $Val extends PlaylistViewerInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PlaylistViewerInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -63,30 +69,32 @@ class _$PlaylistViewerInfoCopyWithImpl<$Res, $Val extends PlaylistViewerInfo>
 }
 
 /// @nodoc
-abstract class _$$_PlaylistViewerInfoCopyWith<$Res>
+abstract class _$$PlaylistViewerInfoImplCopyWith<$Res>
     implements $PlaylistViewerInfoCopyWith<$Res> {
-  factory _$$_PlaylistViewerInfoCopyWith(_$_PlaylistViewerInfo value,
-          $Res Function(_$_PlaylistViewerInfo) then) =
-      __$$_PlaylistViewerInfoCopyWithImpl<$Res>;
+  factory _$$PlaylistViewerInfoImplCopyWith(_$PlaylistViewerInfoImpl value,
+          $Res Function(_$PlaylistViewerInfoImpl) then) =
+      __$$PlaylistViewerInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'editable') bool editable});
 }
 
 /// @nodoc
-class __$$_PlaylistViewerInfoCopyWithImpl<$Res>
-    extends _$PlaylistViewerInfoCopyWithImpl<$Res, _$_PlaylistViewerInfo>
-    implements _$$_PlaylistViewerInfoCopyWith<$Res> {
-  __$$_PlaylistViewerInfoCopyWithImpl(
-      _$_PlaylistViewerInfo _value, $Res Function(_$_PlaylistViewerInfo) _then)
+class __$$PlaylistViewerInfoImplCopyWithImpl<$Res>
+    extends _$PlaylistViewerInfoCopyWithImpl<$Res, _$PlaylistViewerInfoImpl>
+    implements _$$PlaylistViewerInfoImplCopyWith<$Res> {
+  __$$PlaylistViewerInfoImplCopyWithImpl(_$PlaylistViewerInfoImpl _value,
+      $Res Function(_$PlaylistViewerInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PlaylistViewerInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? editable = null,
   }) {
-    return _then(_$_PlaylistViewerInfo(
+    return _then(_$PlaylistViewerInfoImpl(
       editable: null == editable
           ? _value.editable
           : editable // ignore: cast_nullable_to_non_nullable
@@ -97,12 +105,12 @@ class __$$_PlaylistViewerInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PlaylistViewerInfo implements _PlaylistViewerInfo {
-  const _$_PlaylistViewerInfo(
+class _$PlaylistViewerInfoImpl implements _PlaylistViewerInfo {
+  const _$PlaylistViewerInfoImpl(
       {@JsonKey(name: 'editable') required this.editable});
 
-  factory _$_PlaylistViewerInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_PlaylistViewerInfoFromJson(json);
+  factory _$PlaylistViewerInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PlaylistViewerInfoImplFromJson(json);
 
   @override
   @JsonKey(name: 'editable')
@@ -114,28 +122,30 @@ class _$_PlaylistViewerInfo implements _PlaylistViewerInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PlaylistViewerInfo &&
+            other is _$PlaylistViewerInfoImpl &&
             (identical(other.editable, editable) ||
                 other.editable == editable));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, editable);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PlaylistViewerInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PlaylistViewerInfoCopyWith<_$_PlaylistViewerInfo> get copyWith =>
-      __$$_PlaylistViewerInfoCopyWithImpl<_$_PlaylistViewerInfo>(
+  _$$PlaylistViewerInfoImplCopyWith<_$PlaylistViewerInfoImpl> get copyWith =>
+      __$$PlaylistViewerInfoImplCopyWithImpl<_$PlaylistViewerInfoImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PlaylistViewerInfoToJson(
+    return _$$PlaylistViewerInfoImplToJson(
       this,
     );
   }
@@ -144,16 +154,19 @@ class _$_PlaylistViewerInfo implements _PlaylistViewerInfo {
 abstract class _PlaylistViewerInfo implements PlaylistViewerInfo {
   const factory _PlaylistViewerInfo(
           {@JsonKey(name: 'editable') required final bool editable}) =
-      _$_PlaylistViewerInfo;
+      _$PlaylistViewerInfoImpl;
 
   factory _PlaylistViewerInfo.fromJson(Map<String, dynamic> json) =
-      _$_PlaylistViewerInfo.fromJson;
+      _$PlaylistViewerInfoImpl.fromJson;
 
   @override
   @JsonKey(name: 'editable')
   bool get editable;
+
+  /// Create a copy of PlaylistViewerInfo
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_PlaylistViewerInfoCopyWith<_$_PlaylistViewerInfo> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PlaylistViewerInfoImplCopyWith<_$PlaylistViewerInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

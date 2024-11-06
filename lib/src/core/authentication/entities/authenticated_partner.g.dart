@@ -8,13 +8,13 @@ part of 'authenticated_partner.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AuthenticatedPartner _$$_AuthenticatedPartnerFromJson(
+_$AuthenticatedPartnerImpl _$$AuthenticatedPartnerImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_AuthenticatedPartner',
+      r'_$AuthenticatedPartnerImpl',
       json,
       ($checkedConvert) {
-        final val = _$_AuthenticatedPartner(
+        final val = _$AuthenticatedPartnerImpl(
           syncTime:
               $checkedConvert('syncTime', (v) => decryptSyncTime(v as String)),
           partnerAuthToken:
@@ -23,7 +23,7 @@ _$_AuthenticatedPartner _$$_AuthenticatedPartnerFromJson(
           stationSkipUnit:
               $checkedConvert('stationSkipUnit', (v) => v as String),
           stationSkipLimit:
-              $checkedConvert('stationSkipLimit', (v) => v as int),
+              $checkedConvert('stationSkipLimit', (v) => (v as num).toInt()),
           urls: $checkedConvert(
               'urls',
               (v) => (v as Map<String, dynamic>).map(
@@ -34,8 +34,8 @@ _$_AuthenticatedPartner _$$_AuthenticatedPartnerFromJson(
       },
     );
 
-Map<String, dynamic> _$$_AuthenticatedPartnerToJson(
-        _$_AuthenticatedPartner instance) =>
+Map<String, dynamic> _$$AuthenticatedPartnerImplToJson(
+        _$AuthenticatedPartnerImpl instance) =>
     <String, dynamic>{
       'syncTime': encryptSyncTime(instance.syncTime),
       'partnerAuthToken': instance.partnerAuthToken,

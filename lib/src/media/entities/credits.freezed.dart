@@ -12,7 +12,7 @@ part of 'credits.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Credits _$CreditsFromJson(Map<String, dynamic> json) {
   return _Credits.fromJson(json);
@@ -25,8 +25,12 @@ mixin _$Credits {
   @JsonKey(name: 'fullCredits')
   String get fullCreditsHtml => throw _privateConstructorUsedError;
 
+  /// Serializes this Credits to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Credits
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CreditsCopyWith<Credits> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -50,6 +54,8 @@ class _$CreditsCopyWithImpl<$Res, $Val extends Credits>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Credits
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -70,10 +76,10 @@ class _$CreditsCopyWithImpl<$Res, $Val extends Credits>
 }
 
 /// @nodoc
-abstract class _$$_CreditsCopyWith<$Res> implements $CreditsCopyWith<$Res> {
-  factory _$$_CreditsCopyWith(
-          _$_Credits value, $Res Function(_$_Credits) then) =
-      __$$_CreditsCopyWithImpl<$Res>;
+abstract class _$$CreditsImplCopyWith<$Res> implements $CreditsCopyWith<$Res> {
+  factory _$$CreditsImplCopyWith(
+          _$CreditsImpl value, $Res Function(_$CreditsImpl) then) =
+      __$$CreditsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -82,19 +88,22 @@ abstract class _$$_CreditsCopyWith<$Res> implements $CreditsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_CreditsCopyWithImpl<$Res>
-    extends _$CreditsCopyWithImpl<$Res, _$_Credits>
-    implements _$$_CreditsCopyWith<$Res> {
-  __$$_CreditsCopyWithImpl(_$_Credits _value, $Res Function(_$_Credits) _then)
+class __$$CreditsImplCopyWithImpl<$Res>
+    extends _$CreditsCopyWithImpl<$Res, _$CreditsImpl>
+    implements _$$CreditsImplCopyWith<$Res> {
+  __$$CreditsImplCopyWithImpl(
+      _$CreditsImpl _value, $Res Function(_$CreditsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Credits
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? creditsSnippetHtml = null,
     Object? fullCreditsHtml = null,
   }) {
-    return _then(_$_Credits(
+    return _then(_$CreditsImpl(
       creditsSnippetHtml: null == creditsSnippetHtml
           ? _value.creditsSnippetHtml
           : creditsSnippetHtml // ignore: cast_nullable_to_non_nullable
@@ -109,13 +118,13 @@ class __$$_CreditsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Credits implements _Credits {
-  const _$_Credits(
+class _$CreditsImpl implements _Credits {
+  const _$CreditsImpl(
       {@JsonKey(name: 'creditsSnippet') required this.creditsSnippetHtml,
       @JsonKey(name: 'fullCredits') required this.fullCreditsHtml});
 
-  factory _$_Credits.fromJson(Map<String, dynamic> json) =>
-      _$$_CreditsFromJson(json);
+  factory _$CreditsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CreditsImplFromJson(json);
 
   @override
   @JsonKey(name: 'creditsSnippet')
@@ -130,30 +139,32 @@ class _$_Credits implements _Credits {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Credits &&
+            other is _$CreditsImpl &&
             (identical(other.creditsSnippetHtml, creditsSnippetHtml) ||
                 other.creditsSnippetHtml == creditsSnippetHtml) &&
             (identical(other.fullCreditsHtml, fullCreditsHtml) ||
                 other.fullCreditsHtml == fullCreditsHtml));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, creditsSnippetHtml, fullCreditsHtml);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Credits
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreditsCopyWith<_$_Credits> get copyWith =>
-      __$$_CreditsCopyWithImpl<_$_Credits>(this, _$identity);
+  _$$CreditsImplCopyWith<_$CreditsImpl> get copyWith =>
+      __$$CreditsImplCopyWithImpl<_$CreditsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CreditsToJson(
+    return _$$CreditsImplToJson(
       this,
     );
   }
@@ -162,11 +173,11 @@ class _$_Credits implements _Credits {
 abstract class _Credits implements Credits {
   const factory _Credits(
       {@JsonKey(name: 'creditsSnippet')
-          required final String creditsSnippetHtml,
+      required final String creditsSnippetHtml,
       @JsonKey(name: 'fullCredits')
-          required final String fullCreditsHtml}) = _$_Credits;
+      required final String fullCreditsHtml}) = _$CreditsImpl;
 
-  factory _Credits.fromJson(Map<String, dynamic> json) = _$_Credits.fromJson;
+  factory _Credits.fromJson(Map<String, dynamic> json) = _$CreditsImpl.fromJson;
 
   @override
   @JsonKey(name: 'creditsSnippet')
@@ -174,8 +185,11 @@ abstract class _Credits implements Credits {
   @override
   @JsonKey(name: 'fullCredits')
   String get fullCreditsHtml;
+
+  /// Create a copy of Credits
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_CreditsCopyWith<_$_Credits> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CreditsImplCopyWith<_$CreditsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

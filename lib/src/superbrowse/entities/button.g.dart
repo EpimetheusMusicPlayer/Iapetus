@@ -8,12 +8,13 @@ part of 'button.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SuperbrowseButton _$$_SuperbrowseButtonFromJson(Map<String, dynamic> json) =>
+_$SuperbrowseButtonImpl _$$SuperbrowseButtonImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_SuperbrowseButton',
+      r'_$SuperbrowseButtonImpl',
       json,
       ($checkedConvert) {
-        final val = _$_SuperbrowseButton(
+        final val = _$SuperbrowseButtonImpl(
           action: $checkedConvert(
               'action',
               (v) => v == null
@@ -26,8 +27,8 @@ _$_SuperbrowseButton _$$_SuperbrowseButtonFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_SuperbrowseButtonToJson(
-        _$_SuperbrowseButton instance) =>
+Map<String, dynamic> _$$SuperbrowseButtonImplToJson(
+        _$SuperbrowseButtonImpl instance) =>
     <String, dynamic>{
       'action': instance.action,
       'type': _$ButtonTypeEnumMap[instance.type]!,

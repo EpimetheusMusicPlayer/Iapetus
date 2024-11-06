@@ -8,12 +8,13 @@ part of 'station_content_set.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_StationContentSet _$$_StationContentSetFromJson(Map<String, dynamic> json) =>
+_$StationContentSetImpl _$$StationContentSetImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_StationContentSet',
+      r'_$StationContentSetImpl',
       json,
       ($checkedConvert) {
-        final val = _$_StationContentSet(
+        final val = _$StationContentSetImpl(
           content: $checkedConvert(
               'content',
               (v) => (v as Map<String, dynamic>).map(
@@ -32,8 +33,8 @@ _$_StationContentSet _$$_StationContentSetFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_StationContentSetToJson(
-        _$_StationContentSet instance) =>
+Map<String, dynamic> _$$StationContentSetImplToJson(
+        _$StationContentSetImpl instance) =>
     <String, dynamic>{
       'content': instance.content,
       'contentTable': instance.contentTable

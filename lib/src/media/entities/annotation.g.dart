@@ -8,16 +8,19 @@ part of 'annotation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TrackAnnotation _$$TrackAnnotationFromJson(Map<String, dynamic> json) =>
+_$TrackAnnotationImpl _$$TrackAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$TrackAnnotation',
+      r'_$TrackAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$TrackAnnotation(
+        final val = _$TrackAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           sortableName: $checkedConvert('sortableName', (v) => v as String),
-          duration: $checkedConvert('duration', (v) => readSeconds(v as int)),
-          trackNumber: $checkedConvert('trackNumber', (v) => v as int),
+          duration: $checkedConvert(
+              'duration', (v) => readSeconds((v as num).toInt())),
+          trackNumber:
+              $checkedConvert('trackNumber', (v) => (v as num).toInt()),
           icon: $checkedConvert('icon',
               (v) => MediaIcon.optionalFromJson(v as Map<String, dynamic>)),
           rightsInfo: $checkedConvert('rightsInfo',
@@ -32,8 +35,8 @@ _$TrackAnnotation _$$TrackAnnotationFromJson(Map<String, dynamic> json) =>
               $checkedConvert('shareableUrlPath', (v) => v as String),
           hasRadio:
               $checkedConvert('hasRadio', (v) => readOptInBool(v as bool?)),
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           slugPlusPandoraId:
               $checkedConvert('slugPlusPandoraId', (v) => v as String),
           isrc: $checkedConvert('isrc', (v) => v as String),
@@ -47,7 +50,8 @@ _$TrackAnnotation _$$TrackAnnotationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$TrackAnnotationToJson(_$TrackAnnotation instance) =>
+Map<String, dynamic> _$$TrackAnnotationImplToJson(
+        _$TrackAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'sortableName': instance.sortableName,
@@ -81,16 +85,17 @@ const _$ScopeEnumMap = {
   Scope.details: 'details',
 };
 
-_$ArtistAnnotation _$$ArtistAnnotationFromJson(Map<String, dynamic> json) =>
+_$ArtistAnnotationImpl _$$ArtistAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$ArtistAnnotation',
+      r'_$ArtistAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$ArtistAnnotation(
+        final val = _$ArtistAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           sortableName: $checkedConvert('sortableName', (v) => v as String),
-          trackCount: $checkedConvert('trackCount', (v) => v as int),
-          albumCount: $checkedConvert('albumCount', (v) => v as int),
+          trackCount: $checkedConvert('trackCount', (v) => (v as num).toInt()),
+          albumCount: $checkedConvert('albumCount', (v) => (v as num).toInt()),
           icon: $checkedConvert('icon',
               (v) => MediaIcon.optionalFromJson(v as Map<String, dynamic>)),
           shareableUrlPath:
@@ -98,8 +103,8 @@ _$ArtistAnnotation _$$ArtistAnnotationFromJson(Map<String, dynamic> json) =>
           twitterHandle: $checkedConvert('twitterHandle', (v) => v as String?),
           hasRadio:
               $checkedConvert('hasRadio', (v) => readOptInBool(v as bool?)),
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           slugPlusPandoraId:
               $checkedConvert('slugPlusPandoraId', (v) => v as String),
           collaboration: $checkedConvert('collaboration', (v) => v as bool),
@@ -122,7 +127,8 @@ _$ArtistAnnotation _$$ArtistAnnotationFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$ArtistAnnotationToJson(_$ArtistAnnotation instance) =>
+Map<String, dynamic> _$$ArtistAnnotationImplToJson(
+        _$ArtistAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'sortableName': instance.sortableName,
@@ -144,18 +150,20 @@ Map<String, dynamic> _$$ArtistAnnotationToJson(_$ArtistAnnotation instance) =>
       'type': instance.$type,
     };
 
-_$AlbumAnnotation _$$AlbumAnnotationFromJson(Map<String, dynamic> json) =>
+_$AlbumAnnotationImpl _$$AlbumAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$AlbumAnnotation',
+      r'_$AlbumAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$AlbumAnnotation(
+        final val = _$AlbumAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           sortableName: $checkedConvert('sortableName', (v) => v as String),
           releaseDate: $checkedConvert('releaseDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          duration: $checkedConvert('duration', (v) => readSeconds(v as int)),
-          trackCount: $checkedConvert('trackCount', (v) => v as int),
+          duration: $checkedConvert(
+              'duration', (v) => readSeconds((v as num).toInt())),
+          trackCount: $checkedConvert('trackCount', (v) => (v as num).toInt()),
           isCompilation: $checkedConvert('isCompilation', (v) => v as bool),
           icon: $checkedConvert('icon',
               (v) => MediaIcon.optionalFromJson(v as Map<String, dynamic>)),
@@ -169,8 +177,8 @@ _$AlbumAnnotation _$$AlbumAnnotationFromJson(Map<String, dynamic> json) =>
               'explicitness', (v) => $enumDecode(_$ExplicitnessEnumMap, v)),
           shareableUrlPath:
               $checkedConvert('shareableUrlPath', (v) => v as String),
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           slugPlusPandoraId:
               $checkedConvert('slugPlusPandoraId', (v) => v as String),
           hasRadio:
@@ -188,7 +196,8 @@ _$AlbumAnnotation _$$AlbumAnnotationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'trackIds': 'tracks', r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$AlbumAnnotationToJson(_$AlbumAnnotation instance) =>
+Map<String, dynamic> _$$AlbumAnnotationImplToJson(
+        _$AlbumAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'sortableName': instance.sortableName,
@@ -213,16 +222,17 @@ Map<String, dynamic> _$$AlbumAnnotationToJson(_$AlbumAnnotation instance) =>
       'type': instance.$type,
     };
 
-_$ArtistMessageAnnotation _$$ArtistMessageAnnotationFromJson(
+_$ArtistMessageAnnotationImpl _$$ArtistMessageAnnotationImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$ArtistMessageAnnotation',
+      r'_$ArtistMessageAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$ArtistMessageAnnotation(
+        final val = _$ArtistMessageAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           sortableName: $checkedConvert('sortableName', (v) => v as String),
-          duration: $checkedConvert('duration', (v) => readSeconds(v as int)),
+          duration: $checkedConvert(
+              'duration', (v) => readSeconds((v as num).toInt())),
           icon: $checkedConvert('icon',
               (v) => MediaIcon.optionalFromJson(v as Map<String, dynamic>)),
           tileIcon: $checkedConvert('tileIcon',
@@ -235,8 +245,8 @@ _$ArtistMessageAnnotation _$$ArtistMessageAnnotationFromJson(
               'deliveryType', (v) => $enumDecode(_$DeliveryTypeEnumMap, v)),
           playsWithTrackId:
               $checkedConvert('playsWithTrackPandoraId', (v) => v as String?),
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           contentState: $checkedConvert(
               'contentState', (v) => $enumDecode(_$ContentStateEnumMap, v)),
           pandoraId: $checkedConvert('pandoraId', (v) => v as String),
@@ -252,8 +262,8 @@ _$ArtistMessageAnnotation _$$ArtistMessageAnnotationFromJson(
       },
     );
 
-Map<String, dynamic> _$$ArtistMessageAnnotationToJson(
-        _$ArtistMessageAnnotation instance) =>
+Map<String, dynamic> _$$ArtistMessageAnnotationImplToJson(
+        _$ArtistMessageAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'sortableName': instance.sortableName,
@@ -284,21 +294,22 @@ const _$ContentStateEnumMap = {
   ContentState.removed: 'REMOVED',
 };
 
-_$GenreAnnotation _$$GenreAnnotationFromJson(Map<String, dynamic> json) =>
+_$GenreAnnotationImpl _$$GenreAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$GenreAnnotation',
+      r'_$GenreAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$GenreAnnotation(
+        final val = _$GenreAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           sortableName: $checkedConvert('sortableName', (v) => v as String),
           icon: $checkedConvert('icon',
               (v) => MediaIcon.optionalFromJson(v as Map<String, dynamic>)),
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           description: $checkedConvert('description', (v) => v as String),
-          stationListenerCount:
-              $checkedConvert('stationListenerCount', (v) => v as int),
+          stationListenerCount: $checkedConvert(
+              'stationListenerCount', (v) => (v as num).toInt()),
           shareableUrlPath:
               $checkedConvert('shareableUrlPath', (v) => v as String),
           hasTakeoverModes:
@@ -314,7 +325,8 @@ _$GenreAnnotation _$$GenreAnnotationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$GenreAnnotationToJson(_$GenreAnnotation instance) =>
+Map<String, dynamic> _$$GenreAnnotationImplToJson(
+        _$GenreAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'sortableName': instance.sortableName,
@@ -330,12 +342,13 @@ Map<String, dynamic> _$$GenreAnnotationToJson(_$GenreAnnotation instance) =>
       'type': instance.$type,
     };
 
-_$PlaylistAnnotation _$$PlaylistAnnotationFromJson(Map<String, dynamic> json) =>
+_$PlaylistAnnotationImpl _$$PlaylistAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PlaylistAnnotation',
+      r'_$PlaylistAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$PlaylistAnnotation(
+        final val = _$PlaylistAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           allowFeedback: $checkedConvert(
               'allowFeedback', (v) => readOptInBool(v as bool?)),
@@ -344,7 +357,8 @@ _$PlaylistAnnotation _$$PlaylistAnnotationFromJson(Map<String, dynamic> json) =>
           collectible: $checkedConvert('collectible', (v) => v as bool),
           description: $checkedConvert('description',
               (v) => readOptionalOptionallyEmptyString(v as String?)),
-          duration: $checkedConvert('duration', (v) => readSeconds(v as int)),
+          duration: $checkedConvert(
+              'duration', (v) => readSeconds((v as num).toInt())),
           includedTrackTypes: $checkedConvert(
               'includedTrackTypes',
               (v) => (v as List<dynamic>)
@@ -353,7 +367,7 @@ _$PlaylistAnnotation _$$PlaylistAnnotationFromJson(Map<String, dynamic> json) =>
           isPrivate: $checkedConvert('isPrivate', (v) => v as bool),
           linkedType: $checkedConvert(
               'linkedType', (v) => $enumDecode(_$PlaylistLinkedTypeEnumMap, v)),
-          listenerId: $checkedConvert('listenerId', (v) => v as int),
+          listenerId: $checkedConvert('listenerId', (v) => (v as num).toInt()),
           listenerIdInfo: $checkedConvert('listenerIdInfo',
               (v) => ListenerIdInfo.fromJson(v as Map<String, dynamic>)),
           listenerIdToken:
@@ -364,13 +378,14 @@ _$PlaylistAnnotation _$$PlaylistAnnotationFromJson(Map<String, dynamic> json) =>
           shareableUrlPath:
               $checkedConvert('shareableUrlPath', (v) => v as String),
           thorLayers: $checkedConvert('thorLayers', (v) => v as String),
-          timeCreated: $checkedConvert(
-              'timeCreated', (v) => readDateTimeMilliseconds(v as int)),
+          timeCreated: $checkedConvert('timeCreated',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           timeLastPlayed: $checkedConvert('timeLastPlayed',
-              (v) => readOptionalDateTimeMilliseconds(v as int?)),
+              (v) => readOptionalDateTimeMilliseconds((v as num?)?.toInt())),
           timeLastUpdated: $checkedConvert('timeLastUpdated',
-              (v) => readOptionalDateTimeMilliseconds(v as int?)),
-          totalTracks: $checkedConvert('totalTracks', (v) => v as int),
+              (v) => readOptionalDateTimeMilliseconds((v as num?)?.toInt())),
+          totalTracks:
+              $checkedConvert('totalTracks', (v) => (v as num).toInt()),
           unlocked: $checkedConvert('unlocked', (v) => v as bool),
           viewerInfo: $checkedConvert(
               'viewerInfo',
@@ -387,8 +402,8 @@ _$PlaylistAnnotation _$$PlaylistAnnotationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$PlaylistAnnotationToJson(
-        _$PlaylistAnnotation instance) =>
+Map<String, dynamic> _$$PlaylistAnnotationImplToJson(
+        _$PlaylistAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'allowFeedback': writeOptInBool(instance.allowFeedback),
@@ -472,15 +487,16 @@ const _$PlaylistLinkedTypeEnumMap = {
   PlaylistLinkedType.unspecified: 'NULL',
 };
 
-_$StationAnnotation _$$StationAnnotationFromJson(Map<String, dynamic> json) =>
+_$StationAnnotationImpl _$$StationAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$StationAnnotation',
+      r'_$StationAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$StationAnnotation(
+        final val = _$StationAnnotationImpl(
           name: $checkedConvert('stationName', (v) => v as String),
           stationId: $checkedConvert('stationId', (v) => v as String),
-          listenerId: $checkedConvert('listenerId', (v) => v as int),
+          listenerId: $checkedConvert('listenerId', (v) => (v as num).toInt()),
           listenerPandoraId:
               $checkedConvert('listenerPandoraId', (v) => v as String),
           initialSeedId: $checkedConvert('initialSeedId', (v) => v as String?),
@@ -498,7 +514,8 @@ _$StationAnnotation _$$StationAnnotationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'name': 'stationName', r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$StationAnnotationToJson(_$StationAnnotation instance) =>
+Map<String, dynamic> _$$StationAnnotationImplToJson(
+        _$StationAnnotationImpl instance) =>
     <String, dynamic>{
       'stationName': instance.name,
       'stationId': instance.stationId,
@@ -513,22 +530,24 @@ Map<String, dynamic> _$$StationAnnotationToJson(_$StationAnnotation instance) =>
       'type': instance.$type,
     };
 
-_$PodcastAnnotation _$$PodcastAnnotationFromJson(Map<String, dynamic> json) =>
+_$PodcastAnnotationImpl _$$PodcastAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PodcastAnnotation',
+      r'_$PodcastAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$PodcastAnnotation(
+        final val = _$PodcastAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           sortableName: $checkedConvert('sortableName', (v) => v as String),
           icon: $checkedConvert('icon',
               (v) => MediaIcon.optionalFromJson(v as Map<String, dynamic>)),
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           publisherName: $checkedConvert('publisherName', (v) => v as String),
           publisherId: $checkedConvert('publisherId', (v) => v as String),
           ordering: $checkedConvert('ordering', (v) => v as String),
-          episodeCount: $checkedConvert('episodeCount', (v) => v as int),
+          episodeCount:
+              $checkedConvert('episodeCount', (v) => (v as num).toInt()),
           shelfLife: $checkedConvert('shelfLife', (v) => v as String),
           categoryPandoraIds: $checkedConvert('categories',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
@@ -560,7 +579,8 @@ _$PodcastAnnotation _$$PodcastAnnotationFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$PodcastAnnotationToJson(_$PodcastAnnotation instance) =>
+Map<String, dynamic> _$$PodcastAnnotationImplToJson(
+        _$PodcastAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'sortableName': instance.sortableName,
@@ -585,20 +605,20 @@ Map<String, dynamic> _$$PodcastAnnotationToJson(_$PodcastAnnotation instance) =>
       'type': instance.$type,
     };
 
-_$PodcastCategoryAnnotation _$$PodcastCategoryAnnotationFromJson(
+_$PodcastCategoryAnnotationImpl _$$PodcastCategoryAnnotationImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PodcastCategoryAnnotation',
+      r'_$PodcastCategoryAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$PodcastCategoryAnnotation(
+        final val = _$PodcastCategoryAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           aliases: $checkedConvert('aliases',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           icon: $checkedConvert('icon',
               (v) => MediaIcon.optionalFromJson(v as Map<String, dynamic>)),
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           pandoraId: $checkedConvert('pandoraId', (v) => v as String),
           scope: $checkedConvert('scope', (v) => v as String),
           $type: $checkedConvert('type', (v) => v as String?),
@@ -608,8 +628,8 @@ _$PodcastCategoryAnnotation _$$PodcastCategoryAnnotationFromJson(
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$PodcastCategoryAnnotationToJson(
-        _$PodcastCategoryAnnotation instance) =>
+Map<String, dynamic> _$$PodcastCategoryAnnotationImplToJson(
+        _$PodcastCategoryAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'aliases': instance.aliases,
@@ -620,24 +640,26 @@ Map<String, dynamic> _$$PodcastCategoryAnnotationToJson(
       'type': instance.$type,
     };
 
-_$EpisodeAnnotation _$$EpisodeAnnotationFromJson(Map<String, dynamic> json) =>
+_$EpisodeAnnotationImpl _$$EpisodeAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$EpisodeAnnotation',
+      r'_$EpisodeAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$EpisodeAnnotation(
+        final val = _$EpisodeAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           sortableName: $checkedConvert('sortableName', (v) => v as String),
           icon: $checkedConvert('icon',
               (v) => MediaIcon.optionalFromJson(v as Map<String, dynamic>)),
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           programName: $checkedConvert('programName', (v) => v as String),
           summary: $checkedConvert('summary', (v) => v as String),
           releaseDate: $checkedConvert('releaseDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
           podcastPandoraId: $checkedConvert('podcastId', (v) => v as String),
-          duration: $checkedConvert('duration', (v) => readSeconds(v as int)),
+          duration: $checkedConvert(
+              'duration', (v) => readSeconds((v as num).toInt())),
           rightsInfo: $checkedConvert('rightsInfo',
               (v) => RightsInfo.fromJson(v as Map<String, dynamic>)),
           explicitness: $checkedConvert(
@@ -662,7 +684,8 @@ _$EpisodeAnnotation _$$EpisodeAnnotationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'podcastPandoraId': 'podcastId', r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$EpisodeAnnotationToJson(_$EpisodeAnnotation instance) =>
+Map<String, dynamic> _$$EpisodeAnnotationImplToJson(
+        _$EpisodeAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'sortableName': instance.sortableName,
@@ -685,17 +708,18 @@ Map<String, dynamic> _$$EpisodeAnnotationToJson(_$EpisodeAnnotation instance) =>
       'type': instance.$type,
     };
 
-_$CuratorAnnotation _$$CuratorAnnotationFromJson(Map<String, dynamic> json) =>
+_$CuratorAnnotationImpl _$$CuratorAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CuratorAnnotation',
+      r'_$CuratorAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$CuratorAnnotation(
+        final val = _$CuratorAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           sortableName: $checkedConvert('sortableName', (v) => v as String),
           icon: $checkedConvert('icon',
               (v) => MediaIcon.optionalFromJson(v as Map<String, dynamic>)),
-          listenerId: $checkedConvert('listenerId', (v) => v as int),
+          listenerId: $checkedConvert('listenerId', (v) => (v as num).toInt()),
           listenerPandoraId:
               $checkedConvert('listenerPandoraId', (v) => v as String),
           pandoraId: $checkedConvert('pandoraId', (v) => v as String),
@@ -707,7 +731,8 @@ _$CuratorAnnotation _$$CuratorAnnotationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$CuratorAnnotationToJson(_$CuratorAnnotation instance) =>
+Map<String, dynamic> _$$CuratorAnnotationImplToJson(
+        _$CuratorAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'sortableName': instance.sortableName,
@@ -719,24 +744,25 @@ Map<String, dynamic> _$$CuratorAnnotationToJson(_$CuratorAnnotation instance) =>
       'type': instance.$type,
     };
 
-_$ComposerAnnotation _$$ComposerAnnotationFromJson(Map<String, dynamic> json) =>
+_$ComposerAnnotationImpl _$$ComposerAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$ComposerAnnotation',
+      r'_$ComposerAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$ComposerAnnotation(
+        final val = _$ComposerAnnotationImpl(
           name: $checkedConvert('name', (v) => v as String),
           sortableName: $checkedConvert('sortableName', (v) => v as String),
           icon: $checkedConvert('icon',
               (v) => MediaIcon.optionalFromJson(v as Map<String, dynamic>)),
           hasRadio:
               $checkedConvert('hasRadio', (v) => readOptInBool(v as bool?)),
-          albumCount: $checkedConvert('albumCount', (v) => v as int),
-          trackCount: $checkedConvert('trackCount', (v) => v as int),
+          albumCount: $checkedConvert('albumCount', (v) => (v as num).toInt()),
+          trackCount: $checkedConvert('trackCount', (v) => (v as num).toInt()),
           shareableUrlPath:
               $checkedConvert('shareableUrlPath', (v) => v as String),
-          modificationTime: $checkedConvert(
-              'modificationTime', (v) => readDateTimeMilliseconds(v as int)),
+          modificationTime: $checkedConvert('modificationTime',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           slugPlusPandoraId:
               $checkedConvert('slugPlusPandoraId', (v) => v as String),
           pandoraId: $checkedConvert('pandoraId', (v) => v as String),
@@ -748,8 +774,8 @@ _$ComposerAnnotation _$$ComposerAnnotationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {r'$type': 'type'},
     );
 
-Map<String, dynamic> _$$ComposerAnnotationToJson(
-        _$ComposerAnnotation instance) =>
+Map<String, dynamic> _$$ComposerAnnotationImplToJson(
+        _$ComposerAnnotationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'sortableName': instance.sortableName,
@@ -765,13 +791,14 @@ Map<String, dynamic> _$$ComposerAnnotationToJson(
       'type': instance.$type,
     };
 
-_$ListenerAnnotation _$$ListenerAnnotationFromJson(Map<String, dynamic> json) =>
+_$ListenerAnnotationImpl _$$ListenerAnnotationImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$ListenerAnnotation',
+      r'_$ListenerAnnotationImpl',
       json,
       ($checkedConvert) {
-        final val = _$ListenerAnnotation(
-          listenerId: $checkedConvert('listenerId', (v) => v as int),
+        final val = _$ListenerAnnotationImpl(
+          listenerId: $checkedConvert('listenerId', (v) => (v as num).toInt()),
           webname: $checkedConvert('webname', (v) => v as String),
           fullName: $checkedConvert('fullname', (v) => v as String?),
           displayName: $checkedConvert('displayname', (v) => v as String),
@@ -793,8 +820,8 @@ _$ListenerAnnotation _$$ListenerAnnotationFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$ListenerAnnotationToJson(
-        _$ListenerAnnotation instance) =>
+Map<String, dynamic> _$$ListenerAnnotationImplToJson(
+        _$ListenerAnnotationImpl instance) =>
     <String, dynamic>{
       'listenerId': instance.listenerId,
       'webname': instance.webname,

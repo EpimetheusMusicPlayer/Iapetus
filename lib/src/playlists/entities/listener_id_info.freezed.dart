@@ -12,7 +12,7 @@ part of 'listener_id_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ListenerIdInfo _$ListenerIdInfoFromJson(Map<String, dynamic> json) {
   return _ListenerIdInfo.fromJson(json);
@@ -27,8 +27,12 @@ mixin _$ListenerIdInfo {
   @JsonKey(name: 'listenerIdToken')
   String get listenerIdToken => throw _privateConstructorUsedError;
 
+  /// Serializes this ListenerIdInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ListenerIdInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ListenerIdInfoCopyWith<ListenerIdInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$ListenerIdInfoCopyWithImpl<$Res, $Val extends ListenerIdInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ListenerIdInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,11 +86,11 @@ class _$ListenerIdInfoCopyWithImpl<$Res, $Val extends ListenerIdInfo>
 }
 
 /// @nodoc
-abstract class _$$_ListenerIdInfoCopyWith<$Res>
+abstract class _$$ListenerIdInfoImplCopyWith<$Res>
     implements $ListenerIdInfoCopyWith<$Res> {
-  factory _$$_ListenerIdInfoCopyWith(
-          _$_ListenerIdInfo value, $Res Function(_$_ListenerIdInfo) then) =
-      __$$_ListenerIdInfoCopyWithImpl<$Res>;
+  factory _$$ListenerIdInfoImplCopyWith(_$ListenerIdInfoImpl value,
+          $Res Function(_$ListenerIdInfoImpl) then) =
+      __$$ListenerIdInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,13 +100,15 @@ abstract class _$$_ListenerIdInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ListenerIdInfoCopyWithImpl<$Res>
-    extends _$ListenerIdInfoCopyWithImpl<$Res, _$_ListenerIdInfo>
-    implements _$$_ListenerIdInfoCopyWith<$Res> {
-  __$$_ListenerIdInfoCopyWithImpl(
-      _$_ListenerIdInfo _value, $Res Function(_$_ListenerIdInfo) _then)
+class __$$ListenerIdInfoImplCopyWithImpl<$Res>
+    extends _$ListenerIdInfoCopyWithImpl<$Res, _$ListenerIdInfoImpl>
+    implements _$$ListenerIdInfoImplCopyWith<$Res> {
+  __$$ListenerIdInfoImplCopyWithImpl(
+      _$ListenerIdInfoImpl _value, $Res Function(_$ListenerIdInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ListenerIdInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,7 +116,7 @@ class __$$_ListenerIdInfoCopyWithImpl<$Res>
     Object? listenerPandoraId = null,
     Object? listenerIdToken = null,
   }) {
-    return _then(_$_ListenerIdInfo(
+    return _then(_$ListenerIdInfoImpl(
       listenerId: null == listenerId
           ? _value.listenerId
           : listenerId // ignore: cast_nullable_to_non_nullable
@@ -127,15 +135,15 @@ class __$$_ListenerIdInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ListenerIdInfo extends _ListenerIdInfo {
-  const _$_ListenerIdInfo(
+class _$ListenerIdInfoImpl extends _ListenerIdInfo {
+  const _$ListenerIdInfoImpl(
       {@JsonKey(name: 'listenerId') required this.listenerId,
       @JsonKey(name: 'listenerPandoraId') required this.listenerPandoraId,
       @JsonKey(name: 'listenerIdToken') required this.listenerIdToken})
       : super._();
 
-  factory _$_ListenerIdInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_ListenerIdInfoFromJson(json);
+  factory _$ListenerIdInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ListenerIdInfoImplFromJson(json);
 
   @override
   @JsonKey(name: 'listenerId')
@@ -153,10 +161,10 @@ class _$_ListenerIdInfo extends _ListenerIdInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ListenerIdInfo &&
+            other is _$ListenerIdInfoImpl &&
             (identical(other.listenerId, listenerId) ||
                 other.listenerId == listenerId) &&
             (identical(other.listenerPandoraId, listenerPandoraId) ||
@@ -165,20 +173,23 @@ class _$_ListenerIdInfo extends _ListenerIdInfo {
                 other.listenerIdToken == listenerIdToken));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, listenerId, listenerPandoraId, listenerIdToken);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ListenerIdInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ListenerIdInfoCopyWith<_$_ListenerIdInfo> get copyWith =>
-      __$$_ListenerIdInfoCopyWithImpl<_$_ListenerIdInfo>(this, _$identity);
+  _$$ListenerIdInfoImplCopyWith<_$ListenerIdInfoImpl> get copyWith =>
+      __$$ListenerIdInfoImplCopyWithImpl<_$ListenerIdInfoImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ListenerIdInfoToJson(
+    return _$$ListenerIdInfoImplToJson(
       this,
     );
   }
@@ -186,16 +197,15 @@ class _$_ListenerIdInfo extends _ListenerIdInfo {
 
 abstract class _ListenerIdInfo extends ListenerIdInfo {
   const factory _ListenerIdInfo(
-      {@JsonKey(name: 'listenerId')
-          required final int listenerId,
+      {@JsonKey(name: 'listenerId') required final int listenerId,
       @JsonKey(name: 'listenerPandoraId')
-          required final String listenerPandoraId,
+      required final String listenerPandoraId,
       @JsonKey(name: 'listenerIdToken')
-          required final String listenerIdToken}) = _$_ListenerIdInfo;
+      required final String listenerIdToken}) = _$ListenerIdInfoImpl;
   const _ListenerIdInfo._() : super._();
 
   factory _ListenerIdInfo.fromJson(Map<String, dynamic> json) =
-      _$_ListenerIdInfo.fromJson;
+      _$ListenerIdInfoImpl.fromJson;
 
   @override
   @JsonKey(name: 'listenerId')
@@ -206,8 +216,11 @@ abstract class _ListenerIdInfo extends ListenerIdInfo {
   @override
   @JsonKey(name: 'listenerIdToken')
   String get listenerIdToken;
+
+  /// Create a copy of ListenerIdInfo
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_ListenerIdInfoCopyWith<_$_ListenerIdInfo> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ListenerIdInfoImplCopyWith<_$ListenerIdInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

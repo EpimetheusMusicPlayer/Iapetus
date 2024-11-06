@@ -8,12 +8,12 @@ part of 'station_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_StationList _$$_StationListFromJson(Map<String, dynamic> json) =>
+_$StationListImpl _$$StationListImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_StationList',
+      r'_$StationListImpl',
       json,
       ($checkedConvert) {
-        final val = _$_StationList(
+        final val = _$StationListImpl(
           stations: $checkedConvert(
               'stations',
               (v) => (v as List<dynamic>)
@@ -26,7 +26,7 @@ _$_StationList _$$_StationListFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_StationListToJson(_$_StationList instance) =>
+Map<String, dynamic> _$$StationListImplToJson(_$StationListImpl instance) =>
     <String, dynamic>{
       'stations': instance.stations,
       'recommendations': instance.recommendations,

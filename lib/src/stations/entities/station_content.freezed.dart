@@ -12,7 +12,7 @@ part of 'station_content.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 StationContent _$StationContentFromJson(Map<String, dynamic> json) {
   return _StationContent.fromJson(json);
@@ -121,8 +121,12 @@ mixin _$StationContent {
   @JsonKey(name: 'modeId')
   int get modeId => throw _privateConstructorUsedError;
 
+  /// Serializes this StationContent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StationContent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StationContentCopyWith<StationContent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -134,100 +138,62 @@ abstract class $StationContentCopyWith<$Res> {
       _$StationContentCopyWithImpl<$Res, StationContent>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'userSeed')
-          String? userSeed,
-      @JsonKey(name: 'allowBookmarkTrack')
-          bool allowBookmarkTrack,
-      @JsonKey(name: 'albumExplorerUrl')
-          Uri albumExplorerUrl,
-      @JsonKey(name: 'albumArtUrl')
-          Uri albumArtUrl,
-      @JsonKey(name: 'artistDetailUrl')
-          Uri artistDetailUrl,
-      @JsonKey(name: 'artistExplorerUrl')
-          Uri artistExplorerUrl,
-      @JsonKey(name: 'songDetailUrl')
-          Uri songDetailUrl,
-      @JsonKey(name: 'trackType')
-          TrackType trackType,
-      @JsonKey(name: 'nowPlayingStationAdUrl')
-          Uri? nowPlayingStationAdUrl,
+      {@JsonKey(name: 'userSeed') String? userSeed,
+      @JsonKey(name: 'allowBookmarkTrack') bool allowBookmarkTrack,
+      @JsonKey(name: 'albumExplorerUrl') Uri albumExplorerUrl,
+      @JsonKey(name: 'albumArtUrl') Uri albumArtUrl,
+      @JsonKey(name: 'artistDetailUrl') Uri artistDetailUrl,
+      @JsonKey(name: 'artistExplorerUrl') Uri artistExplorerUrl,
+      @JsonKey(name: 'songDetailUrl') Uri songDetailUrl,
+      @JsonKey(name: 'trackType') TrackType trackType,
+      @JsonKey(name: 'nowPlayingStationAdUrl') Uri? nowPlayingStationAdUrl,
       @JsonKey(name: 'allowStartStationFromTrack')
-          bool allowStartStationFromTrack,
+      bool allowStartStationFromTrack,
       @JsonKey(name: 'nowPlayingStationAdTargeting')
-          String? nowPlayingStationAdTargeting,
+      String? nowPlayingStationAdTargeting,
       @JsonKey(name: 'nowPlayingStationPremiumAdTargeting')
-          String? nowPlayingStationPremiumAdTargeting,
-      @JsonKey(name: 'allowShareTrack')
-          bool allowShareTrack,
-      @JsonKey(name: 'pandoraType')
-          PandoraType pandoraType,
-      @JsonKey(name: 'songIdentity')
-          String songIdentity,
+      String? nowPlayingStationPremiumAdTargeting,
+      @JsonKey(name: 'allowShareTrack') bool allowShareTrack,
+      @JsonKey(name: 'pandoraType') PandoraType pandoraType,
+      @JsonKey(name: 'songIdentity') String songIdentity,
       @JsonKey(name: 'nowPlayingStationPremiumAdUrl')
-          Uri? nowPlayingStationPremiumAdUrl,
-      @JsonKey(name: 'allowFeedback')
-          bool allowFeedback,
-      @JsonKey(name: 'musicId')
-          String musicId,
-      @JsonKey(name: 'categoryDescriptor')
-          String categoryDescriptor,
-      @JsonKey(name: 'isFeatured')
-          bool isFeatured,
-      @JsonKey(name: 'disableTrackDetail')
-          bool disableTrackDetail,
-      @JsonKey(name: 'songName')
-          String songName,
-      @JsonKey(name: 'allowTiredOfTrack')
-          bool allowTiredOfTrack,
-      @JsonKey(name: 'programDescriptor')
-          String programDescriptor,
-      @JsonKey(name: 'artistName')
-          String artistName,
+      Uri? nowPlayingStationPremiumAdUrl,
+      @JsonKey(name: 'allowFeedback') bool allowFeedback,
+      @JsonKey(name: 'musicId') String musicId,
+      @JsonKey(name: 'categoryDescriptor') String categoryDescriptor,
+      @JsonKey(name: 'isFeatured') bool isFeatured,
+      @JsonKey(name: 'disableTrackDetail') bool disableTrackDetail,
+      @JsonKey(name: 'songName') String songName,
+      @JsonKey(name: 'allowTiredOfTrack') bool allowTiredOfTrack,
+      @JsonKey(name: 'programDescriptor') String programDescriptor,
+      @JsonKey(name: 'artistName') String artistName,
       @JsonKey(name: 'trackLength', fromJson: readSeconds, toJson: writeSeconds)
-          Duration trackLength,
-      @JsonKey(name: 'trackToken')
-          String trackToken,
-      @JsonKey(name: 'allowBuyTrack')
-          bool allowBuyTrack,
-      @JsonKey(name: 'albumDetailUrl')
-          Uri albumDetailUrl,
+      Duration trackLength,
+      @JsonKey(name: 'trackToken') String trackToken,
+      @JsonKey(name: 'allowBuyTrack') bool allowBuyTrack,
+      @JsonKey(name: 'albumDetailUrl') Uri albumDetailUrl,
       @JsonKey(name: 'audioUrlMap')
-          Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
-      @JsonKey(name: 'albumIdentity')
-          String albumIdentity,
+      Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
+      @JsonKey(name: 'albumIdentity') String albumIdentity,
       @JsonKey(name: 'trackGain', fromJson: readNum, toJson: writeNum)
-          num trackGain,
-      @JsonKey(name: 'albumName')
-          String albumName,
-      @JsonKey(name: 'amazonAlbumUrl')
-          Uri amazonAlbumUrl,
-      @JsonKey(name: 'shareLandingUrl')
-          Uri shareLandingUrl,
-      @JsonKey(name: 'songExplorerUrl')
-          Uri songExplorerUrl,
+      num trackGain,
+      @JsonKey(name: 'albumName') String albumName,
+      @JsonKey(name: 'amazonAlbumUrl') Uri amazonAlbumUrl,
+      @JsonKey(name: 'shareLandingUrl') Uri shareLandingUrl,
+      @JsonKey(name: 'songExplorerUrl') Uri songExplorerUrl,
       @JsonKey(name: 'nowPlayingStationPremiumAdUnit')
-          String? nowPlayingStationPremiumAdUnit,
-      @JsonKey(name: 'songRating')
-          MediaRating songRating,
-      @JsonKey(name: 'trackKey')
-          TrackKey? trackKey,
-      @JsonKey(name: 'nowPlayingStationAdUnit')
-          String? nowPlayingStationAdUnit,
-      @JsonKey(name: 'requestedModeId')
-          int requestedModeId,
-      @JsonKey(name: 'stationId')
-          String stationId,
-      @JsonKey(name: 'pandoraId')
-          String pandoraId,
+      String? nowPlayingStationPremiumAdUnit,
+      @JsonKey(name: 'songRating') MediaRating songRating,
+      @JsonKey(name: 'trackKey') TrackKey? trackKey,
+      @JsonKey(name: 'nowPlayingStationAdUnit') String? nowPlayingStationAdUnit,
+      @JsonKey(name: 'requestedModeId') int requestedModeId,
+      @JsonKey(name: 'stationId') String stationId,
+      @JsonKey(name: 'pandoraId') String pandoraId,
       @JsonKey(name: 'allowSkipTrackWithoutLimit')
-          bool allowSkipTrackWithoutLimit,
-      @JsonKey(name: 'itunesSongUrl')
-          Uri itunesSongUrl,
-      @JsonKey(name: 'disableSkipButton')
-          bool disableSkipButton,
-      @JsonKey(name: 'modeId')
-          int modeId});
+      bool allowSkipTrackWithoutLimit,
+      @JsonKey(name: 'itunesSongUrl') Uri itunesSongUrl,
+      @JsonKey(name: 'disableSkipButton') bool disableSkipButton,
+      @JsonKey(name: 'modeId') int modeId});
 
   $TrackKeyCopyWith<$Res>? get trackKey;
 }
@@ -242,6 +208,8 @@ class _$StationContentCopyWithImpl<$Res, $Val extends StationContent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StationContent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -486,6 +454,8 @@ class _$StationContentCopyWithImpl<$Res, $Val extends StationContent>
     ) as $Val);
   }
 
+  /// Create a copy of StationContent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TrackKeyCopyWith<$Res>? get trackKey {
@@ -500,121 +470,85 @@ class _$StationContentCopyWithImpl<$Res, $Val extends StationContent>
 }
 
 /// @nodoc
-abstract class _$$_StationContentCopyWith<$Res>
+abstract class _$$StationContentImplCopyWith<$Res>
     implements $StationContentCopyWith<$Res> {
-  factory _$$_StationContentCopyWith(
-          _$_StationContent value, $Res Function(_$_StationContent) then) =
-      __$$_StationContentCopyWithImpl<$Res>;
+  factory _$$StationContentImplCopyWith(_$StationContentImpl value,
+          $Res Function(_$StationContentImpl) then) =
+      __$$StationContentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'userSeed')
-          String? userSeed,
-      @JsonKey(name: 'allowBookmarkTrack')
-          bool allowBookmarkTrack,
-      @JsonKey(name: 'albumExplorerUrl')
-          Uri albumExplorerUrl,
-      @JsonKey(name: 'albumArtUrl')
-          Uri albumArtUrl,
-      @JsonKey(name: 'artistDetailUrl')
-          Uri artistDetailUrl,
-      @JsonKey(name: 'artistExplorerUrl')
-          Uri artistExplorerUrl,
-      @JsonKey(name: 'songDetailUrl')
-          Uri songDetailUrl,
-      @JsonKey(name: 'trackType')
-          TrackType trackType,
-      @JsonKey(name: 'nowPlayingStationAdUrl')
-          Uri? nowPlayingStationAdUrl,
+      {@JsonKey(name: 'userSeed') String? userSeed,
+      @JsonKey(name: 'allowBookmarkTrack') bool allowBookmarkTrack,
+      @JsonKey(name: 'albumExplorerUrl') Uri albumExplorerUrl,
+      @JsonKey(name: 'albumArtUrl') Uri albumArtUrl,
+      @JsonKey(name: 'artistDetailUrl') Uri artistDetailUrl,
+      @JsonKey(name: 'artistExplorerUrl') Uri artistExplorerUrl,
+      @JsonKey(name: 'songDetailUrl') Uri songDetailUrl,
+      @JsonKey(name: 'trackType') TrackType trackType,
+      @JsonKey(name: 'nowPlayingStationAdUrl') Uri? nowPlayingStationAdUrl,
       @JsonKey(name: 'allowStartStationFromTrack')
-          bool allowStartStationFromTrack,
+      bool allowStartStationFromTrack,
       @JsonKey(name: 'nowPlayingStationAdTargeting')
-          String? nowPlayingStationAdTargeting,
+      String? nowPlayingStationAdTargeting,
       @JsonKey(name: 'nowPlayingStationPremiumAdTargeting')
-          String? nowPlayingStationPremiumAdTargeting,
-      @JsonKey(name: 'allowShareTrack')
-          bool allowShareTrack,
-      @JsonKey(name: 'pandoraType')
-          PandoraType pandoraType,
-      @JsonKey(name: 'songIdentity')
-          String songIdentity,
+      String? nowPlayingStationPremiumAdTargeting,
+      @JsonKey(name: 'allowShareTrack') bool allowShareTrack,
+      @JsonKey(name: 'pandoraType') PandoraType pandoraType,
+      @JsonKey(name: 'songIdentity') String songIdentity,
       @JsonKey(name: 'nowPlayingStationPremiumAdUrl')
-          Uri? nowPlayingStationPremiumAdUrl,
-      @JsonKey(name: 'allowFeedback')
-          bool allowFeedback,
-      @JsonKey(name: 'musicId')
-          String musicId,
-      @JsonKey(name: 'categoryDescriptor')
-          String categoryDescriptor,
-      @JsonKey(name: 'isFeatured')
-          bool isFeatured,
-      @JsonKey(name: 'disableTrackDetail')
-          bool disableTrackDetail,
-      @JsonKey(name: 'songName')
-          String songName,
-      @JsonKey(name: 'allowTiredOfTrack')
-          bool allowTiredOfTrack,
-      @JsonKey(name: 'programDescriptor')
-          String programDescriptor,
-      @JsonKey(name: 'artistName')
-          String artistName,
+      Uri? nowPlayingStationPremiumAdUrl,
+      @JsonKey(name: 'allowFeedback') bool allowFeedback,
+      @JsonKey(name: 'musicId') String musicId,
+      @JsonKey(name: 'categoryDescriptor') String categoryDescriptor,
+      @JsonKey(name: 'isFeatured') bool isFeatured,
+      @JsonKey(name: 'disableTrackDetail') bool disableTrackDetail,
+      @JsonKey(name: 'songName') String songName,
+      @JsonKey(name: 'allowTiredOfTrack') bool allowTiredOfTrack,
+      @JsonKey(name: 'programDescriptor') String programDescriptor,
+      @JsonKey(name: 'artistName') String artistName,
       @JsonKey(name: 'trackLength', fromJson: readSeconds, toJson: writeSeconds)
-          Duration trackLength,
-      @JsonKey(name: 'trackToken')
-          String trackToken,
-      @JsonKey(name: 'allowBuyTrack')
-          bool allowBuyTrack,
-      @JsonKey(name: 'albumDetailUrl')
-          Uri albumDetailUrl,
+      Duration trackLength,
+      @JsonKey(name: 'trackToken') String trackToken,
+      @JsonKey(name: 'allowBuyTrack') bool allowBuyTrack,
+      @JsonKey(name: 'albumDetailUrl') Uri albumDetailUrl,
       @JsonKey(name: 'audioUrlMap')
-          Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
-      @JsonKey(name: 'albumIdentity')
-          String albumIdentity,
+      Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
+      @JsonKey(name: 'albumIdentity') String albumIdentity,
       @JsonKey(name: 'trackGain', fromJson: readNum, toJson: writeNum)
-          num trackGain,
-      @JsonKey(name: 'albumName')
-          String albumName,
-      @JsonKey(name: 'amazonAlbumUrl')
-          Uri amazonAlbumUrl,
-      @JsonKey(name: 'shareLandingUrl')
-          Uri shareLandingUrl,
-      @JsonKey(name: 'songExplorerUrl')
-          Uri songExplorerUrl,
+      num trackGain,
+      @JsonKey(name: 'albumName') String albumName,
+      @JsonKey(name: 'amazonAlbumUrl') Uri amazonAlbumUrl,
+      @JsonKey(name: 'shareLandingUrl') Uri shareLandingUrl,
+      @JsonKey(name: 'songExplorerUrl') Uri songExplorerUrl,
       @JsonKey(name: 'nowPlayingStationPremiumAdUnit')
-          String? nowPlayingStationPremiumAdUnit,
-      @JsonKey(name: 'songRating')
-          MediaRating songRating,
-      @JsonKey(name: 'trackKey')
-          TrackKey? trackKey,
-      @JsonKey(name: 'nowPlayingStationAdUnit')
-          String? nowPlayingStationAdUnit,
-      @JsonKey(name: 'requestedModeId')
-          int requestedModeId,
-      @JsonKey(name: 'stationId')
-          String stationId,
-      @JsonKey(name: 'pandoraId')
-          String pandoraId,
+      String? nowPlayingStationPremiumAdUnit,
+      @JsonKey(name: 'songRating') MediaRating songRating,
+      @JsonKey(name: 'trackKey') TrackKey? trackKey,
+      @JsonKey(name: 'nowPlayingStationAdUnit') String? nowPlayingStationAdUnit,
+      @JsonKey(name: 'requestedModeId') int requestedModeId,
+      @JsonKey(name: 'stationId') String stationId,
+      @JsonKey(name: 'pandoraId') String pandoraId,
       @JsonKey(name: 'allowSkipTrackWithoutLimit')
-          bool allowSkipTrackWithoutLimit,
-      @JsonKey(name: 'itunesSongUrl')
-          Uri itunesSongUrl,
-      @JsonKey(name: 'disableSkipButton')
-          bool disableSkipButton,
-      @JsonKey(name: 'modeId')
-          int modeId});
+      bool allowSkipTrackWithoutLimit,
+      @JsonKey(name: 'itunesSongUrl') Uri itunesSongUrl,
+      @JsonKey(name: 'disableSkipButton') bool disableSkipButton,
+      @JsonKey(name: 'modeId') int modeId});
 
   @override
   $TrackKeyCopyWith<$Res>? get trackKey;
 }
 
 /// @nodoc
-class __$$_StationContentCopyWithImpl<$Res>
-    extends _$StationContentCopyWithImpl<$Res, _$_StationContent>
-    implements _$$_StationContentCopyWith<$Res> {
-  __$$_StationContentCopyWithImpl(
-      _$_StationContent _value, $Res Function(_$_StationContent) _then)
+class __$$StationContentImplCopyWithImpl<$Res>
+    extends _$StationContentCopyWithImpl<$Res, _$StationContentImpl>
+    implements _$$StationContentImplCopyWith<$Res> {
+  __$$StationContentImplCopyWithImpl(
+      _$StationContentImpl _value, $Res Function(_$StationContentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StationContent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -666,7 +600,7 @@ class __$$_StationContentCopyWithImpl<$Res>
     Object? disableSkipButton = null,
     Object? modeId = null,
   }) {
-    return _then(_$_StationContent(
+    return _then(_$StationContentImpl(
       userSeed: freezed == userSeed
           ? _value.userSeed
           : userSeed // ignore: cast_nullable_to_non_nullable
@@ -862,107 +796,69 @@ class __$$_StationContentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StationContent extends _StationContent {
-  const _$_StationContent(
-      {@JsonKey(name: 'userSeed')
-          this.userSeed,
-      @JsonKey(name: 'allowBookmarkTrack')
-          required this.allowBookmarkTrack,
-      @JsonKey(name: 'albumExplorerUrl')
-          required this.albumExplorerUrl,
-      @JsonKey(name: 'albumArtUrl')
-          required this.albumArtUrl,
-      @JsonKey(name: 'artistDetailUrl')
-          required this.artistDetailUrl,
-      @JsonKey(name: 'artistExplorerUrl')
-          required this.artistExplorerUrl,
-      @JsonKey(name: 'songDetailUrl')
-          required this.songDetailUrl,
-      @JsonKey(name: 'trackType')
-          required this.trackType,
-      @JsonKey(name: 'nowPlayingStationAdUrl')
-          this.nowPlayingStationAdUrl,
+class _$StationContentImpl extends _StationContent {
+  const _$StationContentImpl(
+      {@JsonKey(name: 'userSeed') this.userSeed,
+      @JsonKey(name: 'allowBookmarkTrack') required this.allowBookmarkTrack,
+      @JsonKey(name: 'albumExplorerUrl') required this.albumExplorerUrl,
+      @JsonKey(name: 'albumArtUrl') required this.albumArtUrl,
+      @JsonKey(name: 'artistDetailUrl') required this.artistDetailUrl,
+      @JsonKey(name: 'artistExplorerUrl') required this.artistExplorerUrl,
+      @JsonKey(name: 'songDetailUrl') required this.songDetailUrl,
+      @JsonKey(name: 'trackType') required this.trackType,
+      @JsonKey(name: 'nowPlayingStationAdUrl') this.nowPlayingStationAdUrl,
       @JsonKey(name: 'allowStartStationFromTrack')
-          required this.allowStartStationFromTrack,
+      required this.allowStartStationFromTrack,
       @JsonKey(name: 'nowPlayingStationAdTargeting')
-          this.nowPlayingStationAdTargeting,
+      this.nowPlayingStationAdTargeting,
       @JsonKey(name: 'nowPlayingStationPremiumAdTargeting')
-          this.nowPlayingStationPremiumAdTargeting,
-      @JsonKey(name: 'allowShareTrack')
-          required this.allowShareTrack,
-      @JsonKey(name: 'pandoraType')
-          required this.pandoraType,
-      @JsonKey(name: 'songIdentity')
-          required this.songIdentity,
+      this.nowPlayingStationPremiumAdTargeting,
+      @JsonKey(name: 'allowShareTrack') required this.allowShareTrack,
+      @JsonKey(name: 'pandoraType') required this.pandoraType,
+      @JsonKey(name: 'songIdentity') required this.songIdentity,
       @JsonKey(name: 'nowPlayingStationPremiumAdUrl')
-          this.nowPlayingStationPremiumAdUrl,
-      @JsonKey(name: 'allowFeedback')
-          required this.allowFeedback,
-      @JsonKey(name: 'musicId')
-          required this.musicId,
-      @JsonKey(name: 'categoryDescriptor')
-          required this.categoryDescriptor,
-      @JsonKey(name: 'isFeatured')
-          required this.isFeatured,
-      @JsonKey(name: 'disableTrackDetail')
-          required this.disableTrackDetail,
-      @JsonKey(name: 'songName')
-          required this.songName,
-      @JsonKey(name: 'allowTiredOfTrack')
-          required this.allowTiredOfTrack,
-      @JsonKey(name: 'programDescriptor')
-          required this.programDescriptor,
-      @JsonKey(name: 'artistName')
-          required this.artistName,
+      this.nowPlayingStationPremiumAdUrl,
+      @JsonKey(name: 'allowFeedback') required this.allowFeedback,
+      @JsonKey(name: 'musicId') required this.musicId,
+      @JsonKey(name: 'categoryDescriptor') required this.categoryDescriptor,
+      @JsonKey(name: 'isFeatured') required this.isFeatured,
+      @JsonKey(name: 'disableTrackDetail') required this.disableTrackDetail,
+      @JsonKey(name: 'songName') required this.songName,
+      @JsonKey(name: 'allowTiredOfTrack') required this.allowTiredOfTrack,
+      @JsonKey(name: 'programDescriptor') required this.programDescriptor,
+      @JsonKey(name: 'artistName') required this.artistName,
       @JsonKey(name: 'trackLength', fromJson: readSeconds, toJson: writeSeconds)
-          required this.trackLength,
-      @JsonKey(name: 'trackToken')
-          required this.trackToken,
-      @JsonKey(name: 'allowBuyTrack')
-          required this.allowBuyTrack,
-      @JsonKey(name: 'albumDetailUrl')
-          required this.albumDetailUrl,
+      required this.trackLength,
+      @JsonKey(name: 'trackToken') required this.trackToken,
+      @JsonKey(name: 'allowBuyTrack') required this.allowBuyTrack,
+      @JsonKey(name: 'albumDetailUrl') required this.albumDetailUrl,
       @JsonKey(name: 'audioUrlMap')
-          required final Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
-      @JsonKey(name: 'albumIdentity')
-          required this.albumIdentity,
+      required final Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
+      @JsonKey(name: 'albumIdentity') required this.albumIdentity,
       @JsonKey(name: 'trackGain', fromJson: readNum, toJson: writeNum)
-          required this.trackGain,
-      @JsonKey(name: 'albumName')
-          required this.albumName,
-      @JsonKey(name: 'amazonAlbumUrl')
-          required this.amazonAlbumUrl,
-      @JsonKey(name: 'shareLandingUrl')
-          required this.shareLandingUrl,
-      @JsonKey(name: 'songExplorerUrl')
-          required this.songExplorerUrl,
+      required this.trackGain,
+      @JsonKey(name: 'albumName') required this.albumName,
+      @JsonKey(name: 'amazonAlbumUrl') required this.amazonAlbumUrl,
+      @JsonKey(name: 'shareLandingUrl') required this.shareLandingUrl,
+      @JsonKey(name: 'songExplorerUrl') required this.songExplorerUrl,
       @JsonKey(name: 'nowPlayingStationPremiumAdUnit')
-          this.nowPlayingStationPremiumAdUnit,
-      @JsonKey(name: 'songRating')
-          required this.songRating,
-      @JsonKey(name: 'trackKey')
-          required this.trackKey,
-      @JsonKey(name: 'nowPlayingStationAdUnit')
-          this.nowPlayingStationAdUnit,
-      @JsonKey(name: 'requestedModeId')
-          required this.requestedModeId,
-      @JsonKey(name: 'stationId')
-          required this.stationId,
-      @JsonKey(name: 'pandoraId')
-          required this.pandoraId,
+      this.nowPlayingStationPremiumAdUnit,
+      @JsonKey(name: 'songRating') required this.songRating,
+      @JsonKey(name: 'trackKey') required this.trackKey,
+      @JsonKey(name: 'nowPlayingStationAdUnit') this.nowPlayingStationAdUnit,
+      @JsonKey(name: 'requestedModeId') required this.requestedModeId,
+      @JsonKey(name: 'stationId') required this.stationId,
+      @JsonKey(name: 'pandoraId') required this.pandoraId,
       @JsonKey(name: 'allowSkipTrackWithoutLimit')
-          required this.allowSkipTrackWithoutLimit,
-      @JsonKey(name: 'itunesSongUrl')
-          required this.itunesSongUrl,
-      @JsonKey(name: 'disableSkipButton')
-          required this.disableSkipButton,
-      @JsonKey(name: 'modeId')
-          required this.modeId})
+      required this.allowSkipTrackWithoutLimit,
+      @JsonKey(name: 'itunesSongUrl') required this.itunesSongUrl,
+      @JsonKey(name: 'disableSkipButton') required this.disableSkipButton,
+      @JsonKey(name: 'modeId') required this.modeId})
       : _audioUrlMap = audioUrlMap,
         super._();
 
-  factory _$_StationContent.fromJson(Map<String, dynamic> json) =>
-      _$$_StationContentFromJson(json);
+  factory _$StationContentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StationContentImplFromJson(json);
 
   @override
   @JsonKey(name: 'userSeed')
@@ -1120,10 +1016,10 @@ class _$_StationContent extends _StationContent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StationContent &&
+            other is _$StationContentImpl &&
             (identical(other.userSeed, userSeed) ||
                 other.userSeed == userSeed) &&
             (identical(other.allowBookmarkTrack, allowBookmarkTrack) ||
@@ -1203,7 +1099,7 @@ class _$_StationContent extends _StationContent {
             (identical(other.modeId, modeId) || other.modeId == modeId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1256,15 +1152,18 @@ class _$_StationContent extends _StationContent {
         modeId
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StationContent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StationContentCopyWith<_$_StationContent> get copyWith =>
-      __$$_StationContentCopyWithImpl<_$_StationContent>(this, _$identity);
+  _$$StationContentImplCopyWith<_$StationContentImpl> get copyWith =>
+      __$$StationContentImplCopyWithImpl<_$StationContentImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StationContentToJson(
+    return _$$StationContentImplToJson(
       this,
     );
   }
@@ -1272,104 +1171,73 @@ class _$_StationContent extends _StationContent {
 
 abstract class _StationContent extends StationContent {
   const factory _StationContent(
-      {@JsonKey(name: 'userSeed')
-          final String? userSeed,
+      {@JsonKey(name: 'userSeed') final String? userSeed,
       @JsonKey(name: 'allowBookmarkTrack')
-          required final bool allowBookmarkTrack,
-      @JsonKey(name: 'albumExplorerUrl')
-          required final Uri albumExplorerUrl,
-      @JsonKey(name: 'albumArtUrl')
-          required final Uri albumArtUrl,
-      @JsonKey(name: 'artistDetailUrl')
-          required final Uri artistDetailUrl,
-      @JsonKey(name: 'artistExplorerUrl')
-          required final Uri artistExplorerUrl,
-      @JsonKey(name: 'songDetailUrl')
-          required final Uri songDetailUrl,
-      @JsonKey(name: 'trackType')
-          required final TrackType trackType,
+      required final bool allowBookmarkTrack,
+      @JsonKey(name: 'albumExplorerUrl') required final Uri albumExplorerUrl,
+      @JsonKey(name: 'albumArtUrl') required final Uri albumArtUrl,
+      @JsonKey(name: 'artistDetailUrl') required final Uri artistDetailUrl,
+      @JsonKey(name: 'artistExplorerUrl') required final Uri artistExplorerUrl,
+      @JsonKey(name: 'songDetailUrl') required final Uri songDetailUrl,
+      @JsonKey(name: 'trackType') required final TrackType trackType,
       @JsonKey(name: 'nowPlayingStationAdUrl')
-          final Uri? nowPlayingStationAdUrl,
+      final Uri? nowPlayingStationAdUrl,
       @JsonKey(name: 'allowStartStationFromTrack')
-          required final bool allowStartStationFromTrack,
+      required final bool allowStartStationFromTrack,
       @JsonKey(name: 'nowPlayingStationAdTargeting')
-          final String? nowPlayingStationAdTargeting,
+      final String? nowPlayingStationAdTargeting,
       @JsonKey(name: 'nowPlayingStationPremiumAdTargeting')
-          final String? nowPlayingStationPremiumAdTargeting,
-      @JsonKey(name: 'allowShareTrack')
-          required final bool allowShareTrack,
-      @JsonKey(name: 'pandoraType')
-          required final PandoraType pandoraType,
-      @JsonKey(name: 'songIdentity')
-          required final String songIdentity,
+      final String? nowPlayingStationPremiumAdTargeting,
+      @JsonKey(name: 'allowShareTrack') required final bool allowShareTrack,
+      @JsonKey(name: 'pandoraType') required final PandoraType pandoraType,
+      @JsonKey(name: 'songIdentity') required final String songIdentity,
       @JsonKey(name: 'nowPlayingStationPremiumAdUrl')
-          final Uri? nowPlayingStationPremiumAdUrl,
-      @JsonKey(name: 'allowFeedback')
-          required final bool allowFeedback,
-      @JsonKey(name: 'musicId')
-          required final String musicId,
+      final Uri? nowPlayingStationPremiumAdUrl,
+      @JsonKey(name: 'allowFeedback') required final bool allowFeedback,
+      @JsonKey(name: 'musicId') required final String musicId,
       @JsonKey(name: 'categoryDescriptor')
-          required final String categoryDescriptor,
-      @JsonKey(name: 'isFeatured')
-          required final bool isFeatured,
+      required final String categoryDescriptor,
+      @JsonKey(name: 'isFeatured') required final bool isFeatured,
       @JsonKey(name: 'disableTrackDetail')
-          required final bool disableTrackDetail,
-      @JsonKey(name: 'songName')
-          required final String songName,
-      @JsonKey(name: 'allowTiredOfTrack')
-          required final bool allowTiredOfTrack,
+      required final bool disableTrackDetail,
+      @JsonKey(name: 'songName') required final String songName,
+      @JsonKey(name: 'allowTiredOfTrack') required final bool allowTiredOfTrack,
       @JsonKey(name: 'programDescriptor')
-          required final String programDescriptor,
-      @JsonKey(name: 'artistName')
-          required final String artistName,
+      required final String programDescriptor,
+      @JsonKey(name: 'artistName') required final String artistName,
       @JsonKey(name: 'trackLength', fromJson: readSeconds, toJson: writeSeconds)
-          required final Duration trackLength,
-      @JsonKey(name: 'trackToken')
-          required final String trackToken,
-      @JsonKey(name: 'allowBuyTrack')
-          required final bool allowBuyTrack,
-      @JsonKey(name: 'albumDetailUrl')
-          required final Uri albumDetailUrl,
+      required final Duration trackLength,
+      @JsonKey(name: 'trackToken') required final String trackToken,
+      @JsonKey(name: 'allowBuyTrack') required final bool allowBuyTrack,
+      @JsonKey(name: 'albumDetailUrl') required final Uri albumDetailUrl,
       @JsonKey(name: 'audioUrlMap')
-          required final Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
-      @JsonKey(name: 'albumIdentity')
-          required final String albumIdentity,
+      required final Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
+      @JsonKey(name: 'albumIdentity') required final String albumIdentity,
       @JsonKey(name: 'trackGain', fromJson: readNum, toJson: writeNum)
-          required final num trackGain,
-      @JsonKey(name: 'albumName')
-          required final String albumName,
-      @JsonKey(name: 'amazonAlbumUrl')
-          required final Uri amazonAlbumUrl,
-      @JsonKey(name: 'shareLandingUrl')
-          required final Uri shareLandingUrl,
-      @JsonKey(name: 'songExplorerUrl')
-          required final Uri songExplorerUrl,
+      required final num trackGain,
+      @JsonKey(name: 'albumName') required final String albumName,
+      @JsonKey(name: 'amazonAlbumUrl') required final Uri amazonAlbumUrl,
+      @JsonKey(name: 'shareLandingUrl') required final Uri shareLandingUrl,
+      @JsonKey(name: 'songExplorerUrl') required final Uri songExplorerUrl,
       @JsonKey(name: 'nowPlayingStationPremiumAdUnit')
-          final String? nowPlayingStationPremiumAdUnit,
-      @JsonKey(name: 'songRating')
-          required final MediaRating songRating,
-      @JsonKey(name: 'trackKey')
-          required final TrackKey? trackKey,
+      final String? nowPlayingStationPremiumAdUnit,
+      @JsonKey(name: 'songRating') required final MediaRating songRating,
+      @JsonKey(name: 'trackKey') required final TrackKey? trackKey,
       @JsonKey(name: 'nowPlayingStationAdUnit')
-          final String? nowPlayingStationAdUnit,
-      @JsonKey(name: 'requestedModeId')
-          required final int requestedModeId,
-      @JsonKey(name: 'stationId')
-          required final String stationId,
-      @JsonKey(name: 'pandoraId')
-          required final String pandoraId,
+      final String? nowPlayingStationAdUnit,
+      @JsonKey(name: 'requestedModeId') required final int requestedModeId,
+      @JsonKey(name: 'stationId') required final String stationId,
+      @JsonKey(name: 'pandoraId') required final String pandoraId,
       @JsonKey(name: 'allowSkipTrackWithoutLimit')
-          required final bool allowSkipTrackWithoutLimit,
-      @JsonKey(name: 'itunesSongUrl')
-          required final Uri itunesSongUrl,
-      @JsonKey(name: 'disableSkipButton')
-          required final bool disableSkipButton,
+      required final bool allowSkipTrackWithoutLimit,
+      @JsonKey(name: 'itunesSongUrl') required final Uri itunesSongUrl,
+      @JsonKey(name: 'disableSkipButton') required final bool disableSkipButton,
       @JsonKey(name: 'modeId')
-          required final int modeId}) = _$_StationContent;
+      required final int modeId}) = _$StationContentImpl;
   const _StationContent._() : super._();
 
   factory _StationContent.fromJson(Map<String, dynamic> json) =
-      _$_StationContent.fromJson;
+      _$StationContentImpl.fromJson;
 
   @override
   @JsonKey(name: 'userSeed')
@@ -1413,9 +1281,9 @@ abstract class _StationContent extends StationContent {
   @override
   @JsonKey(name: 'pandoraType')
   PandoraType get pandoraType;
-  @override
 
   /// Used for remote applications, like Sonos.
+  @override
   @JsonKey(name: 'songIdentity')
   String get songIdentity;
   @override
@@ -1514,8 +1382,11 @@ abstract class _StationContent extends StationContent {
   @override
   @JsonKey(name: 'modeId')
   int get modeId;
+
+  /// Create a copy of StationContent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_StationContentCopyWith<_$_StationContent> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StationContentImplCopyWith<_$StationContentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

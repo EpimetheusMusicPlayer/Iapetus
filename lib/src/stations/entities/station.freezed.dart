@@ -12,7 +12,7 @@ part of 'station.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Station _$StationFromJson(Map<String, dynamic> json) {
   return _Station.fromJson(json);
@@ -58,8 +58,12 @@ mixin _$Station {
   @JsonKey(name: 'stationSharingUrl')
   Uri get stationSharingUrl => throw _privateConstructorUsedError;
 
+  /// Serializes this Station to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Station
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StationCopyWith<Station> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -69,40 +73,27 @@ abstract class $StationCopyWith<$Res> {
       _$StationCopyWithImpl<$Res, Station>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'suppressVideoAds')
-          bool? suppressVideoAds,
-      @JsonKey(name: 'stationId')
-          String stationId,
-      @JsonKey(name: 'allowAddMusic')
-          bool allowAddMusic,
-      @JsonKey(name: 'dateCreated', fromJson: readDateTimeJsonObject, toJson: writeDateTimeJsonObject)
-          DateTime dateCreated,
-      @JsonKey(name: 'stationDetailUrl')
-          Uri stationDetailUrl,
-      @JsonKey(name: 'artUrl')
-          Uri artUrl,
-      @JsonKey(name: 'allowEditDescription')
-          bool allowEditDescription,
-      @JsonKey(name: 'requiresCleanAds')
-          bool? requiresCleanAds,
-      @JsonKey(name: 'isGenreStation')
-          bool isGenreStation,
-      @JsonKey(name: 'stationToken')
-          String stationToken,
-      @JsonKey(name: 'stationName')
-          String stationName,
-      @JsonKey(name: 'hasTakeoverModes')
-          bool hasTakeoverModes,
-      @JsonKey(name: 'isShared')
-          bool isShared,
-      @JsonKey(name: 'hasCuratedModes')
-          bool hasCuratedModes,
-      @JsonKey(name: 'allowDelete')
-          bool allowDelete,
-      @JsonKey(name: 'allowRename')
-          bool allowRename,
-      @JsonKey(name: 'stationSharingUrl')
-          Uri stationSharingUrl});
+      {@JsonKey(name: 'suppressVideoAds') bool? suppressVideoAds,
+      @JsonKey(name: 'stationId') String stationId,
+      @JsonKey(name: 'allowAddMusic') bool allowAddMusic,
+      @JsonKey(
+          name: 'dateCreated',
+          fromJson: readDateTimeJsonObject,
+          toJson: writeDateTimeJsonObject)
+      DateTime dateCreated,
+      @JsonKey(name: 'stationDetailUrl') Uri stationDetailUrl,
+      @JsonKey(name: 'artUrl') Uri artUrl,
+      @JsonKey(name: 'allowEditDescription') bool allowEditDescription,
+      @JsonKey(name: 'requiresCleanAds') bool? requiresCleanAds,
+      @JsonKey(name: 'isGenreStation') bool isGenreStation,
+      @JsonKey(name: 'stationToken') String stationToken,
+      @JsonKey(name: 'stationName') String stationName,
+      @JsonKey(name: 'hasTakeoverModes') bool hasTakeoverModes,
+      @JsonKey(name: 'isShared') bool isShared,
+      @JsonKey(name: 'hasCuratedModes') bool hasCuratedModes,
+      @JsonKey(name: 'allowDelete') bool allowDelete,
+      @JsonKey(name: 'allowRename') bool allowRename,
+      @JsonKey(name: 'stationSharingUrl') Uri stationSharingUrl});
 }
 
 /// @nodoc
@@ -115,6 +106,8 @@ class _$StationCopyWithImpl<$Res, $Val extends Station>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Station
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -210,56 +203,46 @@ class _$StationCopyWithImpl<$Res, $Val extends Station>
 }
 
 /// @nodoc
-abstract class _$$_StationCopyWith<$Res> implements $StationCopyWith<$Res> {
-  factory _$$_StationCopyWith(
-          _$_Station value, $Res Function(_$_Station) then) =
-      __$$_StationCopyWithImpl<$Res>;
+abstract class _$$StationImplCopyWith<$Res> implements $StationCopyWith<$Res> {
+  factory _$$StationImplCopyWith(
+          _$StationImpl value, $Res Function(_$StationImpl) then) =
+      __$$StationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'suppressVideoAds')
-          bool? suppressVideoAds,
-      @JsonKey(name: 'stationId')
-          String stationId,
-      @JsonKey(name: 'allowAddMusic')
-          bool allowAddMusic,
-      @JsonKey(name: 'dateCreated', fromJson: readDateTimeJsonObject, toJson: writeDateTimeJsonObject)
-          DateTime dateCreated,
-      @JsonKey(name: 'stationDetailUrl')
-          Uri stationDetailUrl,
-      @JsonKey(name: 'artUrl')
-          Uri artUrl,
-      @JsonKey(name: 'allowEditDescription')
-          bool allowEditDescription,
-      @JsonKey(name: 'requiresCleanAds')
-          bool? requiresCleanAds,
-      @JsonKey(name: 'isGenreStation')
-          bool isGenreStation,
-      @JsonKey(name: 'stationToken')
-          String stationToken,
-      @JsonKey(name: 'stationName')
-          String stationName,
-      @JsonKey(name: 'hasTakeoverModes')
-          bool hasTakeoverModes,
-      @JsonKey(name: 'isShared')
-          bool isShared,
-      @JsonKey(name: 'hasCuratedModes')
-          bool hasCuratedModes,
-      @JsonKey(name: 'allowDelete')
-          bool allowDelete,
-      @JsonKey(name: 'allowRename')
-          bool allowRename,
-      @JsonKey(name: 'stationSharingUrl')
-          Uri stationSharingUrl});
+      {@JsonKey(name: 'suppressVideoAds') bool? suppressVideoAds,
+      @JsonKey(name: 'stationId') String stationId,
+      @JsonKey(name: 'allowAddMusic') bool allowAddMusic,
+      @JsonKey(
+          name: 'dateCreated',
+          fromJson: readDateTimeJsonObject,
+          toJson: writeDateTimeJsonObject)
+      DateTime dateCreated,
+      @JsonKey(name: 'stationDetailUrl') Uri stationDetailUrl,
+      @JsonKey(name: 'artUrl') Uri artUrl,
+      @JsonKey(name: 'allowEditDescription') bool allowEditDescription,
+      @JsonKey(name: 'requiresCleanAds') bool? requiresCleanAds,
+      @JsonKey(name: 'isGenreStation') bool isGenreStation,
+      @JsonKey(name: 'stationToken') String stationToken,
+      @JsonKey(name: 'stationName') String stationName,
+      @JsonKey(name: 'hasTakeoverModes') bool hasTakeoverModes,
+      @JsonKey(name: 'isShared') bool isShared,
+      @JsonKey(name: 'hasCuratedModes') bool hasCuratedModes,
+      @JsonKey(name: 'allowDelete') bool allowDelete,
+      @JsonKey(name: 'allowRename') bool allowRename,
+      @JsonKey(name: 'stationSharingUrl') Uri stationSharingUrl});
 }
 
 /// @nodoc
-class __$$_StationCopyWithImpl<$Res>
-    extends _$StationCopyWithImpl<$Res, _$_Station>
-    implements _$$_StationCopyWith<$Res> {
-  __$$_StationCopyWithImpl(_$_Station _value, $Res Function(_$_Station) _then)
+class __$$StationImplCopyWithImpl<$Res>
+    extends _$StationCopyWithImpl<$Res, _$StationImpl>
+    implements _$$StationImplCopyWith<$Res> {
+  __$$StationImplCopyWithImpl(
+      _$StationImpl _value, $Res Function(_$StationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Station
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -281,7 +264,7 @@ class __$$_StationCopyWithImpl<$Res>
     Object? allowRename = null,
     Object? stationSharingUrl = null,
   }) {
-    return _then(_$_Station(
+    return _then(_$StationImpl(
       suppressVideoAds: freezed == suppressVideoAds
           ? _value.suppressVideoAds
           : suppressVideoAds // ignore: cast_nullable_to_non_nullable
@@ -356,45 +339,32 @@ class __$$_StationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Station implements _Station {
-  const _$_Station(
-      {@JsonKey(name: 'suppressVideoAds')
-          this.suppressVideoAds,
-      @JsonKey(name: 'stationId')
-          required this.stationId,
-      @JsonKey(name: 'allowAddMusic')
-          required this.allowAddMusic,
-      @JsonKey(name: 'dateCreated', fromJson: readDateTimeJsonObject, toJson: writeDateTimeJsonObject)
-          required this.dateCreated,
-      @JsonKey(name: 'stationDetailUrl')
-          required this.stationDetailUrl,
-      @JsonKey(name: 'artUrl')
-          required this.artUrl,
-      @JsonKey(name: 'allowEditDescription')
-          required this.allowEditDescription,
-      @JsonKey(name: 'requiresCleanAds')
-          this.requiresCleanAds,
-      @JsonKey(name: 'isGenreStation')
-          required this.isGenreStation,
-      @JsonKey(name: 'stationToken')
-          required this.stationToken,
-      @JsonKey(name: 'stationName')
-          required this.stationName,
-      @JsonKey(name: 'hasTakeoverModes')
-          required this.hasTakeoverModes,
-      @JsonKey(name: 'isShared')
-          required this.isShared,
-      @JsonKey(name: 'hasCuratedModes')
-          required this.hasCuratedModes,
-      @JsonKey(name: 'allowDelete')
-          required this.allowDelete,
-      @JsonKey(name: 'allowRename')
-          required this.allowRename,
-      @JsonKey(name: 'stationSharingUrl')
-          required this.stationSharingUrl});
+class _$StationImpl implements _Station {
+  const _$StationImpl(
+      {@JsonKey(name: 'suppressVideoAds') this.suppressVideoAds,
+      @JsonKey(name: 'stationId') required this.stationId,
+      @JsonKey(name: 'allowAddMusic') required this.allowAddMusic,
+      @JsonKey(
+          name: 'dateCreated',
+          fromJson: readDateTimeJsonObject,
+          toJson: writeDateTimeJsonObject)
+      required this.dateCreated,
+      @JsonKey(name: 'stationDetailUrl') required this.stationDetailUrl,
+      @JsonKey(name: 'artUrl') required this.artUrl,
+      @JsonKey(name: 'allowEditDescription') required this.allowEditDescription,
+      @JsonKey(name: 'requiresCleanAds') this.requiresCleanAds,
+      @JsonKey(name: 'isGenreStation') required this.isGenreStation,
+      @JsonKey(name: 'stationToken') required this.stationToken,
+      @JsonKey(name: 'stationName') required this.stationName,
+      @JsonKey(name: 'hasTakeoverModes') required this.hasTakeoverModes,
+      @JsonKey(name: 'isShared') required this.isShared,
+      @JsonKey(name: 'hasCuratedModes') required this.hasCuratedModes,
+      @JsonKey(name: 'allowDelete') required this.allowDelete,
+      @JsonKey(name: 'allowRename') required this.allowRename,
+      @JsonKey(name: 'stationSharingUrl') required this.stationSharingUrl});
 
-  factory _$_Station.fromJson(Map<String, dynamic> json) =>
-      _$$_StationFromJson(json);
+  factory _$StationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StationImplFromJson(json);
 
   @override
   @JsonKey(name: 'suppressVideoAds')
@@ -457,10 +427,10 @@ class _$_Station implements _Station {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Station &&
+            other is _$StationImpl &&
             (identical(other.suppressVideoAds, suppressVideoAds) ||
                 other.suppressVideoAds == suppressVideoAds) &&
             (identical(other.stationId, stationId) ||
@@ -496,7 +466,7 @@ class _$_Station implements _Station {
                 other.stationSharingUrl == stationSharingUrl));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -518,15 +488,17 @@ class _$_Station implements _Station {
       allowRename,
       stationSharingUrl);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Station
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StationCopyWith<_$_Station> get copyWith =>
-      __$$_StationCopyWithImpl<_$_Station>(this, _$identity);
+  _$$StationImplCopyWith<_$StationImpl> get copyWith =>
+      __$$StationImplCopyWithImpl<_$StationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StationToJson(
+    return _$$StationImplToJson(
       this,
     );
   }
@@ -534,42 +506,31 @@ class _$_Station implements _Station {
 
 abstract class _Station implements Station {
   const factory _Station(
-      {@JsonKey(name: 'suppressVideoAds')
-          final bool? suppressVideoAds,
-      @JsonKey(name: 'stationId')
-          required final String stationId,
-      @JsonKey(name: 'allowAddMusic')
-          required final bool allowAddMusic,
-      @JsonKey(name: 'dateCreated', fromJson: readDateTimeJsonObject, toJson: writeDateTimeJsonObject)
-          required final DateTime dateCreated,
-      @JsonKey(name: 'stationDetailUrl')
-          required final Uri stationDetailUrl,
-      @JsonKey(name: 'artUrl')
-          required final Uri artUrl,
+      {@JsonKey(name: 'suppressVideoAds') final bool? suppressVideoAds,
+      @JsonKey(name: 'stationId') required final String stationId,
+      @JsonKey(name: 'allowAddMusic') required final bool allowAddMusic,
+      @JsonKey(
+          name: 'dateCreated',
+          fromJson: readDateTimeJsonObject,
+          toJson: writeDateTimeJsonObject)
+      required final DateTime dateCreated,
+      @JsonKey(name: 'stationDetailUrl') required final Uri stationDetailUrl,
+      @JsonKey(name: 'artUrl') required final Uri artUrl,
       @JsonKey(name: 'allowEditDescription')
-          required final bool allowEditDescription,
-      @JsonKey(name: 'requiresCleanAds')
-          final bool? requiresCleanAds,
-      @JsonKey(name: 'isGenreStation')
-          required final bool isGenreStation,
-      @JsonKey(name: 'stationToken')
-          required final String stationToken,
-      @JsonKey(name: 'stationName')
-          required final String stationName,
-      @JsonKey(name: 'hasTakeoverModes')
-          required final bool hasTakeoverModes,
-      @JsonKey(name: 'isShared')
-          required final bool isShared,
-      @JsonKey(name: 'hasCuratedModes')
-          required final bool hasCuratedModes,
-      @JsonKey(name: 'allowDelete')
-          required final bool allowDelete,
-      @JsonKey(name: 'allowRename')
-          required final bool allowRename,
+      required final bool allowEditDescription,
+      @JsonKey(name: 'requiresCleanAds') final bool? requiresCleanAds,
+      @JsonKey(name: 'isGenreStation') required final bool isGenreStation,
+      @JsonKey(name: 'stationToken') required final String stationToken,
+      @JsonKey(name: 'stationName') required final String stationName,
+      @JsonKey(name: 'hasTakeoverModes') required final bool hasTakeoverModes,
+      @JsonKey(name: 'isShared') required final bool isShared,
+      @JsonKey(name: 'hasCuratedModes') required final bool hasCuratedModes,
+      @JsonKey(name: 'allowDelete') required final bool allowDelete,
+      @JsonKey(name: 'allowRename') required final bool allowRename,
       @JsonKey(name: 'stationSharingUrl')
-          required final Uri stationSharingUrl}) = _$_Station;
+      required final Uri stationSharingUrl}) = _$StationImpl;
 
-  factory _Station.fromJson(Map<String, dynamic> json) = _$_Station.fromJson;
+  factory _Station.fromJson(Map<String, dynamic> json) = _$StationImpl.fromJson;
 
   @override
   @JsonKey(name: 'suppressVideoAds')
@@ -625,8 +586,11 @@ abstract class _Station implements Station {
   @override
   @JsonKey(name: 'stationSharingUrl')
   Uri get stationSharingUrl;
+
+  /// Create a copy of Station
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_StationCopyWith<_$_Station> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StationImplCopyWith<_$StationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

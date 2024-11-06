@@ -8,11 +8,12 @@ part of 'icon.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MediaIcon _$$_MediaIconFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$_MediaIcon',
+_$MediaIconImpl _$$MediaIconImplFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      r'_$MediaIconImpl',
       json,
       ($checkedConvert) {
-        final val = _$_MediaIcon(
+        final val = _$MediaIconImpl(
           dominantColor: $checkedConvert(
               'dominantColor', (v) => readOptionalColor(v as String?)),
           artId: $checkedConvert('artId', (v) => v as String),
@@ -23,7 +24,7 @@ _$_MediaIcon _$$_MediaIconFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$_MediaIconToJson(_$_MediaIcon instance) =>
+Map<String, dynamic> _$$MediaIconImplToJson(_$MediaIconImpl instance) =>
     <String, dynamic>{
       'dominantColor': writeOptionalColor(instance.dominantColor),
       'artId': instance.artId,

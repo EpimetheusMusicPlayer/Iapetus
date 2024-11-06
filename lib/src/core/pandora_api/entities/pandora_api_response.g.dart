@@ -8,13 +8,13 @@ part of 'pandora_api_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SuccessfulPandoraApiResponse _$$SuccessfulPandoraApiResponseFromJson(
+_$SuccessfulPandoraApiResponseImpl _$$SuccessfulPandoraApiResponseImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$SuccessfulPandoraApiResponse',
+      r'_$SuccessfulPandoraApiResponseImpl',
       json,
       ($checkedConvert) {
-        final val = _$SuccessfulPandoraApiResponse(
+        final val = _$SuccessfulPandoraApiResponseImpl(
           result: $checkedConvert('result', (v) => v),
           $type: $checkedConvert('stat', (v) => v as String?),
         );
@@ -23,22 +23,22 @@ _$SuccessfulPandoraApiResponse _$$SuccessfulPandoraApiResponseFromJson(
       fieldKeyMap: const {r'$type': 'stat'},
     );
 
-Map<String, dynamic> _$$SuccessfulPandoraApiResponseToJson(
-        _$SuccessfulPandoraApiResponse instance) =>
+Map<String, dynamic> _$$SuccessfulPandoraApiResponseImplToJson(
+        _$SuccessfulPandoraApiResponseImpl instance) =>
     <String, dynamic>{
       'result': instance.result,
       'stat': instance.$type,
     };
 
-_$PandoraApiException _$$PandoraApiExceptionFromJson(
+_$PandoraApiExceptionImpl _$$PandoraApiExceptionImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PandoraApiException',
+      r'_$PandoraApiExceptionImpl',
       json,
       ($checkedConvert) {
-        final val = _$PandoraApiException(
+        final val = _$PandoraApiExceptionImpl(
           code: $checkedConvert(
-              'code', (v) => PandoraApiErrorCode.fromCode(v as int)),
+              'code', (v) => PandoraApiErrorCode.fromCode((v as num).toInt())),
           message: $checkedConvert('message', (v) => v as String),
           $type: $checkedConvert('stat', (v) => v as String?),
         );
@@ -47,8 +47,8 @@ _$PandoraApiException _$$PandoraApiExceptionFromJson(
       fieldKeyMap: const {r'$type': 'stat'},
     );
 
-Map<String, dynamic> _$$PandoraApiExceptionToJson(
-        _$PandoraApiException instance) =>
+Map<String, dynamic> _$$PandoraApiExceptionImplToJson(
+        _$PandoraApiExceptionImpl instance) =>
     <String, dynamic>{
       'code': _$PandoraApiErrorCodeEnumMap[instance.code]!,
       'message': instance.message,

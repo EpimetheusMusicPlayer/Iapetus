@@ -8,11 +8,12 @@ part of 'station.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Station _$$_StationFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$_Station',
+_$StationImpl _$$StationImplFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      r'_$StationImpl',
       json,
       ($checkedConvert) {
-        final val = _$_Station(
+        final val = _$StationImpl(
           suppressVideoAds:
               $checkedConvert('suppressVideoAds', (v) => v as bool?),
           stationId: $checkedConvert('stationId', (v) => v as String),
@@ -42,7 +43,7 @@ _$_Station _$$_StationFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$_StationToJson(_$_Station instance) =>
+Map<String, dynamic> _$$StationImplToJson(_$StationImpl instance) =>
     <String, dynamic>{
       'suppressVideoAds': instance.suppressVideoAds,
       'stationId': instance.stationId,

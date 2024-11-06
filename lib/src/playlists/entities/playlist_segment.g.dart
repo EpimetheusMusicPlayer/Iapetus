@@ -8,12 +8,13 @@ part of 'playlist_segment.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PlaylistSegment _$$_PlaylistSegmentFromJson(Map<String, dynamic> json) =>
+_$PlaylistSegmentImpl _$$PlaylistSegmentImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_PlaylistSegment',
+      r'_$PlaylistSegmentImpl',
       json,
       ($checkedConvert) {
-        final val = _$_PlaylistSegment(
+        final val = _$PlaylistSegmentImpl(
           pandoraId: $checkedConvert('pandoraId', (v) => v as String),
           annotations: $checkedConvert(
               'annotations',
@@ -26,25 +27,27 @@ _$_PlaylistSegment _$$_PlaylistSegmentFromJson(Map<String, dynamic> json) =>
               (v) => (v as List<dynamic>)
                   .map((e) => PlaylistTrack.fromJson(e as Map<String, dynamic>))
                   .toList()),
-          version: $checkedConvert('version', (v) => v as int),
+          version: $checkedConvert('version', (v) => (v as num).toInt()),
           name: $checkedConvert('name', (v) => v as String),
           description: $checkedConvert('description', (v) => v as String),
-          timeCreated: $checkedConvert(
-              'timeCreated', (v) => readDateTimeMilliseconds(v as int)),
-          timeLastUpdated: $checkedConvert(
-              'timeLastUpdated', (v) => readDateTimeMilliseconds(v as int)),
+          timeCreated: $checkedConvert('timeCreated',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
+          timeLastUpdated: $checkedConvert('timeLastUpdated',
+              (v) => readDateTimeMilliseconds((v as num).toInt())),
           timeLastRefreshed: $checkedConvert('timeLastRefreshed',
-              (v) => readOptionalDateTimeMilliseconds(v as int?)),
+              (v) => readOptionalDateTimeMilliseconds((v as num?)?.toInt())),
           private: $checkedConvert('isPrivate', (v) => v as bool),
           secret: $checkedConvert('secret', (v) => v as bool),
           linkedType: $checkedConvert('linkedType', (v) => v as String),
           linkedSourceId:
               $checkedConvert('linkedSourceId', (v) => v as String?),
-          totalTracks: $checkedConvert('totalTracks', (v) => v as int),
+          totalTracks:
+              $checkedConvert('totalTracks', (v) => (v as num).toInt()),
           shareableUrlPath: $checkedConvert(
               'shareableUrlPath', (v) => Uri.parse(v as String)),
           thorLayers: $checkedConvert('thorLayers', (v) => v as String),
-          duration: $checkedConvert('duration', (v) => readSeconds(v as int)),
+          duration: $checkedConvert(
+              'duration', (v) => readSeconds((v as num).toInt())),
           unlocked: $checkedConvert('unlocked', (v) => v as bool),
           viewerInfo: $checkedConvert('viewerInfo',
               (v) => PlaylistViewerInfo.fromJson(v as Map<String, dynamic>)),
@@ -59,7 +62,7 @@ _$_PlaylistSegment _$$_PlaylistSegmentFromJson(Map<String, dynamic> json) =>
               'allowFeedback', (v) => readOptInBool(v as bool?)),
           collectible: $checkedConvert('collectible', (v) => v as bool),
           notModified: $checkedConvert('notModified', (v) => v as bool),
-          listenerId: $checkedConvert('listenerId', (v) => v as int),
+          listenerId: $checkedConvert('listenerId', (v) => (v as num).toInt()),
           listenerPandoraId:
               $checkedConvert('listenerPandoraId', (v) => v as String),
           listenerIdToken:
@@ -70,7 +73,8 @@ _$_PlaylistSegment _$$_PlaylistSegmentFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'private': 'isPrivate'},
     );
 
-Map<String, dynamic> _$$_PlaylistSegmentToJson(_$_PlaylistSegment instance) =>
+Map<String, dynamic> _$$PlaylistSegmentImplToJson(
+        _$PlaylistSegmentImpl instance) =>
     <String, dynamic>{
       'pandoraId': instance.pandoraId,
       'annotations': instance.annotations,

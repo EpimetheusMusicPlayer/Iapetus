@@ -19,7 +19,7 @@ class HexEncoder extends Converter<Uint8List, String> {
       _HexEncoderSink(sink);
 }
 
-class _HexEncoderSink extends Sink<Uint8List> {
+class _HexEncoderSink implements Sink<Uint8List> {
   final Sink<String> _output;
 
   _HexEncoderSink(this._output);

@@ -12,7 +12,7 @@ part of 'song_recommendation_set.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SongRecommendationSet _$SongRecommendationSetFromJson(
     Map<String, dynamic> json) {
@@ -30,8 +30,12 @@ mixin _$SongRecommendationSet {
   Map<String, MediaAnnotation> get annotations =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this SongRecommendationSet to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SongRecommendationSet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SongRecommendationSetCopyWith<SongRecommendationSet> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,12 +47,10 @@ abstract class $SongRecommendationSetCopyWith<$Res> {
       _$SongRecommendationSetCopyWithImpl<$Res, SongRecommendationSet>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'requestId')
-          String requestId,
+      {@JsonKey(name: 'requestId') String requestId,
       @JsonKey(name: 'songRecommendations')
-          List<SongRecommendation> songRecommendations,
-      @JsonKey(name: 'annotations')
-          Map<String, MediaAnnotation> annotations});
+      List<SongRecommendation> songRecommendations,
+      @JsonKey(name: 'annotations') Map<String, MediaAnnotation> annotations});
 }
 
 /// @nodoc
@@ -62,6 +64,8 @@ class _$SongRecommendationSetCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SongRecommendationSet
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,30 +91,32 @@ class _$SongRecommendationSetCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SongRecommendationSetCopyWith<$Res>
+abstract class _$$SongRecommendationSetImplCopyWith<$Res>
     implements $SongRecommendationSetCopyWith<$Res> {
-  factory _$$_SongRecommendationSetCopyWith(_$_SongRecommendationSet value,
-          $Res Function(_$_SongRecommendationSet) then) =
-      __$$_SongRecommendationSetCopyWithImpl<$Res>;
+  factory _$$SongRecommendationSetImplCopyWith(
+          _$SongRecommendationSetImpl value,
+          $Res Function(_$SongRecommendationSetImpl) then) =
+      __$$SongRecommendationSetImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'requestId')
-          String requestId,
+      {@JsonKey(name: 'requestId') String requestId,
       @JsonKey(name: 'songRecommendations')
-          List<SongRecommendation> songRecommendations,
-      @JsonKey(name: 'annotations')
-          Map<String, MediaAnnotation> annotations});
+      List<SongRecommendation> songRecommendations,
+      @JsonKey(name: 'annotations') Map<String, MediaAnnotation> annotations});
 }
 
 /// @nodoc
-class __$$_SongRecommendationSetCopyWithImpl<$Res>
-    extends _$SongRecommendationSetCopyWithImpl<$Res, _$_SongRecommendationSet>
-    implements _$$_SongRecommendationSetCopyWith<$Res> {
-  __$$_SongRecommendationSetCopyWithImpl(_$_SongRecommendationSet _value,
-      $Res Function(_$_SongRecommendationSet) _then)
+class __$$SongRecommendationSetImplCopyWithImpl<$Res>
+    extends _$SongRecommendationSetCopyWithImpl<$Res,
+        _$SongRecommendationSetImpl>
+    implements _$$SongRecommendationSetImplCopyWith<$Res> {
+  __$$SongRecommendationSetImplCopyWithImpl(_$SongRecommendationSetImpl _value,
+      $Res Function(_$SongRecommendationSetImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SongRecommendationSet
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,7 +124,7 @@ class __$$_SongRecommendationSetCopyWithImpl<$Res>
     Object? songRecommendations = null,
     Object? annotations = null,
   }) {
-    return _then(_$_SongRecommendationSet(
+    return _then(_$SongRecommendationSetImpl(
       requestId: null == requestId
           ? _value.requestId
           : requestId // ignore: cast_nullable_to_non_nullable
@@ -137,19 +143,18 @@ class __$$_SongRecommendationSetCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SongRecommendationSet implements _SongRecommendationSet {
-  const _$_SongRecommendationSet(
-      {@JsonKey(name: 'requestId')
-          required this.requestId,
+class _$SongRecommendationSetImpl implements _SongRecommendationSet {
+  const _$SongRecommendationSetImpl(
+      {@JsonKey(name: 'requestId') required this.requestId,
       @JsonKey(name: 'songRecommendations')
-          required final List<SongRecommendation> songRecommendations,
+      required final List<SongRecommendation> songRecommendations,
       @JsonKey(name: 'annotations')
-          final Map<String, MediaAnnotation> annotations = const {}})
+      final Map<String, MediaAnnotation> annotations = const {}})
       : _songRecommendations = songRecommendations,
         _annotations = annotations;
 
-  factory _$_SongRecommendationSet.fromJson(Map<String, dynamic> json) =>
-      _$$_SongRecommendationSetFromJson(json);
+  factory _$SongRecommendationSetImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SongRecommendationSetImplFromJson(json);
 
   @override
   @JsonKey(name: 'requestId')
@@ -179,10 +184,10 @@ class _$_SongRecommendationSet implements _SongRecommendationSet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SongRecommendationSet &&
+            other is _$SongRecommendationSetImpl &&
             (identical(other.requestId, requestId) ||
                 other.requestId == requestId) &&
             const DeepCollectionEquality()
@@ -191,7 +196,7 @@ class _$_SongRecommendationSet implements _SongRecommendationSet {
                 .equals(other._annotations, _annotations));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -199,16 +204,18 @@ class _$_SongRecommendationSet implements _SongRecommendationSet {
       const DeepCollectionEquality().hash(_songRecommendations),
       const DeepCollectionEquality().hash(_annotations));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SongRecommendationSet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SongRecommendationSetCopyWith<_$_SongRecommendationSet> get copyWith =>
-      __$$_SongRecommendationSetCopyWithImpl<_$_SongRecommendationSet>(
-          this, _$identity);
+  _$$SongRecommendationSetImplCopyWith<_$SongRecommendationSetImpl>
+      get copyWith => __$$SongRecommendationSetImplCopyWithImpl<
+          _$SongRecommendationSetImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SongRecommendationSetToJson(
+    return _$$SongRecommendationSetImplToJson(
       this,
     );
   }
@@ -216,16 +223,15 @@ class _$_SongRecommendationSet implements _SongRecommendationSet {
 
 abstract class _SongRecommendationSet implements SongRecommendationSet {
   const factory _SongRecommendationSet(
-          {@JsonKey(name: 'requestId')
-              required final String requestId,
+          {@JsonKey(name: 'requestId') required final String requestId,
           @JsonKey(name: 'songRecommendations')
-              required final List<SongRecommendation> songRecommendations,
+          required final List<SongRecommendation> songRecommendations,
           @JsonKey(name: 'annotations')
-              final Map<String, MediaAnnotation> annotations}) =
-      _$_SongRecommendationSet;
+          final Map<String, MediaAnnotation> annotations}) =
+      _$SongRecommendationSetImpl;
 
   factory _SongRecommendationSet.fromJson(Map<String, dynamic> json) =
-      _$_SongRecommendationSet.fromJson;
+      _$SongRecommendationSetImpl.fromJson;
 
   @override
   @JsonKey(name: 'requestId')
@@ -236,8 +242,11 @@ abstract class _SongRecommendationSet implements SongRecommendationSet {
   @override
   @JsonKey(name: 'annotations')
   Map<String, MediaAnnotation> get annotations;
+
+  /// Create a copy of SongRecommendationSet
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SongRecommendationSetCopyWith<_$_SongRecommendationSet> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SongRecommendationSetImplCopyWith<_$SongRecommendationSetImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

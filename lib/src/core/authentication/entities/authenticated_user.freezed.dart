@@ -12,7 +12,7 @@ part of 'authenticated_user.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AuthenticatedUser _$AuthenticatedUserFromJson(Map<String, dynamic> json) {
   return _AuthenticatedUser.fromJson(json);
@@ -145,8 +145,12 @@ mixin _$AuthenticatedUser {
       toJson: writeOptOutBool)
   bool get canSellUserData => throw _privateConstructorUsedError;
 
+  /// Serializes this AuthenticatedUser to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AuthenticatedUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AuthenticatedUserCopyWith<AuthenticatedUser> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -158,104 +162,85 @@ abstract class $AuthenticatedUserCopyWith<$Res> {
       _$AuthenticatedUserCopyWithImpl<$Res, AuthenticatedUser>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'isMonthlyPayer')
-          bool isMonthlyPayer,
-      @JsonKey(name: 'dailySkipLimitSubscriber')
-          int dailySkipLimitSubscriber,
-      @JsonKey(name: 'minimumAdRefreshInterval')
-          int? minimumAdRefreshInterval,
-      @JsonKey(name: 'age')
-          int age,
-      @JsonKey(name: 'facebookPermissions', fromJson: AuthenticatedUser._readCommaSeparatedList, toJson: AuthenticatedUser._writeCommaSeparatedList)
-          List<String> facebookPermissions,
-      @JsonKey(name: 'splashScreenAdUrl')
-          Uri? splashScreenAdUrl,
-      @JsonKey(name: 'userProfileUrl')
-          Uri userProfileUrl,
-      @JsonKey(name: 'canListen')
-          bool canListen,
-      @JsonKey(name: 'hasUsedTrial')
-          bool hasUsedTrial,
-      @JsonKey(name: 'facebookAppId')
-          String facebookAppId,
-      @JsonKey(name: 'maxStationsAllowed')
-          int maxStationsAllowed,
-      @JsonKey(name: 'userId')
-          String userId,
-      @JsonKey(name: 'accountMonthlyListening')
-          int accountMonthlyListening,
+      {@JsonKey(name: 'isMonthlyPayer') bool isMonthlyPayer,
+      @JsonKey(name: 'dailySkipLimitSubscriber') int dailySkipLimitSubscriber,
+      @JsonKey(name: 'minimumAdRefreshInterval') int? minimumAdRefreshInterval,
+      @JsonKey(name: 'age') int age,
+      @JsonKey(
+          name: 'facebookPermissions',
+          fromJson: AuthenticatedUser._readCommaSeparatedList,
+          toJson: AuthenticatedUser._writeCommaSeparatedList)
+      List<String> facebookPermissions,
+      @JsonKey(name: 'splashScreenAdUrl') Uri? splashScreenAdUrl,
+      @JsonKey(name: 'userProfileUrl') Uri userProfileUrl,
+      @JsonKey(name: 'canListen') bool canListen,
+      @JsonKey(name: 'hasUsedTrial') bool hasUsedTrial,
+      @JsonKey(name: 'facebookAppId') String facebookAppId,
+      @JsonKey(name: 'maxStationsAllowed') int maxStationsAllowed,
+      @JsonKey(name: 'userId') String userId,
+      @JsonKey(name: 'accountMonthlyListening') int accountMonthlyListening,
       @JsonKey(name: 'zeroVolumeAutoPauseEnabledFlag')
-          bool zeroVolumeAutoPauseEnabledFlag,
-      @JsonKey(name: 'isSubscriber')
-          bool isSubscriber,
-      @JsonKey(name: 'stationHourlySkipLimit')
-          int stationHourlySkipLimit,
-      @JsonKey(name: 'listeningTimeoutMinutes', fromJson: AuthenticatedUser._readMinuteString, toJson: AuthenticatedUser._writeMinuteString)
-          Duration listeningTimeout,
-      @JsonKey(name: 'deviceMonthlyListening')
-          int deviceMonthlyListening,
-      @JsonKey(name: 'zip')
-          String zip,
-      @JsonKey(name: 'stationCreationAdUrl')
-          Uri? stationCreationAdUrl,
-      @JsonKey(name: 'accountMessageUrl')
-          Uri? accountMessageUrl,
-      @JsonKey(name: 'isCapped')
-          bool isCapped,
-      @JsonKey(name: 'googleplayApiKey')
-          String googleplayApiKey,
+      bool zeroVolumeAutoPauseEnabledFlag,
+      @JsonKey(name: 'isSubscriber') bool isSubscriber,
+      @JsonKey(name: 'stationHourlySkipLimit') int stationHourlySkipLimit,
+      @JsonKey(
+          name: 'listeningTimeoutMinutes',
+          fromJson: AuthenticatedUser._readMinuteString,
+          toJson: AuthenticatedUser._writeMinuteString)
+      Duration listeningTimeout,
+      @JsonKey(name: 'deviceMonthlyListening') int deviceMonthlyListening,
+      @JsonKey(name: 'zip') String zip,
+      @JsonKey(name: 'stationCreationAdUrl') Uri? stationCreationAdUrl,
+      @JsonKey(name: 'accountMessageUrl') Uri? accountMessageUrl,
+      @JsonKey(name: 'isCapped') bool isCapped,
+      @JsonKey(name: 'googleplayApiKey') String googleplayApiKey,
       @JsonKey(name: 'dailySkipLimitNonSubscriber')
-          int dailySkipLimitNonSubscriber,
+      int dailySkipLimitNonSubscriber,
       @JsonKey(name: 'collectTrackLifetimeStats')
-          bool collectTrackLifetimeStats,
-      @JsonKey(name: 'subscriptionHasExpired')
-          bool subscriptionHasExpired,
-      @JsonKey(name: 'userAuthToken')
-          String userAuthToken,
-      @JsonKey(name: 'username')
-          String username,
-      @JsonKey(name: 'googleplayMonthlySku')
-          String googleplayMonthlySku,
+      bool collectTrackLifetimeStats,
+      @JsonKey(name: 'subscriptionHasExpired') bool subscriptionHasExpired,
+      @JsonKey(name: 'userAuthToken') String userAuthToken,
+      @JsonKey(name: 'username') String username,
+      @JsonKey(name: 'googleplayMonthlySku') String googleplayMonthlySku,
       @JsonKey(name: 'listeningTimeoutAlertMsgUri')
-          Uri listeningTimeoutAlertMsgUri,
+      Uri listeningTimeoutAlertMsgUri,
       @JsonKey(name: 'monthlyCapWarningRepeatPercent')
-          int monthlyCapWarningRepeatPercent,
-      @JsonKey(name: 'videoAdUrl')
-          Uri? videoAdUrl,
-      @JsonKey(name: 'zeroVolumeNumMutedTracks')
-          int zeroVolumeNumMutedTracks,
-      @JsonKey(name: 'skipDelayMillisecondsAfterTrackStart', fromJson: AuthenticatedUser._readNullableMilliseconds, toJson: AuthenticatedUser._writeNullableMilliseconds)
-          Duration? skipDelayAfterTrackStart,
-      @JsonKey(name: 'accountMessageKey')
-          String? accountMessageKey,
-      @JsonKey(name: 'dailySkipLimit')
-          int dailySkipLimit,
-      @JsonKey(name: 'monthlyCapHours')
-          int monthlyCapHours,
-      @JsonKey(name: 'webname')
-          String webname,
+      int monthlyCapWarningRepeatPercent,
+      @JsonKey(name: 'videoAdUrl') Uri? videoAdUrl,
+      @JsonKey(name: 'zeroVolumeNumMutedTracks') int zeroVolumeNumMutedTracks,
+      @JsonKey(
+          name: 'skipDelayMillisecondsAfterTrackStart',
+          fromJson: AuthenticatedUser._readNullableMilliseconds,
+          toJson: AuthenticatedUser._writeNullableMilliseconds)
+      Duration? skipDelayAfterTrackStart,
+      @JsonKey(name: 'accountMessageKey') String? accountMessageKey,
+      @JsonKey(name: 'dailySkipLimit') int dailySkipLimit,
+      @JsonKey(name: 'monthlyCapHours') int monthlyCapHours,
+      @JsonKey(name: 'webname') String webname,
       @JsonKey(name: 'gender', fromJson: genderFromApiString, toJson: genderToApiString)
-          Gender gender,
-      @JsonKey(name: 'userstate')
-          String userstate,
-      @JsonKey(name: 'monthlyCapWarningPercent')
-          int monthlyCapWarningPercent,
-      @JsonKey(name: 'hasAudioAds')
-          bool hasAudioAds,
-      @JsonKey(name: 'fullname', fromJson: readOptionalOptionallyEmptyString, toJson: writeOptionallyEmptyString)
-          String? fullname,
-      @JsonKey(name: 'skipLimitBehavior')
-          SkipLimitBehavior skipLimitBehavior,
+      Gender gender,
+      @JsonKey(name: 'userstate') String userstate,
+      @JsonKey(name: 'monthlyCapWarningPercent') int monthlyCapWarningPercent,
+      @JsonKey(name: 'hasAudioAds') bool hasAudioAds,
+      @JsonKey(
+          name: 'fullname',
+          fromJson: readOptionalOptionallyEmptyString,
+          toJson: writeOptionallyEmptyString)
+      String? fullname,
+      @JsonKey(name: 'skipLimitBehavior') SkipLimitBehavior skipLimitBehavior,
       @JsonKey(name: 'enableOnDemand', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool enableOnDemand,
+      bool enableOnDemand,
       @JsonKey(name: 'isEligibleForOffline', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool isEligibleForOffline,
-      @JsonKey(name: 'isEligibleForManualDownload', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool isEligibleForManualDownload,
+      bool isEligibleForOffline,
+      @JsonKey(
+          name: 'isEligibleForManualDownload',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      bool isEligibleForManualDownload,
       @JsonKey(name: 'pandoraBrandingType')
-          PandoraBrandingType? pandoraBrandingType,
+      PandoraBrandingType? pandoraBrandingType,
       @JsonKey(name: 'canSellUserData', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool canSellUserData});
+      bool canSellUserData});
 }
 
 /// @nodoc
@@ -268,6 +253,8 @@ class _$AuthenticatedUserCopyWithImpl<$Res, $Val extends AuthenticatedUser>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AuthenticatedUser
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -523,122 +510,105 @@ class _$AuthenticatedUserCopyWithImpl<$Res, $Val extends AuthenticatedUser>
 }
 
 /// @nodoc
-abstract class _$$_AuthenticatedUserCopyWith<$Res>
+abstract class _$$AuthenticatedUserImplCopyWith<$Res>
     implements $AuthenticatedUserCopyWith<$Res> {
-  factory _$$_AuthenticatedUserCopyWith(_$_AuthenticatedUser value,
-          $Res Function(_$_AuthenticatedUser) then) =
-      __$$_AuthenticatedUserCopyWithImpl<$Res>;
+  factory _$$AuthenticatedUserImplCopyWith(_$AuthenticatedUserImpl value,
+          $Res Function(_$AuthenticatedUserImpl) then) =
+      __$$AuthenticatedUserImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'isMonthlyPayer')
-          bool isMonthlyPayer,
-      @JsonKey(name: 'dailySkipLimitSubscriber')
-          int dailySkipLimitSubscriber,
-      @JsonKey(name: 'minimumAdRefreshInterval')
-          int? minimumAdRefreshInterval,
-      @JsonKey(name: 'age')
-          int age,
-      @JsonKey(name: 'facebookPermissions', fromJson: AuthenticatedUser._readCommaSeparatedList, toJson: AuthenticatedUser._writeCommaSeparatedList)
-          List<String> facebookPermissions,
-      @JsonKey(name: 'splashScreenAdUrl')
-          Uri? splashScreenAdUrl,
-      @JsonKey(name: 'userProfileUrl')
-          Uri userProfileUrl,
-      @JsonKey(name: 'canListen')
-          bool canListen,
-      @JsonKey(name: 'hasUsedTrial')
-          bool hasUsedTrial,
-      @JsonKey(name: 'facebookAppId')
-          String facebookAppId,
-      @JsonKey(name: 'maxStationsAllowed')
-          int maxStationsAllowed,
-      @JsonKey(name: 'userId')
-          String userId,
-      @JsonKey(name: 'accountMonthlyListening')
-          int accountMonthlyListening,
+      {@JsonKey(name: 'isMonthlyPayer') bool isMonthlyPayer,
+      @JsonKey(name: 'dailySkipLimitSubscriber') int dailySkipLimitSubscriber,
+      @JsonKey(name: 'minimumAdRefreshInterval') int? minimumAdRefreshInterval,
+      @JsonKey(name: 'age') int age,
+      @JsonKey(
+          name: 'facebookPermissions',
+          fromJson: AuthenticatedUser._readCommaSeparatedList,
+          toJson: AuthenticatedUser._writeCommaSeparatedList)
+      List<String> facebookPermissions,
+      @JsonKey(name: 'splashScreenAdUrl') Uri? splashScreenAdUrl,
+      @JsonKey(name: 'userProfileUrl') Uri userProfileUrl,
+      @JsonKey(name: 'canListen') bool canListen,
+      @JsonKey(name: 'hasUsedTrial') bool hasUsedTrial,
+      @JsonKey(name: 'facebookAppId') String facebookAppId,
+      @JsonKey(name: 'maxStationsAllowed') int maxStationsAllowed,
+      @JsonKey(name: 'userId') String userId,
+      @JsonKey(name: 'accountMonthlyListening') int accountMonthlyListening,
       @JsonKey(name: 'zeroVolumeAutoPauseEnabledFlag')
-          bool zeroVolumeAutoPauseEnabledFlag,
-      @JsonKey(name: 'isSubscriber')
-          bool isSubscriber,
-      @JsonKey(name: 'stationHourlySkipLimit')
-          int stationHourlySkipLimit,
-      @JsonKey(name: 'listeningTimeoutMinutes', fromJson: AuthenticatedUser._readMinuteString, toJson: AuthenticatedUser._writeMinuteString)
-          Duration listeningTimeout,
-      @JsonKey(name: 'deviceMonthlyListening')
-          int deviceMonthlyListening,
-      @JsonKey(name: 'zip')
-          String zip,
-      @JsonKey(name: 'stationCreationAdUrl')
-          Uri? stationCreationAdUrl,
-      @JsonKey(name: 'accountMessageUrl')
-          Uri? accountMessageUrl,
-      @JsonKey(name: 'isCapped')
-          bool isCapped,
-      @JsonKey(name: 'googleplayApiKey')
-          String googleplayApiKey,
+      bool zeroVolumeAutoPauseEnabledFlag,
+      @JsonKey(name: 'isSubscriber') bool isSubscriber,
+      @JsonKey(name: 'stationHourlySkipLimit') int stationHourlySkipLimit,
+      @JsonKey(
+          name: 'listeningTimeoutMinutes',
+          fromJson: AuthenticatedUser._readMinuteString,
+          toJson: AuthenticatedUser._writeMinuteString)
+      Duration listeningTimeout,
+      @JsonKey(name: 'deviceMonthlyListening') int deviceMonthlyListening,
+      @JsonKey(name: 'zip') String zip,
+      @JsonKey(name: 'stationCreationAdUrl') Uri? stationCreationAdUrl,
+      @JsonKey(name: 'accountMessageUrl') Uri? accountMessageUrl,
+      @JsonKey(name: 'isCapped') bool isCapped,
+      @JsonKey(name: 'googleplayApiKey') String googleplayApiKey,
       @JsonKey(name: 'dailySkipLimitNonSubscriber')
-          int dailySkipLimitNonSubscriber,
+      int dailySkipLimitNonSubscriber,
       @JsonKey(name: 'collectTrackLifetimeStats')
-          bool collectTrackLifetimeStats,
-      @JsonKey(name: 'subscriptionHasExpired')
-          bool subscriptionHasExpired,
-      @JsonKey(name: 'userAuthToken')
-          String userAuthToken,
-      @JsonKey(name: 'username')
-          String username,
-      @JsonKey(name: 'googleplayMonthlySku')
-          String googleplayMonthlySku,
+      bool collectTrackLifetimeStats,
+      @JsonKey(name: 'subscriptionHasExpired') bool subscriptionHasExpired,
+      @JsonKey(name: 'userAuthToken') String userAuthToken,
+      @JsonKey(name: 'username') String username,
+      @JsonKey(name: 'googleplayMonthlySku') String googleplayMonthlySku,
       @JsonKey(name: 'listeningTimeoutAlertMsgUri')
-          Uri listeningTimeoutAlertMsgUri,
+      Uri listeningTimeoutAlertMsgUri,
       @JsonKey(name: 'monthlyCapWarningRepeatPercent')
-          int monthlyCapWarningRepeatPercent,
-      @JsonKey(name: 'videoAdUrl')
-          Uri? videoAdUrl,
-      @JsonKey(name: 'zeroVolumeNumMutedTracks')
-          int zeroVolumeNumMutedTracks,
-      @JsonKey(name: 'skipDelayMillisecondsAfterTrackStart', fromJson: AuthenticatedUser._readNullableMilliseconds, toJson: AuthenticatedUser._writeNullableMilliseconds)
-          Duration? skipDelayAfterTrackStart,
-      @JsonKey(name: 'accountMessageKey')
-          String? accountMessageKey,
-      @JsonKey(name: 'dailySkipLimit')
-          int dailySkipLimit,
-      @JsonKey(name: 'monthlyCapHours')
-          int monthlyCapHours,
-      @JsonKey(name: 'webname')
-          String webname,
+      int monthlyCapWarningRepeatPercent,
+      @JsonKey(name: 'videoAdUrl') Uri? videoAdUrl,
+      @JsonKey(name: 'zeroVolumeNumMutedTracks') int zeroVolumeNumMutedTracks,
+      @JsonKey(
+          name: 'skipDelayMillisecondsAfterTrackStart',
+          fromJson: AuthenticatedUser._readNullableMilliseconds,
+          toJson: AuthenticatedUser._writeNullableMilliseconds)
+      Duration? skipDelayAfterTrackStart,
+      @JsonKey(name: 'accountMessageKey') String? accountMessageKey,
+      @JsonKey(name: 'dailySkipLimit') int dailySkipLimit,
+      @JsonKey(name: 'monthlyCapHours') int monthlyCapHours,
+      @JsonKey(name: 'webname') String webname,
       @JsonKey(name: 'gender', fromJson: genderFromApiString, toJson: genderToApiString)
-          Gender gender,
-      @JsonKey(name: 'userstate')
-          String userstate,
-      @JsonKey(name: 'monthlyCapWarningPercent')
-          int monthlyCapWarningPercent,
-      @JsonKey(name: 'hasAudioAds')
-          bool hasAudioAds,
-      @JsonKey(name: 'fullname', fromJson: readOptionalOptionallyEmptyString, toJson: writeOptionallyEmptyString)
-          String? fullname,
-      @JsonKey(name: 'skipLimitBehavior')
-          SkipLimitBehavior skipLimitBehavior,
+      Gender gender,
+      @JsonKey(name: 'userstate') String userstate,
+      @JsonKey(name: 'monthlyCapWarningPercent') int monthlyCapWarningPercent,
+      @JsonKey(name: 'hasAudioAds') bool hasAudioAds,
+      @JsonKey(
+          name: 'fullname',
+          fromJson: readOptionalOptionallyEmptyString,
+          toJson: writeOptionallyEmptyString)
+      String? fullname,
+      @JsonKey(name: 'skipLimitBehavior') SkipLimitBehavior skipLimitBehavior,
       @JsonKey(name: 'enableOnDemand', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool enableOnDemand,
+      bool enableOnDemand,
       @JsonKey(name: 'isEligibleForOffline', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool isEligibleForOffline,
-      @JsonKey(name: 'isEligibleForManualDownload', fromJson: readOptInBool, toJson: writeOptInBool)
-          bool isEligibleForManualDownload,
+      bool isEligibleForOffline,
+      @JsonKey(
+          name: 'isEligibleForManualDownload',
+          fromJson: readOptInBool,
+          toJson: writeOptInBool)
+      bool isEligibleForManualDownload,
       @JsonKey(name: 'pandoraBrandingType')
-          PandoraBrandingType? pandoraBrandingType,
+      PandoraBrandingType? pandoraBrandingType,
       @JsonKey(name: 'canSellUserData', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          bool canSellUserData});
+      bool canSellUserData});
 }
 
 /// @nodoc
-class __$$_AuthenticatedUserCopyWithImpl<$Res>
-    extends _$AuthenticatedUserCopyWithImpl<$Res, _$_AuthenticatedUser>
-    implements _$$_AuthenticatedUserCopyWith<$Res> {
-  __$$_AuthenticatedUserCopyWithImpl(
-      _$_AuthenticatedUser _value, $Res Function(_$_AuthenticatedUser) _then)
+class __$$AuthenticatedUserImplCopyWithImpl<$Res>
+    extends _$AuthenticatedUserCopyWithImpl<$Res, _$AuthenticatedUserImpl>
+    implements _$$AuthenticatedUserImplCopyWith<$Res> {
+  __$$AuthenticatedUserImplCopyWithImpl(_$AuthenticatedUserImpl _value,
+      $Res Function(_$AuthenticatedUserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AuthenticatedUser
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -692,7 +662,7 @@ class __$$_AuthenticatedUserCopyWithImpl<$Res>
     Object? pandoraBrandingType = freezed,
     Object? canSellUserData = null,
   }) {
-    return _then(_$_AuthenticatedUser(
+    return _then(_$AuthenticatedUserImpl(
       isMonthlyPayer: null == isMonthlyPayer
           ? _value.isMonthlyPayer
           : isMonthlyPayer // ignore: cast_nullable_to_non_nullable
@@ -895,110 +865,96 @@ class __$$_AuthenticatedUserCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AuthenticatedUser implements _AuthenticatedUser {
-  const _$_AuthenticatedUser(
-      {@JsonKey(name: 'isMonthlyPayer')
-          required this.isMonthlyPayer,
+class _$AuthenticatedUserImpl implements _AuthenticatedUser {
+  const _$AuthenticatedUserImpl(
+      {@JsonKey(name: 'isMonthlyPayer') required this.isMonthlyPayer,
       @JsonKey(name: 'dailySkipLimitSubscriber')
-          required this.dailySkipLimitSubscriber,
+      required this.dailySkipLimitSubscriber,
       @JsonKey(name: 'minimumAdRefreshInterval')
-          required this.minimumAdRefreshInterval,
-      @JsonKey(name: 'age')
-          required this.age,
-      @JsonKey(name: 'facebookPermissions', fromJson: AuthenticatedUser._readCommaSeparatedList, toJson: AuthenticatedUser._writeCommaSeparatedList)
-          required final List<String> facebookPermissions,
-      @JsonKey(name: 'splashScreenAdUrl')
-          required this.splashScreenAdUrl,
-      @JsonKey(name: 'userProfileUrl')
-          required this.userProfileUrl,
-      @JsonKey(name: 'canListen')
-          required this.canListen,
-      @JsonKey(name: 'hasUsedTrial')
-          required this.hasUsedTrial,
-      @JsonKey(name: 'facebookAppId')
-          required this.facebookAppId,
-      @JsonKey(name: 'maxStationsAllowed')
-          required this.maxStationsAllowed,
-      @JsonKey(name: 'userId')
-          required this.userId,
+      required this.minimumAdRefreshInterval,
+      @JsonKey(name: 'age') required this.age,
+      @JsonKey(
+          name: 'facebookPermissions',
+          fromJson: AuthenticatedUser._readCommaSeparatedList,
+          toJson: AuthenticatedUser._writeCommaSeparatedList)
+      required final List<String> facebookPermissions,
+      @JsonKey(name: 'splashScreenAdUrl') required this.splashScreenAdUrl,
+      @JsonKey(name: 'userProfileUrl') required this.userProfileUrl,
+      @JsonKey(name: 'canListen') required this.canListen,
+      @JsonKey(name: 'hasUsedTrial') required this.hasUsedTrial,
+      @JsonKey(name: 'facebookAppId') required this.facebookAppId,
+      @JsonKey(name: 'maxStationsAllowed') required this.maxStationsAllowed,
+      @JsonKey(name: 'userId') required this.userId,
       @JsonKey(name: 'accountMonthlyListening')
-          required this.accountMonthlyListening,
+      required this.accountMonthlyListening,
       @JsonKey(name: 'zeroVolumeAutoPauseEnabledFlag')
-          required this.zeroVolumeAutoPauseEnabledFlag,
-      @JsonKey(name: 'isSubscriber')
-          required this.isSubscriber,
+      required this.zeroVolumeAutoPauseEnabledFlag,
+      @JsonKey(name: 'isSubscriber') required this.isSubscriber,
       @JsonKey(name: 'stationHourlySkipLimit')
-          required this.stationHourlySkipLimit,
-      @JsonKey(name: 'listeningTimeoutMinutes', fromJson: AuthenticatedUser._readMinuteString, toJson: AuthenticatedUser._writeMinuteString)
-          required this.listeningTimeout,
+      required this.stationHourlySkipLimit,
+      @JsonKey(
+          name: 'listeningTimeoutMinutes',
+          fromJson: AuthenticatedUser._readMinuteString,
+          toJson: AuthenticatedUser._writeMinuteString)
+      required this.listeningTimeout,
       @JsonKey(name: 'deviceMonthlyListening')
-          required this.deviceMonthlyListening,
-      @JsonKey(name: 'zip')
-          required this.zip,
-      @JsonKey(name: 'stationCreationAdUrl')
-          required this.stationCreationAdUrl,
-      @JsonKey(name: 'accountMessageUrl')
-          required this.accountMessageUrl,
-      @JsonKey(name: 'isCapped')
-          required this.isCapped,
-      @JsonKey(name: 'googleplayApiKey')
-          required this.googleplayApiKey,
+      required this.deviceMonthlyListening,
+      @JsonKey(name: 'zip') required this.zip,
+      @JsonKey(name: 'stationCreationAdUrl') required this.stationCreationAdUrl,
+      @JsonKey(name: 'accountMessageUrl') required this.accountMessageUrl,
+      @JsonKey(name: 'isCapped') required this.isCapped,
+      @JsonKey(name: 'googleplayApiKey') required this.googleplayApiKey,
       @JsonKey(name: 'dailySkipLimitNonSubscriber')
-          required this.dailySkipLimitNonSubscriber,
+      required this.dailySkipLimitNonSubscriber,
       @JsonKey(name: 'collectTrackLifetimeStats')
-          required this.collectTrackLifetimeStats,
+      required this.collectTrackLifetimeStats,
       @JsonKey(name: 'subscriptionHasExpired')
-          required this.subscriptionHasExpired,
-      @JsonKey(name: 'userAuthToken')
-          required this.userAuthToken,
-      @JsonKey(name: 'username')
-          required this.username,
-      @JsonKey(name: 'googleplayMonthlySku')
-          required this.googleplayMonthlySku,
+      required this.subscriptionHasExpired,
+      @JsonKey(name: 'userAuthToken') required this.userAuthToken,
+      @JsonKey(name: 'username') required this.username,
+      @JsonKey(name: 'googleplayMonthlySku') required this.googleplayMonthlySku,
       @JsonKey(name: 'listeningTimeoutAlertMsgUri')
-          required this.listeningTimeoutAlertMsgUri,
+      required this.listeningTimeoutAlertMsgUri,
       @JsonKey(name: 'monthlyCapWarningRepeatPercent')
-          required this.monthlyCapWarningRepeatPercent,
-      @JsonKey(name: 'videoAdUrl')
-          required this.videoAdUrl,
+      required this.monthlyCapWarningRepeatPercent,
+      @JsonKey(name: 'videoAdUrl') required this.videoAdUrl,
       @JsonKey(name: 'zeroVolumeNumMutedTracks')
-          required this.zeroVolumeNumMutedTracks,
-      @JsonKey(name: 'skipDelayMillisecondsAfterTrackStart', fromJson: AuthenticatedUser._readNullableMilliseconds, toJson: AuthenticatedUser._writeNullableMilliseconds)
-          required this.skipDelayAfterTrackStart,
-      @JsonKey(name: 'accountMessageKey')
-          required this.accountMessageKey,
-      @JsonKey(name: 'dailySkipLimit')
-          required this.dailySkipLimit,
-      @JsonKey(name: 'monthlyCapHours')
-          required this.monthlyCapHours,
-      @JsonKey(name: 'webname')
-          required this.webname,
+      required this.zeroVolumeNumMutedTracks,
+      @JsonKey(
+          name: 'skipDelayMillisecondsAfterTrackStart',
+          fromJson: AuthenticatedUser._readNullableMilliseconds,
+          toJson: AuthenticatedUser._writeNullableMilliseconds)
+      required this.skipDelayAfterTrackStart,
+      @JsonKey(name: 'accountMessageKey') required this.accountMessageKey,
+      @JsonKey(name: 'dailySkipLimit') required this.dailySkipLimit,
+      @JsonKey(name: 'monthlyCapHours') required this.monthlyCapHours,
+      @JsonKey(name: 'webname') required this.webname,
       @JsonKey(name: 'gender', fromJson: genderFromApiString, toJson: genderToApiString)
-          required this.gender,
-      @JsonKey(name: 'userstate')
-          required this.userstate,
+      required this.gender,
+      @JsonKey(name: 'userstate') required this.userstate,
       @JsonKey(name: 'monthlyCapWarningPercent')
-          required this.monthlyCapWarningPercent,
-      @JsonKey(name: 'hasAudioAds')
-          required this.hasAudioAds,
-      @JsonKey(name: 'fullname', fromJson: readOptionalOptionallyEmptyString, toJson: writeOptionallyEmptyString)
-          this.fullname,
+      required this.monthlyCapWarningPercent,
+      @JsonKey(name: 'hasAudioAds') required this.hasAudioAds,
+      @JsonKey(
+          name: 'fullname',
+          fromJson: readOptionalOptionallyEmptyString,
+          toJson: writeOptionallyEmptyString)
+      this.fullname,
       @JsonKey(name: 'skipLimitBehavior')
-          this.skipLimitBehavior = SkipLimitBehavior.block,
+      this.skipLimitBehavior = SkipLimitBehavior.block,
       @JsonKey(name: 'enableOnDemand', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.enableOnDemand,
+      required this.enableOnDemand,
       @JsonKey(name: 'isEligibleForOffline', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.isEligibleForOffline,
+      required this.isEligibleForOffline,
       @JsonKey(name: 'isEligibleForManualDownload', fromJson: readOptInBool, toJson: writeOptInBool)
-          required this.isEligibleForManualDownload,
-      @JsonKey(name: 'pandoraBrandingType')
-          this.pandoraBrandingType,
+      required this.isEligibleForManualDownload,
+      @JsonKey(name: 'pandoraBrandingType') this.pandoraBrandingType,
       @JsonKey(name: 'canSellUserData', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required this.canSellUserData})
+      required this.canSellUserData})
       : _facebookPermissions = facebookPermissions;
 
-  factory _$_AuthenticatedUser.fromJson(Map<String, dynamic> json) =>
-      _$$_AuthenticatedUserFromJson(json);
+  factory _$AuthenticatedUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AuthenticatedUserImplFromJson(json);
 
   @override
   @JsonKey(name: 'isMonthlyPayer')
@@ -1186,10 +1142,10 @@ class _$_AuthenticatedUser implements _AuthenticatedUser {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AuthenticatedUser &&
+            other is _$AuthenticatedUserImpl &&
             (identical(other.isMonthlyPayer, isMonthlyPayer) ||
                 other.isMonthlyPayer == isMonthlyPayer) &&
             (identical(other.dailySkipLimitSubscriber, dailySkipLimitSubscriber) ||
@@ -1265,7 +1221,7 @@ class _$_AuthenticatedUser implements _AuthenticatedUser {
             (identical(other.canSellUserData, canSellUserData) || other.canSellUserData == canSellUserData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1320,16 +1276,18 @@ class _$_AuthenticatedUser implements _AuthenticatedUser {
         canSellUserData
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AuthenticatedUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AuthenticatedUserCopyWith<_$_AuthenticatedUser> get copyWith =>
-      __$$_AuthenticatedUserCopyWithImpl<_$_AuthenticatedUser>(
+  _$$AuthenticatedUserImplCopyWith<_$AuthenticatedUserImpl> get copyWith =>
+      __$$AuthenticatedUserImplCopyWithImpl<_$AuthenticatedUserImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AuthenticatedUserToJson(
+    return _$$AuthenticatedUserImplToJson(
       this,
     );
   }
@@ -1337,107 +1295,98 @@ class _$_AuthenticatedUser implements _AuthenticatedUser {
 
 abstract class _AuthenticatedUser implements AuthenticatedUser {
   const factory _AuthenticatedUser(
-      {@JsonKey(name: 'isMonthlyPayer')
-          required final bool isMonthlyPayer,
+      {@JsonKey(name: 'isMonthlyPayer') required final bool isMonthlyPayer,
       @JsonKey(name: 'dailySkipLimitSubscriber')
-          required final int dailySkipLimitSubscriber,
+      required final int dailySkipLimitSubscriber,
       @JsonKey(name: 'minimumAdRefreshInterval')
-          required final int? minimumAdRefreshInterval,
-      @JsonKey(name: 'age')
-          required final int age,
-      @JsonKey(name: 'facebookPermissions', fromJson: AuthenticatedUser._readCommaSeparatedList, toJson: AuthenticatedUser._writeCommaSeparatedList)
-          required final List<String> facebookPermissions,
-      @JsonKey(name: 'splashScreenAdUrl')
-          required final Uri? splashScreenAdUrl,
-      @JsonKey(name: 'userProfileUrl')
-          required final Uri userProfileUrl,
-      @JsonKey(name: 'canListen')
-          required final bool canListen,
-      @JsonKey(name: 'hasUsedTrial')
-          required final bool hasUsedTrial,
-      @JsonKey(name: 'facebookAppId')
-          required final String facebookAppId,
+      required final int? minimumAdRefreshInterval,
+      @JsonKey(name: 'age') required final int age,
+      @JsonKey(
+          name: 'facebookPermissions',
+          fromJson: AuthenticatedUser._readCommaSeparatedList,
+          toJson: AuthenticatedUser._writeCommaSeparatedList)
+      required final List<String> facebookPermissions,
+      @JsonKey(name: 'splashScreenAdUrl') required final Uri? splashScreenAdUrl,
+      @JsonKey(name: 'userProfileUrl') required final Uri userProfileUrl,
+      @JsonKey(name: 'canListen') required final bool canListen,
+      @JsonKey(name: 'hasUsedTrial') required final bool hasUsedTrial,
+      @JsonKey(name: 'facebookAppId') required final String facebookAppId,
       @JsonKey(name: 'maxStationsAllowed')
-          required final int maxStationsAllowed,
-      @JsonKey(name: 'userId')
-          required final String userId,
+      required final int maxStationsAllowed,
+      @JsonKey(name: 'userId') required final String userId,
       @JsonKey(name: 'accountMonthlyListening')
-          required final int accountMonthlyListening,
+      required final int accountMonthlyListening,
       @JsonKey(name: 'zeroVolumeAutoPauseEnabledFlag')
-          required final bool zeroVolumeAutoPauseEnabledFlag,
-      @JsonKey(name: 'isSubscriber')
-          required final bool isSubscriber,
+      required final bool zeroVolumeAutoPauseEnabledFlag,
+      @JsonKey(name: 'isSubscriber') required final bool isSubscriber,
       @JsonKey(name: 'stationHourlySkipLimit')
-          required final int stationHourlySkipLimit,
-      @JsonKey(name: 'listeningTimeoutMinutes', fromJson: AuthenticatedUser._readMinuteString, toJson: AuthenticatedUser._writeMinuteString)
-          required final Duration listeningTimeout,
+      required final int stationHourlySkipLimit,
+      @JsonKey(
+          name: 'listeningTimeoutMinutes',
+          fromJson: AuthenticatedUser._readMinuteString,
+          toJson: AuthenticatedUser._writeMinuteString)
+      required final Duration listeningTimeout,
       @JsonKey(name: 'deviceMonthlyListening')
-          required final int deviceMonthlyListening,
-      @JsonKey(name: 'zip')
-          required final String zip,
+      required final int deviceMonthlyListening,
+      @JsonKey(name: 'zip') required final String zip,
       @JsonKey(name: 'stationCreationAdUrl')
-          required final Uri? stationCreationAdUrl,
-      @JsonKey(name: 'accountMessageUrl')
-          required final Uri? accountMessageUrl,
-      @JsonKey(name: 'isCapped')
-          required final bool isCapped,
-      @JsonKey(name: 'googleplayApiKey')
-          required final String googleplayApiKey,
+      required final Uri? stationCreationAdUrl,
+      @JsonKey(name: 'accountMessageUrl') required final Uri? accountMessageUrl,
+      @JsonKey(name: 'isCapped') required final bool isCapped,
+      @JsonKey(name: 'googleplayApiKey') required final String googleplayApiKey,
       @JsonKey(name: 'dailySkipLimitNonSubscriber')
-          required final int dailySkipLimitNonSubscriber,
+      required final int dailySkipLimitNonSubscriber,
       @JsonKey(name: 'collectTrackLifetimeStats')
-          required final bool collectTrackLifetimeStats,
+      required final bool collectTrackLifetimeStats,
       @JsonKey(name: 'subscriptionHasExpired')
-          required final bool subscriptionHasExpired,
-      @JsonKey(name: 'userAuthToken')
-          required final String userAuthToken,
-      @JsonKey(name: 'username')
-          required final String username,
+      required final bool subscriptionHasExpired,
+      @JsonKey(name: 'userAuthToken') required final String userAuthToken,
+      @JsonKey(name: 'username') required final String username,
       @JsonKey(name: 'googleplayMonthlySku')
-          required final String googleplayMonthlySku,
+      required final String googleplayMonthlySku,
       @JsonKey(name: 'listeningTimeoutAlertMsgUri')
-          required final Uri listeningTimeoutAlertMsgUri,
+      required final Uri listeningTimeoutAlertMsgUri,
       @JsonKey(name: 'monthlyCapWarningRepeatPercent')
-          required final int monthlyCapWarningRepeatPercent,
-      @JsonKey(name: 'videoAdUrl')
-          required final Uri? videoAdUrl,
+      required final int monthlyCapWarningRepeatPercent,
+      @JsonKey(name: 'videoAdUrl') required final Uri? videoAdUrl,
       @JsonKey(name: 'zeroVolumeNumMutedTracks')
-          required final int zeroVolumeNumMutedTracks,
-      @JsonKey(name: 'skipDelayMillisecondsAfterTrackStart', fromJson: AuthenticatedUser._readNullableMilliseconds, toJson: AuthenticatedUser._writeNullableMilliseconds)
-          required final Duration? skipDelayAfterTrackStart,
+      required final int zeroVolumeNumMutedTracks,
+      @JsonKey(
+          name: 'skipDelayMillisecondsAfterTrackStart',
+          fromJson: AuthenticatedUser._readNullableMilliseconds,
+          toJson: AuthenticatedUser._writeNullableMilliseconds)
+      required final Duration? skipDelayAfterTrackStart,
       @JsonKey(name: 'accountMessageKey')
-          required final String? accountMessageKey,
-      @JsonKey(name: 'dailySkipLimit')
-          required final int dailySkipLimit,
-      @JsonKey(name: 'monthlyCapHours')
-          required final int monthlyCapHours,
-      @JsonKey(name: 'webname')
-          required final String webname,
+      required final String? accountMessageKey,
+      @JsonKey(name: 'dailySkipLimit') required final int dailySkipLimit,
+      @JsonKey(name: 'monthlyCapHours') required final int monthlyCapHours,
+      @JsonKey(name: 'webname') required final String webname,
       @JsonKey(name: 'gender', fromJson: genderFromApiString, toJson: genderToApiString)
-          required final Gender gender,
-      @JsonKey(name: 'userstate')
-          required final String userstate,
+      required final Gender gender,
+      @JsonKey(name: 'userstate') required final String userstate,
       @JsonKey(name: 'monthlyCapWarningPercent')
-          required final int monthlyCapWarningPercent,
-      @JsonKey(name: 'hasAudioAds')
-          required final bool hasAudioAds,
-      @JsonKey(name: 'fullname', fromJson: readOptionalOptionallyEmptyString, toJson: writeOptionallyEmptyString)
-          final String? fullname,
+      required final int monthlyCapWarningPercent,
+      @JsonKey(name: 'hasAudioAds') required final bool hasAudioAds,
+      @JsonKey(
+          name: 'fullname',
+          fromJson: readOptionalOptionallyEmptyString,
+          toJson: writeOptionallyEmptyString)
+      final String? fullname,
       @JsonKey(name: 'skipLimitBehavior')
-          final SkipLimitBehavior skipLimitBehavior,
+      final SkipLimitBehavior skipLimitBehavior,
       @JsonKey(name: 'enableOnDemand', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool enableOnDemand,
+      required final bool enableOnDemand,
       @JsonKey(name: 'isEligibleForOffline', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool isEligibleForOffline,
+      required final bool isEligibleForOffline,
       @JsonKey(name: 'isEligibleForManualDownload', fromJson: readOptInBool, toJson: writeOptInBool)
-          required final bool isEligibleForManualDownload,
+      required final bool isEligibleForManualDownload,
       @JsonKey(name: 'pandoraBrandingType')
-          final PandoraBrandingType? pandoraBrandingType,
+      final PandoraBrandingType? pandoraBrandingType,
       @JsonKey(name: 'canSellUserData', fromJson: readOptOutBool, toJson: writeOptOutBool)
-          required final bool canSellUserData}) = _$_AuthenticatedUser;
+      required final bool canSellUserData}) = _$AuthenticatedUserImpl;
 
   factory _AuthenticatedUser.fromJson(Map<String, dynamic> json) =
-      _$_AuthenticatedUser.fromJson;
+      _$AuthenticatedUserImpl.fromJson;
 
   @override
   @JsonKey(name: 'isMonthlyPayer')
@@ -1448,9 +1397,9 @@ abstract class _AuthenticatedUser implements AuthenticatedUser {
   @override
   @JsonKey(name: 'minimumAdRefreshInterval')
   int? get minimumAdRefreshInterval;
-  @override
 
   /// The listener's age, in years.
+  @override
   @JsonKey(name: 'age')
   int get age;
   @override
@@ -1611,8 +1560,11 @@ abstract class _AuthenticatedUser implements AuthenticatedUser {
       fromJson: readOptOutBool,
       toJson: writeOptOutBool)
   bool get canSellUserData;
+
+  /// Create a copy of AuthenticatedUser
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_AuthenticatedUserCopyWith<_$_AuthenticatedUser> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AuthenticatedUserImplCopyWith<_$AuthenticatedUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

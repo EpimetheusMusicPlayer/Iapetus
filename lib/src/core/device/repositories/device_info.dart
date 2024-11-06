@@ -1,6 +1,7 @@
 import 'package:iapetus/src/core/storage/repositories/iapetus_storage.dart';
+import 'package:uuid/data.dart';
+import 'package:uuid/rng.dart';
 import 'package:uuid/uuid.dart';
-import 'package:uuid/uuid_util.dart';
 
 class DeviceInfo {
   final IapetusSecureStorage storage;
@@ -19,5 +20,5 @@ class DeviceInfo {
   }
 
   static String _generateDeviceId() =>
-      const Uuid(options: {'grng': UuidUtil.cryptoRNG}).v4();
+      Uuid(goptions: GlobalOptions(CryptoRNG())).v4();
 }

@@ -12,7 +12,7 @@ part of 'full_profile.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 FullProfile _$FullProfileFromJson(Map<String, dynamic> json) {
   return _FullProfile.fromJson(json);
@@ -57,8 +57,12 @@ mixin _$FullProfile {
   Map<String, MediaAnnotation> get annotations =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this FullProfile to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FullProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FullProfileCopyWith<FullProfile> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -99,6 +103,8 @@ class _$FullProfileCopyWithImpl<$Res, $Val extends FullProfile>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FullProfile
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -194,11 +200,11 @@ class _$FullProfileCopyWithImpl<$Res, $Val extends FullProfile>
 }
 
 /// @nodoc
-abstract class _$$_FullProfileCopyWith<$Res>
+abstract class _$$FullProfileImplCopyWith<$Res>
     implements $FullProfileCopyWith<$Res> {
-  factory _$$_FullProfileCopyWith(
-          _$_FullProfile value, $Res Function(_$_FullProfile) then) =
-      __$$_FullProfileCopyWithImpl<$Res>;
+  factory _$$FullProfileImplCopyWith(
+          _$FullProfileImpl value, $Res Function(_$FullProfileImpl) then) =
+      __$$FullProfileImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -222,13 +228,15 @@ abstract class _$$_FullProfileCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FullProfileCopyWithImpl<$Res>
-    extends _$FullProfileCopyWithImpl<$Res, _$_FullProfile>
-    implements _$$_FullProfileCopyWith<$Res> {
-  __$$_FullProfileCopyWithImpl(
-      _$_FullProfile _value, $Res Function(_$_FullProfile) _then)
+class __$$FullProfileImplCopyWithImpl<$Res>
+    extends _$FullProfileCopyWithImpl<$Res, _$FullProfileImpl>
+    implements _$$FullProfileImplCopyWith<$Res> {
+  __$$FullProfileImplCopyWithImpl(
+      _$FullProfileImpl _value, $Res Function(_$FullProfileImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FullProfile
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -250,7 +258,7 @@ class __$$_FullProfileCopyWithImpl<$Res>
     Object? playlistPandoraIds = null,
     Object? annotations = null,
   }) {
-    return _then(_$_FullProfile(
+    return _then(_$FullProfileImpl(
       ownerPandoraId: null == ownerPandoraId
           ? _value.ownerPandoraId
           : ownerPandoraId // ignore: cast_nullable_to_non_nullable
@@ -325,50 +333,37 @@ class __$$_FullProfileCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FullProfile extends _FullProfile {
-  const _$_FullProfile(
-      {@JsonKey(name: 'ownerPandoraId')
-          required this.ownerPandoraId,
-      @JsonKey(name: 'ownerListenerId')
-          required this.ownerListenerId,
-      @JsonKey(name: 'isPremiumUser')
-          required this.isPremiumUser,
-      @JsonKey(name: 'isOwnProfile')
-          required this.isOwnProfile,
-      @JsonKey(name: 'isFollowing')
-          required this.isFollowing,
-      @JsonKey(name: 'isPrivate')
-          required this.isPrivate,
-      @JsonKey(name: 'thumbCount')
-          required this.thumbCount,
-      @JsonKey(name: 'playlistCount')
-          required this.playlistCount,
-      @JsonKey(name: 'stationCount')
-          required this.stationCount,
-      @JsonKey(name: 'followerCount')
-          required this.followerCount,
-      @JsonKey(name: 'followingCount')
-          required this.followingCount,
-      @JsonKey(name: 'recentFavoritesCount')
-          required this.recentFavoritesCount,
-      @JsonKey(name: 'topArtistsCount')
-          required this.topArtistsCount,
+class _$FullProfileImpl extends _FullProfile {
+  const _$FullProfileImpl(
+      {@JsonKey(name: 'ownerPandoraId') required this.ownerPandoraId,
+      @JsonKey(name: 'ownerListenerId') required this.ownerListenerId,
+      @JsonKey(name: 'isPremiumUser') required this.isPremiumUser,
+      @JsonKey(name: 'isOwnProfile') required this.isOwnProfile,
+      @JsonKey(name: 'isFollowing') required this.isFollowing,
+      @JsonKey(name: 'isPrivate') required this.isPrivate,
+      @JsonKey(name: 'thumbCount') required this.thumbCount,
+      @JsonKey(name: 'playlistCount') required this.playlistCount,
+      @JsonKey(name: 'stationCount') required this.stationCount,
+      @JsonKey(name: 'followerCount') required this.followerCount,
+      @JsonKey(name: 'followingCount') required this.followingCount,
+      @JsonKey(name: 'recentFavoritesCount') required this.recentFavoritesCount,
+      @JsonKey(name: 'topArtistsCount') required this.topArtistsCount,
       @JsonKey(name: 'recentFavorites')
-          required final List<String> recentFavoritePandoraIds,
+      required final List<String> recentFavoritePandoraIds,
       @JsonKey(name: 'topArtists')
-          required final List<String> topArtistPandoraIds,
+      required final List<String> topArtistPandoraIds,
       @JsonKey(name: 'playlists')
-          required final List<String> playlistPandoraIds,
+      required final List<String> playlistPandoraIds,
       @JsonKey(name: 'annotations')
-          required final Map<String, MediaAnnotation> annotations})
+      required final Map<String, MediaAnnotation> annotations})
       : _recentFavoritePandoraIds = recentFavoritePandoraIds,
         _topArtistPandoraIds = topArtistPandoraIds,
         _playlistPandoraIds = playlistPandoraIds,
         _annotations = annotations,
         super._();
 
-  factory _$_FullProfile.fromJson(Map<String, dynamic> json) =>
-      _$$_FullProfileFromJson(json);
+  factory _$FullProfileImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FullProfileImplFromJson(json);
 
   @override
   @JsonKey(name: 'ownerPandoraId')
@@ -454,10 +449,10 @@ class _$_FullProfile extends _FullProfile {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FullProfile &&
+            other is _$FullProfileImpl &&
             (identical(other.ownerPandoraId, ownerPandoraId) ||
                 other.ownerPandoraId == ownerPandoraId) &&
             (identical(other.ownerListenerId, ownerListenerId) ||
@@ -494,7 +489,7 @@ class _$_FullProfile extends _FullProfile {
                 .equals(other._annotations, _annotations));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -516,15 +511,17 @@ class _$_FullProfile extends _FullProfile {
       const DeepCollectionEquality().hash(_playlistPandoraIds),
       const DeepCollectionEquality().hash(_annotations));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FullProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FullProfileCopyWith<_$_FullProfile> get copyWith =>
-      __$$_FullProfileCopyWithImpl<_$_FullProfile>(this, _$identity);
+  _$$FullProfileImplCopyWith<_$FullProfileImpl> get copyWith =>
+      __$$FullProfileImplCopyWithImpl<_$FullProfileImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FullProfileToJson(
+    return _$$FullProfileImplToJson(
       this,
     );
   }
@@ -532,45 +529,33 @@ class _$_FullProfile extends _FullProfile {
 
 abstract class _FullProfile extends FullProfile {
   const factory _FullProfile(
-          {@JsonKey(name: 'ownerPandoraId')
-              required final String ownerPandoraId,
-          @JsonKey(name: 'ownerListenerId')
-              required final int ownerListenerId,
-          @JsonKey(name: 'isPremiumUser')
-              required final bool isPremiumUser,
-          @JsonKey(name: 'isOwnProfile')
-              required final bool isOwnProfile,
-          @JsonKey(name: 'isFollowing')
-              required final bool isFollowing,
-          @JsonKey(name: 'isPrivate')
-              required final bool isPrivate,
-          @JsonKey(name: 'thumbCount')
-              required final int thumbCount,
-          @JsonKey(name: 'playlistCount')
-              required final int playlistCount,
-          @JsonKey(name: 'stationCount')
-              required final int stationCount,
-          @JsonKey(name: 'followerCount')
-              required final int followerCount,
-          @JsonKey(name: 'followingCount')
-              required final int followingCount,
-          @JsonKey(name: 'recentFavoritesCount')
-              required final int recentFavoritesCount,
-          @JsonKey(name: 'topArtistsCount')
-              required final int topArtistsCount,
-          @JsonKey(name: 'recentFavorites')
-              required final List<String> recentFavoritePandoraIds,
-          @JsonKey(name: 'topArtists')
-              required final List<String> topArtistPandoraIds,
-          @JsonKey(name: 'playlists')
-              required final List<String> playlistPandoraIds,
-          @JsonKey(name: 'annotations')
-              required final Map<String, MediaAnnotation> annotations}) =
-      _$_FullProfile;
+      {@JsonKey(name: 'ownerPandoraId') required final String ownerPandoraId,
+      @JsonKey(name: 'ownerListenerId') required final int ownerListenerId,
+      @JsonKey(name: 'isPremiumUser') required final bool isPremiumUser,
+      @JsonKey(name: 'isOwnProfile') required final bool isOwnProfile,
+      @JsonKey(name: 'isFollowing') required final bool isFollowing,
+      @JsonKey(name: 'isPrivate') required final bool isPrivate,
+      @JsonKey(name: 'thumbCount') required final int thumbCount,
+      @JsonKey(name: 'playlistCount') required final int playlistCount,
+      @JsonKey(name: 'stationCount') required final int stationCount,
+      @JsonKey(name: 'followerCount') required final int followerCount,
+      @JsonKey(name: 'followingCount') required final int followingCount,
+      @JsonKey(name: 'recentFavoritesCount')
+      required final int recentFavoritesCount,
+      @JsonKey(name: 'topArtistsCount') required final int topArtistsCount,
+      @JsonKey(name: 'recentFavorites')
+      required final List<String> recentFavoritePandoraIds,
+      @JsonKey(name: 'topArtists')
+      required final List<String> topArtistPandoraIds,
+      @JsonKey(name: 'playlists')
+      required final List<String> playlistPandoraIds,
+      @JsonKey(name: 'annotations')
+      required final Map<String, MediaAnnotation>
+          annotations}) = _$FullProfileImpl;
   const _FullProfile._() : super._();
 
   factory _FullProfile.fromJson(Map<String, dynamic> json) =
-      _$_FullProfile.fromJson;
+      _$FullProfileImpl.fromJson;
 
   @override
   @JsonKey(name: 'ownerPandoraId')
@@ -623,8 +608,11 @@ abstract class _FullProfile extends FullProfile {
   @override
   @JsonKey(name: 'annotations')
   Map<String, MediaAnnotation> get annotations;
+
+  /// Create a copy of FullProfile
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_FullProfileCopyWith<_$_FullProfile> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FullProfileImplCopyWith<_$FullProfileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

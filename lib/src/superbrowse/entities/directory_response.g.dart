@@ -8,13 +8,14 @@ part of 'directory_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DirectoryResponse _$$_DirectoryResponseFromJson(Map<String, dynamic> json) =>
+_$DirectoryResponseImpl _$$DirectoryResponseImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_DirectoryResponse',
+      r'_$DirectoryResponseImpl',
       json,
       ($checkedConvert) {
-        final val = _$_DirectoryResponse(
-          ttl: $checkedConvert('ttl', (v) => readSeconds(v as int)),
+        final val = _$DirectoryResponseImpl(
+          ttl: $checkedConvert('ttl', (v) => readSeconds((v as num).toInt())),
           title: $checkedConvert('title', (v) => v as String?),
           checksum: $checkedConvert('checksum', (v) => v as String),
           generation: $checkedConvert('generation', (v) => v as String?),
@@ -38,8 +39,8 @@ _$_DirectoryResponse _$$_DirectoryResponseFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$_DirectoryResponseToJson(
-        _$_DirectoryResponse instance) =>
+Map<String, dynamic> _$$DirectoryResponseImplToJson(
+        _$DirectoryResponseImpl instance) =>
     <String, dynamic>{
       'ttl': writeSeconds(instance.ttl),
       'title': instance.title,

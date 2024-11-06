@@ -12,7 +12,7 @@ part of 'station_list.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 StationList _$StationListFromJson(Map<String, dynamic> json) {
   return _StationList.fromJson(json);
@@ -26,8 +26,12 @@ mixin _$StationList {
   SearchRecommendations get recommendations =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this StationList to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StationList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StationListCopyWith<StationList> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$StationListCopyWithImpl<$Res, $Val extends StationList>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StationList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -73,6 +79,8 @@ class _$StationListCopyWithImpl<$Res, $Val extends StationList>
     ) as $Val);
   }
 
+  /// Create a copy of StationList
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SearchRecommendationsCopyWith<$Res> get recommendations {
@@ -84,11 +92,11 @@ class _$StationListCopyWithImpl<$Res, $Val extends StationList>
 }
 
 /// @nodoc
-abstract class _$$_StationListCopyWith<$Res>
+abstract class _$$StationListImplCopyWith<$Res>
     implements $StationListCopyWith<$Res> {
-  factory _$$_StationListCopyWith(
-          _$_StationList value, $Res Function(_$_StationList) then) =
-      __$$_StationListCopyWithImpl<$Res>;
+  factory _$$StationListImplCopyWith(
+          _$StationListImpl value, $Res Function(_$StationListImpl) then) =
+      __$$StationListImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -100,20 +108,22 @@ abstract class _$$_StationListCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_StationListCopyWithImpl<$Res>
-    extends _$StationListCopyWithImpl<$Res, _$_StationList>
-    implements _$$_StationListCopyWith<$Res> {
-  __$$_StationListCopyWithImpl(
-      _$_StationList _value, $Res Function(_$_StationList) _then)
+class __$$StationListImplCopyWithImpl<$Res>
+    extends _$StationListCopyWithImpl<$Res, _$StationListImpl>
+    implements _$$StationListImplCopyWith<$Res> {
+  __$$StationListImplCopyWithImpl(
+      _$StationListImpl _value, $Res Function(_$StationListImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StationList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? stations = null,
     Object? recommendations = null,
   }) {
-    return _then(_$_StationList(
+    return _then(_$StationListImpl(
       stations: null == stations
           ? _value._stations
           : stations // ignore: cast_nullable_to_non_nullable
@@ -128,14 +138,14 @@ class __$$_StationListCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StationList implements _StationList {
-  const _$_StationList(
+class _$StationListImpl implements _StationList {
+  const _$StationListImpl(
       {@JsonKey(name: 'stations') required final List<Station> stations,
       @JsonKey(name: 'recommendations') required this.recommendations})
       : _stations = stations;
 
-  factory _$_StationList.fromJson(Map<String, dynamic> json) =>
-      _$$_StationListFromJson(json);
+  factory _$StationListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StationListImplFromJson(json);
 
   final List<Station> _stations;
   @override
@@ -156,29 +166,31 @@ class _$_StationList implements _StationList {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StationList &&
+            other is _$StationListImpl &&
             const DeepCollectionEquality().equals(other._stations, _stations) &&
             (identical(other.recommendations, recommendations) ||
                 other.recommendations == recommendations));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_stations), recommendations);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StationList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StationListCopyWith<_$_StationList> get copyWith =>
-      __$$_StationListCopyWithImpl<_$_StationList>(this, _$identity);
+  _$$StationListImplCopyWith<_$StationListImpl> get copyWith =>
+      __$$StationListImplCopyWithImpl<_$StationListImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StationListToJson(
+    return _$$StationListImplToJson(
       this,
     );
   }
@@ -186,14 +198,13 @@ class _$_StationList implements _StationList {
 
 abstract class _StationList implements StationList {
   const factory _StationList(
-          {@JsonKey(name: 'stations')
-              required final List<Station> stations,
+          {@JsonKey(name: 'stations') required final List<Station> stations,
           @JsonKey(name: 'recommendations')
-              required final SearchRecommendations recommendations}) =
-      _$_StationList;
+          required final SearchRecommendations recommendations}) =
+      _$StationListImpl;
 
   factory _StationList.fromJson(Map<String, dynamic> json) =
-      _$_StationList.fromJson;
+      _$StationListImpl.fromJson;
 
   @override
   @JsonKey(name: 'stations')
@@ -201,8 +212,11 @@ abstract class _StationList implements StationList {
   @override
   @JsonKey(name: 'recommendations')
   SearchRecommendations get recommendations;
+
+  /// Create a copy of StationList
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_StationListCopyWith<_$_StationList> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StationListImplCopyWith<_$StationListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'on_demand_media.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 OnDemandMedia _$OnDemandMediaFromJson(Map<String, dynamic> json) {
   return _OnDemandMedia.fromJson(json);
@@ -30,8 +30,12 @@ mixin _$OnDemandMedia {
   @JsonKey(name: 'trackGain', fromJson: double.parse, toJson: writeNum)
   double get trackGain => throw _privateConstructorUsedError;
 
+  /// Serializes this OnDemandMedia to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OnDemandMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OnDemandMediaCopyWith<OnDemandMedia> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,14 +47,12 @@ abstract class $OnDemandMediaCopyWith<$Res> {
       _$OnDemandMediaCopyWithImpl<$Res, OnDemandMedia>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'audioSkipUrl')
-          Uri audioSkipUrl,
-      @JsonKey(name: 'audioReceiptUrl')
-          Uri audioReceiptUrl,
+      {@JsonKey(name: 'audioSkipUrl') Uri audioSkipUrl,
+      @JsonKey(name: 'audioReceiptUrl') Uri audioReceiptUrl,
       @JsonKey(name: 'audioUrlMap')
-          Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
+      Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
       @JsonKey(name: 'trackGain', fromJson: double.parse, toJson: writeNum)
-          double trackGain});
+      double trackGain});
 }
 
 /// @nodoc
@@ -63,6 +65,8 @@ class _$OnDemandMediaCopyWithImpl<$Res, $Val extends OnDemandMedia>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OnDemandMedia
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,32 +97,32 @@ class _$OnDemandMediaCopyWithImpl<$Res, $Val extends OnDemandMedia>
 }
 
 /// @nodoc
-abstract class _$$_OnDemandMediaCopyWith<$Res>
+abstract class _$$OnDemandMediaImplCopyWith<$Res>
     implements $OnDemandMediaCopyWith<$Res> {
-  factory _$$_OnDemandMediaCopyWith(
-          _$_OnDemandMedia value, $Res Function(_$_OnDemandMedia) then) =
-      __$$_OnDemandMediaCopyWithImpl<$Res>;
+  factory _$$OnDemandMediaImplCopyWith(
+          _$OnDemandMediaImpl value, $Res Function(_$OnDemandMediaImpl) then) =
+      __$$OnDemandMediaImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'audioSkipUrl')
-          Uri audioSkipUrl,
-      @JsonKey(name: 'audioReceiptUrl')
-          Uri audioReceiptUrl,
+      {@JsonKey(name: 'audioSkipUrl') Uri audioSkipUrl,
+      @JsonKey(name: 'audioReceiptUrl') Uri audioReceiptUrl,
       @JsonKey(name: 'audioUrlMap')
-          Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
+      Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
       @JsonKey(name: 'trackGain', fromJson: double.parse, toJson: writeNum)
-          double trackGain});
+      double trackGain});
 }
 
 /// @nodoc
-class __$$_OnDemandMediaCopyWithImpl<$Res>
-    extends _$OnDemandMediaCopyWithImpl<$Res, _$_OnDemandMedia>
-    implements _$$_OnDemandMediaCopyWith<$Res> {
-  __$$_OnDemandMediaCopyWithImpl(
-      _$_OnDemandMedia _value, $Res Function(_$_OnDemandMedia) _then)
+class __$$OnDemandMediaImplCopyWithImpl<$Res>
+    extends _$OnDemandMediaCopyWithImpl<$Res, _$OnDemandMediaImpl>
+    implements _$$OnDemandMediaImplCopyWith<$Res> {
+  __$$OnDemandMediaImplCopyWithImpl(
+      _$OnDemandMediaImpl _value, $Res Function(_$OnDemandMediaImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OnDemandMedia
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,7 +131,7 @@ class __$$_OnDemandMediaCopyWithImpl<$Res>
     Object? audioUrlMap = null,
     Object? trackGain = null,
   }) {
-    return _then(_$_OnDemandMedia(
+    return _then(_$OnDemandMediaImpl(
       audioSkipUrl: null == audioSkipUrl
           ? _value.audioSkipUrl
           : audioSkipUrl // ignore: cast_nullable_to_non_nullable
@@ -150,20 +154,18 @@ class __$$_OnDemandMediaCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OnDemandMedia implements _OnDemandMedia {
-  const _$_OnDemandMedia(
-      {@JsonKey(name: 'audioSkipUrl')
-          required this.audioSkipUrl,
-      @JsonKey(name: 'audioReceiptUrl')
-          required this.audioReceiptUrl,
+class _$OnDemandMediaImpl implements _OnDemandMedia {
+  const _$OnDemandMediaImpl(
+      {@JsonKey(name: 'audioSkipUrl') required this.audioSkipUrl,
+      @JsonKey(name: 'audioReceiptUrl') required this.audioReceiptUrl,
       @JsonKey(name: 'audioUrlMap')
-          required final Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
+      required final Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
       @JsonKey(name: 'trackGain', fromJson: double.parse, toJson: writeNum)
-          required this.trackGain})
+      required this.trackGain})
       : _audioUrlMap = audioUrlMap;
 
-  factory _$_OnDemandMedia.fromJson(Map<String, dynamic> json) =>
-      _$$_OnDemandMediaFromJson(json);
+  factory _$OnDemandMediaImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OnDemandMediaImplFromJson(json);
 
   @override
   @JsonKey(name: 'audioSkipUrl')
@@ -190,10 +192,10 @@ class _$_OnDemandMedia implements _OnDemandMedia {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnDemandMedia &&
+            other is _$OnDemandMediaImpl &&
             (identical(other.audioSkipUrl, audioSkipUrl) ||
                 other.audioSkipUrl == audioSkipUrl) &&
             (identical(other.audioReceiptUrl, audioReceiptUrl) ||
@@ -204,20 +206,22 @@ class _$_OnDemandMedia implements _OnDemandMedia {
                 other.trackGain == trackGain));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, audioSkipUrl, audioReceiptUrl,
       const DeepCollectionEquality().hash(_audioUrlMap), trackGain);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OnDemandMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnDemandMediaCopyWith<_$_OnDemandMedia> get copyWith =>
-      __$$_OnDemandMediaCopyWithImpl<_$_OnDemandMedia>(this, _$identity);
+  _$$OnDemandMediaImplCopyWith<_$OnDemandMediaImpl> get copyWith =>
+      __$$OnDemandMediaImplCopyWithImpl<_$OnDemandMediaImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OnDemandMediaToJson(
+    return _$$OnDemandMediaImplToJson(
       this,
     );
   }
@@ -225,17 +229,15 @@ class _$_OnDemandMedia implements _OnDemandMedia {
 
 abstract class _OnDemandMedia implements OnDemandMedia {
   const factory _OnDemandMedia(
-      {@JsonKey(name: 'audioSkipUrl')
-          required final Uri audioSkipUrl,
-      @JsonKey(name: 'audioReceiptUrl')
-          required final Uri audioReceiptUrl,
+      {@JsonKey(name: 'audioSkipUrl') required final Uri audioSkipUrl,
+      @JsonKey(name: 'audioReceiptUrl') required final Uri audioReceiptUrl,
       @JsonKey(name: 'audioUrlMap')
-          required final Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
+      required final Map<AudioUrlQuality, AudioUrlData> audioUrlMap,
       @JsonKey(name: 'trackGain', fromJson: double.parse, toJson: writeNum)
-          required final double trackGain}) = _$_OnDemandMedia;
+      required final double trackGain}) = _$OnDemandMediaImpl;
 
   factory _OnDemandMedia.fromJson(Map<String, dynamic> json) =
-      _$_OnDemandMedia.fromJson;
+      _$OnDemandMediaImpl.fromJson;
 
   @override
   @JsonKey(name: 'audioSkipUrl')
@@ -249,8 +251,11 @@ abstract class _OnDemandMedia implements OnDemandMedia {
   @override
   @JsonKey(name: 'trackGain', fromJson: double.parse, toJson: writeNum)
   double get trackGain;
+
+  /// Create a copy of OnDemandMedia
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_OnDemandMediaCopyWith<_$_OnDemandMedia> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OnDemandMediaImplCopyWith<_$OnDemandMediaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

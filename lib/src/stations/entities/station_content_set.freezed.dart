@@ -12,7 +12,7 @@ part of 'station_content_set.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 StationContentSet _$StationContentSetFromJson(Map<String, dynamic> json) {
   return _StationContentSet.fromJson(json);
@@ -26,8 +26,12 @@ mixin _$StationContentSet {
   Map<StationContentUse, List<String>> get contentTable =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this StationContentSet to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StationContentSet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StationContentSetCopyWith<StationContentSet> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -39,10 +43,9 @@ abstract class $StationContentSetCopyWith<$Res> {
       _$StationContentSetCopyWithImpl<$Res, StationContentSet>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'content')
-          Map<String, StationContent> content,
+      {@JsonKey(name: 'content') Map<String, StationContent> content,
       @JsonKey(name: 'contentTable')
-          Map<StationContentUse, List<String>> contentTable});
+      Map<StationContentUse, List<String>> contentTable});
 }
 
 /// @nodoc
@@ -55,6 +58,8 @@ class _$StationContentSetCopyWithImpl<$Res, $Val extends StationContentSet>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StationContentSet
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -75,35 +80,36 @@ class _$StationContentSetCopyWithImpl<$Res, $Val extends StationContentSet>
 }
 
 /// @nodoc
-abstract class _$$_StationContentSetCopyWith<$Res>
+abstract class _$$StationContentSetImplCopyWith<$Res>
     implements $StationContentSetCopyWith<$Res> {
-  factory _$$_StationContentSetCopyWith(_$_StationContentSet value,
-          $Res Function(_$_StationContentSet) then) =
-      __$$_StationContentSetCopyWithImpl<$Res>;
+  factory _$$StationContentSetImplCopyWith(_$StationContentSetImpl value,
+          $Res Function(_$StationContentSetImpl) then) =
+      __$$StationContentSetImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'content')
-          Map<String, StationContent> content,
+      {@JsonKey(name: 'content') Map<String, StationContent> content,
       @JsonKey(name: 'contentTable')
-          Map<StationContentUse, List<String>> contentTable});
+      Map<StationContentUse, List<String>> contentTable});
 }
 
 /// @nodoc
-class __$$_StationContentSetCopyWithImpl<$Res>
-    extends _$StationContentSetCopyWithImpl<$Res, _$_StationContentSet>
-    implements _$$_StationContentSetCopyWith<$Res> {
-  __$$_StationContentSetCopyWithImpl(
-      _$_StationContentSet _value, $Res Function(_$_StationContentSet) _then)
+class __$$StationContentSetImplCopyWithImpl<$Res>
+    extends _$StationContentSetCopyWithImpl<$Res, _$StationContentSetImpl>
+    implements _$$StationContentSetImplCopyWith<$Res> {
+  __$$StationContentSetImplCopyWithImpl(_$StationContentSetImpl _value,
+      $Res Function(_$StationContentSetImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StationContentSet
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? content = null,
     Object? contentTable = null,
   }) {
-    return _then(_$_StationContentSet(
+    return _then(_$StationContentSetImpl(
       content: null == content
           ? _value._content
           : content // ignore: cast_nullable_to_non_nullable
@@ -118,18 +124,18 @@ class __$$_StationContentSetCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StationContentSet extends _StationContentSet {
-  const _$_StationContentSet(
+class _$StationContentSetImpl extends _StationContentSet {
+  const _$StationContentSetImpl(
       {@JsonKey(name: 'content')
-          required final Map<String, StationContent> content,
+      required final Map<String, StationContent> content,
       @JsonKey(name: 'contentTable')
-          required final Map<StationContentUse, List<String>> contentTable})
+      required final Map<StationContentUse, List<String>> contentTable})
       : _content = content,
         _contentTable = contentTable,
         super._();
 
-  factory _$_StationContentSet.fromJson(Map<String, dynamic> json) =>
-      _$$_StationContentSetFromJson(json);
+  factory _$StationContentSetImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StationContentSetImplFromJson(json);
 
   final Map<String, StationContent> _content;
   @override
@@ -155,32 +161,34 @@ class _$_StationContentSet extends _StationContentSet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StationContentSet &&
+            other is _$StationContentSetImpl &&
             const DeepCollectionEquality().equals(other._content, _content) &&
             const DeepCollectionEquality()
                 .equals(other._contentTable, _contentTable));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_content),
       const DeepCollectionEquality().hash(_contentTable));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StationContentSet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StationContentSetCopyWith<_$_StationContentSet> get copyWith =>
-      __$$_StationContentSetCopyWithImpl<_$_StationContentSet>(
+  _$$StationContentSetImplCopyWith<_$StationContentSetImpl> get copyWith =>
+      __$$StationContentSetImplCopyWithImpl<_$StationContentSetImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StationContentSetToJson(
+    return _$$StationContentSetImplToJson(
       this,
     );
   }
@@ -188,15 +196,15 @@ class _$_StationContentSet extends _StationContentSet {
 
 abstract class _StationContentSet extends StationContentSet {
   const factory _StationContentSet(
-      {@JsonKey(name: 'content')
+          {@JsonKey(name: 'content')
           required final Map<String, StationContent> content,
-      @JsonKey(name: 'contentTable')
-          required final Map<StationContentUse, List<String>>
-              contentTable}) = _$_StationContentSet;
+          @JsonKey(name: 'contentTable')
+          required final Map<StationContentUse, List<String>> contentTable}) =
+      _$StationContentSetImpl;
   const _StationContentSet._() : super._();
 
   factory _StationContentSet.fromJson(Map<String, dynamic> json) =
-      _$_StationContentSet.fromJson;
+      _$StationContentSetImpl.fromJson;
 
   @override
   @JsonKey(name: 'content')
@@ -204,8 +212,11 @@ abstract class _StationContentSet extends StationContentSet {
   @override
   @JsonKey(name: 'contentTable')
   Map<StationContentUse, List<String>> get contentTable;
+
+  /// Create a copy of StationContentSet
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_StationContentSetCopyWith<_$_StationContentSet> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StationContentSetImplCopyWith<_$StationContentSetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

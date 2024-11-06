@@ -11,18 +11,21 @@ import 'package:iapetus/src/media/entities/lyric_data.dart';
 part 'details.freezed.dart';
 part 'details.g.dart';
 
-@Freezed(copyWith: false) // https://github.com/rrousselGit/freezed/issues/884
+// Details fields require casting.
+// https://github.com/rrousselGit/freezed/issues/425
+// https://github.com/rrousselGit/freezed/issues/1006
+@freezed
 class MediaDetailsSet with _$MediaDetailsSet implements Annotated {
   const factory MediaDetailsSet.track({
     @JsonKey(name: 'annotations')
-        required Map<String, MediaAnnotation> annotations,
-    @JsonKey(name: 'trackDetails') required TrackDetails details,
+    required Map<String, MediaAnnotation> annotations,
+    @JsonKey(name: 'trackDetails') required MediaDetails details,
   }) = TrackDetailsSet;
 
   const factory MediaDetailsSet.genre({
     @JsonKey(name: 'annotations')
-        required Map<String, MediaAnnotation> annotations,
-    @JsonKey(name: 'genreDetails') required GenreDetails details,
+    required Map<String, MediaAnnotation> annotations,
+    @JsonKey(name: 'genreDetails') required MediaDetails details,
   }) = GenreDetailsSet;
 
   factory MediaDetailsSet.fromJson(Map<String, dynamic> json) =>
@@ -42,8 +45,12 @@ class MediaDetails with _$MediaDetails implements PandoraEntity {
     @JsonKey(name: 'releaseDate') required DateTime releaseDate,
     @JsonKey(name: 'copyright') required String copyrightHtml,
     @JsonKey(name: 'shareableUrlPath') required String shareableUrlPath,
-    @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-        required DateTime modificationTime,
+    @JsonKey(
+      name: 'modificationTime',
+      fromJson: readDateTimeMilliseconds,
+      toJson: writeDateTimeMilliseconds,
+    )
+    required DateTime modificationTime,
     @JsonKey(name: 'similarTracks') required List<String> similarTrackIds,
     @JsonKey(name: 'focusTraits') required List<FocusTrait> focusTraits,
     @JsonKey(name: 'credits') Credits? credits,
@@ -54,8 +61,12 @@ class MediaDetails with _$MediaDetails implements PandoraEntity {
   }) = TrackDetails;
 
   const factory MediaDetails.genre({
-    @JsonKey(name: 'modificationTime', fromJson: readDateTimeMilliseconds, toJson: writeDateTimeMilliseconds)
-        required DateTime modificationTime,
+    @JsonKey(
+      name: 'modificationTime',
+      fromJson: readDateTimeMilliseconds,
+      toJson: writeDateTimeMilliseconds,
+    )
+    required DateTime modificationTime,
     @JsonKey(name: 'sampleArtists') required List<String> sampleArtistIds,
     @JsonKey(name: 'sampleTracks') required List<String> sampleTrackIds,
     @JsonKey(name: 'focusTraits') required List<FocusTrait> focusTraits,

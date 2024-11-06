@@ -12,7 +12,7 @@ part of 'section.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SuperbrowseSection _$SuperbrowseSectionFromJson(Map<String, dynamic> json) {
   return _SuperbrowseSection.fromJson(json);
@@ -30,8 +30,12 @@ mixin _$SuperbrowseSection {
   List<SuperbrowseSubsection>? get subsections =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this SuperbrowseSection to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SuperbrowseSection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SuperbrowseSectionCopyWith<SuperbrowseSection> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -62,6 +66,8 @@ class _$SuperbrowseSectionCopyWithImpl<$Res, $Val extends SuperbrowseSection>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SuperbrowseSection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -90,6 +96,8 @@ class _$SuperbrowseSectionCopyWithImpl<$Res, $Val extends SuperbrowseSection>
     ) as $Val);
   }
 
+  /// Create a copy of SuperbrowseSection
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SuperbrowseItemCopyWith<$Res>? get header {
@@ -102,6 +110,8 @@ class _$SuperbrowseSectionCopyWithImpl<$Res, $Val extends SuperbrowseSection>
     });
   }
 
+  /// Create a copy of SuperbrowseSection
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SuperbrowseItemCopyWith<$Res>? get footer {
@@ -116,11 +126,11 @@ class _$SuperbrowseSectionCopyWithImpl<$Res, $Val extends SuperbrowseSection>
 }
 
 /// @nodoc
-abstract class _$$_SuperbrowseSectionCopyWith<$Res>
+abstract class _$$SuperbrowseSectionImplCopyWith<$Res>
     implements $SuperbrowseSectionCopyWith<$Res> {
-  factory _$$_SuperbrowseSectionCopyWith(_$_SuperbrowseSection value,
-          $Res Function(_$_SuperbrowseSection) then) =
-      __$$_SuperbrowseSectionCopyWithImpl<$Res>;
+  factory _$$SuperbrowseSectionImplCopyWith(_$SuperbrowseSectionImpl value,
+          $Res Function(_$SuperbrowseSectionImpl) then) =
+      __$$SuperbrowseSectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -136,13 +146,15 @@ abstract class _$$_SuperbrowseSectionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SuperbrowseSectionCopyWithImpl<$Res>
-    extends _$SuperbrowseSectionCopyWithImpl<$Res, _$_SuperbrowseSection>
-    implements _$$_SuperbrowseSectionCopyWith<$Res> {
-  __$$_SuperbrowseSectionCopyWithImpl(
-      _$_SuperbrowseSection _value, $Res Function(_$_SuperbrowseSection) _then)
+class __$$SuperbrowseSectionImplCopyWithImpl<$Res>
+    extends _$SuperbrowseSectionCopyWithImpl<$Res, _$SuperbrowseSectionImpl>
+    implements _$$SuperbrowseSectionImplCopyWith<$Res> {
+  __$$SuperbrowseSectionImplCopyWithImpl(_$SuperbrowseSectionImpl _value,
+      $Res Function(_$SuperbrowseSectionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SuperbrowseSection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,7 +163,7 @@ class __$$_SuperbrowseSectionCopyWithImpl<$Res>
     Object? footer = freezed,
     Object? subsections = freezed,
   }) {
-    return _then(_$_SuperbrowseSection(
+    return _then(_$SuperbrowseSectionImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -174,20 +186,17 @@ class __$$_SuperbrowseSectionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SuperbrowseSection implements _SuperbrowseSection {
-  const _$_SuperbrowseSection(
-      {@JsonKey(name: 'id')
-          required this.id,
-      @JsonKey(name: 'title')
-          this.header,
-      @JsonKey(name: 'viewAll')
-          this.footer,
+class _$SuperbrowseSectionImpl implements _SuperbrowseSection {
+  const _$SuperbrowseSectionImpl(
+      {@JsonKey(name: 'id') required this.id,
+      @JsonKey(name: 'title') this.header,
+      @JsonKey(name: 'viewAll') this.footer,
       @JsonKey(name: 'subsections')
-          final List<SuperbrowseSubsection>? subsections})
+      final List<SuperbrowseSubsection>? subsections})
       : _subsections = subsections;
 
-  factory _$_SuperbrowseSection.fromJson(Map<String, dynamic> json) =>
-      _$$_SuperbrowseSectionFromJson(json);
+  factory _$SuperbrowseSectionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SuperbrowseSectionImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -215,10 +224,10 @@ class _$_SuperbrowseSection implements _SuperbrowseSection {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SuperbrowseSection &&
+            other is _$SuperbrowseSectionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.header, header) || other.header == header) &&
             (identical(other.footer, footer) || other.footer == footer) &&
@@ -226,21 +235,23 @@ class _$_SuperbrowseSection implements _SuperbrowseSection {
                 .equals(other._subsections, _subsections));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, header, footer,
       const DeepCollectionEquality().hash(_subsections));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SuperbrowseSection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuperbrowseSectionCopyWith<_$_SuperbrowseSection> get copyWith =>
-      __$$_SuperbrowseSectionCopyWithImpl<_$_SuperbrowseSection>(
+  _$$SuperbrowseSectionImplCopyWith<_$SuperbrowseSectionImpl> get copyWith =>
+      __$$SuperbrowseSectionImplCopyWithImpl<_$SuperbrowseSectionImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SuperbrowseSectionToJson(
+    return _$$SuperbrowseSectionImplToJson(
       this,
     );
   }
@@ -248,18 +259,15 @@ class _$_SuperbrowseSection implements _SuperbrowseSection {
 
 abstract class _SuperbrowseSection implements SuperbrowseSection {
   const factory _SuperbrowseSection(
-          {@JsonKey(name: 'id')
-              required final String id,
-          @JsonKey(name: 'title')
-              final SuperbrowseItem? header,
-          @JsonKey(name: 'viewAll')
-              final SuperbrowseItem? footer,
+          {@JsonKey(name: 'id') required final String id,
+          @JsonKey(name: 'title') final SuperbrowseItem? header,
+          @JsonKey(name: 'viewAll') final SuperbrowseItem? footer,
           @JsonKey(name: 'subsections')
-              final List<SuperbrowseSubsection>? subsections}) =
-      _$_SuperbrowseSection;
+          final List<SuperbrowseSubsection>? subsections}) =
+      _$SuperbrowseSectionImpl;
 
   factory _SuperbrowseSection.fromJson(Map<String, dynamic> json) =
-      _$_SuperbrowseSection.fromJson;
+      _$SuperbrowseSectionImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -273,8 +281,11 @@ abstract class _SuperbrowseSection implements SuperbrowseSection {
   @override
   @JsonKey(name: 'subsections')
   List<SuperbrowseSubsection>? get subsections;
+
+  /// Create a copy of SuperbrowseSection
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SuperbrowseSectionCopyWith<_$_SuperbrowseSection> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuperbrowseSectionImplCopyWith<_$SuperbrowseSectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

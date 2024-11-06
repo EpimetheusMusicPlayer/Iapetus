@@ -8,13 +8,13 @@ part of 'song_recommendation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SongRecommendation _$$_SongRecommendationFromJson(
+_$SongRecommendationImpl _$$SongRecommendationImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$_SongRecommendation',
+      r'_$SongRecommendationImpl',
       json,
       ($checkedConvert) {
-        final val = _$_SongRecommendation(
+        final val = _$SongRecommendationImpl(
           pandoraId: $checkedConvert('musicId', (v) => v as String),
           autoplaySourceId:
               $checkedConvert('autoplaySourceId', (v) => v as String?),
@@ -30,8 +30,8 @@ _$_SongRecommendation _$$_SongRecommendationFromJson(
       fieldKeyMap: const {'pandoraId': 'musicId'},
     );
 
-Map<String, dynamic> _$$_SongRecommendationToJson(
-        _$_SongRecommendation instance) =>
+Map<String, dynamic> _$$SongRecommendationImplToJson(
+        _$SongRecommendationImpl instance) =>
     <String, dynamic>{
       'musicId': instance.pandoraId,
       'autoplaySourceId': instance.autoplaySourceId,
