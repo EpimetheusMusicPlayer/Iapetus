@@ -1,5 +1,5 @@
 /// The main library for the iapetus package.
-library iapetus;
+library;
 
 export 'package:freezed_annotation/freezed_annotation.dart'
     show CheckedFromJsonException;

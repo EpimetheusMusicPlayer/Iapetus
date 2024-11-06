@@ -26,7 +26,7 @@ dependencies:
 
 dev_dependencies:
   ## Language
-  lint: ^2.0.1
+  lints: ^5.0.0
 
   ## Building
   build_runner: ^2.3.3

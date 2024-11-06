@@ -2,7 +2,7 @@
 ///
 /// These features are made public to aid in low-level API use. Regular use of
 /// the high-level Iapetus APIs should not require these features.
-library iapetus_data;
+library;
 
 export 'src/autoplay/autoplay_data.dart';
 export 'src/collection/collection_data.dart';
