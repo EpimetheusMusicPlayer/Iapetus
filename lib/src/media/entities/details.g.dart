@@ -30,6 +30,14 @@ _$TrackDetailsSetImpl _$$TrackDetailsSetImplFromJson(
       fieldKeyMap: const {'details': 'trackDetails', r'$type': 'runtimeType'},
     );
 
+Map<String, dynamic> _$$TrackDetailsSetImplToJson(
+        _$TrackDetailsSetImpl instance) =>
+    <String, dynamic>{
+      'annotations': instance.annotations,
+      'trackDetails': instance.details,
+      'runtimeType': instance.$type,
+    };
+
 _$GenreDetailsSetImpl _$$GenreDetailsSetImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
@@ -51,6 +59,14 @@ _$GenreDetailsSetImpl _$$GenreDetailsSetImplFromJson(
       },
       fieldKeyMap: const {'details': 'genreDetails', r'$type': 'runtimeType'},
     );
+
+Map<String, dynamic> _$$GenreDetailsSetImplToJson(
+        _$GenreDetailsSetImpl instance) =>
+    <String, dynamic>{
+      'annotations': instance.annotations,
+      'genreDetails': instance.details,
+      'runtimeType': instance.$type,
+    };
 
 _$TrackDetailsImpl _$$TrackDetailsImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(

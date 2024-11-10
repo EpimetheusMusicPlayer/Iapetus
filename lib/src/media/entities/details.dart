@@ -28,18 +28,16 @@ sealed class MediaDetailsSet with _$MediaDetailsSet implements Annotated {
     @JsonKey(name: 'genreDetails') required MediaDetails details,
   }) = GenreDetailsSet;
 
-  factory MediaDetailsSet.fromJson(Map<String, dynamic> json) {
-    return switch (json) {
-      {'annotations': _, 'trackDetails': _} => TrackDetailsSet.fromJson(json),
-      {'annotations': _, 'genreDetails': _} => GenreDetailsSet.fromJson(json),
-      _ => throw CheckedFromJsonException(
-          json,
-          'details',
-          'Map<String, dynamic>',
-          'The detail type is not recognised!',
-        ),
-    };
-  }
+  factory MediaDetailsSet.fromJson(Map<String, dynamic> json) => switch (json) {
+        {'annotations': _, 'trackDetails': _} => TrackDetailsSet.fromJson(json),
+        {'annotations': _, 'genreDetails': _} => GenreDetailsSet.fromJson(json),
+        _ => throw CheckedFromJsonException(
+            json,
+            'details',
+            'Map<String, dynamic>',
+            'The detail type is not recognised!',
+          ),
+      };
 }
 
 @Freezed(unionKey: 'type')

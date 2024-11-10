@@ -97,6 +97,9 @@ mixin _$MediaDetailsSet {
   }) =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this MediaDetailsSet to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   /// Create a copy of MediaDetailsSet
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -204,7 +207,7 @@ class __$$TrackDetailsSetImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable(createToJson: false)
+@JsonSerializable()
 class _$TrackDetailsSetImpl implements TrackDetailsSet {
   const _$TrackDetailsSetImpl(
       {@JsonKey(name: 'annotations')
@@ -347,6 +350,13 @@ class _$TrackDetailsSetImpl implements TrackDetailsSet {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TrackDetailsSetImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class TrackDetailsSet implements MediaDetailsSet {
@@ -420,7 +430,7 @@ class __$$GenreDetailsSetImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable(createToJson: false)
+@JsonSerializable()
 class _$GenreDetailsSetImpl implements GenreDetailsSet {
   const _$GenreDetailsSetImpl(
       {@JsonKey(name: 'annotations')
@@ -562,6 +572,13 @@ class _$GenreDetailsSetImpl implements GenreDetailsSet {
       return genre(this);
     }
     return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GenreDetailsSetImplToJson(
+      this,
+    );
   }
 }
 
