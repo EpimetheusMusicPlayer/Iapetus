@@ -14,8 +14,8 @@ part 'details.g.dart';
 // Details fields require casting.
 // https://github.com/rrousselGit/freezed/issues/425
 // https://github.com/rrousselGit/freezed/issues/1006
-@freezed
-class MediaDetailsSet with _$MediaDetailsSet implements Annotated {
+@Freezed(fromJson: true)
+sealed class MediaDetailsSet with _$MediaDetailsSet implements Annotated {
   const factory MediaDetailsSet.track({
     @JsonKey(name: 'annotations')
     required Map<String, MediaAnnotation> annotations,
@@ -28,12 +28,25 @@ class MediaDetailsSet with _$MediaDetailsSet implements Annotated {
     @JsonKey(name: 'genreDetails') required MediaDetails details,
   }) = GenreDetailsSet;
 
-  factory MediaDetailsSet.fromJson(Map<String, dynamic> json) =>
-      _$MediaDetailsSetFromJson(json);
+  factory MediaDetailsSet.fromJson(Map<String, dynamic> json) {
+    return switch (json) {
+      {'annotations': _, 'trackDetails': _} => TrackDetailsSet.fromJson(json),
+      {'annotations': _, 'genreDetails': _} => GenreDetailsSet.fromJson(json),
+      _ => throw CheckedFromJsonException(
+          json,
+          'details',
+          'Map<String, dynamic>',
+          'The detail type is not recognised!',
+        ),
+    };
+  }
 }
 
-@freezed
-class MediaDetails with _$MediaDetails implements PandoraEntity {
+@Freezed(unionKey: 'type')
+sealed class MediaDetails with _$MediaDetails implements PandoraEntity {
+  const MediaDetails._();
+
+  @FreezedUnionValue('TR')
   @Assert(
     // language=Dart
     '(lyricData == null && cleanLyricData == null) || (lyricData != null && cleanLyricData != null)',
@@ -56,10 +69,10 @@ class MediaDetails with _$MediaDetails implements PandoraEntity {
     @JsonKey(name: 'credits') Credits? credits,
     @JsonKey(name: 'featured') required bool featured,
     @JsonKey(name: 'pandoraId') required String pandoraId,
-    @JsonKey(name: 'type') required PandoraType pandoraType,
     @JsonKey(name: 'scope') required String scope,
   }) = TrackDetails;
 
+  @FreezedUnionValue('GE')
   const factory MediaDetails.genre({
     @JsonKey(
       name: 'modificationTime',
@@ -73,9 +86,14 @@ class MediaDetails with _$MediaDetails implements PandoraEntity {
     @JsonKey(name: 'isRedirect') required bool isRedirect,
     @JsonKey(name: 'curatorId') required String curatorId,
     @JsonKey(name: 'pandoraId') required String pandoraId,
-    @JsonKey(name: 'type') required PandoraType pandoraType,
     @JsonKey(name: 'scope') required String scope,
   }) = GenreDetails;
+
+  @override
+  PandoraType get pandoraType => switch (this) {
+        TrackDetails() => PandoraType.song,
+        GenreDetails() => PandoraType.genre,
+      };
 
   factory MediaDetails.fromJson(Map<String, dynamic> json) =>
       _$MediaDetailsFromJson(json);

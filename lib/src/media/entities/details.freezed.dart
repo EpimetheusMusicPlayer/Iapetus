@@ -97,9 +97,6 @@ mixin _$MediaDetailsSet {
   }) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this MediaDetailsSet to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   /// Create a copy of MediaDetailsSet
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -207,7 +204,7 @@ class __$$TrackDetailsSetImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class _$TrackDetailsSetImpl implements TrackDetailsSet {
   const _$TrackDetailsSetImpl(
       {@JsonKey(name: 'annotations')
@@ -350,13 +347,6 @@ class _$TrackDetailsSetImpl implements TrackDetailsSet {
     }
     return orElse();
   }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TrackDetailsSetImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class TrackDetailsSet implements MediaDetailsSet {
@@ -430,7 +420,7 @@ class __$$GenreDetailsSetImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class _$GenreDetailsSetImpl implements GenreDetailsSet {
   const _$GenreDetailsSetImpl(
       {@JsonKey(name: 'annotations')
@@ -573,13 +563,6 @@ class _$GenreDetailsSetImpl implements GenreDetailsSet {
     }
     return orElse();
   }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GenreDetailsSetImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class GenreDetailsSet implements MediaDetailsSet {
@@ -608,15 +591,15 @@ abstract class GenreDetailsSet implements MediaDetailsSet {
 }
 
 MediaDetails _$MediaDetailsFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'track':
+  switch (json['type']) {
+    case 'TR':
       return TrackDetails.fromJson(json);
-    case 'genre':
+    case 'GE':
       return GenreDetails.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'MediaDetails',
-          'Invalid union type "${json['runtimeType']}"!');
+      throw CheckedFromJsonException(json, 'type', 'MediaDetails',
+          'Invalid union type "${json['type']}"!');
   }
 }
 
@@ -631,8 +614,6 @@ mixin _$MediaDetails {
   List<FocusTrait> get focusTraits => throw _privateConstructorUsedError;
   @JsonKey(name: 'pandoraId')
   String get pandoraId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'type')
-  PandoraType get pandoraType => throw _privateConstructorUsedError;
   @JsonKey(name: 'scope')
   String get scope => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -654,7 +635,6 @@ mixin _$MediaDetails {
             @JsonKey(name: 'credits') Credits? credits,
             @JsonKey(name: 'featured') bool featured,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)
         track,
     required TResult Function(
@@ -669,7 +649,6 @@ mixin _$MediaDetails {
             @JsonKey(name: 'isRedirect') bool isRedirect,
             @JsonKey(name: 'curatorId') String curatorId,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)
         genre,
   }) =>
@@ -693,7 +672,6 @@ mixin _$MediaDetails {
             @JsonKey(name: 'credits') Credits? credits,
             @JsonKey(name: 'featured') bool featured,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         track,
     TResult? Function(
@@ -708,7 +686,6 @@ mixin _$MediaDetails {
             @JsonKey(name: 'isRedirect') bool isRedirect,
             @JsonKey(name: 'curatorId') String curatorId,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         genre,
   }) =>
@@ -732,7 +709,6 @@ mixin _$MediaDetails {
             @JsonKey(name: 'credits') Credits? credits,
             @JsonKey(name: 'featured') bool featured,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         track,
     TResult Function(
@@ -747,7 +723,6 @@ mixin _$MediaDetails {
             @JsonKey(name: 'isRedirect') bool isRedirect,
             @JsonKey(name: 'curatorId') String curatorId,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         genre,
     required TResult orElse(),
@@ -797,7 +772,6 @@ abstract class $MediaDetailsCopyWith<$Res> {
       DateTime modificationTime,
       @JsonKey(name: 'focusTraits') List<FocusTrait> focusTraits,
       @JsonKey(name: 'pandoraId') String pandoraId,
-      @JsonKey(name: 'type') PandoraType pandoraType,
       @JsonKey(name: 'scope') String scope});
 }
 
@@ -819,7 +793,6 @@ class _$MediaDetailsCopyWithImpl<$Res, $Val extends MediaDetails>
     Object? modificationTime = null,
     Object? focusTraits = null,
     Object? pandoraId = null,
-    Object? pandoraType = null,
     Object? scope = null,
   }) {
     return _then(_value.copyWith(
@@ -835,10 +808,6 @@ class _$MediaDetailsCopyWithImpl<$Res, $Val extends MediaDetails>
           ? _value.pandoraId
           : pandoraId // ignore: cast_nullable_to_non_nullable
               as String,
-      pandoraType: null == pandoraType
-          ? _value.pandoraType
-          : pandoraType // ignore: cast_nullable_to_non_nullable
-              as PandoraType,
       scope: null == scope
           ? _value.scope
           : scope // ignore: cast_nullable_to_non_nullable
@@ -872,7 +841,6 @@ abstract class _$$TrackDetailsImplCopyWith<$Res>
       @JsonKey(name: 'credits') Credits? credits,
       @JsonKey(name: 'featured') bool featured,
       @JsonKey(name: 'pandoraId') String pandoraId,
-      @JsonKey(name: 'type') PandoraType pandoraType,
       @JsonKey(name: 'scope') String scope});
 
   $MediaLyricDataCopyWith<$Res>? get lyricData;
@@ -905,7 +873,6 @@ class __$$TrackDetailsImplCopyWithImpl<$Res>
     Object? credits = freezed,
     Object? featured = null,
     Object? pandoraId = null,
-    Object? pandoraType = null,
     Object? scope = null,
   }) {
     return _then(_$TrackDetailsImpl(
@@ -957,10 +924,6 @@ class __$$TrackDetailsImplCopyWithImpl<$Res>
           ? _value.pandoraId
           : pandoraId // ignore: cast_nullable_to_non_nullable
               as String,
-      pandoraType: null == pandoraType
-          ? _value.pandoraType
-          : pandoraType // ignore: cast_nullable_to_non_nullable
-              as PandoraType,
       scope: null == scope
           ? _value.scope
           : scope // ignore: cast_nullable_to_non_nullable
@@ -1013,7 +976,7 @@ class __$$TrackDetailsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TrackDetailsImpl implements TrackDetails {
+class _$TrackDetailsImpl extends TrackDetails {
   const _$TrackDetailsImpl(
       {@JsonKey(name: 'trackTags') required final List<String> trackTags,
       @JsonKey(name: 'lyricData') this.lyricData,
@@ -1032,7 +995,6 @@ class _$TrackDetailsImpl implements TrackDetails {
       @JsonKey(name: 'credits') this.credits,
       @JsonKey(name: 'featured') required this.featured,
       @JsonKey(name: 'pandoraId') required this.pandoraId,
-      @JsonKey(name: 'type') required this.pandoraType,
       @JsonKey(name: 'scope') required this.scope,
       final String? $type})
       : assert((lyricData == null && cleanLyricData == null) ||
@@ -1040,7 +1002,8 @@ class _$TrackDetailsImpl implements TrackDetails {
         _trackTags = trackTags,
         _similarTrackIds = similarTrackIds,
         _focusTraits = focusTraits,
-        $type = $type ?? 'track';
+        $type = $type ?? 'TR',
+        super._();
 
   factory _$TrackDetailsImpl.fromJson(Map<String, dynamic> json) =>
       _$$TrackDetailsImplFromJson(json);
@@ -1103,18 +1066,15 @@ class _$TrackDetailsImpl implements TrackDetails {
   @JsonKey(name: 'pandoraId')
   final String pandoraId;
   @override
-  @JsonKey(name: 'type')
-  final PandoraType pandoraType;
-  @override
   @JsonKey(name: 'scope')
   final String scope;
 
-  @JsonKey(name: 'runtimeType')
+  @JsonKey(name: 'type')
   final String $type;
 
   @override
   String toString() {
-    return 'MediaDetails.track(trackTags: $trackTags, lyricData: $lyricData, cleanLyricData: $cleanLyricData, releaseDate: $releaseDate, copyrightHtml: $copyrightHtml, shareableUrlPath: $shareableUrlPath, modificationTime: $modificationTime, similarTrackIds: $similarTrackIds, focusTraits: $focusTraits, credits: $credits, featured: $featured, pandoraId: $pandoraId, pandoraType: $pandoraType, scope: $scope)';
+    return 'MediaDetails.track(trackTags: $trackTags, lyricData: $lyricData, cleanLyricData: $cleanLyricData, releaseDate: $releaseDate, copyrightHtml: $copyrightHtml, shareableUrlPath: $shareableUrlPath, modificationTime: $modificationTime, similarTrackIds: $similarTrackIds, focusTraits: $focusTraits, credits: $credits, featured: $featured, pandoraId: $pandoraId, scope: $scope)';
   }
 
   @override
@@ -1145,8 +1105,6 @@ class _$TrackDetailsImpl implements TrackDetails {
                 other.featured == featured) &&
             (identical(other.pandoraId, pandoraId) ||
                 other.pandoraId == pandoraId) &&
-            (identical(other.pandoraType, pandoraType) ||
-                other.pandoraType == pandoraType) &&
             (identical(other.scope, scope) || other.scope == scope));
   }
 
@@ -1166,7 +1124,6 @@ class _$TrackDetailsImpl implements TrackDetails {
       credits,
       featured,
       pandoraId,
-      pandoraType,
       scope);
 
   /// Create a copy of MediaDetails
@@ -1197,7 +1154,6 @@ class _$TrackDetailsImpl implements TrackDetails {
             @JsonKey(name: 'credits') Credits? credits,
             @JsonKey(name: 'featured') bool featured,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)
         track,
     required TResult Function(
@@ -1212,7 +1168,6 @@ class _$TrackDetailsImpl implements TrackDetails {
             @JsonKey(name: 'isRedirect') bool isRedirect,
             @JsonKey(name: 'curatorId') String curatorId,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)
         genre,
   }) {
@@ -1229,7 +1184,6 @@ class _$TrackDetailsImpl implements TrackDetails {
         credits,
         featured,
         pandoraId,
-        pandoraType,
         scope);
   }
 
@@ -1253,7 +1207,6 @@ class _$TrackDetailsImpl implements TrackDetails {
             @JsonKey(name: 'credits') Credits? credits,
             @JsonKey(name: 'featured') bool featured,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         track,
     TResult? Function(
@@ -1268,7 +1221,6 @@ class _$TrackDetailsImpl implements TrackDetails {
             @JsonKey(name: 'isRedirect') bool isRedirect,
             @JsonKey(name: 'curatorId') String curatorId,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         genre,
   }) {
@@ -1285,7 +1237,6 @@ class _$TrackDetailsImpl implements TrackDetails {
         credits,
         featured,
         pandoraId,
-        pandoraType,
         scope);
   }
 
@@ -1309,7 +1260,6 @@ class _$TrackDetailsImpl implements TrackDetails {
             @JsonKey(name: 'credits') Credits? credits,
             @JsonKey(name: 'featured') bool featured,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         track,
     TResult Function(
@@ -1324,7 +1274,6 @@ class _$TrackDetailsImpl implements TrackDetails {
             @JsonKey(name: 'isRedirect') bool isRedirect,
             @JsonKey(name: 'curatorId') String curatorId,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         genre,
     required TResult orElse(),
@@ -1343,7 +1292,6 @@ class _$TrackDetailsImpl implements TrackDetails {
           credits,
           featured,
           pandoraId,
-          pandoraType,
           scope);
     }
     return orElse();
@@ -1388,7 +1336,7 @@ class _$TrackDetailsImpl implements TrackDetails {
   }
 }
 
-abstract class TrackDetails implements MediaDetails {
+abstract class TrackDetails extends MediaDetails {
   const factory TrackDetails(
       {@JsonKey(name: 'trackTags') required final List<String> trackTags,
       @JsonKey(name: 'lyricData') final MediaLyricData? lyricData,
@@ -1407,9 +1355,9 @@ abstract class TrackDetails implements MediaDetails {
       @JsonKey(name: 'credits') final Credits? credits,
       @JsonKey(name: 'featured') required final bool featured,
       @JsonKey(name: 'pandoraId') required final String pandoraId,
-      @JsonKey(name: 'type') required final PandoraType pandoraType,
       @JsonKey(name: 'scope')
       required final String scope}) = _$TrackDetailsImpl;
+  const TrackDetails._() : super._();
 
   factory TrackDetails.fromJson(Map<String, dynamic> json) =
       _$TrackDetailsImpl.fromJson;
@@ -1445,9 +1393,6 @@ abstract class TrackDetails implements MediaDetails {
   @JsonKey(name: 'pandoraId')
   String get pandoraId;
   @override
-  @JsonKey(name: 'type')
-  PandoraType get pandoraType;
-  @override
   @JsonKey(name: 'scope')
   String get scope;
 
@@ -1479,7 +1424,6 @@ abstract class _$$GenreDetailsImplCopyWith<$Res>
       @JsonKey(name: 'isRedirect') bool isRedirect,
       @JsonKey(name: 'curatorId') String curatorId,
       @JsonKey(name: 'pandoraId') String pandoraId,
-      @JsonKey(name: 'type') PandoraType pandoraType,
       @JsonKey(name: 'scope') String scope});
 }
 
@@ -1503,7 +1447,6 @@ class __$$GenreDetailsImplCopyWithImpl<$Res>
     Object? isRedirect = null,
     Object? curatorId = null,
     Object? pandoraId = null,
-    Object? pandoraType = null,
     Object? scope = null,
   }) {
     return _then(_$GenreDetailsImpl(
@@ -1535,10 +1478,6 @@ class __$$GenreDetailsImplCopyWithImpl<$Res>
           ? _value.pandoraId
           : pandoraId // ignore: cast_nullable_to_non_nullable
               as String,
-      pandoraType: null == pandoraType
-          ? _value.pandoraType
-          : pandoraType // ignore: cast_nullable_to_non_nullable
-              as PandoraType,
       scope: null == scope
           ? _value.scope
           : scope // ignore: cast_nullable_to_non_nullable
@@ -1549,7 +1488,7 @@ class __$$GenreDetailsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GenreDetailsImpl implements GenreDetails {
+class _$GenreDetailsImpl extends GenreDetails {
   const _$GenreDetailsImpl(
       {@JsonKey(
           name: 'modificationTime',
@@ -1563,13 +1502,13 @@ class _$GenreDetailsImpl implements GenreDetails {
       @JsonKey(name: 'isRedirect') required this.isRedirect,
       @JsonKey(name: 'curatorId') required this.curatorId,
       @JsonKey(name: 'pandoraId') required this.pandoraId,
-      @JsonKey(name: 'type') required this.pandoraType,
       @JsonKey(name: 'scope') required this.scope,
       final String? $type})
       : _sampleArtistIds = sampleArtistIds,
         _sampleTrackIds = sampleTrackIds,
         _focusTraits = focusTraits,
-        $type = $type ?? 'genre';
+        $type = $type ?? 'GE',
+        super._();
 
   factory _$GenreDetailsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GenreDetailsImplFromJson(json);
@@ -1617,18 +1556,15 @@ class _$GenreDetailsImpl implements GenreDetails {
   @JsonKey(name: 'pandoraId')
   final String pandoraId;
   @override
-  @JsonKey(name: 'type')
-  final PandoraType pandoraType;
-  @override
   @JsonKey(name: 'scope')
   final String scope;
 
-  @JsonKey(name: 'runtimeType')
+  @JsonKey(name: 'type')
   final String $type;
 
   @override
   String toString() {
-    return 'MediaDetails.genre(modificationTime: $modificationTime, sampleArtistIds: $sampleArtistIds, sampleTrackIds: $sampleTrackIds, focusTraits: $focusTraits, isRedirect: $isRedirect, curatorId: $curatorId, pandoraId: $pandoraId, pandoraType: $pandoraType, scope: $scope)';
+    return 'MediaDetails.genre(modificationTime: $modificationTime, sampleArtistIds: $sampleArtistIds, sampleTrackIds: $sampleTrackIds, focusTraits: $focusTraits, isRedirect: $isRedirect, curatorId: $curatorId, pandoraId: $pandoraId, scope: $scope)';
   }
 
   @override
@@ -1650,8 +1586,6 @@ class _$GenreDetailsImpl implements GenreDetails {
                 other.curatorId == curatorId) &&
             (identical(other.pandoraId, pandoraId) ||
                 other.pandoraId == pandoraId) &&
-            (identical(other.pandoraType, pandoraType) ||
-                other.pandoraType == pandoraType) &&
             (identical(other.scope, scope) || other.scope == scope));
   }
 
@@ -1666,7 +1600,6 @@ class _$GenreDetailsImpl implements GenreDetails {
       isRedirect,
       curatorId,
       pandoraId,
-      pandoraType,
       scope);
 
   /// Create a copy of MediaDetails
@@ -1697,7 +1630,6 @@ class _$GenreDetailsImpl implements GenreDetails {
             @JsonKey(name: 'credits') Credits? credits,
             @JsonKey(name: 'featured') bool featured,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)
         track,
     required TResult Function(
@@ -1712,12 +1644,11 @@ class _$GenreDetailsImpl implements GenreDetails {
             @JsonKey(name: 'isRedirect') bool isRedirect,
             @JsonKey(name: 'curatorId') String curatorId,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)
         genre,
   }) {
     return genre(modificationTime, sampleArtistIds, sampleTrackIds, focusTraits,
-        isRedirect, curatorId, pandoraId, pandoraType, scope);
+        isRedirect, curatorId, pandoraId, scope);
   }
 
   @override
@@ -1740,7 +1671,6 @@ class _$GenreDetailsImpl implements GenreDetails {
             @JsonKey(name: 'credits') Credits? credits,
             @JsonKey(name: 'featured') bool featured,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         track,
     TResult? Function(
@@ -1755,12 +1685,11 @@ class _$GenreDetailsImpl implements GenreDetails {
             @JsonKey(name: 'isRedirect') bool isRedirect,
             @JsonKey(name: 'curatorId') String curatorId,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         genre,
   }) {
     return genre?.call(modificationTime, sampleArtistIds, sampleTrackIds,
-        focusTraits, isRedirect, curatorId, pandoraId, pandoraType, scope);
+        focusTraits, isRedirect, curatorId, pandoraId, scope);
   }
 
   @override
@@ -1783,7 +1712,6 @@ class _$GenreDetailsImpl implements GenreDetails {
             @JsonKey(name: 'credits') Credits? credits,
             @JsonKey(name: 'featured') bool featured,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         track,
     TResult Function(
@@ -1798,14 +1726,13 @@ class _$GenreDetailsImpl implements GenreDetails {
             @JsonKey(name: 'isRedirect') bool isRedirect,
             @JsonKey(name: 'curatorId') String curatorId,
             @JsonKey(name: 'pandoraId') String pandoraId,
-            @JsonKey(name: 'type') PandoraType pandoraType,
             @JsonKey(name: 'scope') String scope)?
         genre,
     required TResult orElse(),
   }) {
     if (genre != null) {
       return genre(modificationTime, sampleArtistIds, sampleTrackIds,
-          focusTraits, isRedirect, curatorId, pandoraId, pandoraType, scope);
+          focusTraits, isRedirect, curatorId, pandoraId, scope);
     }
     return orElse();
   }
@@ -1849,7 +1776,7 @@ class _$GenreDetailsImpl implements GenreDetails {
   }
 }
 
-abstract class GenreDetails implements MediaDetails {
+abstract class GenreDetails extends MediaDetails {
   const factory GenreDetails(
       {@JsonKey(
           name: 'modificationTime',
@@ -1863,9 +1790,9 @@ abstract class GenreDetails implements MediaDetails {
       @JsonKey(name: 'isRedirect') required final bool isRedirect,
       @JsonKey(name: 'curatorId') required final String curatorId,
       @JsonKey(name: 'pandoraId') required final String pandoraId,
-      @JsonKey(name: 'type') required final PandoraType pandoraType,
       @JsonKey(name: 'scope')
       required final String scope}) = _$GenreDetailsImpl;
+  const GenreDetails._() : super._();
 
   factory GenreDetails.fromJson(Map<String, dynamic> json) =
       _$GenreDetailsImpl.fromJson;
@@ -1890,9 +1817,6 @@ abstract class GenreDetails implements MediaDetails {
   @override
   @JsonKey(name: 'pandoraId')
   String get pandoraId;
-  @override
-  @JsonKey(name: 'type')
-  PandoraType get pandoraType;
   @override
   @JsonKey(name: 'scope')
   String get scope;

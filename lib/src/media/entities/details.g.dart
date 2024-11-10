@@ -30,14 +30,6 @@ _$TrackDetailsSetImpl _$$TrackDetailsSetImplFromJson(
       fieldKeyMap: const {'details': 'trackDetails', r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$TrackDetailsSetImplToJson(
-        _$TrackDetailsSetImpl instance) =>
-    <String, dynamic>{
-      'annotations': instance.annotations,
-      'trackDetails': instance.details,
-      'runtimeType': instance.$type,
-    };
-
 _$GenreDetailsSetImpl _$$GenreDetailsSetImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
@@ -59,14 +51,6 @@ _$GenreDetailsSetImpl _$$GenreDetailsSetImplFromJson(
       },
       fieldKeyMap: const {'details': 'genreDetails', r'$type': 'runtimeType'},
     );
-
-Map<String, dynamic> _$$GenreDetailsSetImplToJson(
-        _$GenreDetailsSetImpl instance) =>
-    <String, dynamic>{
-      'annotations': instance.annotations,
-      'genreDetails': instance.details,
-      'runtimeType': instance.$type,
-    };
 
 _$TrackDetailsImpl _$$TrackDetailsImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
@@ -107,18 +91,15 @@ _$TrackDetailsImpl _$$TrackDetailsImplFromJson(Map<String, dynamic> json) =>
                   : Credits.fromJson(v as Map<String, dynamic>)),
           featured: $checkedConvert('featured', (v) => v as bool),
           pandoraId: $checkedConvert('pandoraId', (v) => v as String),
-          pandoraType: $checkedConvert(
-              'type', (v) => $enumDecode(_$PandoraTypeEnumMap, v)),
           scope: $checkedConvert('scope', (v) => v as String),
-          $type: $checkedConvert('runtimeType', (v) => v as String?),
+          $type: $checkedConvert('type', (v) => v as String?),
         );
         return val;
       },
       fieldKeyMap: const {
         'copyrightHtml': 'copyright',
         'similarTrackIds': 'similarTracks',
-        'pandoraType': 'type',
-        r'$type': 'runtimeType'
+        r'$type': 'type'
       },
     );
 
@@ -136,51 +117,9 @@ Map<String, dynamic> _$$TrackDetailsImplToJson(_$TrackDetailsImpl instance) =>
       'credits': instance.credits,
       'featured': instance.featured,
       'pandoraId': instance.pandoraId,
-      'type': _$PandoraTypeEnumMap[instance.pandoraType]!,
       'scope': instance.scope,
-      'runtimeType': instance.$type,
+      'type': instance.$type,
     };
-
-const _$PandoraTypeEnumMap = {
-  PandoraType.album: 'AL',
-  PandoraType.artist: 'AR',
-  PandoraType.artistAllSongs: 'AT',
-  PandoraType.artistTopSongs: 'AP',
-  PandoraType.autoplay: 'AU',
-  PandoraType.browseDirectory: 'BR',
-  PandoraType.collectedAlbumTracks: 'CA',
-  PandoraType.collectedTracks: 'CT',
-  PandoraType.composer: 'CO',
-  PandoraType.downloadedTracks: 'DT',
-  PandoraType.genre: 'GE',
-  PandoraType.playlist: 'PL',
-  PandoraType.podcast: 'PC',
-  PandoraType.podcastAutoplay: 'PA',
-  PandoraType.episode: 'PE',
-  PandoraType.song: 'TR',
-  PandoraType.station: 'ST',
-  PandoraType.stationSampleTracks: 'SS',
-  PandoraType.stationThumbUp: 'TU',
-  PandoraType.userStation: 'ST',
-  PandoraType.hybridStation: 'HS',
-  PandoraType.artistMessage: 'AM',
-  PandoraType.listener: 'LI',
-  PandoraType.curator: 'CU',
-  PandoraType.podcastCategory: 'TG',
-  PandoraType.podcastPublisher: 'CP',
-  PandoraType.stationFactory: 'SF',
-  PandoraType.ae: 'AE',
-  PandoraType.bn: 'BN',
-  PandoraType.cg: 'CG',
-  PandoraType.le: 'LE',
-  PandoraType.mo: 'MO',
-  PandoraType.lc: 'LC',
-  PandoraType.sc: 'SC',
-  PandoraType.sh: 'SH',
-  PandoraType.sp: 'SP',
-  PandoraType.ve: 'VE',
-  PandoraType.xc: 'XC',
-};
 
 _$GenreDetailsImpl _$$GenreDetailsImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
@@ -202,18 +141,15 @@ _$GenreDetailsImpl _$$GenreDetailsImplFromJson(Map<String, dynamic> json) =>
           isRedirect: $checkedConvert('isRedirect', (v) => v as bool),
           curatorId: $checkedConvert('curatorId', (v) => v as String),
           pandoraId: $checkedConvert('pandoraId', (v) => v as String),
-          pandoraType: $checkedConvert(
-              'type', (v) => $enumDecode(_$PandoraTypeEnumMap, v)),
           scope: $checkedConvert('scope', (v) => v as String),
-          $type: $checkedConvert('runtimeType', (v) => v as String?),
+          $type: $checkedConvert('type', (v) => v as String?),
         );
         return val;
       },
       fieldKeyMap: const {
         'sampleArtistIds': 'sampleArtists',
         'sampleTrackIds': 'sampleTracks',
-        'pandoraType': 'type',
-        r'$type': 'runtimeType'
+        r'$type': 'type'
       },
     );
 
@@ -226,7 +162,6 @@ Map<String, dynamic> _$$GenreDetailsImplToJson(_$GenreDetailsImpl instance) =>
       'isRedirect': instance.isRedirect,
       'curatorId': instance.curatorId,
       'pandoraId': instance.pandoraId,
-      'type': _$PandoraTypeEnumMap[instance.pandoraType]!,
       'scope': instance.scope,
-      'runtimeType': instance.$type,
+      'type': instance.$type,
     };
