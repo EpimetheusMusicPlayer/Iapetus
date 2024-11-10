@@ -6,13 +6,23 @@ part 'icon.g.dart';
 
 @freezed
 class MediaIcon with _$MediaIcon {
+  static const staticHost = 'content-images.p-cdn.com';
+
   const factory MediaIcon({
     /// The dominant color (0xAARRGGBB)
-    @JsonKey(name: 'dominantColor', fromJson: readOptionalColor, toJson: writeOptionalColor)
-        required int? dominantColor,
+    @JsonKey(
+      name: 'dominantColor',
+      fromJson: readOptionalColor,
+      toJson: writeOptionalColor,
+    )
+    required int? dominantColor,
     @JsonKey(name: 'artId') required String artId,
-    @JsonKey(name: 'artUrl', fromJson: readOptionallyEmptyUri, toJson: writeOptionallyEmptyUri)
-        required Uri? artUrl,
+    @JsonKey(
+      name: 'artUrl',
+      fromJson: readOptionallyEmptyUri,
+      toJson: writeOptionallyEmptyUri,
+    )
+    required Uri? artUrl,
   }) = _MediaIcon;
 
   factory MediaIcon.fromJson(Map<String, dynamic> json) =>
